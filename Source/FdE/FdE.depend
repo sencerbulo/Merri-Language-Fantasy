@@ -1,0 +1,1454 @@
+# depslib dependency file v1.0
+1429120675 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/main.cpp
+	<SDL.h>
+	"SDL_image.h"
+	"Kuko/base/Application.hpp"
+	"Kuko/base/Sprite.hpp"
+	"Kuko/utilities/Logger.hpp"
+	"Kuko/managers/ImageManager.hpp"
+	"Kuko/managers/StateManager.hpp"
+	"Kuko/managers/InputManager.hpp"
+	"Kuko/managers/FontManager.hpp"
+	"Kuko/managers/LanguageManager.hpp"
+	"Kuko/managers/LuaManager.hpp"
+	"Kuko/managers/SoundManager.hpp"
+	<iostream>
+	<string>
+	"states/TitleState.hpp"
+
+1400119779 /usr/include/SDL2/SDL.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_config.h
+	"SDL_platform.h"
+
+1400119779 /usr/include/SDL2/SDL_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/begin_code.h
+
+1400119779 /usr/include/SDL2/close_code.h
+
+1400119779 /usr/include/SDL2/SDL_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_pixels.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1400119779 /usr/include/SDL2/SDL_scancode.h
+	"SDL_stdinc.h"
+
+1400119779 /usr/include/SDL2/SDL_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1400119779 /usr/include/SDL2/SDL_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1400119779 /usr/include/SDL2/SDL_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1390221167 /usr/include/SDL2/SDL_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/base/Application.hpp
+	<SDL.h>
+	<string>
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/base/Sprite.hpp
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<iostream>
+	"../utilities/Logger.hpp"
+	"PositionRect.hpp"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/utilities/Logger.hpp
+	<iostream>
+	<fstream>
+	<string>
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/base/PositionRect.hpp
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/ImageManager.hpp
+	<SDL.h>
+	<SDL_image.h>
+	<map>
+	<string>
+	"../base/Sprite.hpp"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/StateManager.hpp
+	"../states/IState.hpp"
+	"../base/Application.hpp"
+	<map>
+	<string>
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/states/IState.hpp
+	"../base/Application.hpp"
+	<string>
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/InputManager.hpp
+	<SDL.h>
+	<map>
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/FontManager.hpp
+	<SDL.h>
+	"SDL_ttf.h"
+	<map>
+	<string>
+
+1383088273 /usr/include/SDL2/SDL_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/LanguageManager.hpp
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/LuaManager.hpp
+	<lua.hpp>
+	<string>
+
+1389370498 /usr/include/lua5.2/lua.hpp
+	"lua.h"
+	"lualib.h"
+	"lauxlib.h"
+
+1389370498 /usr/include/lua5.2/lua.h
+	<stdarg.h>
+	<stddef.h>
+	"luaconf.h"
+
+1389395399 /usr/include/lua5.2/luaconf.h
+	<limits.h>
+	<stddef.h>
+	"lua5.2-deb-multiarch.h"
+	<stdio.h>
+	<math.h>
+
+1389370498 /usr/include/lua5.2/lualib.h
+	"lua.h"
+
+1389370498 /usr/include/lua5.2/lauxlib.h
+	<stddef.h>
+	<stdio.h>
+	"lua.h"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/SoundManager.hpp
+	<SDL.h>
+	<SDL_mixer.h>
+	<map>
+	<string>
+
+1395318426 /usr/include/SDL2/SDL_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/base/Application.cpp
+	"Application.hpp"
+	"../utilities/Logger.hpp"
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/base/Sprite.cpp
+	"Sprite.hpp"
+	"../base/Application.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/entities/BaseEntity.cpp
+	"BaseEntity.hpp"
+	"../managers/ImageManager.hpp"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/entities/BaseEntity.hpp
+	<SDL.h>
+	"../base/Sprite.hpp"
+	"../base/PositionRect.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/entities/Character.cpp
+	"Character.hpp"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/entities/Character.hpp
+	"BaseEntity.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/entities/Map.cpp
+	"Map.hpp"
+	"../base/Sprite.hpp"
+	"../base/Application.hpp"
+	"../managers/MapManager.hpp"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/entities/Map.hpp
+	<vector>
+	<string>
+	"BaseEntity.hpp"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/MapManager.hpp
+	<string>
+	<map>
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/FontManager.cpp
+	"FontManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/ImageManager.cpp
+	"ImageManager.hpp"
+	"../base/Application.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/InputManager.cpp
+	"InputManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/LanguageManager.cpp
+	"LanguageManager.hpp"
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/LuaManager.cpp
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/MapManager.cpp
+	"MapManager.hpp"
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/MenuManager.cpp
+	"MenuManager.hpp"
+	"ImageManager.hpp"
+	"FontManager.hpp"
+	"LuaManager.hpp"
+	"LanguageManager.hpp"
+	"../utilities/Logger.hpp"
+	<fstream>
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/MenuManager.hpp
+	"../base/Application.hpp"
+	"../widgets/UIButton.hpp"
+	"../widgets/UILabel.hpp"
+	"../widgets/UIImage.hpp"
+	<map>
+	<string>
+	<set>
+
+1429121340 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/widgets/UIButton.hpp
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"UIImage.hpp"
+	"UILabel.hpp"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/widgets/IWidget.hpp
+	<SDL.h>
+	<string>
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/widgets/UIImage.hpp
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1428873529 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/widgets/UILabel.hpp
+	<string>
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/SoundManager.cpp
+	"SoundManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/managers/StateManager.cpp
+	"StateManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/utilities/Logger.cpp
+	"Logger.hpp"
+	<ctime>
+	<sstream>
+
+1429121349 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/widgets/UIButton.cpp
+	"UIButton.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/widgets/UIImage.cpp
+	"UIImage.hpp"
+	"../managers/ImageManager.hpp"
+	"../base/Application.hpp"
+
+1428873529 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/Kuko/widgets/UILabel.cpp
+	"UILabel.hpp"
+	"../base/Application.hpp"
+	"../managers/ImageManager.hpp"
+
+1429119573 /home/rejcx/projects/rayto-language-fantasy/Source/Rayto/states/TitleState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/base/Sprite.hpp"
+	"../Kuko/widgets/UIImage.hpp"
+	"../Kuko/widgets/UIButton.hpp"
+	"../Kuko/widgets/UILabel.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+
+1429121004 source:/home/rejcx/projects/rayto-language-fantasy/Source/Rayto/states/TitleState.cpp
+	"TitleState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/base/Application.hpp"
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/base/Application.cpp
+	"Application.hpp"
+	"../utilities/Logger.hpp"
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/base/Application.hpp
+	<SDL.h>
+	<string>
+
+1431551918 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/utilities/Logger.hpp
+	<iostream>
+	<fstream>
+	<string>
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/base/Sprite.cpp
+	"Sprite.hpp"
+	"../base/Application.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/base/Sprite.hpp
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<iostream>
+	"../utilities/Logger.hpp"
+	"PositionRect.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/base/PositionRect.hpp
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/entities/BaseEntity.cpp
+	"BaseEntity.hpp"
+	"../managers/ImageManager.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/entities/BaseEntity.hpp
+	<SDL.h>
+	"../base/Sprite.hpp"
+	"../base/PositionRect.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/ImageManager.hpp
+	<SDL.h>
+	<SDL_image.h>
+	<map>
+	<string>
+	"../base/Sprite.hpp"
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/entities/Character.cpp
+	"Character.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/entities/Character.hpp
+	"BaseEntity.hpp"
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/entities/Map.cpp
+	"Map.hpp"
+	"../base/Sprite.hpp"
+	"../base/Application.hpp"
+	"../managers/MapManager.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/entities/Map.hpp
+	<vector>
+	<string>
+	"BaseEntity.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/MapManager.hpp
+	<string>
+	<map>
+
+1431543192 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/FontManager.cpp
+	"FontManager.hpp"
+	"../utilities/Logger.hpp"
+
+1431543028 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/FontManager.hpp
+	<SDL.h>
+	"SDL_ttf.h"
+	<map>
+	<string>
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/ImageManager.cpp
+	"ImageManager.hpp"
+	"../base/Application.hpp"
+
+1431551205 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/InputManager.cpp
+	"InputManager.hpp"
+	"../utilities/Logger.hpp"
+
+1431551189 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/InputManager.hpp
+	<SDL.h>
+	<map>
+
+1431539289 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/LanguageManager.cpp
+	"LanguageManager.hpp"
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1431537828 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/LanguageManager.hpp
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+
+1431553201 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/LuaManager.hpp
+	<lua.hpp>
+	<string>
+
+1431553319 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/LuaManager.cpp
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/MapManager.cpp
+	"MapManager.hpp"
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1431539259 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/MenuManager.cpp
+	"MenuManager.hpp"
+	"ImageManager.hpp"
+	"FontManager.hpp"
+	"LuaManager.hpp"
+	"LanguageManager.hpp"
+	"../utilities/Logger.hpp"
+	<fstream>
+
+1431472392 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/MenuManager.hpp
+	"../base/Application.hpp"
+	"../widgets/UIButton.hpp"
+	"../widgets/UILabel.hpp"
+	"../widgets/UIImage.hpp"
+	<map>
+	<string>
+	<set>
+
+1431539153 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/widgets/UIButton.hpp
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"UIImage.hpp"
+	"UILabel.hpp"
+
+1431472636 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/widgets/IWidget.hpp
+	<SDL.h>
+	<string>
+
+1431472272 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/widgets/UIImage.hpp
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1431539146 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/widgets/UILabel.hpp
+	<string>
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/SoundManager.cpp
+	"SoundManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/SoundManager.hpp
+	<SDL.h>
+	<SDL_mixer.h>
+	<map>
+	<string>
+
+1428873529 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/StateManager.cpp
+	"StateManager.hpp"
+	"../utilities/Logger.hpp"
+
+1428873529 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/StateManager.hpp
+	"../states/IState.hpp"
+	"../base/Application.hpp"
+	<map>
+	<string>
+
+1431551224 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/states/IState.hpp
+	"../base/Application.hpp"
+	"../managers/InputManager.hpp"
+	<string>
+
+1431552059 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/utilities/Logger.cpp
+	"Logger.hpp"
+	<ctime>
+	<sstream>
+
+1431539158 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/widgets/UIButton.cpp
+	"UIButton.hpp"
+
+1431472280 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/widgets/UIImage.cpp
+	"UIImage.hpp"
+	"../managers/ImageManager.hpp"
+	"../base/Application.hpp"
+
+1431539143 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/widgets/UILabel.cpp
+	"UILabel.hpp"
+	"../base/Application.hpp"
+	"../managers/ImageManager.hpp"
+
+1431553900 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/main.cpp
+	<SDL.h>
+	"SDL_image.h"
+	"Kuko/base/Application.hpp"
+	"Kuko/base/Sprite.hpp"
+	"Kuko/utilities/Logger.hpp"
+	"Kuko/managers/ImageManager.hpp"
+	"Kuko/managers/StateManager.hpp"
+	"Kuko/managers/InputManager.hpp"
+	"Kuko/managers/FontManager.hpp"
+	"Kuko/managers/LanguageManager.hpp"
+	"Kuko/managers/LuaManager.hpp"
+	"Kuko/managers/SoundManager.hpp"
+	"Kuko/managers/ConfigManager.hpp"
+	<iostream>
+	<string>
+	"states/TitleState.hpp"
+	"states/StartupState.hpp"
+	"states/OptionState.hpp"
+
+1431538765 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/states/TitleState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/base/Sprite.hpp"
+	"../Kuko/widgets/UIImage.hpp"
+	"../Kuko/widgets/UIButton.hpp"
+	"../Kuko/widgets/UILabel.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+
+1431551172 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/states/TitleState.cpp
+	"TitleState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/base/Application.hpp"
+
+1431538664 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/states/StartupState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/base/Sprite.hpp"
+	"../Kuko/widgets/UIImage.hpp"
+	"../Kuko/widgets/UIButton.hpp"
+	"../Kuko/widgets/UILabel.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+
+1431553910 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/states/StartupState.cpp
+	"StartupState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/managers/ConfigManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/base/Application.hpp"
+
+1431547710 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/states/OptionState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/base/Sprite.hpp"
+	"../Kuko/widgets/UIImage.hpp"
+	"../Kuko/widgets/UIButton.hpp"
+	"../Kuko/widgets/UILabel.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+
+1431553651 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/states/OptionState.cpp
+	"OptionState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/base/Application.hpp"
+
+1431553891 source:/home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/ConfigManager.cpp
+	"ConfigManager.hpp"
+	<fstream>
+	"LanguageManager.hpp"
+	"FontManager.hpp"
+	"../utilities/Logger.hpp"
+
+1431553807 /home/rejcx/projects/cpp-fantazio-de-esperanto/Source/FdE/Kuko/managers/ConfigManager.hpp
+	<string>
+	<map>
+	"LuaManager.hpp"
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/base/Application.cpp
+	"Application.hpp"
+	"../utilities/Logger.hpp"
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/base/Application.hpp
+	<SDL.h>
+	<string>
+
+1432248612 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/utilities/Logger.hpp
+	<iostream>
+	<fstream>
+	<string>
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/base/Sprite.cpp
+	"Sprite.hpp"
+	"../base/Application.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/base/Sprite.hpp
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<iostream>
+	"../utilities/Logger.hpp"
+	"PositionRect.hpp"
+
+1433009551 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/base/PositionRect.hpp
+
+1432245676 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/entities/BaseEntity.cpp
+	"BaseEntity.hpp"
+	"../managers/ImageManager.hpp"
+	"../utilities/StringUtil.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/entities/BaseEntity.hpp
+	<SDL.h>
+	"../base/Sprite.hpp"
+	"../base/PositionRect.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/ImageManager.hpp
+	<SDL.h>
+	<SDL_image.h>
+	<map>
+	<string>
+	"../base/Sprite.hpp"
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/entities/Character.cpp
+	"Character.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/entities/Character.hpp
+	"BaseEntity.hpp"
+
+1432245714 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/entities/Map.cpp
+	"Map.hpp"
+	"../base/Sprite.hpp"
+	"../base/Application.hpp"
+	"../managers/MapManager.hpp"
+	"../utilities/StringUtil.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/entities/Map.hpp
+	<vector>
+	<string>
+	"BaseEntity.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/MapManager.hpp
+	<string>
+	<map>
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/FontManager.cpp
+	"FontManager.hpp"
+	"../utilities/Logger.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/FontManager.hpp
+	<SDL.h>
+	"SDL_ttf.h"
+	<map>
+	<string>
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/ImageManager.cpp
+	"ImageManager.hpp"
+	"../base/Application.hpp"
+
+1432243735 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/InputManager.cpp
+	"InputManager.hpp"
+	"../utilities/Logger.hpp"
+
+1432243725 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/InputManager.hpp
+	<SDL.h>
+	<map>
+	<string>
+
+1433086059 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/LanguageManager.cpp
+	"LanguageManager.hpp"
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1433086048 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/LanguageManager.hpp
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+
+1433086068 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/LuaManager.hpp
+	<lua.hpp>
+	<string>
+
+1433086083 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/LuaManager.cpp
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/MapManager.cpp
+	"MapManager.hpp"
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1433088306 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/MenuManager.cpp
+	"MenuManager.hpp"
+	"ImageManager.hpp"
+	"FontManager.hpp"
+	"LuaManager.hpp"
+	"LanguageManager.hpp"
+	"../utilities/Logger.hpp"
+	"../utilities/StringUtil.hpp"
+	<fstream>
+
+1433088233 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/MenuManager.hpp
+	"../base/Application.hpp"
+	"../widgets/UIButton.hpp"
+	"../widgets/UILabel.hpp"
+	"../widgets/UIImage.hpp"
+	"../widgets/UITextBox.hpp"
+	<map>
+	<string>
+	<set>
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/UIButton.hpp
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"UIImage.hpp"
+	"UILabel.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/IWidget.hpp
+	<SDL.h>
+	<string>
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/UIImage.hpp
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/UILabel.hpp
+	<string>
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1432245752 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/SoundManager.cpp
+	"SoundManager.hpp"
+	"../utilities/Logger.hpp"
+	"../utilities/StringUtil.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/SoundManager.hpp
+	<SDL.h>
+	<SDL_mixer.h>
+	<map>
+	<string>
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/StateManager.cpp
+	"StateManager.hpp"
+	"../utilities/Logger.hpp"
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/StateManager.hpp
+	"../states/IState.hpp"
+	"../base/Application.hpp"
+	<map>
+	<string>
+
+1432230639 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/states/IState.hpp
+	"../base/Application.hpp"
+	"../managers/InputManager.hpp"
+	<string>
+
+1432250145 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/utilities/Logger.cpp
+	"Logger.hpp"
+	<ctime>
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/UIButton.cpp
+	"UIButton.hpp"
+
+1432230639 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/UIImage.cpp
+	"UIImage.hpp"
+	"../managers/ImageManager.hpp"
+	"../base/Application.hpp"
+
+1432245770 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/UILabel.cpp
+	"UILabel.hpp"
+	"../base/Application.hpp"
+	"../managers/ImageManager.hpp"
+	"../utilities/StringUtil.hpp"
+
+1433086828 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/main.cpp
+	<SDL.h>
+	"SDL_image.h"
+	"Kuko/base/Application.hpp"
+	"Kuko/base/Sprite.hpp"
+	"Kuko/utilities/Logger.hpp"
+	"Kuko/managers/ImageManager.hpp"
+	"Kuko/managers/StateManager.hpp"
+	"Kuko/managers/InputManager.hpp"
+	"Kuko/managers/FontManager.hpp"
+	"Kuko/managers/LanguageManager.hpp"
+	"Kuko/managers/LuaManager.hpp"
+	"Kuko/managers/SoundManager.hpp"
+	"Kuko/managers/ConfigManager.hpp"
+	<iostream>
+	<string>
+	"states/TitleState.hpp"
+	"states/StartupState.hpp"
+	"states/OptionState.hpp"
+	"states/NewGameState.hpp"
+
+1433091429 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/ConfigManager.hpp
+	<string>
+	<map>
+	"LuaManager.hpp"
+
+1433092995 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/states/TitleState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+	<vector>
+	<string>
+
+1432231000 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/states/StartupState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+
+1432241498 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/states/OptionState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+
+1433091021 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/states/StartupState.cpp
+	"StartupState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/managers/ConfigManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/utilities/StringUtil.hpp"
+	"../Kuko/base/Application.hpp"
+
+1433094409 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/states/TitleState.cpp
+	"TitleState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/managers/ConfigManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/base/Application.hpp"
+	"../Kuko/utilities/StringUtil.hpp"
+
+1433092576 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/managers/ConfigManager.cpp
+	"ConfigManager.hpp"
+	<fstream>
+	"LanguageManager.hpp"
+	"FontManager.hpp"
+	"../utilities/Logger.hpp"
+	"../utilities/StringUtil.hpp"
+
+1433094435 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/states/OptionState.cpp
+	"OptionState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/base/Application.hpp"
+
+1433091459 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/states/NewGameState.cpp
+	"NewGameState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/managers/ConfigManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/utilities/StringUtil.hpp"
+	"../Kuko/base/Application.hpp"
+	<stdlib.h>
+	<time.h>
+
+1433088561 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/states/NewGameState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+	"../Kuko/base/Sprite.hpp"
+	<vector>
+
+1432244034 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/UITextBox.hpp
+	<string>
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1432247168 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/widgets/UITextBox.cpp
+	"UITextBox.hpp"
+	"../base/Application.hpp"
+	"../managers/ImageManager.hpp"
+
+1432245393 /home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/utilities/StringUtil.hpp
+	<string>
+
+1432245758 source:/home/rejcx/projects/Rayto-Language-Fantasy/Source/FdE/Kuko/utilities/StringUtil.cpp
+	"StringUtil.hpp"
+	<sstream>
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/base/Application.cpp
+	"Application.hpp"
+	"../utilities/Logger.hpp"
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<SDL_mixer.h>
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/base/Application.hpp
+	<SDL.h>
+	<string>
+
+1432248612 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/utilities/Logger.hpp
+	<iostream>
+	<fstream>
+	<string>
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/base/Sprite.cpp
+	"Sprite.hpp"
+	"../base/Application.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/base/Sprite.hpp
+	<SDL.h>
+	<SDL_image.h>
+	<string>
+	<iostream>
+	"../utilities/Logger.hpp"
+	"PositionRect.hpp"
+
+1433009551 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/base/PositionRect.hpp
+
+1432245676 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/entities/BaseEntity.cpp
+	"BaseEntity.hpp"
+	"../managers/ImageManager.hpp"
+	"../utilities/StringUtil.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/entities/BaseEntity.hpp
+	<SDL.h>
+	"../base/Sprite.hpp"
+	"../base/PositionRect.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/ImageManager.hpp
+	<SDL.h>
+	<SDL_image.h>
+	<map>
+	<string>
+	"../base/Sprite.hpp"
+
+1432245393 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/utilities/StringUtil.hpp
+	<string>
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/entities/Character.cpp
+	"Character.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/entities/Character.hpp
+	"BaseEntity.hpp"
+
+1432245714 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/entities/Map.cpp
+	"Map.hpp"
+	"../base/Sprite.hpp"
+	"../base/Application.hpp"
+	"../managers/MapManager.hpp"
+	"../utilities/StringUtil.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/entities/Map.hpp
+	<vector>
+	<string>
+	"BaseEntity.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/MapManager.hpp
+	<string>
+	<map>
+
+1433655255 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/ConfigManager.cpp
+	"ConfigManager.hpp"
+	<fstream>
+	"LanguageManager.hpp"
+	"FontManager.hpp"
+	"../utilities/Logger.hpp"
+	"../utilities/StringUtil.hpp"
+
+1433655255 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/ConfigManager.hpp
+	<string>
+	<map>
+	<vector>
+	"LuaManager.hpp"
+
+1433086068 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/LuaManager.hpp
+	<lua.hpp>
+	<string>
+
+1433086048 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/LanguageManager.hpp
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/FontManager.hpp
+	<SDL.h>
+	"SDL_ttf.h"
+	<map>
+	<string>
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/FontManager.cpp
+	"FontManager.hpp"
+	"../utilities/Logger.hpp"
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/ImageManager.cpp
+	"ImageManager.hpp"
+	"../base/Application.hpp"
+
+1432243735 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/InputManager.cpp
+	"InputManager.hpp"
+	"../utilities/Logger.hpp"
+
+1432243725 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/InputManager.hpp
+	<SDL.h>
+	<map>
+	<string>
+
+1433086059 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/LanguageManager.cpp
+	"LanguageManager.hpp"
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1433086083 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/LuaManager.cpp
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/MapManager.cpp
+	"MapManager.hpp"
+	"LuaManager.hpp"
+	"../utilities/Logger.hpp"
+
+1433088306 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/MenuManager.cpp
+	"MenuManager.hpp"
+	"ImageManager.hpp"
+	"FontManager.hpp"
+	"LuaManager.hpp"
+	"LanguageManager.hpp"
+	"../utilities/Logger.hpp"
+	"../utilities/StringUtil.hpp"
+	<fstream>
+
+1433088233 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/MenuManager.hpp
+	"../base/Application.hpp"
+	"../widgets/UIButton.hpp"
+	"../widgets/UILabel.hpp"
+	"../widgets/UIImage.hpp"
+	"../widgets/UITextBox.hpp"
+	<map>
+	<string>
+	<set>
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/UIButton.hpp
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"UIImage.hpp"
+	"UILabel.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/IWidget.hpp
+	<SDL.h>
+	<string>
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/UIImage.hpp
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/UILabel.hpp
+	<string>
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1432244034 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/UITextBox.hpp
+	<string>
+	"SDL_ttf.h"
+	"IWidget.hpp"
+	"../base/Sprite.hpp"
+
+1432245752 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/SoundManager.cpp
+	"SoundManager.hpp"
+	"../utilities/Logger.hpp"
+	"../utilities/StringUtil.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/SoundManager.hpp
+	<SDL.h>
+	<SDL_mixer.h>
+	<map>
+	<string>
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/StateManager.cpp
+	"StateManager.hpp"
+	"../utilities/Logger.hpp"
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/managers/StateManager.hpp
+	"../states/IState.hpp"
+	"../base/Application.hpp"
+	<map>
+	<string>
+
+1432230639 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/states/IState.hpp
+	"../base/Application.hpp"
+	"../managers/InputManager.hpp"
+	<string>
+
+1432250145 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/utilities/Logger.cpp
+	"Logger.hpp"
+	<ctime>
+
+1432245758 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/utilities/StringUtil.cpp
+	"StringUtil.hpp"
+	<sstream>
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/UIButton.cpp
+	"UIButton.hpp"
+
+1432230639 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/UIImage.cpp
+	"UIImage.hpp"
+	"../managers/ImageManager.hpp"
+	"../base/Application.hpp"
+
+1432245770 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/UILabel.cpp
+	"UILabel.hpp"
+	"../base/Application.hpp"
+	"../managers/ImageManager.hpp"
+	"../utilities/StringUtil.hpp"
+
+1432247168 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/Kuko/widgets/UITextBox.cpp
+	"UITextBox.hpp"
+	"../base/Application.hpp"
+	"../managers/ImageManager.hpp"
+
+1433655423 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/states/TitleState.cpp
+	"TitleState.hpp"
+	"../Kuko/managers/ImageManager.hpp"
+	"../Kuko/managers/InputManager.hpp"
+	"../Kuko/managers/FontManager.hpp"
+	"../Kuko/managers/LanguageManager.hpp"
+	"../Kuko/managers/SoundManager.hpp"
+	"../Kuko/managers/ConfigManager.hpp"
+	"../Kuko/utilities/Logger.hpp"
+	"../Kuko/base/Application.hpp"
+	"../Kuko/utilities/StringUtil.hpp"
+
+1433655398 /home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/states/TitleState.hpp
+	"../Kuko/states/IState.hpp"
+	"../Kuko/managers/MenuManager.hpp"
+	<vector>
+	<string>
+
+1433655945 source:/home/rejcx/projects/Fantazio-de-Esperanto/Source/FdE/main.cpp
+	<SDL.h>
+	"SDL_image.h"
+	"Kuko/base/Application.hpp"
+	"Kuko/base/Sprite.hpp"
+	"Kuko/utilities/Logger.hpp"
+	"Kuko/managers/ImageManager.hpp"
+	"Kuko/managers/StateManager.hpp"
+	"Kuko/managers/InputManager.hpp"
+	"Kuko/managers/FontManager.hpp"
+	"Kuko/managers/LanguageManager.hpp"
+	"Kuko/managers/LuaManager.hpp"
+	"Kuko/managers/SoundManager.hpp"
+	"Kuko/managers/ConfigManager.hpp"
+	<iostream>
+	<string>
+	"states/TitleState.hpp"
+
