@@ -1,2 +1,0 @@
-TitleState = gideros.class( IState )
-
