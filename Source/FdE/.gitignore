@@ -1,5 +1,0 @@
-obj/
-bin/
-*.o
-log.txt
-config.lua
