@@ -12,10 +12,21 @@ end
 
 -- Setup / Teardown --
 function StateBase:Setup( options )
+	self.gotoState = ""
 end
 
 function StateBase:Cleanup()
 	
+end
+
+function StateBase:GotoState()
+	return self.gotoState
+end
+
+function StateBase:SetGotoState( name )
+	print( "Set goto state to ", name )
+	self.gotoState = name
+	print( "Set goto state to ", self.gotoState )
 end
 
 function StateBase:Draw()
@@ -31,21 +42,28 @@ function StateBase:Draw()
 end
 
 function StateBase:ClearScreen()
+	print( "Clear screen" )
 	if ( self.background ~= nil ) then stage:removeChild( self.background ) end
 
 	for key, value in pairs( self.bitmaps ) do
-		print( "Draw bitmap ", key )
 		stage:removeChild( value )
 	end
 	
 	for key, value in pairs( self.labels ) do
-		print( "Draw label ", key )
 		stage:removeChild( value )
 	end	
 end
 
 function StateBase:ClearWidgets()
-	print( "TO DO: implement ClearWidgets()" )
+	for key, value in pairs( self.bitmaps ) do
+		value = nil
+		self.bitmaps[ key ] = nil
+	end
+	
+	for key, value in pairs( self.labels ) do
+		value = nil
+		self.labels[ key ] = nil
+	end
 end
 
 -- Helpers --
@@ -62,7 +80,6 @@ end
 
 function StateBase:SetBackground( options )
 	if ( self.textures[ options.path ] == nil ) then
-		print( "Load texture \"" .. options.path .. "\"" )
 		self.textures[ options.path ] = Texture.new( options.path )
 	end
 	
@@ -79,7 +96,6 @@ end
 -- options.opacity
 function StateBase:AddBitmap( options )
 	if ( self.textures[ options.path ] == nil ) then
-		print( "Load texture \"" .. options.path .. "\"" )
 		self.textures[ options.path ] = Texture.new( options.path )
 	end
 	
@@ -113,7 +129,6 @@ end
 -- options.scale_y
 function StateBase:AddLabel( options )
 	if ( self.fonts[ options.path .. options.size ] == nil ) then
-		print( "Load font \"" .. options.path .. "\" at size ", options.size )
 		self.fonts[ options.path .. options.size ] = TTFont.new( options.path, options.size )
 	end
 	

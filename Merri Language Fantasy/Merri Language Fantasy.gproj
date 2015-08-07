@@ -1,5 +1,5 @@
 <project>
- <properties mouseToTouch="1" autorotation="0" windowHeight="0" encryptCode="0" iosDevice="0" touchToMouse="1" win_org="GiderosMobile" mouseTouchOrder="0" packageName="com.yourdomain.yourapp" retinaDisplay="0" fps="60" osx_domain="giderosmobile.com" windowWidth="0" encryptAssets="0" logicalWidth="360" win_domain="giderosmobile.com" osx_org="GiderosMobile" logicalHeight="640" scaleMode="5" orientation="0" assetsOnly="0" architecture="0">
+ <properties logicalWidth="360" iosDevice="0" retinaDisplay="0" osx_domain="giderosmobile.com" windowWidth="0" encryptAssets="0" win_domain="giderosmobile.com" packageName="com.yourdomain.yourapp" fps="60" windowHeight="0" win_org="GiderosMobile" autorotation="0" encryptCode="0" logicalHeight="640" architecture="0" mouseTouchOrder="0" touchToMouse="1" mouseToTouch="1" osx_org="GiderosMobile" orientation="0" assetsOnly="0" scaleMode="5">
   <imageScales/>
  </properties>
  <folder name="Content">
@@ -36,6 +36,7 @@
  </folder>
  <folder name="Engine">
   <folder name="States">
+   <file source="Engine/States/StateManager.lua"/>
    <file source="Engine/States/StateBase.lua"/>
   </folder>
  </folder>

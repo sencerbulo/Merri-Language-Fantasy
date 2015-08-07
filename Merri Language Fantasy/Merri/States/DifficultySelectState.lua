@@ -2,7 +2,6 @@ DifficultySelectState = Core.class( StateBase )
 
 function DifficultySelectState:init( options )
 	StateBase:init( options )
-	self:Setup( options )
 end
 
 -- Setup / Teardown --
@@ -69,4 +68,12 @@ function DifficultySelectState:Handle_MouseDown( event )
 end
 
 function DifficultySelectState:Handle_EnterFrame( event )
+end
+
+function DifficultySelectState:ClearScreen()
+	StateBase:ClearScreen()	
+end
+
+function DifficultySelectState:ClearWidgets()
+	StateBase:ClearWidgets()
 end

@@ -2,14 +2,17 @@ LanguageSelectState = Core.class( StateBase )
 
 function LanguageSelectState:init( options )
 	StateBase:init( options )
-	self:Setup( options )
-	GLOBAL_CONFIG.HELPER_LANGUAGE = nil
-	GLOBAL_CONFIG.TARGET_LANGUAGE = nil
 end
 
 -- Setup / Teardown --
 function LanguageSelectState:Setup( options )
+	GLOBAL_CONFIG.HELPER_LANGUAGE = nil
+	GLOBAL_CONFIG.TARGET_LANGUAGE = nil
 	self:SetupHelperMenu( options )
+end
+
+function LanguageSelectState:GotoState()
+	return StateBase:GotoState()
 end
 
 function LanguageSelectState:SetupHelperMenu( options )
@@ -90,7 +93,6 @@ end
 
 function LanguageSelectState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
-	print( "Clicked ", clickedButton )
 	
 	if ( self.menuPage == "SelectHelper" ) then
 		if ( clickedButton == "btn_language_en" ) then 				GLOBAL_CONFIG.HELPER_LANGUAGE = "English"
@@ -111,7 +113,7 @@ function LanguageSelectState:Handle_MouseDown( event )
 		end
 		
 		if ( GLOBAL_CONFIG.TARGET_LANGUAGE ~= nil ) then
-			-- Go to next state
+			StateBase:SetGotoState( "TitleState" )
 		end
 	end
 	
@@ -119,4 +121,12 @@ function LanguageSelectState:Handle_MouseDown( event )
 end
 
 function LanguageSelectState:Handle_EnterFrame( event )
+end
+
+function LanguageSelectState:ClearScreen()
+	StateBase:ClearScreen()	
+end
+
+function LanguageSelectState:ClearWidgets()
+	StateBase:ClearWidgets()
 end

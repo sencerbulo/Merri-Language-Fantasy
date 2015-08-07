@@ -2,7 +2,6 @@ TitleState = Core.class( StateBase )
 
 function TitleState:init( options )
 	StateBase:init( options )
-	self:Setup( options )
 end
 
 -- Setup / Teardown --
@@ -52,11 +51,27 @@ end
 
 function TitleState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
-	if ( clickedButton == "btn_play" ) then 					--GLOBAL_CONFIG.HELPER_LANGUAGE = "English"
-	elseif ( clickedButton == "btn_help" ) then 			--GLOBAL_CONFIG.HELPER_LANGUAGE = "Esperanto"
-	elseif ( clickedButton == "btn_options" ) then 	--GLOBAL_CONFIG.HELPER_LANGUAGE = "Ido"
+	print( "Clicked ", clickedButton )
+	
+	if ( clickedButton == "btn_play" ) then 					
+		StateBase:SetGotoState( "DifficultySelectState" )
+			
+	elseif ( clickedButton == "btn_help" ) then 
+	
+	elseif ( clickedButton == "btn_options" ) then
+	
 	end
 end
 
 function TitleState:Handle_EnterFrame( event )
+end
+
+
+
+function TitleState:ClearScreen()
+	StateBase:ClearScreen()	
+end
+
+function TitleState:ClearWidgets()
+	StateBase:ClearWidgets()
 end
