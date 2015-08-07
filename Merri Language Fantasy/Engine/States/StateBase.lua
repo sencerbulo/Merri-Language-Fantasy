@@ -31,17 +31,14 @@ function StateBase:Draw()
 	end
 end
 
--- Callbacks --
-function StateBase:Handle_AndroidKey( event )
-end
+-- Helpers --
 
-function StateBase:Handle_KeyDown( event )
-end
-
-function StateBase:Handle_MouseDown( event )
-end
-
-function StateBase:Handle_EnterFrame( event )
+function StateBase:ClickedButtonName( event )
+	for key, value in pairs( self.bitmaps ) do
+		if ( value:hitTestPoint( event.x, event.y ) ) then
+			return key
+		end
+	end
 end
 
 -- Utils
