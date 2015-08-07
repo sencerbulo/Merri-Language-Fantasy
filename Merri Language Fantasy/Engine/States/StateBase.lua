@@ -87,6 +87,7 @@ end
 
 -- options.id
 -- options.path (font)
+-- options.size
 -- options.text
 -- options.color
 -- options.pos_x
@@ -94,12 +95,13 @@ end
 -- options.scale_x
 -- options.scale_y
 function StateBase:AddLabel( options )
-	if ( self.fonts[ options.path ] == nil ) then
-		print( "Load font \"" .. options.path .. "\"" )
-		self.fonts[ options.path ] = TTFont.new( options.path, 16 )
+	print( options.path .. options.size )
+	if ( self.fonts[ options.path .. options.size ] == nil ) then
+		print( "Load font \"" .. options.path .. "\" at size ", options.size )
+		self.fonts[ options.path .. options.size ] = TTFont.new( options.path, options.size )
 	end
 	
-	self.labels[ options.id ] = TextField.new( self.fonts[ options.path ], options.text )
+	self.labels[ options.id ] = TextField.new( self.fonts[ options.path .. options.size ], options.text )
 	
 	if ( options.pos_x ~= nil and options.pos_y ~= nil ) then
 		self.labels[ options.id ]:setPosition( options.pos_x, options.pos_y )

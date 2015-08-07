@@ -1,4 +1,4 @@
-currentState = LanguageSelectState.new()
+currentState = TitleState.new()
 
 function Handle_EnterFrame( event )
 	currentState:Handle_EnterFrame( event )

@@ -8,6 +8,10 @@
   </folder>
   <folder name="Graphics">
    <folder name="UI">
+    <file source="Content/Graphics/UI/title_text.png"/>
+    <file source="Content/Graphics/UI/btn_play.png"/>
+    <file source="Content/Graphics/UI/btn_options.png"/>
+    <file source="Content/Graphics/UI/btn_help.png"/>
     <file source="Content/Graphics/UI/widebtnbg.png"/>
     <file source="Content/Graphics/UI/generalbg.png"/>
     <file source="Content/Graphics/UI/dnk-half.png"/>
@@ -16,6 +20,7 @@
  </folder>
  <folder name="Merri">
   <folder name="States">
+   <file source="Merri/States/TitleState.lua"/>
    <file source="Merri/States/LanguageSelectState.lua"/>
   </folder>
   <file source="Merri/main.lua"/>
