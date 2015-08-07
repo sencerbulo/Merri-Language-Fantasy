@@ -27,6 +27,7 @@ function TitleState:Setup( options )
 	StateBase:AddLabel( { id = "moosader", path = "Content/Fonts/PressStart2P.ttf",		pos_x = 10, pos_y = 25, color = 0xFFFFFF, size = 13, text = "Moosader's" } )
 	StateBase:AddBitmap( { id = "title", 	path = "Content/Graphics/UI/title_text.png",  pos_x = 64, pos_y = 35 } )
 	StateBase:AddLabel( { id = "title", 			path = "Content/Fonts/PressStart2P.ttf",		pos_x = 10, pos_y = 140, color = 0xFFFFFF, size = 16, text = "Fantazio de Esperanto" } )
+	StateBase:AddBitmap( { id = "bg", 	path = "Content/Graphics/UI/bg_titlescene.png",  pos_x = 0, pos_y = 160 } )
 		
 	self:Draw()
 end

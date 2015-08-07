@@ -8,6 +8,7 @@
   </folder>
   <folder name="Graphics">
    <folder name="UI">
+    <file source="Content/Graphics/UI/bg_titlescene.png"/>
     <file source="Content/Graphics/UI/btn_stats.png"/>
     <file source="Content/Graphics/UI/btn_back.png"/>
     <file source="Content/Graphics/UI/difficulty_practice.png"/>

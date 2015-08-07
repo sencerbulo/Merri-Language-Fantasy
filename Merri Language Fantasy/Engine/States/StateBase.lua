@@ -15,20 +15,37 @@ function StateBase:Setup( options )
 end
 
 function StateBase:Cleanup()
+	
 end
 
 function StateBase:Draw()
 	if ( self.background ~= nil ) then stage:addChild( self.background ) end
 
 	for key, value in pairs( self.bitmaps ) do
-		print( "Draw bitmap ", key )
 		stage:addChild( value )
 	end
 	
 	for key, value in pairs( self.labels ) do
-		print( "Draw label ", key )
 		stage:addChild( value )
 	end
+end
+
+function StateBase:ClearScreen()
+	if ( self.background ~= nil ) then stage:removeChild( self.background ) end
+
+	for key, value in pairs( self.bitmaps ) do
+		print( "Draw bitmap ", key )
+		stage:removeChild( value )
+	end
+	
+	for key, value in pairs( self.labels ) do
+		print( "Draw label ", key )
+		stage:removeChild( value )
+	end	
+end
+
+function StateBase:ClearWidgets()
+	print( "TO DO: implement ClearWidgets()" )
 end
 
 -- Helpers --
@@ -95,7 +112,6 @@ end
 -- options.scale_x
 -- options.scale_y
 function StateBase:AddLabel( options )
-	print( options.path .. options.size )
 	if ( self.fonts[ options.path .. options.size ] == nil ) then
 		print( "Load font \"" .. options.path .. "\" at size ", options.size )
 		self.fonts[ options.path .. options.size ] = TTFont.new( options.path, options.size )
