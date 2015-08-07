@@ -8,6 +8,12 @@
   </folder>
   <folder name="Graphics">
    <folder name="UI">
+    <file source="Content/Graphics/UI/btn_stats.png"/>
+    <file source="Content/Graphics/UI/btn_back.png"/>
+    <file source="Content/Graphics/UI/difficulty_practice.png"/>
+    <file source="Content/Graphics/UI/difficulty_medium.png"/>
+    <file source="Content/Graphics/UI/difficulty_hard.png"/>
+    <file source="Content/Graphics/UI/difficulty_easy.png"/>
     <file source="Content/Graphics/UI/title_text.png"/>
     <file source="Content/Graphics/UI/btn_play.png"/>
     <file source="Content/Graphics/UI/btn_options.png"/>
@@ -20,8 +26,9 @@
  </folder>
  <folder name="Merri">
   <folder name="States">
-   <file source="Merri/States/TitleState.lua"/>
+   <file source="Merri/States/DifficultySelectState.lua"/>
    <file source="Merri/States/LanguageSelectState.lua"/>
+   <file source="Merri/States/TitleState.lua"/>
   </folder>
   <file source="Merri/main.lua"/>
   <file source="Merri/config.lua"/>

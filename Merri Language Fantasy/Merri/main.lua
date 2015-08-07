@@ -1,4 +1,4 @@
-currentState = TitleState.new()
+currentState = DifficultySelectState.new()
 
 function Handle_EnterFrame( event )
 	currentState:Handle_EnterFrame( event )

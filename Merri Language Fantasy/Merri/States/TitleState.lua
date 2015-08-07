@@ -10,18 +10,18 @@ function TitleState:Setup( options )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbg.png",  pos_x = 0, pos_y = 0 } )
 	
 	StateBase:AddButton( { 
-		button = { id = "btn_play", 	path = "Content/Graphics/UI/btn_play.png",  	pos_x = 10, pos_y = 520  },
-		label 	= { id = "btn_play", 	path = "Content/Fonts/PressStart2P.ttf",   			pos_x = 15, pos_y = 520+95, color = 0x000000, size = 12, text = "Play" }
+		button = { id = "btn_play", 	path = "Content/Graphics/UI/btn_play.png",  	pos_x = 10, pos_y = 525  },
+		label 	= { id = "btn_play", 	path = "Content/Fonts/PressStart2P.ttf",   			pos_x = 15, pos_y = 525+95, color = 0x000000, size = 12, text = "Play" }
 		} )
 		
 	StateBase:AddButton( { 
-		button = { id = "btn_options", 	path = "Content/Graphics/UI/btn_options.png",  	pos_x = 130, pos_y = 520  },
-		label 	= { id = "btn_options", 	path = "Content/Fonts/PressStart2P.ttf",   					pos_x = 135, pos_y = 520+95, color = 0x000000, size = 12, text = "Options" }
+		button = { id = "btn_options", 	path = "Content/Graphics/UI/btn_options.png",  	pos_x = 130, pos_y = 525  },
+		label 	= { id = "btn_options", 	path = "Content/Fonts/PressStart2P.ttf",   					pos_x = 135, pos_y = 525+95, color = 0x000000, size = 12, text = "Options" }
 		} )
 		
 	StateBase:AddButton( { 
-		button = { id = "btn_help", 	path = "Content/Graphics/UI/btn_help.png",  	pos_x = 250, pos_y = 520  },
-		label 	= { id = "btn_help", 	path = "Content/Fonts/PressStart2P.ttf",   			pos_x = 255, pos_y = 520+95, color = 0x000000, size = 12, text = "Help" }
+		button = { id = "btn_help", 	path = "Content/Graphics/UI/btn_help.png",  	pos_x = 250, pos_y = 525  },
+		label 	= { id = "btn_help", 	path = "Content/Fonts/PressStart2P.ttf",   			pos_x = 255, pos_y = 525+95, color = 0x000000, size = 12, text = "Help" }
 		} )
 		
 	StateBase:AddLabel( { id = "moosader", path = "Content/Fonts/PressStart2P.ttf",		pos_x = 10, pos_y = 25, color = 0xFFFFFF, size = 13, text = "Moosader's" } )
