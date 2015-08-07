@@ -3,6 +3,9 @@ StateBase  = Core.class()
 function StateBase:init( options )
 	self.textures = {}
 	self.bitmaps = {}
+	self.fonts = {}
+	self.labels = {}
+	self.background = nil
 	
 	self:Setup( options )
 end
@@ -15,7 +18,15 @@ function StateBase:Cleanup()
 end
 
 function StateBase:Draw()
+	if ( self.background ~= nil ) then stage:addChild( self.background ) end
+
 	for key, value in pairs( self.bitmaps ) do
+		print( "Draw bitmap ", key )
+		stage:addChild( value )
+	end
+	
+	for key, value in pairs( self.labels ) do
+		print( "Draw label ", key )
 		stage:addChild( value )
 	end
 end
@@ -35,8 +46,17 @@ end
 
 -- Utils
 
+function StateBase:SetBackground( options )
+	if ( self.textures[ options.path ] == nil ) then
+		print( "Load texture \"" .. options.path .. "\"" )
+		self.textures[ options.path ] = Texture.new( options.path )
+	end
+	
+	self.background = Bitmap.new( self.textures[ options.path ] )
+end
+
 -- options.id
--- options.path
+-- options.path (texture)
 -- options.pos_x
 -- options.pos_y
 -- options.scale_x
@@ -66,6 +86,40 @@ function StateBase:AddBitmap( options )
 	if ( options.opacity ~= nil ) then
 		self.bitmaps[ options.id ]:setOpacity( options.opacity )
 	end
+end
+
+-- options.id
+-- options.path (font)
+-- options.text
+-- options.color
+-- options.pos_x
+-- options.pos_y
+-- options.scale_x
+-- options.scale_y
+function StateBase:AddLabel( options )
+	if ( self.fonts[ options.path ] == nil ) then
+		print( "Load font \"" .. options.path .. "\"" )
+		self.fonts[ options.path ] = TTFont.new( options.path, 16 )
+	end
+	
+	self.labels[ options.id ] = TextField.new( self.fonts[ options.path ], options.text )
+	
+	if ( options.pos_x ~= nil and options.pos_y ~= nil ) then
+		self.labels[ options.id ]:setPosition( options.pos_x, options.pos_y )
+	end
+	
+	if ( options.scale_x ~= nil and options.scale_y ~= nil ) then
+		self.labels[ options.id ]:setScale( options.scale_x, options.scale_y )
+	end
+	
+	if ( options.color ~= nil ) then
+		self.labels[ options.id ]:setTextColor( options.color )
+	end
+end
+
+function StateBase:AddButton( options )
+	self:AddBitmap( options.button )
+	self:AddLabel( options.label )
 end
 
 -- Custom Logic --
