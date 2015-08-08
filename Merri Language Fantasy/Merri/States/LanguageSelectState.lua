@@ -13,6 +13,7 @@ function LanguageSelectState:Setup( options )
 end
 
 function LanguageSelectState:SetupHelperMenu( options )	
+	StateBase:SetGotoState( "" )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
 	StateBase:AddButton( { 
 		button = { id = "btn_language_en", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 25  },
@@ -107,11 +108,10 @@ function LanguageSelectState:Handle_MouseDown( event )
 		end
 		
 		if ( GLOBAL_CONFIG.TARGET_LANGUAGE ~= nil ) then
+			SAVE_CONFIG()
 			StateBase:SetGotoState( "TitleState" )
 		end
 	end
-	
-	print( "Helper language: ", GLOBAL_CONFIG.HELPER_LANGUAGE, " Target language: ", GLOBAL_CONFIG.TARGET_LANGUAGE )
 end
 
 function LanguageSelectState:Handle_EnterFrame( event )

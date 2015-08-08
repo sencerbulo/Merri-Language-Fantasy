@@ -187,10 +187,10 @@ function StateBase:Update()
 			x = x - 1
 			y = y - 1
 			
-			if ( x + w <= 0 ) then
-				x = GLOBAL_CONFIG.SCREEN_WIDTH
+			if ( x + w < 0 ) then
+				x = GLOBAL_CONFIG.SCREEN_WIDTH 
 			end
-			if ( y + h <= 0 ) then
+			if ( y + h < 0 ) then
 				y = GLOBAL_CONFIG.SCREEN_HEIGHT
 			end
 			

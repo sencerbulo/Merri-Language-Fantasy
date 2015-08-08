@@ -7,6 +7,7 @@ end
 
 -- Setup / Teardown --
 function TitleState:Setup( options )
+	StateBase:SetGotoState( "" )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
 	
 	StateBase:AddButton( { 

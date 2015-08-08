@@ -3,9 +3,18 @@ stateManager = StateManager.new()
 stateManager:AddState( "LanguageSelectState", LanguageSelectState.new() )
 stateManager:AddState( "TitleState", TitleState.new() )
 stateManager:AddState( "DifficultySelectState", DifficultySelectState.new() )
-stateManager:ChangeState( "LanguageSelectState" )
 
 GameText:Setup()
+
+LOAD_CONFIG()
+
+if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
+	stateManager:ChangeState( "LanguageSelectState" )
+
+else
+	stateManager:ChangeState( "TitleState" )
+
+end
 
 function Handle_EnterFrame( event )
 	stateManager:Handle_EnterFrame( event )
