@@ -15,28 +15,28 @@ function DifficultySelectState:Setup( options )
 		} )
 	
 	StateBase:AddButton( { 
-		button 	= { id = "btn_easy", 	path = "Content/Graphics/UI/difficulty_easy.png",  	pos_x = 0, pos_y = 128  },
+		button 	= { id = "btn_easy", 	path = "Content/Graphics/UI/difficulty_easy.png",  			pos_x = 0, pos_y = 130  },
 		label 		= { id = "btn_easy", 	path = "Content/Fonts/NotoSans-Bold.ttf",   						pos_x = 50, pos_y = 128+75, color = 0xFFFFFF, size = 25, text = GameText:Get( "helper", "Easy" ) }
 		} )
 	
 	StateBase:AddButton( { 
-		button 	= { id = "btn_medium", 	path = "Content/Graphics/UI/difficulty_medium.png",  	pos_x = 0, pos_y = 256  },
+		button 	= { id = "btn_medium", 	path = "Content/Graphics/UI/difficulty_medium.png",  			pos_x = 0, pos_y = 260  },
 		label 		= { id = "btn_medium", 	path = "Content/Fonts/NotoSans-Bold.ttf",   								pos_x = 135, pos_y = 256+75, color = 0xFFFFFF, size = 25, text = GameText:Get( "helper", "Medium" ) }
 		} )
 	
 	StateBase:AddButton( { 
-		button 	= { id = "btn_hard", 	path = "Content/Graphics/UI/difficulty_hard.png",  	pos_x = 0, pos_y = 384  },
+		button 	= { id = "btn_hard", 	path = "Content/Graphics/UI/difficulty_hard.png",  			pos_x = 0, pos_y = 390  },
 		label 		= { id = "btn_hard", 	path = "Content/Fonts/NotoSans-Bold.ttf",   						pos_x = 50, pos_y = 384+75, color = 0xFFFFFF, size = 25, text = GameText:Get( "helper", "Hard" ) }
 		} )
 		
 	StateBase:AddButton( { 
-		button = { id = "btn_stats", 	path = "Content/Graphics/UI/btn_stats.png",  	pos_x = 250, pos_y = 525  },
-		label 	= { id = "btn_stats", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 255, pos_y = 525+95, color = 0x000000, size = 12, text = GameText:Get( "helper", "Stats" ) }
+		button = { id = "btn_stats", 	path = "Content/Graphics/UI/btn_stats.png",  			pos_x = 250, pos_y = 530  },
+		label 	= { id = "btn_stats", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 255, pos_y = 530+95, color = 0x000000, size = 12, text = GameText:Get( "helper", "Stats" ) }
 		} )
 		
 	StateBase:AddButton( { 
-		button = { id = "btn_back", 	path = "Content/Graphics/UI/btn_back.png",  	pos_x = 10, pos_y = 525  },
-		label 	= { id = "btn_back", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 15, pos_y = 525+95, color = 0x000000, size = 12, text = GameText:Get( "helper", "Back" ) }
+		button = { id = "btn_back", 	path = "Content/Graphics/UI/btn_back.png",  			pos_x = 10, pos_y = 530  },
+		label 	= { id = "btn_back", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 15, pos_y = 530+95, color = 0x000000, size = 12, text = GameText:Get( "helper", "Back" ) }
 		} )
 		
 	self:Draw()

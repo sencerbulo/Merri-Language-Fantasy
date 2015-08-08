@@ -1,29 +1,29 @@
 <project>
- <properties fps="60" logicalHeight="640" osx_org="GiderosMobile" osx_domain="giderosmobile.com" mouseToTouch="1" assetsOnly="0" mouseTouchOrder="0" touchToMouse="1" architecture="0" encryptCode="0" packageName="com.yourdomain.yourapp" autorotation="0" windowHeight="0" retinaDisplay="0" orientation="0" iosDevice="0" win_domain="giderosmobile.com" win_org="GiderosMobile" scaleMode="5" encryptAssets="0" logicalWidth="360" windowWidth="0">
+ <properties windowHeight="0" assetsOnly="0" encryptCode="0" iosDevice="0" mouseTouchOrder="0" orientation="0" windowWidth="0" mouseToTouch="1" retinaDisplay="0" autorotation="0" logicalWidth="360" packageName="com.yourdomain.yourapp" touchToMouse="1" osx_domain="giderosmobile.com" architecture="0" osx_org="GiderosMobile" win_org="GiderosMobile" win_domain="giderosmobile.com" encryptAssets="0" logicalHeight="640" scaleMode="5" fps="60">
   <imageScales/>
  </properties>
  <folder name="Content">
   <folder name="Fonts">
    <file source="Content/Fonts/NotoSans-Bold.ttf"/>
-   <file source="Content/Fonts/PressStart2P.ttf"/>
   </folder>
   <folder name="Graphics">
    <folder name="UI">
-    <file source="Content/Graphics/UI/generalbgtile.png"/>
-    <file source="Content/Graphics/UI/bg_titlescene.png"/>
-    <file source="Content/Graphics/UI/btn_stats.png"/>
-    <file source="Content/Graphics/UI/btn_back.png"/>
-    <file source="Content/Graphics/UI/difficulty_practice.png"/>
-    <file source="Content/Graphics/UI/difficulty_medium.png"/>
-    <file source="Content/Graphics/UI/difficulty_hard.png"/>
-    <file source="Content/Graphics/UI/difficulty_easy.png"/>
-    <file source="Content/Graphics/UI/title_text.png"/>
-    <file source="Content/Graphics/UI/btn_play.png"/>
-    <file source="Content/Graphics/UI/btn_options.png"/>
-    <file source="Content/Graphics/UI/btn_help.png"/>
-    <file source="Content/Graphics/UI/widebtnbg.png"/>
-    <file source="Content/Graphics/UI/generalbg.png"/>
-    <file source="Content/Graphics/UI/dnk-half.png"/>
+    <file source="../Content/Graphics/UI/widebtnbg.png"/>
+    <file source="../Content/Graphics/UI/title_text.png"/>
+    <file source="../Content/Graphics/UI/generalbgtile.png"/>
+    <file source="../Content/Graphics/UI/generalbg.png"/>
+    <file source="../Content/Graphics/UI/dnk-half.png"/>
+    <file source="../Content/Graphics/UI/difficulty_practice.xcf"/>
+    <file source="../Content/Graphics/UI/difficulty_practice.png"/>
+    <file source="../Content/Graphics/UI/difficulty_medium.png"/>
+    <file source="../Content/Graphics/UI/difficulty_hard.png"/>
+    <file source="../Content/Graphics/UI/difficulty_easy.png"/>
+    <file source="../Content/Graphics/UI/btn_stats.png"/>
+    <file source="../Content/Graphics/UI/btn_play.png"/>
+    <file source="../Content/Graphics/UI/btn_options.png"/>
+    <file source="../Content/Graphics/UI/btn_help.png"/>
+    <file source="../Content/Graphics/UI/btn_back.png"/>
+    <file source="../Content/Graphics/UI/bg_titlescene.png"/>
    </folder>
   </folder>
  </folder>
