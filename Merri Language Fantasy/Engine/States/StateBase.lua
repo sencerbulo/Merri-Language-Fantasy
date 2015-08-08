@@ -153,8 +153,13 @@ function StateBase:AddLabel( options )
 	
 	self.labels[ options.id ] = TextField.new( self.fonts[ options.path .. options.size ], options.text )
 	
-	if ( options.pos_x ~= nil and options.pos_y ~= nil ) then
+	if ( options.centered ) then
+		local x = GLOBAL_CONFIG.SCREEN_WIDTH / 2 - ( string.len( options.text ) * options.size / 2 ) / 2
+		self.labels[ options.id ]:setPosition( x, options.pos_y )
+		
+	elseif ( options.pos_x ~= nil and options.pos_y ~= nil ) then
 		self.labels[ options.id ]:setPosition( options.pos_x, options.pos_y )
+		
 	end
 	
 	if ( options.scale_x ~= nil and options.scale_y ~= nil ) then

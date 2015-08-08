@@ -5,6 +5,8 @@ stateManager:AddState( "TitleState", TitleState.new() )
 stateManager:AddState( "DifficultySelectState", DifficultySelectState.new() )
 stateManager:ChangeState( "LanguageSelectState" )
 
+GameText:Setup()
+
 function Handle_EnterFrame( event )
 	stateManager:Handle_EnterFrame( event )
 end

@@ -1,9 +1,10 @@
 <project>
- <properties encryptAssets="0" iosDevice="0" fps="60" mouseToTouch="1" architecture="0" windowHeight="0" logicalWidth="360" touchToMouse="1" scaleMode="5" autorotation="0" win_domain="giderosmobile.com" osx_domain="giderosmobile.com" windowWidth="0" orientation="0" encryptCode="0" mouseTouchOrder="0" assetsOnly="0" osx_org="GiderosMobile" retinaDisplay="0" logicalHeight="640" packageName="com.yourdomain.yourapp" win_org="GiderosMobile">
+ <properties fps="60" logicalHeight="640" osx_org="GiderosMobile" osx_domain="giderosmobile.com" mouseToTouch="1" assetsOnly="0" mouseTouchOrder="0" touchToMouse="1" architecture="0" encryptCode="0" packageName="com.yourdomain.yourapp" autorotation="0" windowHeight="0" retinaDisplay="0" orientation="0" iosDevice="0" win_domain="giderosmobile.com" win_org="GiderosMobile" scaleMode="5" encryptAssets="0" logicalWidth="360" windowWidth="0">
   <imageScales/>
  </properties>
  <folder name="Content">
   <folder name="Fonts">
+   <file source="Content/Fonts/NotoSans-Bold.ttf"/>
    <file source="Content/Fonts/PressStart2P.ttf"/>
   </folder>
   <folder name="Graphics">
@@ -27,6 +28,9 @@
   </folder>
  </folder>
  <folder name="Merri">
+  <folder name="Language">
+   <file source="Merri/Language/GameText.lua"/>
+  </folder>
   <folder name="States">
    <file source="Merri/States/DifficultySelectState.lua"/>
    <file source="Merri/States/LanguageSelectState.lua"/>
