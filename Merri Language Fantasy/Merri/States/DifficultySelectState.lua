@@ -61,9 +61,15 @@ end
 
 function DifficultySelectState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
-	if ( clickedButton == "btn_play" ) then 					--GLOBAL_CONFIG.HELPER_LANGUAGE = "English"
-	elseif ( clickedButton == "btn_help" ) then 			--GLOBAL_CONFIG.HELPER_LANGUAGE = "Esperanto"
-	elseif ( clickedButton == "btn_options" ) then 	--GLOBAL_CONFIG.HELPER_LANGUAGE = "Ido"
+	if ( clickedButton == "btn_play" ) then
+	
+	
+	elseif ( clickedButton == "btn_help" ) then
+	
+	
+	elseif ( clickedButton == "btn_back" ) then
+			StateBase:SetGotoState( "TitleState" )	
+	
 	end
 end
 
@@ -76,4 +82,8 @@ end
 
 function DifficultySelectState:ClearWidgets()
 	StateBase:ClearWidgets()
+end
+
+function DifficultySelectState:GotoState()
+	return StateBase:GotoState()
 end

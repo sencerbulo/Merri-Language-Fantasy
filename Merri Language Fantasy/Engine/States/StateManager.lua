@@ -12,6 +12,7 @@ end
 
 function StateManager:ChangeState( name )
 	if ( self.currentState ~= nil ) then
+		print( "ChangeState ", self.currentState:GotoState() )
 		self.currentState:ClearScreen()
 		self.currentState:ClearWidgets()
 	end
@@ -26,14 +27,6 @@ function StateManager:ChangeState( name )
 end
 
 function StateManager:Handle_EnterFrame( options )
-
-	print( "Set goto state ", self.currentState:GotoState() )
-	
-	if ( self.currentState:GotoState() ~= "" ) then
-		self:ChangeState( self.currentState:GotoState() )
-	end
-
-
 	if ( self.currentState == nil ) then return end
 	self.currentState:Handle_EnterFrame( options )
 end
@@ -41,4 +34,9 @@ end
 function StateManager:Handle_MouseDown( options )
 	if ( self.currentState == nil ) then return end
 	self.currentState:Handle_MouseDown( options )
+	
+	if ( self.currentState:GotoState() ~= "" ) then
+		print( "Go to state ", self.currentState:GotoState() )
+		self:ChangeState( self.currentState:GotoState() )
+	end
 end

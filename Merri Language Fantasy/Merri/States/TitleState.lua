@@ -51,7 +51,6 @@ end
 
 function TitleState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
-	print( "Clicked ", clickedButton )
 	
 	if ( clickedButton == "btn_play" ) then 					
 		StateBase:SetGotoState( "DifficultySelectState" )
@@ -66,12 +65,14 @@ end
 function TitleState:Handle_EnterFrame( event )
 end
 
-
-
 function TitleState:ClearScreen()
 	StateBase:ClearScreen()	
 end
 
 function TitleState:ClearWidgets()
 	StateBase:ClearWidgets()
+end
+
+function TitleState:GotoState()
+	return StateBase:GotoState()
 end

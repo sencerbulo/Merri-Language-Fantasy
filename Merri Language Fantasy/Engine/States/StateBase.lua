@@ -5,7 +5,8 @@ function StateBase:init( options )
 	self.bitmaps = {}
 	self.fonts = {}
 	self.labels = {}
-	self.background = nil
+	self.backgrounds = {}
+	self.backgroundScroll = false
 	
 	self:Setup( options )
 end
@@ -13,6 +14,9 @@ end
 -- Setup / Teardown --
 function StateBase:Setup( options )
 	self.gotoState = ""
+	if ( options ~= nil and options.backgroundScroll ~= nil and options.backgroundScroll ) then
+		self.backgroundScroll = true
+	end
 end
 
 function StateBase:Cleanup()
@@ -24,13 +28,13 @@ function StateBase:GotoState()
 end
 
 function StateBase:SetGotoState( name )
-	print( "Set goto state to ", name )
 	self.gotoState = name
-	print( "Set goto state to ", self.gotoState )
 end
 
 function StateBase:Draw()
-	if ( self.background ~= nil ) then stage:addChild( self.background ) end
+	for key, value in pairs( self.backgrounds ) do
+		stage:addChild( value )
+	end
 
 	for key, value in pairs( self.bitmaps ) do
 		stage:addChild( value )
@@ -42,8 +46,9 @@ function StateBase:Draw()
 end
 
 function StateBase:ClearScreen()
-	print( "Clear screen" )
-	if ( self.background ~= nil ) then stage:removeChild( self.background ) end
+	for key, value in pairs( self.backgrounds ) do
+		stage:removeChild( value )
+	end
 
 	for key, value in pairs( self.bitmaps ) do
 		stage:removeChild( value )
@@ -83,7 +88,21 @@ function StateBase:SetBackground( options )
 		self.textures[ options.path ] = Texture.new( options.path )
 	end
 	
-	self.background = Bitmap.new( self.textures[ options.path ] )
+	local w = self.textures[ options.path ]:getWidth()
+	local h = self.textures[ options.path ]:getHeight()
+	
+	if ( w < GLOBAL_CONFIG.SCREEN_WIDTH and h < GLOBAL_CONFIG.SCREEN_HEIGHT ) then
+		-- Add multiples
+		for y = 0, GLOBAL_CONFIG.SCREEN_HEIGHT / h + 1 do
+			for x = 0, GLOBAL_CONFIG.SCREEN_WIDTH / w + 1 do
+				local tile = Bitmap.new( self.textures[ options.path ] ) 
+				tile:setPosition( x * w, y * h )
+				table.insert( self.backgrounds, tile )
+			end
+		end
+	else
+		table.insert( self.backgrounds, Bitmap.new( self.textures[ options.path ] ) )
+	end
 end
 
 -- options.id
@@ -154,6 +173,25 @@ end
 
 -- Custom Logic --
 function StateBase:Update()
+	if ( self.backgroundScroll ) then
+		for key, tile in pairs( self.backgrounds ) do
+			x, y = tile:getPosition()
+			w = tile:getWidth()
+			h = tile:getHeight()
+
+			x = x - 1
+			y = y - 1
+			
+			if ( x + w <= 0 ) then
+				x = GLOBAL_CONFIG.SCREEN_WIDTH
+			end
+			if ( y + h <= 0 ) then
+				y = GLOBAL_CONFIG.SCREEN_HEIGHT
+			end
+			
+			tile:setPosition( x, y )
+		end
+	end
 end
 
 

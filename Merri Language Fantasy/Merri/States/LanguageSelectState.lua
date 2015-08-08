@@ -8,17 +8,12 @@ end
 function LanguageSelectState:Setup( options )
 	GLOBAL_CONFIG.HELPER_LANGUAGE = nil
 	GLOBAL_CONFIG.TARGET_LANGUAGE = nil
+	StateBase:Setup( { backgroundScroll = true } )
 	self:SetupHelperMenu( options )
 end
 
-function LanguageSelectState:GotoState()
-	return StateBase:GotoState()
-end
-
-function LanguageSelectState:SetupHelperMenu( options )
-	print( "Set up Helper Select" )
-	
-	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbg.png",  pos_x = 0, pos_y = 0 } )
+function LanguageSelectState:SetupHelperMenu( options )	
+	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
 	StateBase:AddButton( { 
 		button = { id = "btn_language_en", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 25  },
 		label 	= { id = "btn_language_en", 	path = "Content/Fonts/PressStart2P.ttf",   			pos_x = 25, pos_y = 25+35, color = 0xFFFFFF, size = 16, text = "I know English" }
@@ -121,6 +116,7 @@ function LanguageSelectState:Handle_MouseDown( event )
 end
 
 function LanguageSelectState:Handle_EnterFrame( event )
+	StateBase:Update()
 end
 
 function LanguageSelectState:ClearScreen()
@@ -129,4 +125,8 @@ end
 
 function LanguageSelectState:ClearWidgets()
 	StateBase:ClearWidgets()
+end
+
+function LanguageSelectState:GotoState()
+	return StateBase:GotoState()
 end
