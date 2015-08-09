@@ -60,6 +60,7 @@ end
 
 -- Setup / Teardown --
 function GameMinerState:Setup( options )
+	self.enableLighting = true
 	StateBase:SetGotoState( "" )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/miner_background.png",  pos_x = 0, pos_y = 0 } )
 		
@@ -69,9 +70,10 @@ function GameMinerState:Setup( options )
 	StateBase:AddButton( { button = { id = "btn_right", 		path = "Content/Graphics/UI/btn_right.png",  	pos_x = 228, pos_y = 489  }, } )
 	
 	StateBase:AddButton( { button = { id = "btn_sword", 		path = "Content/Graphics/UI/btn_sword.png",  	pos_x = 0, pos_y = 360  }, } )
-	StateBase:AddButton( { button = { id = "btn_pick", 		path = "Content/Graphics/UI/btn_pick.png",  	pos_x = 260, pos_y = 360  }, } )
+	StateBase:AddButton( { button = { id = "btn_pick", 	path = "Content/Graphics/UI/btn_pick.png",  	pos_x = 260, pos_y = 360  }, } )
 	
 	self.textures = {}
+	self.textures.black = Texture.new( "Content/Graphics/UI/blank_background.png" )
 	self.textures.ground = Texture.new( "Content/Graphics/Tiles/ground_dirt.png" )
 	self.textures.ground2 = Texture.new( "Content/Graphics/Tiles/ground_dirt2.png" )
 	self.textures.walls = Texture.new( "Content/Graphics/Tiles/ground_cobblestone.png" )
@@ -83,19 +85,26 @@ function GameMinerState:Setup( options )
 	self.textures.coinA = Texture.new( "Content/Graphics/Tiles/copper_coin.png" )
 	self.textures.coinB = Texture.new( "Content/Graphics/Tiles/silver_coin.png" )
 	self.textures.coinC = Texture.new( "Content/Graphics/Tiles/gold_coin.png" )
+	self.textures.ladder = Texture.new( "Content/Graphics/Tiles/ladder_down.png" )
 	
 	self.miningSfx = Sound.new( "Content/Audio/mining.wav" )
 	self.collectSfx = Sound.new( "Content/Audio/collect.wav" )
+	self.footstepsSfx = Sound.new( "Content/Audio/footsteps.wav" )
+	
+	self.fadeCounter = 0
+	self.transition = false
+	self.fadeBitmap = Bitmap.new( self.textures.black )
+	self.fadeBitmap:setAlpha( 0 )
 	
 	self.labelFont = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 9 )
 	
 	self.player = Miner.new( { font = self.labelFont } )
-	self.tileWidth = 0
+	
+	local tileWidth = self.textures.ground:getWidth()
+	self.tileWidth = tileWidth
 	
 	self.tiles = {}
 	self:SetupMap()
-	self:Draw()
-	self:TurnBasedUpdate()
 end
 
 function GameMinerState:Cleanup()
@@ -119,19 +128,32 @@ function GameMinerState:Draw()
 end
 
 function GameMinerState:SetupMap()
-	local tileWidth = self.textures.ground:getWidth()
-	self.tileWidth = tileWidth
-	local maxX = GLOBAL_CONFIG.SCREEN_WIDTH / tileWidth - 1
-	local maxY = GLOBAL_CONFIG.SCREEN_WIDTH / tileWidth - 1
-	
+	self:ClearMap()
+	self:GenerateMap()
+end
+
+function GameMinerState:ClearMap()
+	-- Remove existing tiles
+	for key, tile in pairs( self.tiles ) do
+		stage:removeChild( tile.bitmap )
+		
+		if ( tile.rock ~= nil and stage:contains( tile.rock.bitmap ) ) then	stage:removeChild( tile.rock.bitmap ) end
+		if ( tile.label ~= nil and stage:contains( tile.label ) ) then stage:removeChild( tile.label ) end
+		self.tiles[ key ] = nil
+	end
+end
+
+function GameMinerState:GenerateMap()
+	local maxX = GLOBAL_CONFIG.SCREEN_WIDTH / self.tileWidth - 1
+	local maxY = GLOBAL_CONFIG.SCREEN_WIDTH / self.tileWidth - 1
 	-- Initialize all tiles as walls
 	local tileCount = 0
 	for y = 0, maxY do
 		for x = 0, maxX do
 			self.tiles[ x .. "-" .. y ] = {}
 			self.tiles[ x .. "-" .. y ].type = "wall"
-			self.tiles[ x .. "-" .. y ].x = x * tileWidth
-			self.tiles[ x .. "-" .. y ].y = y * tileWidth
+			self.tiles[ x .. "-" .. y ].x = x * self.tileWidth
+			self.tiles[ x .. "-" .. y ].y = y * self.tileWidth
 			tileCount = tileCount + 1
 		end
 	end
@@ -146,8 +168,8 @@ function GameMinerState:SetupMap()
 	-- Traverse
 	local x = startX
 	local y = startY
-	self.player:setPosition( x * tileWidth, y * tileWidth )
-	self.player.moveAmount = tileWidth
+	self.player:setPosition( x * self.tileWidth, y * self.tileWidth )
+	self.player.moveAmount = self.tileWidth
 	
 	local roomPoints = {}
 	table.insert( roomPoints, { x = endX, y = endY } )
@@ -183,7 +205,18 @@ function GameMinerState:SetupMap()
 			end -- if ( xOrY == 1 ) then
 		end -- while ( x ~= endX or y ~= endY ) do
 	end
+	-- Last tile
+	print( "last tile: ", self.tiles[ x .. "-" .. y ].x, ", ", self.tiles[ x .. "-" .. y ].y )
 	self.tiles[ x .. "-" .. y ].type = "ground"
+	self.tiles[ x .. "-" .. y ].itemType = "ladder"
+	self.tiles[ x .. "-" .. y ].rock = {}	
+	self.tiles[ x .. "-" .. y ].rock.bitmap = Bitmap.new( self.textures.ladder )	
+	self.tiles[ x .. "-" .. y ].rock.x = self.tiles[ x .. "-" .. y ].x
+	self.tiles[ x .. "-" .. y ].rock.y = self.tiles[ x .. "-" .. y ].y
+	self.tiles[ x .. "-" .. y ].rock.bitmap:setPosition( self.tiles[ x .. "-" .. y ].rock.x, self.tiles[ x .. "-" .. y ].rock.y )
+	self.tiles[ x .. "-" .. y ].label = TextField.new( self.labelFont, GameText:Get( "target", "Down" ) )
+	self.tiles[ x .. "-" .. y ].label:setTextColor( 0xFFFFFF )
+	self.tiles[ x .. "-" .. y ].label:setPosition( self.tiles[ x .. "-" .. y ].x, self.tiles[ x .. "-" .. y ].y )
 	
 	-- Setup bitmaps
 	for key, tile in pairs( self.tiles ) do
@@ -195,7 +228,7 @@ function GameMinerState:SetupMap()
 			
 			-- Should it have a rock?
 			local rockYes = math.random( 1, 10 )
-			if ( i ~= 0 and rockYes == 1 ) then
+			if ( i ~= 0 and rockYes == 1 and tile.itemType == "none" ) then
 				print( "Add rock at ", tile.x / 36, ", ", tile.y / 36 )
 				local rock = {}
 				rock.x = tile.x
@@ -213,7 +246,11 @@ function GameMinerState:SetupMap()
 		end
 		
 		tile.bitmap:setPosition( tile.x, tile.y )
-	end	
+	end
+	
+	self:Draw()
+	self:TurnBasedUpdate()
+	stage:addChild( self.fadeBitmap )
 end
 
 -- Cyclical --
@@ -228,6 +265,8 @@ function GameMinerState:Handle_KeyDown( event )
 end
 
 function GameMinerState:Handle_MouseDown( event )
+	if ( self.transition == true) then return end
+	
 	clickedButton = StateBase:ClickedButtonName( event )
 	
 	local x, y = self.player:getPosition()
@@ -290,37 +329,54 @@ function GameMinerState:Handle_MouseDown( event )
 	
 	if ( tryToMove ) then
 		self.player:Face( dir )
-		if ( self.tiles[ tileName ] ~= nil and self.tiles[ tileName ].type == "ground" and self.tiles[ tileName ].itemType ~= "rock" ) then
-			self.player:Move( dir )
+		
+		if ( self.tiles[ tileName ] ~= nil ) then
+			-- Movable Tile
+			if ( self.tiles[ tileName ].type == "ground" and self.tiles[ tileName ].itemType ~= "rock" ) then
+				self.player:Move( dir )
+			end
 			
-			if ( self.tiles[ tileName ].itemType ~= "none" and self.tiles[ tileName ].itemType ~= "rock" ) then
+			-- Go downwards
+			if ( self.tiles[ tileName ].itemType == "ladder" ) then
+				print( "Go downstairs" )
+				self.footstepsSfx:play()
+				stage:addChild( self.fadeBitmap )
+				self.fadeBitmap:setAlpha( 0 )
+				self.transition = true
+				self.fadeCounter = 100
+			
+			-- Collectable
+			elseif ( self.tiles[ tileName ].itemType ~= nil and self.tiles[ tileName ].itemType ~= "none" and self.tiles[ tileName ].itemType ~= "rock" ) then
 				if ( self.tiles[ tileName ].rock ~= nil ) then
 					stage:removeChild( self.tiles[ tileName ].rock.bitmap )
 				end
-				stage:removeChild( self.tiles[ tileName ].label )
+				
+				if ( self.tiles[ tileName ].label ~= nil ) then stage:removeChild( self.tiles[ tileName ].label ) end
+				print( "Item Type: ", self.tiles[ tileName ].itemType )
 				self.tiles[ tileName ].itemType = "none"
 				self.collectSfx:play()
 			end
-			
-		end
-	end
+		end -- if ( self.tiles[ tileName ] ~= nil ) then
+	end -- if ( tryToMove ) then
 	
 	self:TurnBasedUpdate()
 end
 
 function GameMinerState:TurnBasedUpdate()
 	-- adjust lighting
-	local x, y = self.player:getPosition()
-	for key, tile in pairs( self.tiles ) do
-		local distance = math.floor( self:GetDistance( x, y, tile.x, tile.y ) / 36 )
-		local alpha = 1 - ( 0.25 * ( distance - 1 ) )
-		--tile.bitmap:setAlpha( alpha )
-		
-		if ( tile.rock ~= nil ) then
-			--tile.rock.bitmap:setAlpha( alpha )	
-		end
-		if ( tile.label ~= nil ) then
-			--tile.label:setAlpha( alpha )
+	if ( self.enableLighting ) then
+		local x, y = self.player:getPosition()
+		for key, tile in pairs( self.tiles ) do
+			local distance = math.floor( self:GetDistance( x, y, tile.x, tile.y ) / 36 )
+			local alpha = 1 - ( 0.25 * ( distance - 1 ) )
+			tile.bitmap:setAlpha( alpha )
+			
+			if ( tile.rock ~= nil ) then
+				tile.rock.bitmap:setAlpha( alpha )	
+			end
+			if ( tile.label ~= nil ) then
+				tile.label:setAlpha( alpha )
+			end
 		end
 	end
 end
@@ -334,6 +390,29 @@ end
 function GameMinerState:Handle_EnterFrame( event )
 	StateBase:Update()
 	self.player:Update()
+	
+	if ( self.transition ) then
+		self.fadeCounter = self.fadeCounter - 1
+		
+		-- Fade out
+		if ( self.fadeCounter > 50 ) then
+			self.fadeBitmap:setAlpha( self.fadeBitmap:getAlpha() + 0.05 )
+		
+		-- Change
+		elseif ( self.fadeCounter == 50 ) then
+			self:SetupMap()
+		
+		-- Fade in
+		elseif ( self.fadeCounter > 0 ) then
+			self.fadeBitmap:setAlpha( self.fadeBitmap:getAlpha() - 0.05 )
+		
+		-- Done
+		else
+			self.transition = false
+			stage:removeChild( self.fadeBitmap )
+		
+		end
+	end
 end
 
 function GameMinerState:ClearScreen()

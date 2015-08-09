@@ -135,6 +135,22 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ido[ "Miner" ] 				= "Ministo"
 	GameText.TargetText.Spanish[ "Miner" ] 		= "Minero"
 	
+	-- like a pick axe
+	GameText.TargetText.English[ "Pick" ] 		= "Pick"
+	GameText.TargetText.Esperanto[ "Pick" ] 	= "Pioĉo"
+	GameText.TargetText.Ido[ "Pick" ] 				= "Piocho"
+	GameText.TargetText.Spanish[ "Pick" ] 		= "Minero"
+	
+	GameText.TargetText.English[ "Sword" ] 			= "Sword"
+	GameText.TargetText.Esperanto[ "Sword" ] 	= "Glavo"
+	GameText.TargetText.Ido[ "Sword" ] 				= "Sabro"
+	GameText.TargetText.Spanish[ "Sword" ] 		= "Minero"
+	
+	GameText.TargetText.English[ "Down" ] 			= "Down"
+	GameText.TargetText.Esperanto[ "Down" ] 	= "Suben"
+	GameText.TargetText.Ido[ "Down" ] 				= "Sube"
+	GameText.TargetText.Spanish[ "Down" ] 		= "Minero"
+	
 	GameText.TargetText.English[ "Rock" ] 		= "Rock"
 	GameText.TargetText.Esperanto[ "Rock" ] 	= "Ŝtono"
 	GameText.TargetText.Ido[ "Rock" ] 				= "Roko"
@@ -160,20 +176,20 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ido[ "gemD" ] 				= "Jado"
 	GameText.TargetText.Spanish[ "gemD" ] 		= "Jado"
 	
-	GameText.TargetText.English[ "coinA" ] 		= "Copper coin"
-	GameText.TargetText.Esperanto[ "coinA" ] 	= "Kupra monero"
-	GameText.TargetText.Ido[ "coinA" ] 				= "Kupra monero"
-	GameText.TargetText.Spanish[ "coinA " ] 		= "Kupra monero"
+	GameText.TargetText.English[ "coinA" ] 		= "Copper"
+	GameText.TargetText.Esperanto[ "coinA" ] 	= "Kupro"
+	GameText.TargetText.Ido[ "coinA" ] 				= "Kupra"
+	GameText.TargetText.Spanish[ "coinA " ] 		= "Kupra"
 	
-	GameText.TargetText.English[ "coinB" ] 		= "Silver coin"
-	GameText.TargetText.Esperanto[ "coinB" ] 	= "Arĝenta monero"
-	GameText.TargetText.Ido[ "coinB" ] 				= "Arĝenta monero"
-	GameText.TargetText.Spanish[ "coinB " ] 		= "Arĝenta monero"
+	GameText.TargetText.English[ "coinB" ] 		= "Silver"
+	GameText.TargetText.Esperanto[ "coinB" ] 	= "Arĝento"
+	GameText.TargetText.Ido[ "coinB" ] 				= "Arĝenta"
+	GameText.TargetText.Spanish[ "coinB " ] 		= "Arĝenta"
 	
-	GameText.TargetText.English[ "coinC" ] 		= "Gold coin"
-	GameText.TargetText.Esperanto[ "coinC" ] 	= "Ora monero"
-	GameText.TargetText.Ido[ "coinC" ] 				= "Ora monero"
-	GameText.TargetText.Spanish[ "coinC " ] 		= "Ora monero"
+	GameText.TargetText.English[ "coinC" ] 		= "Gold"
+	GameText.TargetText.Esperanto[ "coinC" ] 	= "Oro"
+	GameText.TargetText.Ido[ "coinC" ] 				= "Ora"
+	GameText.TargetText.Spanish[ "coinC " ] 		= "Ora"
 	
 end
 

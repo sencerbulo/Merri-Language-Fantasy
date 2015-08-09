@@ -109,7 +109,8 @@ function LanguageSelectState:Handle_MouseDown( event )
 		
 		if ( GLOBAL_CONFIG.TARGET_LANGUAGE ~= nil ) then
 			SAVE_CONFIG()
-			StateBase:SetGotoState( "TitleState" )
+			--StateBase:SetGotoState( "TitleState" )
+			StateBase:SetGotoState( "GameMinerState" )
 		end
 	end
 end
