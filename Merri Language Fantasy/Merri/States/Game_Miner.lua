@@ -16,6 +16,7 @@ function Miner:init( options )
 	self.moveAmount = 0
 	self.frame = 1
 	self.direction = "south"
+	self.health = 3
 	
 	self.label = TextField.new( options.font, GameText:Get( "target", "Miner" ) )
 	self.label:setTextColor( 0xFFFFFF )
@@ -86,6 +87,9 @@ function GameMinerState:Setup( options )
 	self.textures.coinB = Texture.new( "Content/Graphics/Tiles/silver_coin.png" )
 	self.textures.coinC = Texture.new( "Content/Graphics/Tiles/gold_coin.png" )
 	self.textures.ladder = Texture.new( "Content/Graphics/Tiles/ladder_down.png" )
+	self.textures.snail = Texture.new( "Content/Graphics/Characters/enemy_snail.png" )
+	self.textures.mole = Texture.new( "Content/Graphics/Characters/enemy_mole.png" )
+	self.textures.heart = Texture.new( "Content/Graphics/UI/heart.png" )
 	
 	self.miningSfx = Sound.new( "Content/Audio/mining.wav" )
 	self.collectSfx = Sound.new( "Content/Audio/collect.wav" )
@@ -95,6 +99,7 @@ function GameMinerState:Setup( options )
 	self.transition = false
 	self.fadeBitmap = Bitmap.new( self.textures.black )
 	self.fadeBitmap:setAlpha( 0 )
+	self.moveAmount = self.textures.ground:getWidth()
 	
 	self.labelFont = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 9 )
 	self.scoreFont = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 14 )
@@ -105,10 +110,20 @@ function GameMinerState:Setup( options )
 	self.levelText = TextField.new( self.scoreFont, GameText:Get( "target", "Level" ) .. ": " .. self.level )
 	self.levelText:setTextColor( 0xFFFFFF )
 	self.levelText:setPosition( 10, 350 )
+	
 	self.score = 0
 	self.scoreText = TextField.new( self.scoreFont, GameText:Get( "target", "Money" ) .. ": " .. self.score )
 	self.scoreText:setTextColor( 0xFFFFFF )
-	self.scoreText:setPosition( 200, 350 )
+	self.scoreText:setPosition( 150, 350 )
+	
+	self.enemies = {}
+	
+	self.hearts = {}
+	for i = 0, 2 do
+		local heart = Bitmap.new( self.textures.heart )
+		heart:setPosition( 300 + 20 * i, 340 )
+		table.insert( self.hearts, heart )
+	end
 	
 	local tileWidth = self.textures.ground:getWidth()
 	self.tileWidth = tileWidth
@@ -133,6 +148,15 @@ function GameMinerState:Draw()
 		if ( value.label ~= nil ) then
 			stage:addChild( value.label )
 		end
+	end
+	
+	for key, enemy in pairs( self.enemies ) do
+		stage:addChild( enemy.bitmap )
+		stage:addChild( enemy.label )
+	end
+	
+	for key, value in pairs( self.hearts ) do
+		stage:addChild( value )
 	end
 	
 	stage:addChild( self.player.bitmap )
@@ -232,6 +256,7 @@ function GameMinerState:GenerateMap()
 	self.tiles[ x .. "-" .. y ].label:setPosition( self.tiles[ x .. "-" .. y ].x, self.tiles[ x .. "-" .. y ].y )
 	
 	-- Setup bitmaps
+	local enemyMax = self.level
 	for key, tile in pairs( self.tiles ) do
 		if ( tile.type == "wall" ) then
 			tile.bitmap = Bitmap.new( self.textures.walls ) 
@@ -241,6 +266,7 @@ function GameMinerState:GenerateMap()
 			
 			-- Should it have a rock?
 			local rockYes = math.random( 1, 10 )
+			local enemyYes = math.random( 1, 10 )
 			if ( i ~= 0 and rockYes == 1 and tile.itemType == "none" and tile.x ~= startX * self.tileWidth and tile.y ~= startY * self.tileWidth ) then
 				local rock = {}
 				rock.x = tile.x
@@ -253,6 +279,30 @@ function GameMinerState:GenerateMap()
 				tile.label = TextField.new( self.labelFont, GameText:Get( "target", "Rock" ) )
 				tile.label:setTextColor( 0xFFFFFF )
 				tile.label:setPosition( tile.x, tile.y )
+			
+			-- What about an enemy?
+			elseif ( enemyMax > 0 and enemyYes == 1 and tile.itemType == "none" and tile.x ~= startX * self.tileWidth and tile.y ~= startY * self.tileWidth ) then
+				local enemy = {}
+				enemy.x = tile.x
+				enemy.y = tile.y
+				
+				local enemyType = math.random( 1, 2 )
+				if ( enemyType == 1 ) then
+					enemy.type = "snail"
+					enemy.bitmap = Bitmap.new( self.textures.snail )
+					enemy.label = TextField.new( self.labelFont, GameText:Get( "target", "Snail" ) )
+				else
+					enemy.type = "mole"
+					enemy.bitmap = Bitmap.new( self.textures.mole )
+					enemy.label = TextField.new( self.labelFont, GameText:Get( "target", "Mole" ) )
+				end
+				enemy.bitmap:setPosition( enemy.x, enemy.y )
+				enemy.label:setPosition( enemy.x, enemy.y )
+				enemy.label:setTextColor( 0xFFFFFF )
+				
+				table.insert( self.enemies, enemy )
+				enemyMax = enemyMax - 1
+				
 			end
 		
 		end
@@ -398,6 +448,60 @@ function GameMinerState:TurnBasedUpdate()
 				tile.label:setAlpha( alpha )
 			end
 		end
+		
+		for key, enemy in pairs( self.enemies ) do
+			local distance = math.floor( self:GetDistance( x, y, enemy.x, enemy.y ) / 36 )
+			local alpha = 1 - ( 0.25 * ( distance - 1 ) )
+			enemy.bitmap:setAlpha( alpha )
+			enemy.label:setAlpha( alpha )
+		end
+	end
+	
+	-- enemy movement
+	for key, enemy in pairs( self.enemies ) do
+		-- Move towards player if in line-of-sight
+		local tx = enemy.x / self.tileWidth
+		local ty = enemy.y / self.tileWidth
+		local dir = ""
+		local tileName = ""
+		local x, y = self.player:getPosition()
+		
+		if ( enemy.x == x ) then
+			print( "X Matches" )
+			print( x, enemy.x )
+			if ( y < enemy.y ) then
+				dir = "north"
+				tileName = tx .. "-" .. ty - 1
+			
+			elseif ( y > enemy.y ) then
+				dir = "south"
+				tileName = tx .. "-" .. ty + 1
+			
+			end
+			
+		elseif ( enemy.y == y ) then
+			if ( x < enemy.x ) then
+				dir = "west"
+				tileName = tx - 1 .. "-" .. ty
+			
+			elseif ( x > enemy.x ) then
+				dir = "east"
+				tileName = tx + 1 .. "-" .. ty
+			
+			end
+		
+		end
+		
+		if ( self.tiles[ tileName ] ~= nil and self.tiles[ tileName ].itemType ~= "rock" and self.tiles[ tileName ].type == "ground" ) then
+			if ( dir == "north" ) then				enemy.y = enemy.y - self.moveAmount
+			elseif ( dir == "south" ) then		enemy.y = enemy.y + self.moveAmount 
+			elseif ( dir == "east" ) then			enemy.x = enemy.x + self.moveAmount 
+			elseif ( dir == "west" ) then		enemy.x = enemy.x - self.moveAmount end
+			
+			enemy.bitmap:setPosition( enemy.x, enemy.y )
+			enemy.label:setPosition( enemy.x, enemy.y )
+		end
+		
 	end
 end
 

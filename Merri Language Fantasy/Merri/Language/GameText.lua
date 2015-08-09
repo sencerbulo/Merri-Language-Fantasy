@@ -145,6 +145,16 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ido[ "Money" ] 				= "Ministo"
 	GameText.TargetText.Spanish[ "Money" ] 		= "Minero"
 	
+	GameText.TargetText.English[ "Snail" ] 		= "Snail"
+	GameText.TargetText.Esperanto[ "Snail" ] 	= "Heliko"
+	GameText.TargetText.Ido[ "Snail" ] 				= "Ministo"
+	GameText.TargetText.Spanish[ "Snail" ] 		= "Minero"
+	
+	GameText.TargetText.English[ "Mole" ] 		= "Mole"
+	GameText.TargetText.Esperanto[ "Mole" ] 	= "Talpo"
+	GameText.TargetText.Ido[ "Mole" ] 				= "Ministo"
+	GameText.TargetText.Spanish[ "Mole" ] 		= "Minero"
+	
 	-- like a pick axe
 	GameText.TargetText.English[ "Pick" ] 		= "Pick"
 	GameText.TargetText.Esperanto[ "Pick" ] 	= "Pioĉo"
