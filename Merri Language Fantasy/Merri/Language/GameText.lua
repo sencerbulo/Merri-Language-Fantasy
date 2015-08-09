@@ -216,6 +216,16 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ido[ "coinC" ] 				= "Ora"
 	GameText.TargetText.Spanish[ "coinC " ] 		= "Ora"
 	
+	GameText.TargetText.English[ "Game Over" ] 			= "Game Over"
+	GameText.TargetText.Esperanto[ "Game Over" ] 	= "Ludfino"
+	GameText.TargetText.Ido[ "Game Over" ] 				= "Ora"
+	GameText.TargetText.Spanish[ "Game Over " ] 		= "Ora"
+	
+	GameText.HelperText.English[ "Game Over" ] 			= "Game Over"
+	GameText.HelperText.Esperanto[ "Game Over" ] 	= "Ludfino"
+	GameText.HelperText.Ido[ "Game Over" ] 				= "Ora"
+	GameText.HelperText.Spanish[ "Game Over " ] 		= "Ora"
+	
 end
 
 

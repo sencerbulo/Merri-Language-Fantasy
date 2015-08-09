@@ -585,7 +585,20 @@ function GameMinerState:TurnBasedUpdate()
 			
 			if ( self.player.health == -1 ) then
 				-- Game over
-				print( "Game over" )
+				
+				self:ClearMap()
+				stage:removeChild( self.player.bitmap )
+				stage:removeChild( self.player.label )
+				
+				
+				StateBase:AddLabel( 
+					{ id = "gameover1", path = "Content/Fonts/NotoSans-Bold.ttf",	pos_x = 10, pos_y = 140, color = 0xFF0000, 
+						size = 40, text = GameText:Get( "target", "Game Over" ), centered = true } )
+				StateBase:AddLabel( 
+					{ id = "gameover2", path = "Content/Fonts/NotoSans-Bold.ttf",	pos_x = 10, pos_y = 240, color = 0xFF0000, 
+						size = 40, text = GameText:Get( "helper", "Game Over" ), centered = true } )
+	
+				StateBase:Draw()
 			end
 			
 		end
