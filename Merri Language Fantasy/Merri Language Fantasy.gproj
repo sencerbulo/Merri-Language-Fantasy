@@ -1,5 +1,5 @@
 <project>
- <properties windowHeight="0" assetsOnly="0" encryptCode="0" iosDevice="0" mouseTouchOrder="0" orientation="0" windowWidth="0" mouseToTouch="1" retinaDisplay="0" autorotation="0" logicalWidth="360" packageName="com.yourdomain.yourapp" touchToMouse="1" osx_domain="giderosmobile.com" architecture="0" osx_org="GiderosMobile" win_org="GiderosMobile" win_domain="giderosmobile.com" encryptAssets="0" logicalHeight="640" scaleMode="5" fps="60">
+ <properties osx_org="GiderosMobile" windowWidth="0" assetsOnly="0" logicalWidth="360" touchToMouse="1" autorotation="0" fps="60" packageName="com.yourdomain.yourapp" win_org="GiderosMobile" architecture="0" logicalHeight="640" orientation="0" win_domain="giderosmobile.com" encryptAssets="0" mouseTouchOrder="0" windowHeight="0" mouseToTouch="1" encryptCode="0" iosDevice="0" scaleMode="5" osx_domain="giderosmobile.com" retinaDisplay="0">
   <imageScales/>
  </properties>
  <folder name="Content">
@@ -7,7 +7,30 @@
    <file source="Content/Fonts/NotoSans-Bold.ttf"/>
   </folder>
   <folder name="Graphics">
+   <folder name="Characters">
+    <file source="../Content/Graphics/Characters/miner_down.png"/>
+   </folder>
+   <folder name="Tiles">
+    <file source="../Content/Graphics/Tiles/ground_dirt2.png"/>
+    <file source="../Content/Graphics/Tiles/silver_coin.png"/>
+    <file source="../Content/Graphics/Tiles/rock.png"/>
+    <file source="../Content/Graphics/Tiles/ground_dirt.png"/>
+    <file source="../Content/Graphics/Tiles/ground_cobblestone.png"/>
+    <file source="../Content/Graphics/Tiles/gold_coin.png"/>
+    <file source="../Content/Graphics/Tiles/gemD.png"/>
+    <file source="../Content/Graphics/Tiles/gemC.png"/>
+    <file source="../Content/Graphics/Tiles/gemB.png"/>
+    <file source="../Content/Graphics/Tiles/gemA.png"/>
+    <file source="../Content/Graphics/Tiles/copper_coin.png"/>
+    <file source="../Content/Graphics/Tiles/tileset_miner.txt"/>
+    <file source="../Content/Graphics/Tiles/tileset_miner.png"/>
+   </folder>
    <folder name="UI">
+    <file source="../Content/Graphics/UI/blank_background.png"/>
+    <file source="../Content/Graphics/UI/btn_up.png"/>
+    <file source="../Content/Graphics/UI/btn_right.png"/>
+    <file source="../Content/Graphics/UI/btn_left.png"/>
+    <file source="../Content/Graphics/UI/btn_down.png"/>
     <file source="../Content/Graphics/UI/widebtnbg.png"/>
     <file source="../Content/Graphics/UI/title_text.png"/>
     <file source="../Content/Graphics/UI/generalbgtile.png"/>
@@ -32,6 +55,7 @@
    <file source="Merri/Language/GameText.lua"/>
   </folder>
   <folder name="States">
+   <file source="Merri/States/Game_Miner.lua"/>
    <file source="Merri/States/DifficultySelectState.lua"/>
    <file source="Merri/States/LanguageSelectState.lua"/>
    <file source="Merri/States/TitleState.lua"/>

@@ -3,6 +3,7 @@ stateManager = StateManager.new()
 stateManager:AddState( "LanguageSelectState", LanguageSelectState.new() )
 stateManager:AddState( "TitleState", TitleState.new() )
 stateManager:AddState( "DifficultySelectState", DifficultySelectState.new() )
+stateManager:AddState( "GameMinerState", GameMinerState.new() )
 
 GameText:Setup()
 
@@ -12,7 +13,8 @@ if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == n
 	stateManager:ChangeState( "LanguageSelectState" )
 
 else
-	stateManager:ChangeState( "TitleState" )
+	--stateManager:ChangeState( "TitleState" )
+	stateManager:ChangeState( "GameMinerState" )
 
 end
 

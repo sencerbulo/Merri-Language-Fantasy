@@ -173,7 +173,7 @@ end
 
 function StateBase:AddButton( options )
 	self:AddBitmap( options.button )
-	self:AddLabel( options.label )
+	if ( options.label ~= nil ) then		self:AddLabel( options.label )		end
 end
 
 -- Custom Logic --
