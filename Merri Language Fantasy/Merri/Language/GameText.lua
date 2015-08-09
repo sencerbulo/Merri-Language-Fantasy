@@ -135,6 +135,46 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ido[ "Miner" ] 				= "Ministo"
 	GameText.TargetText.Spanish[ "Miner" ] 		= "Minero"
 	
+	GameText.TargetText.English[ "Rock" ] 		= "Rock"
+	GameText.TargetText.Esperanto[ "Rock" ] 	= "Ŝtono"
+	GameText.TargetText.Ido[ "Rock" ] 				= "Roko"
+	GameText.TargetText.Spanish[ "Rock" ] 		= "Piedra"
+	
+	GameText.TargetText.English[ "gemA" ] 		= "Aquamarine"
+	GameText.TargetText.Esperanto[ "gemA" ] 	= "Akvamarino"
+	GameText.TargetText.Ido[ "gemA" ] 				= "Akvamarino"
+	GameText.TargetText.Spanish[ "gemA" ] 		= "Akvamarino"
+	
+	GameText.TargetText.English[ "gemB" ] 		= "Ruby"
+	GameText.TargetText.Esperanto[ "gemB" ] 	= "Rubeno"
+	GameText.TargetText.Ido[ "gemB" ] 				= "Rubeno"
+	GameText.TargetText.Spanish[ "gemB" ] 		= "Rubeno"
+	
+	GameText.TargetText.English[ "gemC" ] 		= "Amethyst"
+	GameText.TargetText.Esperanto[ "gemC" ] 	= "Ametisto"
+	GameText.TargetText.Ido[ "gemC" ] 				= "Ametisto"
+	GameText.TargetText.Spanish[ "gemC" ] 		= "Ametisto"
+	
+	GameText.TargetText.English[ "gemD" ] 		= "Jade"
+	GameText.TargetText.Esperanto[ "gemD" ] 	= "Jado"
+	GameText.TargetText.Ido[ "gemD" ] 				= "Jado"
+	GameText.TargetText.Spanish[ "gemD" ] 		= "Jado"
+	
+	GameText.TargetText.English[ "coinA" ] 		= "Copper coin"
+	GameText.TargetText.Esperanto[ "coinA" ] 	= "Kupra monero"
+	GameText.TargetText.Ido[ "coinA" ] 				= "Kupra monero"
+	GameText.TargetText.Spanish[ "coinA " ] 		= "Kupra monero"
+	
+	GameText.TargetText.English[ "coinB" ] 		= "Silver coin"
+	GameText.TargetText.Esperanto[ "coinB" ] 	= "Arĝenta monero"
+	GameText.TargetText.Ido[ "coinB" ] 				= "Arĝenta monero"
+	GameText.TargetText.Spanish[ "coinB " ] 		= "Arĝenta monero"
+	
+	GameText.TargetText.English[ "coinC" ] 		= "Gold coin"
+	GameText.TargetText.Esperanto[ "coinC" ] 	= "Ora monero"
+	GameText.TargetText.Ido[ "coinC" ] 				= "Ora monero"
+	GameText.TargetText.Spanish[ "coinC " ] 		= "Ora monero"
+	
 end
 
 

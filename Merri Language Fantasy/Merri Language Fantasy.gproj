@@ -4,6 +4,7 @@
  </properties>
  <folder name="Content">
   <folder name="Audio">
+   <file source="Content/Audio/collect.wav"/>
    <file source="Content/Audio/mining.wav"/>
   </folder>
   <folder name="Fonts">
