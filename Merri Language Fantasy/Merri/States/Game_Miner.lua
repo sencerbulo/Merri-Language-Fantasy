@@ -143,56 +143,72 @@ function GameMinerState:SetupMap()
 	local endX = 9
 	local endY = math.random( 0, maxY )
 	
-	print( "Start \t", startX, ", ", startY, "\nEnd \t", endX, ", ", endY )
-	
 	-- Traverse
 	local x = startX
 	local y = startY
 	self.player:setPosition( x * tileWidth, y * tileWidth )
 	self.player.moveAmount = tileWidth
 	
-	while ( x ~= endX or y ~= endY ) do
-		if ( x == startX and y == startY ) then
-			self.tiles[ x .. "-" .. y ].type = "ground2"
-		else
+	local roomPoints = {}
+	table.insert( roomPoints, { x = endX, y = endY } )
+	for i = 0, math.random( 5, 10 ) do
+		local room = { x = math.random( 1, maxX-1 ), y = math.random( 1, maxY-1 ) }
+		table.insert( roomPoints, room )
+	end
+	
+	-- Add paths between each room
+	for key, point in pairs( roomPoints ) do
+		endX = point.x
+		endY = point.y
+		
+		while ( x ~= endX or y ~= endY ) do
 			self.tiles[ x .. "-" .. y ].type = "ground"
-		end -- if ( x == startX and y == startY ) then
-		
-		-- Branch?
-		local branch = 1
-		if ( branch == 1 ) then
-			--if ( self.tiles[ subX .. "-" .. subY ] ~= nil ) then self.tiles[ subX .. "-" .. subY ].type = "ground2" end
-		end -- if ( branch == 1 ) then
-		
-		local xOrY = math.random( 1, 2 )		
-		if ( xOrY == 1 ) then
-			if ( endX < x ) then
-				x = x - 1
-			elseif ( endX > x ) then
-				x = x + 1
-			end
-		else	
-			if ( endY < y ) then
-				y = y - 1
-			elseif ( endY > y ) then
-				y = y + 1
-			end
-		end -- if ( xOrY == 1 ) then
-	end -- while ( x ~= endX or y ~= endY ) do
-	
-	self.tiles[ x .. "-" .. y ].type = "ground2"
-	
+			self.tiles[ x .. "-" .. y ].itemType = "none"
+			self.tiles[ x .. "-" .. y ].label = nil
+			self.tiles[ x .. "-" .. y ].rock = nil
+			
+			local xOrY = math.random( 1, 2 )		
+			if ( xOrY == 1 ) then
+				if ( endX < x ) then
+					x = x - 1
+				elseif ( endX > x ) then
+					x = x + 1
+				end
+			else	
+				if ( endY < y ) then
+					y = y - 1
+				elseif ( endY > y ) then
+					y = y + 1
+				end
+			end -- if ( xOrY == 1 ) then
+		end -- while ( x ~= endX or y ~= endY ) do
+	end
+	self.tiles[ x .. "-" .. y ].type = "ground"
 	
 	-- Setup bitmaps
 	for key, tile in pairs( self.tiles ) do
 		if ( tile.type == "wall" ) then
 			tile.bitmap = Bitmap.new( self.textures.walls ) 
 			
-		elseif (tile.type == "ground2" ) then
-			tile.bitmap = Bitmap.new( self.textures.ground2 )
-			
 		else
 			tile.bitmap = Bitmap.new( self.textures.ground )
+			
+			-- Should it have a rock?
+			local rockYes = math.random( 1, 10 )
+			if ( i ~= 0 and rockYes == 1 ) then
+				print( "Add rock at ", tile.x / 36, ", ", tile.y / 36 )
+				local rock = {}
+				rock.x = tile.x
+				rock.y = tile.y
+				rock.bitmap = Bitmap.new( self.textures.rock )
+				rock.bitmap:setPosition( rock.x, rock.y )
+				tile.itemType = "rock"
+				tile.rock = rock
+				
+				tile.label = TextField.new( self.labelFont, GameText:Get( "target", "Rock" ) )
+				tile.label:setTextColor( 0xFFFFFF )
+				tile.label:setPosition( tile.x, tile.y )
+			end
 		
 		end
 		
@@ -278,7 +294,9 @@ function GameMinerState:Handle_MouseDown( event )
 			self.player:Move( dir )
 			
 			if ( self.tiles[ tileName ].itemType ~= "none" and self.tiles[ tileName ].itemType ~= "rock" ) then
-				stage:removeChild( self.tiles[ tileName ].rock.bitmap )
+				if ( self.tiles[ tileName ].rock ~= nil ) then
+					stage:removeChild( self.tiles[ tileName ].rock.bitmap )
+				end
 				stage:removeChild( self.tiles[ tileName ].label )
 				self.tiles[ tileName ].itemType = "none"
 				self.collectSfx:play()
