@@ -83,6 +83,7 @@ function GameMinerState:Setup( options )
 	self.textures.gemB = Texture.new( "Content/Graphics/Tiles/gemB.png" )
 	self.textures.gemC = Texture.new( "Content/Graphics/Tiles/gemC.png" )
 	self.textures.gemD = Texture.new( "Content/Graphics/Tiles/gemD.png" )
+	self.textures.sandwich = Texture.new( "Content/Graphics/Tiles/sandwich.png" )
 	self.textures.coinA = Texture.new( "Content/Graphics/Tiles/copper_coin.png" )
 	self.textures.coinB = Texture.new( "Content/Graphics/Tiles/silver_coin.png" )
 	self.textures.coinC = Texture.new( "Content/Graphics/Tiles/gold_coin.png" )
@@ -94,6 +95,8 @@ function GameMinerState:Setup( options )
 	self.miningSfx = Sound.new( "Content/Audio/mining.wav" )
 	self.collectSfx = Sound.new( "Content/Audio/collect.wav" )
 	self.footstepsSfx = Sound.new( "Content/Audio/footsteps.wav" )
+	self.hurtSfx = Sound.new( "Content/Audio/hurt.wav" )
+	self.swordSfx = Sound.new( "Content/Audio/sword.wav" )
 	
 	self.fadeCounter = 0
 	self.transition = false
@@ -179,6 +182,12 @@ function GameMinerState:ClearMap()
 		if ( tile.label ~= nil and stage:contains( tile.label ) ) then stage:removeChild( tile.label ) end
 		self.tiles[ key ] = nil
 	end
+	
+	for key, enemy in pairs( self.enemies ) do
+		stage:removeChild( enemy.bitmap )
+		stage:removeChild( enemy.label )
+		self.enemies[ key ] = nil
+	end
 end
 
 function GameMinerState:GenerateMap()
@@ -257,6 +266,8 @@ function GameMinerState:GenerateMap()
 	
 	-- Setup bitmaps
 	local enemyMax = self.level
+	if ( enemyMax > 5 ) then enemyMax = 5 end
+	
 	for key, tile in pairs( self.tiles ) do
 		if ( tile.type == "wall" ) then
 			tile.bitmap = Bitmap.new( self.textures.walls ) 
@@ -299,6 +310,7 @@ function GameMinerState:GenerateMap()
 				enemy.bitmap:setPosition( enemy.x, enemy.y )
 				enemy.label:setPosition( enemy.x, enemy.y )
 				enemy.label:setTextColor( 0xFFFFFF )
+				enemy.alive = true
 				
 				table.insert( self.enemies, enemy )
 				enemyMax = enemyMax - 1
@@ -369,7 +381,7 @@ function GameMinerState:Handle_MouseDown( event )
 		if ( self.tiles[ tileName ] ~= nil and self.tiles[ tileName ].itemType == "rock" ) then
 			self.miningSfx:play()
 			
-			local randomItem = math.random( 1, 7 )	-- 4 gems, 3 coins
+			local randomItem = math.random( 1, 8 )	-- 4 gems, 3 coins
 			
 			if ( randomItem == 1 ) then 				self.tiles[ tileName ].itemType = "gemA"
 			elseif ( randomItem == 2 ) then 		self.tiles[ tileName ].itemType = "gemB"
@@ -378,6 +390,7 @@ function GameMinerState:Handle_MouseDown( event )
 			elseif ( randomItem == 5 ) then 		self.tiles[ tileName ].itemType = "coinA"
 			elseif ( randomItem == 6 ) then 		self.tiles[ tileName ].itemType = "coinB"
 			elseif ( randomItem == 7 ) then 		self.tiles[ tileName ].itemType = "coinC"
+			elseif ( randomItem == 8 ) then 		self.tiles[ tileName ].itemType = "sandwich"
 			end
 			
 			self.tiles[ tileName ].label:setText( GameText:Get( "target", self.tiles[ tileName ].itemType ) )			
@@ -386,7 +399,26 @@ function GameMinerState:Handle_MouseDown( event )
 		
 	
 	elseif ( clickedButton == "btn_sword" ) then
-	
+		-- Check enemies
+		local adjX = x
+		local adjY = y
+		for key, enemy in pairs ( self.enemies ) do
+			if 			( self.player.direction == "north" ) then		adjY = adjY - self.moveAmount
+			elseif 	( self.player.direction == "south" ) then		adjY = adjY + self.moveAmount
+			elseif 	( self.player.direction == "east" ) then		adjX = adjX + self.moveAmount
+			elseif 	( self.player.direction == "west" ) then		adjX = adjX - self.moveAmount
+			end
+			
+			if ( ( adjX == enemy.x and adjY == enemy.y ) or ( x == enemy.x and y == enemy.y ) ) then
+				enemy.bitmap:setColorTransform( 1, 0.5, 0.5, 0.5 )
+				--enemy.bitmap:setAnchorPoint( 0.5, 0.5 )
+				enemy.bitmap:setRotation( 180 )
+				enemy.bitmap:setPosition( enemy.x + self.moveAmount, enemy.y + self.moveAmount )
+				enemy.alive = false
+				self.swordSfx:play() 
+			end
+			
+		end
 	end
 	
 	if ( tryToMove ) then
@@ -418,7 +450,15 @@ function GameMinerState:Handle_MouseDown( event )
 				elseif 	( self.tiles[ tileName ].itemType == "gemD" ) then 		self.score = self.score + 80		
 				elseif 	( self.tiles[ tileName ].itemType == "coinA" ) then 		self.score = self.score + 5		
 				elseif 	( self.tiles[ tileName ].itemType == "coinB" ) then 		self.score = self.score + 15		
-				elseif 	( self.tiles[ tileName ].itemType == "coinC" ) then 		self.score = self.score + 50		end
+				elseif 	( self.tiles[ tileName ].itemType == "coinC" ) then 		self.score = self.score + 50		
+				elseif 	( self.tiles[ tileName ].itemType == "sandwich" and self.player.health < 3 ) then
+					self.player.health = self.player.health + 1	
+				
+					local heart = Bitmap.new( self.textures.heart )
+					heart:setPosition( 300 + 20 * (self.player.health - 1), 340 )
+					table.insert( self.hearts, heart )
+					stage:addChild( heart )
+				end
 				self.scoreText:setText( GameText:Get( "target", "Money" ) .. ": " .. self.score )
 				
 				if ( self.tiles[ tileName ].label ~= nil ) then stage:removeChild( self.tiles[ tileName ].label ) end
@@ -433,6 +473,10 @@ function GameMinerState:Handle_MouseDown( event )
 end
 
 function GameMinerState:TurnBasedUpdate()
+	local r, g, b, a = self.player.bitmap:getColorTransform()
+	if ( g < 1.0 ) then g = g + 0.1 end
+	if ( b < 1.0 ) then b = b + 0.1 end
+	self.player.bitmap:setColorTransform( r, g, b, a )
 	-- adjust lighting
 	if ( self.enableLighting ) then
 		local x, y = self.player:getPosition()
@@ -459,47 +503,91 @@ function GameMinerState:TurnBasedUpdate()
 	
 	-- enemy movement
 	for key, enemy in pairs( self.enemies ) do
-		-- Move towards player if in line-of-sight
-		local tx = enemy.x / self.tileWidth
-		local ty = enemy.y / self.tileWidth
-		local dir = ""
-		local tileName = ""
-		local x, y = self.player:getPosition()
+		if ( enemy.alive == true ) then
 		
-		if ( enemy.x == x ) then
-			print( "X Matches" )
-			print( x, enemy.x )
-			if ( y < enemy.y ) then
-				dir = "north"
-				tileName = tx .. "-" .. ty - 1
+			-- Move towards player if in line-of-sight
+			local tx = enemy.x / self.tileWidth
+			local ty = enemy.y / self.tileWidth
+			local dir = ""
+			local tileName = ""
+			local x, y = self.player:getPosition()
 			
-			elseif ( y > enemy.y ) then
-				dir = "south"
-				tileName = tx .. "-" .. ty + 1
+			if ( enemy.x == x ) then
+				if ( y < enemy.y ) then
+					dir = "north"
+					tileName = tx .. "-" .. ty - 1
+				
+				elseif ( y > enemy.y ) then
+					dir = "south"
+					tileName = tx .. "-" .. ty + 1
+				
+				end
+				
+			elseif ( enemy.y == y ) then
+				if ( x < enemy.x ) then
+					dir = "west"
+					tileName = tx - 1 .. "-" .. ty
+				
+				elseif ( x > enemy.x ) then
+					dir = "east"
+					tileName = tx + 1 .. "-" .. ty
+				
+				end
 			
 			end
 			
-		elseif ( enemy.y == y ) then
-			if ( x < enemy.x ) then
-				dir = "west"
-				tileName = tx - 1 .. "-" .. ty
-			
-			elseif ( x > enemy.x ) then
-				dir = "east"
-				tileName = tx + 1 .. "-" .. ty
-			
+			if ( self.tiles[ tileName ] ~= nil 
+				and self.tiles[ tileName ].itemType ~= "rock" 
+				and self.tiles[ tileName ].type == "ground" ) then
+				
+				if ( enemy.attackedLastTime or enemy.movedLastTime ) then dir = "none" end
+				
+				-- Move / attack			
+				if ( dir == "north" ) then
+					enemy.y = enemy.y - self.moveAmount
+					enemy.movedLastTime = true
+					
+				elseif ( dir == "south" ) then
+					enemy.y = enemy.y + self.moveAmount
+					enemy.movedLastTime = true
+				
+				elseif ( dir == "east" ) then
+					enemy.x = enemy.x + self.moveAmount 
+					enemy.movedLastTime = true
+				
+				elseif ( dir == "west" ) then
+					enemy.x = enemy.x - self.moveAmount 
+					enemy.movedLastTime = true
+				
+				else
+					enemy.movedLastTime = false
+				
+				end
+				
+				local r, g, b, a = self.player.bitmap:getColorTransform()
+				if ( enemy.x == x and enemy.y == y
+						and r >= 1.0 and g >= 1.0 and b >= 1.0 ) then
+					if ( self.hearts[ self.player.health ] ~= nil ) then 
+						stage:removeChild( self.hearts[ self.player.health ] )
+						self.hearts[ self.player.health ] = nil
+					end
+					self.player.health = self.player.health - 1
+					self.hurtSfx:play()
+					self.player.bitmap:setColorTransform( 1.0, 0, 0, 1.0 )
+					enemy.attackedLastTime = true
+				else
+					enemy.attackedLastTime = false
+				end
+				
+				enemy.bitmap:setPosition( enemy.x, enemy.y )
+				enemy.label:setPosition( enemy.x, enemy.y )
 			end
-		
-		end
-		
-		if ( self.tiles[ tileName ] ~= nil and self.tiles[ tileName ].itemType ~= "rock" and self.tiles[ tileName ].type == "ground" ) then
-			if ( dir == "north" ) then				enemy.y = enemy.y - self.moveAmount
-			elseif ( dir == "south" ) then		enemy.y = enemy.y + self.moveAmount 
-			elseif ( dir == "east" ) then			enemy.x = enemy.x + self.moveAmount 
-			elseif ( dir == "west" ) then		enemy.x = enemy.x - self.moveAmount end
 			
-			enemy.bitmap:setPosition( enemy.x, enemy.y )
-			enemy.label:setPosition( enemy.x, enemy.y )
+			if ( self.player.health == -1 ) then
+				-- Game over
+				print( "Game over" )
+			end
+			
 		end
 		
 	end

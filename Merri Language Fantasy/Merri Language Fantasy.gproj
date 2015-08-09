@@ -4,6 +4,8 @@
  </properties>
  <folder name="Content">
   <folder name="Audio">
+   <file source="Content/Audio/sword.wav"/>
+   <file source="Content/Audio/hurt.wav"/>
    <file source="Content/Audio/footsteps.wav"/>
    <file source="Content/Audio/collect.wav"/>
    <file source="Content/Audio/mining.wav"/>
@@ -26,6 +28,7 @@
     <file source="Content/Graphics/Characters/miner sprite.xcf"/>
    </folder>
    <folder name="Tiles">
+    <file source="Content/Graphics/Tiles/sandwich.png"/>
     <file source="Content/Graphics/Tiles/ladder_down.png"/>
     <file source="Content/Graphics/Tiles/tileset_miner.txt"/>
     <file source="Content/Graphics/Tiles/tileset_miner.png"/>
