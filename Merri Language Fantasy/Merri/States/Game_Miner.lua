@@ -97,8 +97,18 @@ function GameMinerState:Setup( options )
 	self.fadeBitmap:setAlpha( 0 )
 	
 	self.labelFont = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 9 )
+	self.scoreFont = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 14 )
 	
 	self.player = Miner.new( { font = self.labelFont } )
+	
+	self.level = 1
+	self.levelText = TextField.new( self.scoreFont, GameText:Get( "target", "Level" ) .. ": " .. self.level )
+	self.levelText:setTextColor( 0xFFFFFF )
+	self.levelText:setPosition( 10, 350 )
+	self.score = 0
+	self.scoreText = TextField.new( self.scoreFont, GameText:Get( "target", "Money" ) .. ": " .. self.score )
+	self.scoreText:setTextColor( 0xFFFFFF )
+	self.scoreText:setPosition( 200, 350 )
 	
 	local tileWidth = self.textures.ground:getWidth()
 	self.tileWidth = tileWidth
@@ -115,6 +125,8 @@ function GameMinerState:Draw()
 	
 	for key, value in pairs( self.tiles ) do
 		stage:addChild( value.bitmap )
+	end
+	for key, value in pairs( self.tiles ) do
 		if ( value.rock ~= nil ) then
 			stage:addChild( value.rock.bitmap )
 		end
@@ -125,6 +137,8 @@ function GameMinerState:Draw()
 	
 	stage:addChild( self.player.bitmap )
 	stage:addChild( self.player.label )
+	stage:addChild( self.levelText )
+	stage:addChild( self.scoreText )
 end
 
 function GameMinerState:SetupMap()
@@ -206,7 +220,6 @@ function GameMinerState:GenerateMap()
 		end -- while ( x ~= endX or y ~= endY ) do
 	end
 	-- Last tile
-	print( "last tile: ", self.tiles[ x .. "-" .. y ].x, ", ", self.tiles[ x .. "-" .. y ].y )
 	self.tiles[ x .. "-" .. y ].type = "ground"
 	self.tiles[ x .. "-" .. y ].itemType = "ladder"
 	self.tiles[ x .. "-" .. y ].rock = {}	
@@ -228,8 +241,7 @@ function GameMinerState:GenerateMap()
 			
 			-- Should it have a rock?
 			local rockYes = math.random( 1, 10 )
-			if ( i ~= 0 and rockYes == 1 and tile.itemType == "none" ) then
-				print( "Add rock at ", tile.x / 36, ", ", tile.y / 36 )
+			if ( i ~= 0 and rockYes == 1 and tile.itemType == "none" and tile.x ~= startX * self.tileWidth and tile.y ~= startY * self.tileWidth ) then
 				local rock = {}
 				rock.x = tile.x
 				rock.y = tile.y
@@ -338,7 +350,6 @@ function GameMinerState:Handle_MouseDown( event )
 			
 			-- Go downwards
 			if ( self.tiles[ tileName ].itemType == "ladder" ) then
-				print( "Go downstairs" )
 				self.footstepsSfx:play()
 				stage:addChild( self.fadeBitmap )
 				self.fadeBitmap:setAlpha( 0 )
@@ -351,10 +362,19 @@ function GameMinerState:Handle_MouseDown( event )
 					stage:removeChild( self.tiles[ tileName ].rock.bitmap )
 				end
 				
+				if 			( self.tiles[ tileName ].itemType == "gemA" ) then 		self.score = self.score + 20			
+				elseif 	( self.tiles[ tileName ].itemType == "gemB" ) then 		self.score = self.score + 40		
+				elseif 	( self.tiles[ tileName ].itemType == "gemC" ) then 		self.score = self.score + 60		
+				elseif 	( self.tiles[ tileName ].itemType == "gemD" ) then 		self.score = self.score + 80		
+				elseif 	( self.tiles[ tileName ].itemType == "coinA" ) then 		self.score = self.score + 5		
+				elseif 	( self.tiles[ tileName ].itemType == "coinB" ) then 		self.score = self.score + 15		
+				elseif 	( self.tiles[ tileName ].itemType == "coinC" ) then 		self.score = self.score + 50		end
+				self.scoreText:setText( GameText:Get( "target", "Money" ) .. ": " .. self.score )
+				
 				if ( self.tiles[ tileName ].label ~= nil ) then stage:removeChild( self.tiles[ tileName ].label ) end
-				print( "Item Type: ", self.tiles[ tileName ].itemType )
 				self.tiles[ tileName ].itemType = "none"
 				self.collectSfx:play()
+				
 			end
 		end -- if ( self.tiles[ tileName ] ~= nil ) then
 	end -- if ( tryToMove ) then
@@ -401,6 +421,8 @@ function GameMinerState:Handle_EnterFrame( event )
 		-- Change
 		elseif ( self.fadeCounter == 50 ) then
 			self:SetupMap()
+			self.level = self.level + 1
+			self.levelText:setText( GameText:Get( "target", "Level" ) .. ": " .. self.level )
 		
 		-- Fade in
 		elseif ( self.fadeCounter > 0 ) then
