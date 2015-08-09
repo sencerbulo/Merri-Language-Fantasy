@@ -3,51 +3,63 @@
   <imageScales/>
  </properties>
  <folder name="Content">
+  <folder name="Audio">
+   <file source="Content/Audio/mining.wav"/>
+  </folder>
   <folder name="Fonts">
    <file source="Content/Fonts/NotoSans-Bold.ttf"/>
   </folder>
   <folder name="Graphics">
    <folder name="Characters">
-    <file source="../Content/Graphics/Characters/miner_down.png"/>
+    <file source="Content/Graphics/Characters/miner_up2.png"/>
+    <file source="Content/Graphics/Characters/miner_up.png"/>
+    <file source="Content/Graphics/Characters/miner_right2.png"/>
+    <file source="Content/Graphics/Characters/miner_right.png"/>
+    <file source="Content/Graphics/Characters/miner_left2.png"/>
+    <file source="Content/Graphics/Characters/miner_left.png"/>
+    <file source="Content/Graphics/Characters/miner_down2.png"/>
+    <file source="Content/Graphics/Characters/miner_down.png"/>
+    <file source="Content/Graphics/Characters/miner sprite.xcf"/>
    </folder>
    <folder name="Tiles">
-    <file source="../Content/Graphics/Tiles/ground_dirt2.png"/>
-    <file source="../Content/Graphics/Tiles/silver_coin.png"/>
-    <file source="../Content/Graphics/Tiles/rock.png"/>
-    <file source="../Content/Graphics/Tiles/ground_dirt.png"/>
-    <file source="../Content/Graphics/Tiles/ground_cobblestone.png"/>
-    <file source="../Content/Graphics/Tiles/gold_coin.png"/>
-    <file source="../Content/Graphics/Tiles/gemD.png"/>
-    <file source="../Content/Graphics/Tiles/gemC.png"/>
-    <file source="../Content/Graphics/Tiles/gemB.png"/>
-    <file source="../Content/Graphics/Tiles/gemA.png"/>
-    <file source="../Content/Graphics/Tiles/copper_coin.png"/>
-    <file source="../Content/Graphics/Tiles/tileset_miner.txt"/>
-    <file source="../Content/Graphics/Tiles/tileset_miner.png"/>
+    <file source="Content/Graphics/Tiles/tileset_miner.txt"/>
+    <file source="Content/Graphics/Tiles/tileset_miner.png"/>
+    <file source="Content/Graphics/Tiles/silver_coin.png"/>
+    <file source="Content/Graphics/Tiles/rock.png"/>
+    <file source="Content/Graphics/Tiles/ground_dirt2.png"/>
+    <file source="Content/Graphics/Tiles/ground_dirt.png"/>
+    <file source="Content/Graphics/Tiles/ground_cobblestone.png"/>
+    <file source="Content/Graphics/Tiles/gold_coin.png"/>
+    <file source="Content/Graphics/Tiles/gemD.png"/>
+    <file source="Content/Graphics/Tiles/gemC.png"/>
+    <file source="Content/Graphics/Tiles/gemB.png"/>
+    <file source="Content/Graphics/Tiles/gemA.png"/>
+    <file source="Content/Graphics/Tiles/copper_coin.png"/>
    </folder>
    <folder name="UI">
-    <file source="../Content/Graphics/UI/miner_background.png"/>
-    <file source="../Content/Graphics/UI/blank_background.png"/>
-    <file source="../Content/Graphics/UI/btn_up.png"/>
-    <file source="../Content/Graphics/UI/btn_right.png"/>
-    <file source="../Content/Graphics/UI/btn_left.png"/>
-    <file source="../Content/Graphics/UI/btn_down.png"/>
-    <file source="../Content/Graphics/UI/widebtnbg.png"/>
-    <file source="../Content/Graphics/UI/title_text.png"/>
-    <file source="../Content/Graphics/UI/generalbgtile.png"/>
-    <file source="../Content/Graphics/UI/generalbg.png"/>
-    <file source="../Content/Graphics/UI/dnk-half.png"/>
-    <file source="../Content/Graphics/UI/difficulty_practice.xcf"/>
-    <file source="../Content/Graphics/UI/difficulty_practice.png"/>
-    <file source="../Content/Graphics/UI/difficulty_medium.png"/>
-    <file source="../Content/Graphics/UI/difficulty_hard.png"/>
-    <file source="../Content/Graphics/UI/difficulty_easy.png"/>
-    <file source="../Content/Graphics/UI/btn_stats.png"/>
-    <file source="../Content/Graphics/UI/btn_play.png"/>
-    <file source="../Content/Graphics/UI/btn_options.png"/>
-    <file source="../Content/Graphics/UI/btn_help.png"/>
-    <file source="../Content/Graphics/UI/btn_back.png"/>
-    <file source="../Content/Graphics/UI/bg_titlescene.png"/>
+    <file source="Content/Graphics/UI/btn_sword.png"/>
+    <file source="Content/Graphics/UI/btn_pick.png"/>
+    <file source="Content/Graphics/UI/widebtnbg.png"/>
+    <file source="Content/Graphics/UI/title_text.png"/>
+    <file source="Content/Graphics/UI/miner_background.png"/>
+    <file source="Content/Graphics/UI/generalbgtile.png"/>
+    <file source="Content/Graphics/UI/generalbg.png"/>
+    <file source="Content/Graphics/UI/dnk-half.png"/>
+    <file source="Content/Graphics/UI/difficulty_practice.png"/>
+    <file source="Content/Graphics/UI/difficulty_medium.png"/>
+    <file source="Content/Graphics/UI/difficulty_hard.png"/>
+    <file source="Content/Graphics/UI/difficulty_easy.png"/>
+    <file source="Content/Graphics/UI/btn_up.png"/>
+    <file source="Content/Graphics/UI/btn_stats.png"/>
+    <file source="Content/Graphics/UI/btn_right.png"/>
+    <file source="Content/Graphics/UI/btn_play.png"/>
+    <file source="Content/Graphics/UI/btn_options.png"/>
+    <file source="Content/Graphics/UI/btn_left.png"/>
+    <file source="Content/Graphics/UI/btn_help.png"/>
+    <file source="Content/Graphics/UI/btn_down.png"/>
+    <file source="Content/Graphics/UI/btn_back.png"/>
+    <file source="Content/Graphics/UI/blank_background.png"/>
+    <file source="Content/Graphics/UI/bg_titlescene.png"/>
    </folder>
   </folder>
  </folder>

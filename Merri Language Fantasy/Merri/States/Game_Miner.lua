@@ -4,11 +4,32 @@ Miner = Core.class()
 
 function Miner:init( options )
 	self.textures = {}
-	self.textures.south = Texture.new( "Content/Graphics/Characters/miner_down.png" )
-	self.bitmap = Bitmap.new( self.textures.south )
+	self.textures.south1 = Texture.new( "Content/Graphics/Characters/miner_down.png" )
+	self.textures.south2 = Texture.new( "Content/Graphics/Characters/miner_down2.png" )
+	self.textures.north1 = Texture.new( "Content/Graphics/Characters/miner_up.png" )
+	self.textures.north2 = Texture.new( "Content/Graphics/Characters/miner_up2.png" )
+	self.textures.east1 = Texture.new( "Content/Graphics/Characters/miner_right.png" )
+	self.textures.east2 = Texture.new( "Content/Graphics/Characters/miner_right2.png" )
+	self.textures.west1 = Texture.new( "Content/Graphics/Characters/miner_left.png" )
+	self.textures.west2 = Texture.new( "Content/Graphics/Characters/miner_left2.png" )
+	self.bitmap = Bitmap.new( self.textures.south1 )
 	self.moveAmount = 0
+	self.frame = 1
+	self.direction = "south"
+	
 	self.label = TextField.new( TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 9 ), GameText:Get( "target", "Miner" ) )
 	self.label:setTextColor( 0xFFFFFF )
+end
+
+function Miner:Move( direction, amount )
+	self.direction = direction
+	local x, y = self:getPosition()
+	if ( direction == "south" ) then 		y = y + self.moveAmount		end
+	if ( direction == "north" ) then 		y = y - self.moveAmount		end
+	if ( direction == "east" ) then 		x = x + self.moveAmount		end
+	if ( direction == "west" ) then 		x = x - self.moveAmount		end
+	
+	self:setPosition( x, y )
 end
 
 function Miner:setPosition( x, y )
@@ -18,6 +39,15 @@ end
 
 function Miner:getPosition()
 	return self.bitmap:getPosition()
+end
+
+function Miner:Update()
+	self.frame = self.frame + 0.05
+	if ( self.frame >= 3 ) then
+		self.frame = 1
+	end
+	local fr = math.floor( self.frame )
+	self.bitmap:setTexture( self.textures[ self.direction .. fr ] )
 end
 
 function GameMinerState:init( options )
@@ -34,6 +64,11 @@ function GameMinerState:Setup( options )
 	StateBase:AddButton( { button = { id = "btn_down", 	path = "Content/Graphics/UI/btn_down.png",  	pos_x = 150, pos_y = 567  }, } )
 	StateBase:AddButton( { button = { id = "btn_left", 			path = "Content/Graphics/UI/btn_left.png",  	pos_x = 72, pos_y = 489  }, } )
 	StateBase:AddButton( { button = { id = "btn_right", 		path = "Content/Graphics/UI/btn_right.png",  	pos_x = 228, pos_y = 489  }, } )
+	
+	StateBase:AddButton( { button = { id = "btn_sword", 		path = "Content/Graphics/UI/btn_sword.png",  	pos_x = 0, pos_y = 360  }, } )
+	StateBase:AddButton( { button = { id = "btn_pick", 		path = "Content/Graphics/UI/btn_pick.png",  	pos_x = 260, pos_y = 360  }, } )
+	
+	self.miningSfx = Sound.new( "Content/Audio/mining.wav" )
 	
 	self.player = Miner.new()
 	self.tileWidth = 0
@@ -159,25 +194,30 @@ function GameMinerState:Handle_MouseDown( event )
 	
 	if ( clickedButton == "btn_up" ) then
 		if ( self.tiles[ tx .. "-" .. ty - 1 ] ~= nil and self.tiles[ tx .. "-" .. ty - 1 ].type == "ground" ) then
-			y = y - self.player.moveAmount
+			self.player:Move( "north" )
 		end
 			
 	elseif ( clickedButton == "btn_down" ) then
 		if ( self.tiles[ tx .. "-" .. ty + 1 ] ~= nil and self.tiles[ tx .. "-" .. ty + 1 ].type == "ground" ) then
-			y = y + self.player.moveAmount
+			self.player:Move( "south" )
 		end
 	
 	elseif ( clickedButton == "btn_left" ) then
 		if ( self.tiles[ tx - 1 .. "-" .. ty ] ~= nil and self.tiles[ tx - 1 .. "-" .. ty ].type == "ground" ) then
-			x = x - self.player.moveAmount
+			self.player:Move( "west" )
 		end
 	
 	elseif ( clickedButton == "btn_right" ) then
 		if ( self.tiles[ tx + 1 .. "-" .. ty ] ~= nil and self.tiles[ tx + 1 .. "-" .. ty ].type == "ground" ) then
-			x = x + self.player.moveAmount
+			self.player:Move( "east" )
 		end
+	
+	elseif ( clickedButton == "btn_pick" ) then
+		self.miningSfx:play()
+	
+	elseif ( clickedButton == "btn_sword" ) then
+	
 	end
-	self.player:setPosition( x, y )
 	
 	self:TurnBasedUpdate()
 end
@@ -200,6 +240,7 @@ end
 
 function GameMinerState:Handle_EnterFrame( event )
 	StateBase:Update()
+	self.player:Update()
 end
 
 function GameMinerState:ClearScreen()
