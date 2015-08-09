@@ -26,6 +26,7 @@
     <file source="../Content/Graphics/Tiles/tileset_miner.png"/>
    </folder>
    <folder name="UI">
+    <file source="../Content/Graphics/UI/miner_background.png"/>
     <file source="../Content/Graphics/UI/blank_background.png"/>
     <file source="../Content/Graphics/UI/btn_up.png"/>
     <file source="../Content/Graphics/UI/btn_right.png"/>

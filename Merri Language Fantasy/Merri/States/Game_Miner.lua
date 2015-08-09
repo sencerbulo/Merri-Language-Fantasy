@@ -7,10 +7,13 @@ function Miner:init( options )
 	self.textures.south = Texture.new( "Content/Graphics/Characters/miner_down.png" )
 	self.bitmap = Bitmap.new( self.textures.south )
 	self.moveAmount = 0
+	self.label = TextField.new( TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 9 ), GameText:Get( "target", "Miner" ) )
+	self.label:setTextColor( 0xFFFFFF )
 end
 
 function Miner:setPosition( x, y )
 	self.bitmap:setPosition( x, y )
+	self.label:setPosition( x, y )
 end
 
 function Miner:getPosition()
@@ -25,7 +28,7 @@ end
 -- Setup / Teardown --
 function GameMinerState:Setup( options )
 	StateBase:SetGotoState( "" )
-	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/blank_background.png",  pos_x = 0, pos_y = 0 } )
+	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/miner_background.png",  pos_x = 0, pos_y = 0 } )
 		
 	StateBase:AddButton( { button = { id = "btn_up", 			path = "Content/Graphics/UI/btn_up.png",  	pos_x = 150, pos_y = 411  }, } )
 	StateBase:AddButton( { button = { id = "btn_down", 	path = "Content/Graphics/UI/btn_down.png",  	pos_x = 150, pos_y = 567  }, } )
@@ -37,6 +40,7 @@ function GameMinerState:Setup( options )
 	
 	self:SetupMap()
 	self:Draw()
+	self:TurnBasedUpdate()
 end
 
 function GameMinerState:Cleanup()
@@ -50,6 +54,7 @@ function GameMinerState:Draw()
 	end
 	
 	stage:addChild( self.player.bitmap )
+	stage:addChild( self.player.label )
 end
 
 function GameMinerState:SetupMap()
@@ -62,8 +67,8 @@ function GameMinerState:SetupMap()
 	
 	local tileWidth = self.textures.ground:getWidth()
 	self.tileWidth = tileWidth
-	local maxX = GLOBAL_CONFIG.SCREEN_WIDTH / tileWidth
-	local maxY = GLOBAL_CONFIG.SCREEN_WIDTH / tileWidth
+	local maxX = GLOBAL_CONFIG.SCREEN_WIDTH / tileWidth - 1
+	local maxY = GLOBAL_CONFIG.SCREEN_WIDTH / tileWidth - 1
 	
 	-- Initialize all tiles as walls
 	local tileCount = 0
@@ -79,7 +84,7 @@ function GameMinerState:SetupMap()
 	
 	print( "Tile count: ", tileCount )
 	
-	local tileCount = math.random( 75, 120 )
+	local tileCount = math.random( 100, 120 )
 	
 	local x = 0
 	local y = math.random( 0, maxY )
@@ -174,7 +179,23 @@ function GameMinerState:Handle_MouseDown( event )
 	end
 	self.player:setPosition( x, y )
 	
-	
+	self:TurnBasedUpdate()
+end
+
+function GameMinerState:TurnBasedUpdate()
+	-- adjust lighting
+	local x, y = self.player:getPosition()
+	for key, tile in pairs( self.tiles ) do
+		local distance = math.floor( self:GetDistance( x, y, tile.x, tile.y ) / 36 )
+		local alpha = 1 - ( 0.25 * ( distance - 1 ) )
+		tile.bitmap:setAlpha( alpha )
+	end
+end
+
+function GameMinerState:GetDistance( x1, y1, x2, y2 )
+	local xd = x1 - x2
+	local yd = y1 - y2
+	return math.sqrt( xd * xd + yd * yd )
 end
 
 function GameMinerState:Handle_EnterFrame( event )

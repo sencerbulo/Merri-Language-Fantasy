@@ -128,6 +128,13 @@ function GameText:SetupLanguages()
 	GameText.HelperText.Ido[ "Stats" ] 				= "Statistiki"
 	GameText.HelperText.Spanish[ "Stats" ] 		= "Estadística"
 	
+	-- GameMinerState --
+	
+	GameText.TargetText.English[ "Miner" ] 		= "Miner"
+	GameText.TargetText.Esperanto[ "Miner" ] 	= "Ministo"
+	GameText.TargetText.Ido[ "Miner" ] 				= "Ministo"
+	GameText.TargetText.Spanish[ "Miner" ] 		= "Minero"
+	
 end
 
 
