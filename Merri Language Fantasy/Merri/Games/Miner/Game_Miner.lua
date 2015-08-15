@@ -16,10 +16,10 @@ function GameMinerState:Setup( options )
 	self.textures = {
 			black = Texture.new( "Content/Graphics/UI/blank_background.png" ),
 			
-			hud_down = Texture.new( "Content/Games/Miner/UI/hud_down.png" ),
-			hud_left = Texture.new( "Content/Games/Miner/UI/hud_left.png" ),
-			hud_right = Texture.new( "Content/Games/Miner/UI/hud_right.png" ),
-			hud_up = Texture.new( "Content/Games/Miner/UI/hud_up.png" ),
+			hud_south = Texture.new( "Content/Games/Miner/UI/hud_down.png" ),
+			hud_west = Texture.new( "Content/Games/Miner/UI/hud_left.png" ),
+			hud_east = Texture.new( "Content/Games/Miner/UI/hud_right.png" ),
+			hud_north = Texture.new( "Content/Games/Miner/UI/hud_up.png" ),
 			
 			hud_pick = Texture.new( "Content/Games/Miner/UI/hud_pick.png" ),
 			hud_sword = Texture.new( "Content/Games/Miner/UI/hud_sword.png" ),
@@ -52,19 +52,31 @@ function GameMinerState:Setup( options )
 	self.hud = {
 		topButton = {
 			action = "move",
-			bitmap = Bitmap.new( self.textures.hud_up )
+			direction = "north",
+			bitmap = Bitmap.new( self.textures.hud_north ),
+			xOffset = 0,
+			yOffset = -36,
 		},
 		bottomButton = {
 			action = "move",
-			bitmap = Bitmap.new( self.textures.hud_down )
+			direction = "south",
+			bitmap = Bitmap.new( self.textures.hud_south ),
+			xOffset = 0,
+			yOffset = 36,
 		},
 		leftButton = {
 			action = "move",
-			bitmap = Bitmap.new( self.textures.hud_left )
+			direction = "west",
+			bitmap = Bitmap.new( self.textures.hud_west ),
+			xOffset = -36,
+			yOffset = 0,
 		},
 		rightButton = {
 			action = "move",
-			bitmap = Bitmap.new( self.textures.hud_right )
+			direction = "east",
+			bitmap = Bitmap.new( self.textures.hud_east ),
+			xOffset = 36,
+			yOffset = 0,
 		},
 	}
 	
@@ -74,74 +86,31 @@ function GameMinerState:Setup( options )
 end
 
 function GameMinerState:SetupHud()
-	local x, y = self.map:GetPlayerCoordinates()
-	
-	self.hud.topButton.bitmap:setPosition( x, y - 36 )
-	self.hud.bottomButton.bitmap:setPosition( x, y + 36 )
-	self.hud.leftButton.bitmap:setPosition( x - 36, y )
-	self.hud.rightButton.bitmap:setPosition( x + 36, y )
-	
 	self.hud.topButton.action,
 	self.hud.bottomButton.action,
 	self.hud.leftButton.action,
 	self.hud.rightButton.action = self.map:GetHudActions()
 	
-	-- Up
-	if ( self.hud.topButton.action == "move" ) then
-		self.hud.topButton.bitmap:setTexture( self.textures.hud_up )
-		self.hud.topButton.bitmap:setAlpha( 1 )
-	elseif ( self.hud.topButton.action == "mine" ) then
-		self.hud.topButton.bitmap:setTexture( self.textures.hud_pick )
-		self.hud.topButton.bitmap:setAlpha( 1 )
-	elseif ( self.hud.topButton.action == "attack" ) then
-		self.hud.topButton.bitmap:setTexture( self.textures.hud_sword )
-		self.hud.topButton.bitmap:setAlpha( 1 )
-	else -- none
-		self.hud.topButton.bitmap:setAlpha( 0 )
+	local x, y = self.map:GetPlayerCoordinates()
+	for key, button in pairs( self.hud ) do
+		-- Update Position
+		button.bitmap:setPosition( x + button.xOffset, y + button.yOffset )
+		
+		-- Update actions
+		button.bitmap:setAlpha( 1 )
+		if ( button.action == "move" ) then
+			button.bitmap:setTexture( self.textures[ "hud_" .. button.direction ] )
+		
+		elseif ( button.action == "mine" ) then
+			button.bitmap:setTexture( self.textures.hud_pick )
+		
+		elseif ( button.action == "attack" ) then
+			button.bitmap:setTexture( self.textures.hud_sword )
+		
+		else -- none
+			button.bitmap:setAlpha( 0 )
+		end
 	end
-	
-	-- Down
-	if ( self.hud.bottomButton.action == "move" ) then
-		self.hud.bottomButton.bitmap:setTexture( self.textures.hud_down )
-		self.hud.bottomButton.bitmap:setAlpha( 1 )
-	elseif ( self.hud.bottomButton.action == "mine" ) then
-		self.hud.bottomButton.bitmap:setTexture( self.textures.hud_pick )
-		self.hud.bottomButton.bitmap:setAlpha( 1 )
-	elseif ( self.hud.bottomButton.action == "attack" ) then
-		self.hud.bottomButton.bitmap:setTexture( self.textures.hud_sword )
-		self.hud.bottomButton.bitmap:setAlpha( 1 )
-	else -- none
-		self.hud.bottomButton.bitmap:setAlpha( 0 )
-	end
-	
-	-- Left
-	if ( self.hud.leftButton.action == "move" ) then
-		self.hud.leftButton.bitmap:setTexture( self.textures.hud_left )
-		self.hud.leftButton.bitmap:setAlpha( 1 )
-	elseif ( self.hud.leftButton.action == "mine" ) then
-		self.hud.leftButton.bitmap:setTexture( self.textures.hud_pick )
-		self.hud.leftButton.bitmap:setAlpha( 1 )
-	elseif ( self.hud.leftButton.action == "attack" ) then
-		self.hud.leftButton.bitmap:setTexture( self.textures.hud_sword )
-		self.hud.leftButton.bitmap:setAlpha( 1 )
-	else -- none
-		self.hud.leftButton.bitmap:setAlpha( 0 )
-	end
-	
-	-- Right	
-	if ( self.hud.rightButton.action == "move" ) then
-		self.hud.rightButton.bitmap:setTexture( self.textures.hud_right )
-		self.hud.rightButton.bitmap:setAlpha( 1 )
-	elseif ( self.hud.rightButton.action == "mine" ) then
-		self.hud.rightButton.bitmap:setTexture( self.textures.hud_pick )
-		self.hud.rightButton.bitmap:setAlpha( 1 )
-	elseif ( self.hud.rightButton.action == "attack" ) then
-		self.hud.rightButton.bitmap:setTexture( self.textures.hud_sword )
-		self.hud.rightButton.bitmap:setAlpha( 1 )
-	else -- none
-		self.hud.rightButton.bitmap:setAlpha( 0 )
-	end
-
 end
 
 function GameMinerState:Cleanup()
@@ -171,18 +140,22 @@ end
 
 function GameMinerState:Handle_MouseDown( event )
 	-- Hud buttons could be to move or mine or attack
-	if ( self.hud.topButton.bitmap:hitTestPoint( event.x, event.y ) ) then
-		self.map.player:Move( "north", self.map.tileWidth )
 	
-	elseif ( self.hud.bottomButton.bitmap:hitTestPoint( event.x, event.y ) ) then
-		self.map.player:Move( "south", self.map.tileWidth )
-	
-	elseif ( self.hud.leftButton.bitmap:hitTestPoint( event.x, event.y ) ) then
-		self.map.player:Move( "west", self.map.tileWidth )
-	
-	elseif ( self.hud.rightButton.bitmap:hitTestPoint( event.x, event.y ) ) then
-		self.map.player:Move( "east", self.map.tileWidth )
-	
+	for key, button in pairs( self.hud ) do
+		if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
+			if ( button.action == "move" ) then
+				self.map.player:Move( button.direction, self.map.tileWidth )
+			
+			elseif ( button.action == "mine" ) then
+				self.map:UsePick( button.direction )
+				self.sounds.mining:play()
+			
+			elseif ( button.action == "attack" ) then
+				self.map:UseSword( button.direction )
+				self.sounds.sword:play()
+			
+			end
+		end
 	end
 	
 	self:SetupHud()

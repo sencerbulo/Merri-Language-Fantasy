@@ -269,7 +269,6 @@ function MinerMap:GetHudActions()
 	return top, bottom, left, right
 end
 
-
 function MinerMap:Draw()
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
@@ -279,6 +278,14 @@ function MinerMap:Draw()
 	end
 	
 	self.player:Draw()
+end
+
+function MinerMap:UseSword( direction )
+
+end
+
+function MinerMap:UsePick( direction ) 
+
 end
 
 function MinerMap:Handle_EnterFrame()
