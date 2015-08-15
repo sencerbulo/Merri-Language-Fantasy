@@ -6,13 +6,13 @@
   <folder name="Games">
    <folder name="Miner">
     <folder name="UI">
+     <file source="Content/Games/Miner/UI/hud_down.png"/>
+     <file source="Content/Games/Miner/UI/hud_left.png"/>
+     <file source="Content/Games/Miner/UI/hud_pick.png"/>
+     <file source="Content/Games/Miner/UI/hud_right.png"/>
+     <file source="Content/Games/Miner/UI/hud_sword.png"/>
+     <file source="Content/Games/Miner/UI/hud_up.png"/>
      <file source="Content/Games/Miner/UI/miner_background.png"/>
-     <file source="Content/Games/Miner/UI/btn_up.png"/>
-     <file source="Content/Games/Miner/UI/btn_sword.png"/>
-     <file source="Content/Games/Miner/UI/btn_right.png"/>
-     <file source="Content/Games/Miner/UI/btn_pick.png"/>
-     <file source="Content/Games/Miner/UI/btn_left.png"/>
-     <file source="Content/Games/Miner/UI/btn_down.png"/>
     </folder>
     <folder name="Tiles">
      <file source="Content/Games/Miner/Tiles/silver_coin.png"/>
@@ -124,6 +124,8 @@
  <folder name="Merri">
   <folder name="Games">
    <folder name="Miner">
+    <file source="Merri/Games/Miner/MinerPlayer.lua"/>
+    <file source="Merri/Games/Miner/MinerMap.lua"/>
     <file source="Merri/Games/Miner/Game_Miner.lua"/>
    </folder>
   </folder>
