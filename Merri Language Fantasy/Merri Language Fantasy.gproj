@@ -32,8 +32,17 @@
      <file source="Content/Games/Miner/Tiles/copper_coin.png"/>
     </folder>
     <folder name="Characters">
-     <file source="Content/Games/Miner/Characters/enemy_snail.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_moose.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_rabbit.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_bat.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_demon.png"/>
      <file source="Content/Games/Miner/Characters/enemy_mole.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_mole.xcf"/>
+     <file source="Content/Games/Miner/Characters/enemy_mushroom.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_skeleton.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_snail.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_snail.xcf"/>
+     <file source="Content/Games/Miner/Characters/enemy_snake.png"/>
      <file source="Content/Games/Miner/Characters/miner_down.png"/>
      <file source="Content/Games/Miner/Characters/miner_down2.png"/>
      <file source="Content/Games/Miner/Characters/miner_left.png"/>

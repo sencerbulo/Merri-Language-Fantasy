@@ -10,6 +10,16 @@ function Map:init( options )
 			ceiling = Texture.new( "Content/Games/Miner/Tiles/ground_darkstone.png" ),
 			
 			rock = Texture.new( "Content/Games/Miner/Tiles/rock.png" ),
+			ladder = Texture.new( "Content/Games/Miner/Tiles/ladder_down.png" ),
+			mushroom = Texture.new( "Content/Games/Miner/Characters/enemy_mushroom.png" ),
+			bat = Texture.new( "Content/Games/Miner/Characters/enemy_bat.png" ),
+			snail = Texture.new( "Content/Games/Miner/Characters/enemy_snail.png" ),
+			rabbit = Texture.new( "Content/Games/Miner/Characters/enemy_rabbit.png" ),
+			snake = Texture.new( "Content/Games/Miner/Characters/enemy_snake.png" ),
+			mole = Texture.new( "Content/Games/Miner/Characters/enemy_mole.png" ),
+			skeleton = Texture.new( "Content/Games/Miner/Characters/enemy_skeleton.png" ),
+			moose = Texture.new( "Content/Games/Miner/Characters/enemy_moose.png" ),
+			
 			gemA = Texture.new( "Content/Games/Miner/Tiles/gemA.png" ),
 			gemB = Texture.new( "Content/Games/Miner/Tiles/gemB.png" ),
 			gemC = Texture.new( "Content/Games/Miner/Tiles/gemC.png" ),
@@ -18,9 +28,6 @@ function Map:init( options )
 			coinB = Texture.new( "Content/Games/Miner/Tiles/silver_coin.png" ),
 			coinC = Texture.new( "Content/Games/Miner/Tiles/gold_coin.png" ),
 			sandwich = Texture.new( "Content/Games/Miner/Tiles/sandwich.png" ),
-			ladder = Texture.new( "Content/Games/Miner/Tiles/ladder_down.png" ),
-			snail = Texture.new( "Content/Games/Miner/Characters/enemy_snail.png" ),
-			mole = Texture.new( "Content/Games/Miner/Characters/enemy_mole.png" ),
 		}
 		
 	self.tileWidth = self.textures.ground:getWidth()
@@ -53,8 +60,11 @@ function Map:Generate()
 	
 	local startX = 0
 	local startY = math.random( 0, self.mapHeight )
+	self.tiles[startX][startY].objectType = "player"
+	
 	local endX = self.mapWidth - 1
 	local endY = math.random( 0, self.mapHeight )
+	self.tiles[endX][endY].objectType = "ladder"
 	
 	-- Traverse Map
 	local x = startX
@@ -110,11 +120,59 @@ function Map:Generate()
 		end
 	end
 	
-	-- Add items
+	local enemyCount = math.floor( self.floor / 4 ) + 1
+	local rockCount = math.floor( self.floor / 2 ) + 1
+	
+	print( "Enemies: ", enemyCount )
+	for e = 0, enemyCount do
+		local x, y		
+		local isValidPlace = false
+		
+		while ( isValidPlace == false ) do
+			x = math.random( 0, self.mapWidth )
+			y = math.random( 0, self.mapHeight )
+			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].objectType == nil )
+		end
+		
+		local enemyType = math.random( 1, 2 )
+		if ( enemyType == 1 and self.floor > 0 and self.floor <= 4 ) then
+			self.tiles[x][y].objectType = "mushroom"
+		elseif ( enemyType == 1 and self.floor > 4 and self.floor <= 8 ) then
+			self.tiles[x][y].objectType = "bat"
+		elseif ( enemyType == 1 and self.floor > 8 and self.floor <= 12 ) then
+			self.tiles[x][y].objectType = "snail"
+		elseif ( enemyType == 1 and self.floor > 12 and self.floor <= 16 ) then
+			self.tiles[x][y].objectType = "rabbit"
+		elseif ( enemyType == 2 and self.floor > 2 and self.floor <= 6 ) then
+			self.tiles[x][y].objectType = "snake"
+		elseif ( enemyType == 2 and self.floor > 6 and self.floor <= 10 ) then
+			self.tiles[x][y].objectType = "mole"
+		elseif ( enemyType == 2 and self.floor > 10 and self.floor <= 14 ) then
+			self.tiles[x][y].objectType = "skeleton"
+		elseif ( enemyType == 2 and self.floor > 14 and self.floor <= 20 ) then
+			self.tiles[x][y].objectType = "moose"
+		end
+	end
+	
+	for r = 0, rockCount do
+		local x, y		
+		local isValidPlace = false
+		
+		while ( isValidPlace == false ) do
+			x = math.random( 0, self.mapWidth )
+			y = math.random( 0, self.mapHeight )
+			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].objectType == nil )
+		end
+		
+		self.tiles[x][y].objectType = "rock"
+	end	
+	
+	-- Set up Object bitmaps
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
-			if ( self.tiles[x][y].type == "ground" ) then
-			
+			if ( self.tiles[x][y].objectType ~= "player" and self.tiles[x][y].objectType ~= nil ) then
+				self.tiles[x][y].object = Bitmap.new( self.textures[self.tiles[x][y].objectType] )
+				self.tiles[x][y].object:setPosition( x * self.tileWidth, y * self.tileWidth )
 			end
 		end
 	end
@@ -124,7 +182,8 @@ end
 function Map:Draw()
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
-			stage:addChild( self.tiles[x][y].bitmap )			
+			stage:addChild( self.tiles[x][y].bitmap )	
+			if ( self.tiles[x][y].object ~= nil ) then stage:addChild( self.tiles[x][y].object ) end
 		end
 	end
 end
