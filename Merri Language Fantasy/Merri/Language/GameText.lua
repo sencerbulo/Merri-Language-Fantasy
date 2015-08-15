@@ -176,10 +176,10 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ido[ "Rock" ] 				= "Roko"
 	GameText.TargetText.Spanish[ "Rock" ] 		= "Piedra"
 	
-	GameText.TargetText.English[ "Sandwich" ] 		= "Sandwich"
-	GameText.TargetText.Esperanto[ "Sandwich" ] 	= "Sandviĉo"
-	GameText.TargetText.Ido[ "Sandwich" ] 				= "Sandwich"
-	GameText.TargetText.Spanish[ "Sandwich" ] 		= "Piedra"
+	GameText.TargetText.English[ "sandwich" ] 		= "Sandwich"
+	GameText.TargetText.Esperanto[ "sandwich" ] 	= "Sandviĉo"
+	GameText.TargetText.Ido[ "sandwich" ] 				= "Sandwich"
+	GameText.TargetText.Spanish[ "sandwich" ] 		= "Piedra"
 	
 	GameText.TargetText.English[ "gemA" ] 		= "Aquamarine"
 	GameText.TargetText.Esperanto[ "gemA" ] 	= "Akvamarino"

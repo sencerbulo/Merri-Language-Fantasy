@@ -1,8 +1,50 @@
 <project>
- <properties orientation="0" scaleMode="5" windowWidth="0" win_domain="giderosmobile.com" touchToMouse="1" iosDevice="0" retinaDisplay="0" mouseToTouch="1" encryptCode="0" mouseTouchOrder="0" assetsOnly="0" win_org="GiderosMobile" fps="60" encryptAssets="0" windowHeight="0" packageName="com.yourdomain.yourapp" architecture="2" osx_org="GiderosMobile" autorotation="0" logicalWidth="360" osx_domain="giderosmobile.com" logicalHeight="640">
+ <properties orientation="0" osx_org="GiderosMobile" architecture="2" scaleMode="5" assetsOnly="0" packageName="com.yourdomain.yourapp" logicalHeight="640" windowHeight="0" touchToMouse="1" win_org="Moosader" fps="60" autorotation="0" osx_domain="giderosmobile.com" encryptAssets="0" logicalWidth="360" win_domain="moosader.com" encryptCode="0" retinaDisplay="0" mouseToTouch="1" iosDevice="0" windowWidth="0" mouseTouchOrder="0">
   <imageScales/>
  </properties>
  <folder name="Content">
+  <folder name="Games">
+   <folder name="Miner">
+    <folder name="UI">
+     <file source="Content/Games/Miner/UI/miner_background.png"/>
+     <file source="Content/Games/Miner/UI/btn_up.png"/>
+     <file source="Content/Games/Miner/UI/btn_sword.png"/>
+     <file source="Content/Games/Miner/UI/btn_right.png"/>
+     <file source="Content/Games/Miner/UI/btn_pick.png"/>
+     <file source="Content/Games/Miner/UI/btn_left.png"/>
+     <file source="Content/Games/Miner/UI/btn_down.png"/>
+    </folder>
+    <folder name="Tiles">
+     <file source="Content/Games/Miner/Tiles/silver_coin.png"/>
+     <file source="Content/Games/Miner/Tiles/sandwich.png"/>
+     <file source="Content/Games/Miner/Tiles/rock.png"/>
+     <file source="Content/Games/Miner/Tiles/ladder_down.png"/>
+     <file source="Content/Games/Miner/Tiles/items.xcf"/>
+     <file source="Content/Games/Miner/Tiles/ground_dirt2.png"/>
+     <file source="Content/Games/Miner/Tiles/ground_dirt.png"/>
+     <file source="Content/Games/Miner/Tiles/ground_darkstone.png"/>
+     <file source="Content/Games/Miner/Tiles/ground_cobblestone.png"/>
+     <file source="Content/Games/Miner/Tiles/gold_coin.png"/>
+     <file source="Content/Games/Miner/Tiles/gemD.png"/>
+     <file source="Content/Games/Miner/Tiles/gemC.png"/>
+     <file source="Content/Games/Miner/Tiles/gemB.png"/>
+     <file source="Content/Games/Miner/Tiles/gemA.png"/>
+     <file source="Content/Games/Miner/Tiles/copper_coin.png"/>
+    </folder>
+    <folder name="Characters">
+     <file source="Content/Games/Miner/Characters/enemy_snail.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_mole.png"/>
+     <file source="Content/Games/Miner/Characters/miner_down.png"/>
+     <file source="Content/Games/Miner/Characters/miner_down2.png"/>
+     <file source="Content/Games/Miner/Characters/miner_left.png"/>
+     <file source="Content/Games/Miner/Characters/miner_left2.png"/>
+     <file source="Content/Games/Miner/Characters/miner_right.png"/>
+     <file source="Content/Games/Miner/Characters/miner_right2.png"/>
+     <file source="Content/Games/Miner/Characters/miner_up.png"/>
+     <file source="Content/Games/Miner/Characters/miner_up2.png"/>
+    </folder>
+   </folder>
+  </folder>
   <folder name="Audio">
    <file source="Content/Audio/sword.wav"/>
    <file source="Content/Audio/hurt.wav"/>
@@ -45,50 +87,46 @@
     <file source="Content/Graphics/Tiles/copper_coin.png"/>
    </folder>
    <folder name="UI">
-    <file source="Content/Graphics/UI/heart.png"/>
-    <file source="Content/Graphics/UI/btn_sword.png"/>
-    <file source="Content/Graphics/UI/btn_pick.png"/>
+    <file source="Content/Graphics/UI/btn_menu.png"/>
     <file source="Content/Graphics/UI/widebtnbg.png"/>
     <file source="Content/Graphics/UI/title_text.png"/>
-    <file source="Content/Graphics/UI/miner_background.png"/>
     <file source="Content/Graphics/UI/generalbgtile.png"/>
     <file source="Content/Graphics/UI/generalbg.png"/>
-    <file source="Content/Graphics/UI/dnk-half.png"/>
     <file source="Content/Graphics/UI/difficulty_practice.png"/>
     <file source="Content/Graphics/UI/difficulty_medium.png"/>
     <file source="Content/Graphics/UI/difficulty_hard.png"/>
     <file source="Content/Graphics/UI/difficulty_easy.png"/>
-    <file source="Content/Graphics/UI/btn_up.png"/>
     <file source="Content/Graphics/UI/btn_stats.png"/>
-    <file source="Content/Graphics/UI/btn_right.png"/>
     <file source="Content/Graphics/UI/btn_play.png"/>
     <file source="Content/Graphics/UI/btn_options.png"/>
-    <file source="Content/Graphics/UI/btn_left.png"/>
     <file source="Content/Graphics/UI/btn_help.png"/>
-    <file source="Content/Graphics/UI/btn_down.png"/>
     <file source="Content/Graphics/UI/btn_back.png"/>
     <file source="Content/Graphics/UI/blank_background.png"/>
     <file source="Content/Graphics/UI/bg_titlescene.png"/>
    </folder>
   </folder>
  </folder>
+ <folder name="Engine">
+  <folder name="States">
+   <file source="Engine/States/StateManager.lua"/>
+   <file source="Engine/States/StateBase.lua"/>
+  </folder>
+ </folder>
  <folder name="Merri">
+  <folder name="Games">
+   <folder name="Miner">
+    <file source="Merri/Games/Miner/Game_Miner.lua"/>
+   </folder>
+  </folder>
   <folder name="Language">
    <file source="Merri/Language/GameText.lua"/>
   </folder>
   <folder name="States">
-   <file source="Merri/States/Game_Miner.lua"/>
    <file source="Merri/States/DifficultySelectState.lua"/>
    <file source="Merri/States/LanguageSelectState.lua"/>
    <file source="Merri/States/TitleState.lua"/>
   </folder>
   <file source="Merri/main.lua"/>
   <file source="Merri/config.lua"/>
- </folder>
- <folder name="Engine">
-  <folder name="States">
-   <file source="Engine/States/StateManager.lua"/>
-   <file source="Engine/States/StateBase.lua"/>
-  </folder>
  </folder>
 </project>

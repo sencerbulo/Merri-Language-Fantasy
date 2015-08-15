@@ -7,6 +7,10 @@ stateManager:AddState( "GameMinerState", GameMinerState.new() )
 
 GameText:Setup()
 
+-- DEMO MODE
+GLOBAL_CONFIG.HELPER_LANGUAGE = "English"
+GLOBAL_CONFIG.TARGET_LANGUAGE = "Esperanto"
+
 LOAD_CONFIG()
 
 if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
