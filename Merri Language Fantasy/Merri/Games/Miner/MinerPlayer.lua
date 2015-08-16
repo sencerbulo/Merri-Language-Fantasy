@@ -18,10 +18,20 @@ function MinerPlayer:init( options )
 	
 	self.label = TextField.new( GameMinerState.fonts.overhead, GameText:Get( "target", "Miner" ) )
 	self.label:setTextColor( 0xFFFFFF )
+	
+	self.hp = 50
+	self.maxHp = 50
+	self.exp = 0
+	self.level = 1
 end
 
 function MinerPlayer:Face( direction )
 	self.direction = direction
+end
+
+function MinerPlayer:AddHealth( amount )
+	self.hp = self.hp + amount
+	if ( self.hp > self.maxHp ) then		self.hp = self.maxHp 	end
 end
 
 function MinerPlayer:Move( direction, amount )

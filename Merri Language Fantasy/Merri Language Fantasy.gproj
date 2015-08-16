@@ -15,7 +15,14 @@
      <file source="Content/Games/Miner/UI/miner_background.png"/>
     </folder>
     <folder name="Tiles">
-     <file source="Content/Games/Miner/Tiles/silver_coin.png"/>
+     <file source="Content/Games/Miner/Tiles/treasure_silver.png"/>
+     <file source="Content/Games/Miner/Tiles/treasure_sapphire.png"/>
+     <file source="Content/Games/Miner/Tiles/treasure_ruby.png"/>
+     <file source="Content/Games/Miner/Tiles/treasure_gold.png"/>
+     <file source="Content/Games/Miner/Tiles/treasure_emerald.png"/>
+     <file source="Content/Games/Miner/Tiles/treasure_diamond.png"/>
+     <file source="Content/Games/Miner/Tiles/treasure_copper.png"/>
+     <file source="Content/Games/Miner/Tiles/treasure_amethyst.png"/>
      <file source="Content/Games/Miner/Tiles/sandwich.png"/>
      <file source="Content/Games/Miner/Tiles/rock.png"/>
      <file source="Content/Games/Miner/Tiles/ladder_down.png"/>
@@ -24,12 +31,6 @@
      <file source="Content/Games/Miner/Tiles/ground_dirt.png"/>
      <file source="Content/Games/Miner/Tiles/ground_darkstone.png"/>
      <file source="Content/Games/Miner/Tiles/ground_cobblestone.png"/>
-     <file source="Content/Games/Miner/Tiles/gold_coin.png"/>
-     <file source="Content/Games/Miner/Tiles/gemD.png"/>
-     <file source="Content/Games/Miner/Tiles/gemC.png"/>
-     <file source="Content/Games/Miner/Tiles/gemB.png"/>
-     <file source="Content/Games/Miner/Tiles/gemA.png"/>
-     <file source="Content/Games/Miner/Tiles/copper_coin.png"/>
     </folder>
     <folder name="Characters">
      <file source="Content/Games/Miner/Characters/enemy_moose.png"/>

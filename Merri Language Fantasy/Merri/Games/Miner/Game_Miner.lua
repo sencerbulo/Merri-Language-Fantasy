@@ -80,8 +80,9 @@ function GameMinerState:Setup( options )
 		},
 	}
 	
-	self:SetupHud()
+	self.points = 0
 	
+	self:SetupHud()	
 	self:Draw()
 end
 
@@ -141,10 +142,12 @@ end
 function GameMinerState:Handle_MouseDown( event )
 	-- Hud buttons could be to move or mine or attack
 	
+	local points = 0
+	local itemType = ""
 	for key, button in pairs( self.hud ) do
 		if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
 			if ( button.action == "move" ) then
-				self.map.player:Move( button.direction, self.map.tileWidth )
+				points, itemType = self.map:MovePlayer( button.direction, self.map.tileWidth )
 			
 			elseif ( button.action == "mine" ) then
 				self.map:UsePick( button.direction )
@@ -156,6 +159,20 @@ function GameMinerState:Handle_MouseDown( event )
 			
 			end
 		end
+	end
+	
+	self.points = self.points + points
+	print( self.points )
+	if ( points > 0 ) then
+		self.sounds.collect:play()
+	elseif ( itemType == "sandwich" ) then
+		-- eat sound effect
+	elseif ( itemType == "ladder" ) then
+		self.sounds.footsteps:play()
+		self.fadeCounter = 100
+		self.transition = true
+		stage:addChild( self.fadeBitmap )
+		self.fadeBitmap:setAlpha( 0 )
 	end
 	
 	self:SetupHud()
@@ -172,6 +189,30 @@ function GameMinerState:GetDistance( x1, y1, x2, y2 )
 end
 
 function GameMinerState:Handle_EnterFrame( event )
+	if ( self.transition ) then
+		self.fadeCounter = self.fadeCounter - 1
+		
+		-- Fade out
+		if ( self.fadeCounter > 50 ) then
+			self.fadeBitmap:setAlpha( self.fadeBitmap:getAlpha() + 0.05 )
+		
+		-- Change
+		elseif ( self.fadeCounter == 50 ) then
+			self.map:GoDownstairs()
+		
+		-- Fade in
+		elseif ( self.fadeCounter > 0 ) then
+			self.fadeBitmap:setAlpha( self.fadeBitmap:getAlpha() - 0.05 )
+		
+		-- Done
+		else
+			self.transition = false
+			stage:removeChild( self.fadeBitmap )
+			self:SetupHud()
+		
+		end	
+	end
+
 	self.map:Handle_EnterFrame( frame )
 end
 
