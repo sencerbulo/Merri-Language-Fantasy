@@ -36,10 +36,11 @@ end
 
 function MinerPlayer:Move( direction, amount )
 	local x, y = self:getPosition()
+	self:Face( direction )
 	
 	if ( direction == "south" ) then 		y = y + self.moveAmount		end
 	if ( direction == "north" ) then 		y = y - self.moveAmount		end
-	if ( direction == "east" ) then 			x = x + self.moveAmount		end
+	if ( direction == "east" ) then 		x = x + self.moveAmount		end
 	if ( direction == "west" ) then 		x = x - self.moveAmount		end
 	
 	self:setPosition( x, y )

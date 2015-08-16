@@ -34,7 +34,7 @@ function GameMinerState:Setup( options )
 	}
 	
 	GameMinerState.fonts = {
-		overhead = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 9 ),
+		overhead = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 8 ),
 		hud = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 14 ),
 	}
 	
@@ -43,6 +43,11 @@ function GameMinerState:Setup( options )
 	self.transition = false
 	self.fadeBitmap = Bitmap.new( self.textures.black )
 	self.fadeBitmap:setAlpha( 0 )
+	
+	-- Narrative Line
+	self.narrationLabel = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "miner-begin" ) )
+	self.narrationLabel:setTextColor( 0xFFFFFF )
+	self.narrationLabel:setPosition( 10, 560 )
 	
 	-- Set up map
 	self.map = MinerMap.new()
@@ -128,6 +133,10 @@ function GameMinerState:Draw()
 	if ( stage:contains( self.fadeBitmap ) ) then
 		stage:addChild( self.fadeBitmap )
 	end
+	
+	stage:addChild( self.narrationLabel )
+	
+	self.map:UpdateLighting()
 end
 
 function GameMinerState:SetupMap()
@@ -146,29 +155,36 @@ function GameMinerState:InputAction( action, direction )
 	
 	if ( action == "move" ) then
 		points, itemType = self.map:MovePlayer( direction, self.map.tileWidth )
+		self.narrationLabel:setText( GameText:Get( "target", "miner-move-" .. direction ) )
 	
 	elseif ( action == "mine" ) then
 		self.map:UsePick( direction )
 		self.sounds.mining:play()
+		self.narrationLabel:setText( GameText:Get( "target", "miner-mine" ) )
 	
 	elseif ( action == "attack" ) then
-		self.map:UseSword( direction )
+		local attacked = self.map:UseSword( direction )
 		self.sounds.sword:play()
+		self.narrationLabel:setText( GameText:Get( "target", "miner-attack-" .. attacked ) )
 		
 	end
 	
 	self.points = self.points + points
-	print( self.points )
 	if ( points > 0 ) then
 		self.sounds.collect:play()
+		self.narrationLabel:setText( GameText:Get( "target", "miner-collect-" .. itemType ) )
+		
 	elseif ( itemType == "sandwich" ) then
 		-- eat sound effect
+		self.narrationLabel:setText( GameText:Get( "target", "miner-eat-sandwich" ) )
+		
 	elseif ( itemType == "ladder" ) then
 		self.sounds.footsteps:play()
 		self.fadeCounter = 100
 		self.transition = true
 		stage:addChild( self.fadeBitmap )
 		self.fadeBitmap:setAlpha( 0 )
+		self.narrationLabel:setText( GameText:Get( "target", "miner-go-down-ladder" ) )
 	end
 	
 	self:SetupHud()
@@ -209,12 +225,6 @@ end
 
 function GameMinerState:TurnBasedUpdate()
 
-end
-
-function GameMinerState:GetDistance( x1, y1, x2, y2 )
-	local xd = x1 - x2
-	local yd = y1 - y2
-	return math.sqrt( xd * xd + yd * yd )
 end
 
 function GameMinerState:Handle_EnterFrame( event )

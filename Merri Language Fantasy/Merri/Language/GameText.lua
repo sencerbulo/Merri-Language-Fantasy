@@ -190,6 +190,11 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ido[ "rock" ] 				= "Roko"
 	GameText.TargetText.Spanish[ "rock" ] 		= "Piedra"
 	
+	GameText.TargetText.English[ "star" ] 		= "Star"
+	GameText.TargetText.Esperanto[ "star" ] 	= "Stelo"
+	GameText.TargetText.Ido[ "star" ] 				= "Roko"
+	GameText.TargetText.Spanish[ "star" ] 		= "Piedra"
+	
 	GameText.TargetText.English[ "sandwich" ] 		= "Sandwich"
 	GameText.TargetText.Esperanto[ "sandwich" ] 	= "Sandviĉo"
 	GameText.TargetText.Ido[ "sandwich" ] 				= "Sandwich"
@@ -249,6 +254,129 @@ function GameText:SetupLanguages()
 	GameText.HelperText.Esperanto[ "Game Over" ] 	= "Ludfino"
 	GameText.HelperText.Ido[ "Game Over" ] 				= "Ora"
 	GameText.HelperText.Spanish[ "Game Over " ] 		= "Ora"
+	
+	GameText.TargetText.English[ "miner-begin" ] 		= "Mine for treasure and stay alive!"
+	GameText.TargetText.Esperanto[ "miner-begin" ] 	= "Minu trezoron kaj daŭru vivi!"
+	GameText.TargetText.Ido[ "miner-begin" ] 				= "Ora"
+	GameText.TargetText.Spanish[ "miner-begin " ] 	= "Ora"
+	
+	GameText.TargetText.English[ "miner-move-north" ] 		= "You walk north."
+	GameText.TargetText.Esperanto[ "miner-move-north" ] 	= "Vi marŝas norden."
+	GameText.TargetText.Ido[ "miner-move-north" ] 				= "Ora"
+	GameText.TargetText.Spanish[ "miner-move-north" ] 		= "Ora"
+	
+	GameText.TargetText.English[ "miner-move-south" ] 		= "You walk south."
+	GameText.TargetText.Esperanto[ "miner-move-south" ] 	= "Vi marŝas suden."
+	GameText.TargetText.Ido[ "miner-move-south" ] 				= "Ora"
+	GameText.TargetText.Spanish[ "miner-move-south" ] 	= "Ora"
+	
+	GameText.TargetText.English[ "miner-move-east" ] 		= "You walk east."
+	GameText.TargetText.Esperanto[ "miner-move-east" ] 	= "Vi marŝas orienten."
+	GameText.TargetText.Ido[ "miner-move-east" ] 				= "Ora"
+	GameText.TargetText.Spanish[ "miner-move-east" ] 	= "Ora"
+	
+	GameText.TargetText.English[ "miner-move-west" ] 		= "You walk west."
+	GameText.TargetText.Esperanto[ "miner-move-west" ] 	= "Vi marŝas okcidenten."
+	GameText.TargetText.Ido[ "miner-move-west" ] 				= "Ora"
+	GameText.TargetText.Spanish[ "miner-move-west" ] 	= "Ora"
+	
+	GameText.TargetText.English[ "miner-mine" ] 		= "You swing your pick."
+	GameText.TargetText.Esperanto[ "miner-mine" ] 	= "Vi svingas vian pioĉo."
+	GameText.TargetText.Ido[ "miner-mine" ] 				= "asdf"
+	GameText.TargetText.Spanish[ "miner-mine" ] 	= "asdf"
+	
+	GameText.TargetText.English[ "miner-eat-sandwich" ] 		= "You eat the cave sandwich."
+	GameText.TargetText.Esperanto[ "miner-eat-sandwich" ] 	= "Vi manĝas la kavernan sandviĉon."
+	GameText.TargetText.Ido[ "miner-eat-sandwich" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-eat-sandwich" ] 	= "asdf."
+	
+	-- collects
+	GameText.TargetText.English[ "miner-collect-copper" ] 		= "You pick up copper."
+	GameText.TargetText.Esperanto[ "miner-collect-copper" ] 	= "Vi kolektas kupron."
+	GameText.TargetText.Ido[ "miner-collect-copper" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-collect-copper" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-collect-silver" ] 		= "You pick up silver."
+	GameText.TargetText.Esperanto[ "miner-collect-silver" ] 	= "Vi kolektas arĝenton."
+	GameText.TargetText.Ido[ "miner-collect-silver" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-collect-silver" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-collect-gold" ] 		= "You pick up gold."
+	GameText.TargetText.Esperanto[ "miner-collect-gold" ] 	= "Vi kolektas oron."
+	GameText.TargetText.Ido[ "miner-collect-gold" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-collect-gold" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-collect-amethyst" ] 		= "You pick up amethyst."
+	GameText.TargetText.Esperanto[ "miner-collect-amethyst" ] 	= "Vi kolektas oron."
+	GameText.TargetText.Ido[ "miner-collect-amethyst" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-collect-amethyst" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-collect-sapphire" ] 		= "You pick up sapphire."
+	GameText.TargetText.Esperanto[ "miner-collect-sapphire" ] 	= "Vi kolektas oron."
+	GameText.TargetText.Ido[ "miner-collect-sapphire" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-collect-sapphire" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-collect-diamond" ] 		= "You pick up diamond."
+	GameText.TargetText.Esperanto[ "miner-collect-diamond" ] 	= "Vi kolektas oron."
+	GameText.TargetText.Ido[ "miner-collect-diamond" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-collect-diamond" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-collect-emerald" ] 		= "You pick up emerald."
+	GameText.TargetText.Esperanto[ "miner-collect-emerald" ] 	= "Vi kolektas oron."
+	GameText.TargetText.Ido[ "miner-collect-emerald" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-collect-emerald" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-collect-ruby" ] 		= "You pick up ruby."
+	GameText.TargetText.Esperanto[ "miner-collect-ruby" ] 	= "Vi kolektas oron."
+	GameText.TargetText.Ido[ "miner-collect-ruby" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-collect-ruby" ] 	= "asdf."
+	
+	-- attacking
+	GameText.TargetText.English[ "miner-attack-snail" ] 		= "You attack the snail."
+	GameText.TargetText.Esperanto[ "miner-attack-snail" ] 	= "Vi atakas la helikon."
+	GameText.TargetText.Ido[ "miner-attack-snail" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-snail" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-attack-mole" ] 		= "You attack the mole."
+	GameText.TargetText.Esperanto[ "miner-attack-mole" ] 	= "Vi atakas la talpon."
+	GameText.TargetText.Ido[ "miner-attack-mole" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-mole" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-attack-mushroom" ] 		= "You attack the mushroom."
+	GameText.TargetText.Esperanto[ "miner-attack-mushroom" ] 	= "Vi atakas la fungon."
+	GameText.TargetText.Ido[ "miner-attack-mushroom" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-mushroom" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-attack-bat" ] 		= "You attack the bat."
+	GameText.TargetText.Esperanto[ "miner-attack-bat" ] 	= "Vi atakas la vesperton."
+	GameText.TargetText.Ido[ "miner-attack-bat" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-bat" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-attack-rabbit" ] 		= "You attack the rabbit."
+	GameText.TargetText.Esperanto[ "miner-attack-rabbit" ] 	= "Vi atakas la kuniklon."
+	GameText.TargetText.Ido[ "miner-attack-rabbit" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-rabbit" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-attack-snake" ] 		= "You attack the snake."
+	GameText.TargetText.Esperanto[ "miner-attack-snake" ] 	= "Vi atakas la serpenton."
+	GameText.TargetText.Ido[ "miner-attack-snake" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-snake" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-attack-moose" ] 		= "You attack the moose."
+	GameText.TargetText.Esperanto[ "miner-attack-moose" ] 	= "Vi atakas la alkon."
+	GameText.TargetText.Ido[ "miner-attack-moose" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-moose" ] 	= "asdf."
+	
+	GameText.TargetText.English[ "miner-attack-skeleton" ] 		= "You attack the skeleton."
+	GameText.TargetText.Esperanto[ "miner-attack-skeleton" ] 	= "Vi atakas la skeleton."
+	GameText.TargetText.Ido[ "miner-attack-skeleton" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-skeleton" ] 	= "asdf."
+	
+	-- ladder
+	GameText.TargetText.English[ "miner-go-down-ladder" ] 			= "You descend the ladder."
+	GameText.TargetText.Esperanto[ "miner-go-down-ladder" ] 	= "Vi malsupreniras per la ŝtupetaro.."
+	GameText.TargetText.Ido[ "miner-go-down-ladder" ] 				= "asdf."
+	GameText.TargetText.Spanish[ "miner-go-down-ladder" ] 		= "asdf."
 	
 end
 

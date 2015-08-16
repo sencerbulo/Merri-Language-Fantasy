@@ -290,6 +290,7 @@ function MinerMap:GetTileCoordsInDirection( origX, origY, direction )
 end
 
 function MinerMap:UseSword( direction )
+	self.player:Face( direction )
 	local playerX, playerY = self.player:getPosition()
 	local tileX, tileY = self:GetTileCoordsInDirection( playerX, playerY, direction )
 	
@@ -298,9 +299,12 @@ function MinerMap:UseSword( direction )
 	self.tiles[tileX][tileY].object:setRotation( 180 )
 	self.tiles[tileX][tileY].object:setPosition( x + self.tileWidth, y + self.tileWidth )
 	self.tiles[tileX][tileY].dead = true
+	
+	return self.tiles[tileX][tileY].objectType
 end
 
 function MinerMap:UsePick( direction ) 
+	self.player:Face( direction )
 	local playerX, playerY = self.player:getPosition()
 	local x, y = self:GetTileCoordsInDirection( playerX, playerY, direction )
 	
@@ -340,6 +344,8 @@ function MinerMap:MovePlayer( direction, amount )
 	x = x / self.tileWidth
 	y = y / self.tileWidth
 	
+	local objectType = self.tiles[x][y].objectType
+	
 	local points = 0
 	if 		( self.tiles[x][y].objectType == "copper" ) then
 		points = 5
@@ -362,9 +368,38 @@ function MinerMap:MovePlayer( direction, amount )
 	if ( points > 0 or self.tiles[x][y].objectType == "sandwich" ) then
 		self.tiles[x][y].objectType = "none"
 		stage:removeChild( self.tiles[x][y].object )
+		stage:removeChild( self.tiles[x][y].label )
 	end
 	
-	return points, self.tiles[x][y].objectType
+	self:UpdateLighting()
+	return points, objectType
+end
+
+function MinerMap:UpdateLighting()
+	local playerX, playerY = self.player:getPosition()
+	
+	for y = 0, self.mapHeight do
+		for x = 0, self.mapWidth do
+			local tileX, tileY = self.tiles[x][y].bitmap:getPosition()
+			local distance = math.floor( self:GetDistance( tileX, tileY, playerX, playerY ) / 36 )
+			
+			local r = 1 - ( 0.25 * ( distance - 1 ) )
+			local g = 1 - ( 0.25 * ( distance - 1 ) )
+			local b = 1 - ( 0.25 * ( distance - 1 ) )
+			local a = 1
+			
+			self.tiles[x][y].bitmap:setColorTransform( r, g, b, a )
+			if ( self.tiles[x][y].label ~= nil ) then 		self.tiles[x][y].label:setColorTransform( r, g, b, a ) 			end
+			if ( self.tiles[x][y].object ~= nil ) then 		self.tiles[x][y].object:setColorTransform( r, g, b, a ) 		end
+			
+		end
+	end
+end
+
+function MinerMap:GetDistance( x1, y1, x2, y2 )
+	local xd = x1 - x2
+	local yd = y1 - y2
+	return math.sqrt( xd * xd + yd * yd )
 end
 
 function MinerMap:Handle_EnterFrame()
