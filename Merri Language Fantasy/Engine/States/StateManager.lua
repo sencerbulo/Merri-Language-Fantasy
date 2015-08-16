@@ -26,6 +26,11 @@ function StateManager:ChangeState( name )
 	end
 end
 
+function StateManager:Handle_KeyDown( event )
+	if ( self.currentState == nil ) then return end
+	self.currentState:Handle_KeyDown( event )
+end
+
 function StateManager:Handle_EnterFrame( options )
 	if ( self.currentState == nil ) then return end
 	self.currentState:Handle_EnterFrame( options )

@@ -37,15 +37,10 @@ end
 function MinerPlayer:Move( direction, amount )
 	local x, y = self:getPosition()
 	
-	print( "Move ", direction, amount )
-	print( "From ", x, y )
-	
 	if ( direction == "south" ) then 		y = y + self.moveAmount		end
 	if ( direction == "north" ) then 		y = y - self.moveAmount		end
 	if ( direction == "east" ) then 			x = x + self.moveAmount		end
 	if ( direction == "west" ) then 		x = x - self.moveAmount		end
-	
-	print( "To ", x, y )
 	
 	self:setPosition( x, y )
 end
@@ -55,6 +50,7 @@ function MinerPlayer:Draw()
 end
 
 function MinerPlayer:setPosition( x, y )
+	print( "set player position to ", x, y )
 	self.bitmap:setPosition( x, y )
 	self.label:setPosition( x, y )
 end

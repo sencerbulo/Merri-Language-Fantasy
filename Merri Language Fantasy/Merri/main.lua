@@ -30,5 +30,10 @@ function Handle_MouseDown( event )
 	stateManager:Handle_MouseDown( event )
 end
 
+function Handle_KeyDown( event )
+	stateManager:Handle_KeyDown( event )
+end
+
 stage:addEventListener( Event.ENTER_FRAME, Handle_EnterFrame, self )
 stage:addEventListener( Event.MOUSE_DOWN, Handle_MouseDown, self )
+stage:addEventListener( Event.KEY_DOWN, Handle_KeyDown, self )

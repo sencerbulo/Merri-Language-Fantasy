@@ -35,12 +35,6 @@ function MinerMap:init( options )
 	self.mapHeight = 14
 		
 	self.tiles = {}
-	for x = 0, self.mapWidth do
-		self.tiles[x] = {}
-		for y = 0, self.mapHeight do
-			self.tiles[x][y] = {}
-		end
-	end
 	
 	self.player = MinerPlayer.new( { moveAmount = self.tileWidth } )
 end
@@ -54,7 +48,35 @@ function MinerMap:GoDownstairs()
 	self:Generate()
 end
 
+function MinerMap:ClearMap()
+	-- Remove existing tiles
+	for y = 0, self.mapHeight do
+		for x = 0, self.mapWidth do
+			if ( self.tiles[x] ~= nil and self.tiles[x][y] ~= nil ) then
+			
+				if ( self.tiles[x][y].bitmap ~= nil and stage:contains( self.tiles[x][y].bitmap ) ) then 	
+					stage:removeChild( self.tiles[x][y].bitmap )		
+				end
+				
+				if ( self.tiles[x][y].object ~= nil and stage:contains( self.tiles[x][y].object ) ) then 
+					stage:removeChild( self.tiles[x][y].object ) 
+				end
+				
+				self.tiles[x][y] = nil
+			end
+		end
+	end
+	
+	for x = 0, self.mapWidth do
+		self.tiles[x] = {}
+		for y = 0, self.mapHeight do
+			self.tiles[x][y] = {}
+		end
+	end
+end
+
 function MinerMap:Generate()
+	self:ClearMap()
 	-- Initialize entire map as wall
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
@@ -183,7 +205,8 @@ function MinerMap:Generate()
 			if ( self.tiles[x][y].objectType == "player" ) then
 				self.player:setPosition( x * self.tileWidth, y * self.tileWidth )
 			
-			elseif ( self.tiles[x][y].objectType ~= nil ) then
+			elseif ( self.tiles[x][y].objectType ~= nil and self.tiles[x][y].objectType ~= "none" ) then
+			
 				self.tiles[x][y].object = Bitmap.new( self.textures[self.tiles[x][y].objectType] )
 				self.tiles[x][y].object:setPosition( x * self.tileWidth, y * self.tileWidth )
 			end
@@ -329,7 +352,7 @@ function MinerMap:MovePlayer( direction, amount )
 		self.player:AddHealth( 20 )
 	end
 	
-	if ( points > 0 ) then
+	if ( points > 0 or self.tiles[x][y].objectType == "sandwich" ) then
 		self.tiles[x][y].objectType = "none"
 		stage:removeChild( self.tiles[x][y].object )
 	end

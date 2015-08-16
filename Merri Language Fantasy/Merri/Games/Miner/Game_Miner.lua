@@ -82,7 +82,7 @@ function GameMinerState:Setup( options )
 	
 	self.points = 0
 	
-	self:SetupHud()	
+	self:SetupHud()
 	self:Draw()
 end
 
@@ -124,6 +124,10 @@ function GameMinerState:Draw()
 	for key, button in pairs( self.hud ) do 
 		stage:addChild( button.bitmap )
 	end
+	
+	if ( stage:contains( self.fadeBitmap ) ) then
+		stage:addChild( self.fadeBitmap )
+	end
 end
 
 function GameMinerState:SetupMap()
@@ -136,29 +140,21 @@ end
 function GameMinerState:Handle_AndroidKey( event )
 end
 
-function GameMinerState:Handle_KeyDown( event )
-end
-
-function GameMinerState:Handle_MouseDown( event )
-	-- Hud buttons could be to move or mine or attack
-	
+function GameMinerState:InputAction( action, direction )
 	local points = 0
 	local itemType = ""
-	for key, button in pairs( self.hud ) do
-		if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
-			if ( button.action == "move" ) then
-				points, itemType = self.map:MovePlayer( button.direction, self.map.tileWidth )
-			
-			elseif ( button.action == "mine" ) then
-				self.map:UsePick( button.direction )
-				self.sounds.mining:play()
-			
-			elseif ( button.action == "attack" ) then
-				self.map:UseSword( button.direction )
-				self.sounds.sword:play()
-			
-			end
-		end
+	
+	if ( action == "move" ) then
+		points, itemType = self.map:MovePlayer( direction, self.map.tileWidth )
+	
+	elseif ( action == "mine" ) then
+		self.map:UsePick( direction )
+		self.sounds.mining:play()
+	
+	elseif ( action == "attack" ) then
+		self.map:UseSword( direction )
+		self.sounds.sword:play()
+		
 	end
 	
 	self.points = self.points + points
@@ -176,6 +172,39 @@ function GameMinerState:Handle_MouseDown( event )
 	end
 	
 	self:SetupHud()
+end
+
+function GameMinerState:Handle_KeyDown( event )
+	local action, direction
+
+	if ( event.keyCode == KeyCode.W or event.keyCode == KeyCode.UP ) then
+		action = self.hud.topButton.action
+		direction = self.hud.topButton.direction
+		
+	elseif ( event.keyCode == KeyCode.S or event.keyCode == KeyCode.DOWN ) then
+		action = self.hud.bottomButton.action
+		direction = self.hud.bottomButton.direction
+	
+	elseif ( event.keyCode == KeyCode.A or event.keyCode == KeyCode.LEFT ) then
+		action = self.hud.leftButton.action
+		direction = self.hud.leftButton.direction
+	
+	elseif ( event.keyCode == KeyCode.D or event.keyCode == KeyCode.RIGHT ) then
+		action = self.hud.rightButton.action
+		direction = self.hud.rightButton.direction
+	
+	end
+	
+	self:InputAction( action, direction )
+end
+
+function GameMinerState:Handle_MouseDown( event )
+	-- Hud buttons could be to move or mine or attack
+	for key, button in pairs( self.hud ) do
+		if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
+			self:InputAction( button.action, button.direction )			
+		end
+	end
 end
 
 function GameMinerState:TurnBasedUpdate()
@@ -199,6 +228,7 @@ function GameMinerState:Handle_EnterFrame( event )
 		-- Change
 		elseif ( self.fadeCounter == 50 ) then
 			self.map:GoDownstairs()
+			self:Draw()
 		
 		-- Fade in
 		elseif ( self.fadeCounter > 0 ) then
