@@ -47,10 +47,10 @@ end
 
 function MinerPlayer:Draw()
 	stage:addChild( self.bitmap )
+	stage:addChild( self.label )
 end
 
 function MinerPlayer:setPosition( x, y )
-	print( "set player position to ", x, y )
 	self.bitmap:setPosition( x, y )
 	self.label:setPosition( x, y )
 end

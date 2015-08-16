@@ -1,7 +1,32 @@
 <project>
- <properties orientation="0" osx_org="GiderosMobile" architecture="2" scaleMode="5" assetsOnly="0" packageName="com.yourdomain.yourapp" logicalHeight="640" windowHeight="0" touchToMouse="1" win_org="Moosader" fps="60" autorotation="0" osx_domain="giderosmobile.com" encryptAssets="0" logicalWidth="360" win_domain="moosader.com" encryptCode="0" retinaDisplay="0" mouseToTouch="1" iosDevice="0" windowWidth="0" mouseTouchOrder="0">
+ <properties retinaDisplay="0" osx_org="GiderosMobile" windowHeight="0" autorotation="0" mouseTouchOrder="0" touchToMouse="1" scaleMode="5" mouseToTouch="1" orientation="0" encryptCode="0" encryptAssets="0" architecture="2" logicalHeight="640" iosDevice="0" osx_domain="giderosmobile.com" win_org="Moosader" assetsOnly="0" logicalWidth="360" win_domain="moosader.com" fps="60" windowWidth="0" packageName="com.yourdomain.yourapp">
   <imageScales/>
  </properties>
+ <folder name="Engine">
+  <folder name="States">
+   <file source="Engine/States/StateManager.lua"/>
+   <file source="Engine/States/StateBase.lua"/>
+  </folder>
+ </folder>
+ <folder name="Merri">
+  <folder name="Games">
+   <folder name="Miner">
+    <file source="Merri/Games/Miner/MinerPlayer.lua"/>
+    <file source="Merri/Games/Miner/MinerMap.lua"/>
+    <file source="Merri/Games/Miner/Game_Miner.lua"/>
+   </folder>
+  </folder>
+  <folder name="Language">
+   <file source="Merri/Language/GameText.lua"/>
+  </folder>
+  <folder name="States">
+   <file source="Merri/States/DifficultySelectState.lua"/>
+   <file source="Merri/States/LanguageSelectState.lua"/>
+   <file source="Merri/States/TitleState.lua"/>
+  </folder>
+  <file source="Merri/main.lua"/>
+  <file source="Merri/config.lua"/>
+ </folder>
  <folder name="Content">
   <folder name="Games">
    <folder name="Miner">
@@ -115,30 +140,5 @@
     <file source="Content/Graphics/UI/bg_titlescene.png"/>
    </folder>
   </folder>
- </folder>
- <folder name="Engine">
-  <folder name="States">
-   <file source="Engine/States/StateManager.lua"/>
-   <file source="Engine/States/StateBase.lua"/>
-  </folder>
- </folder>
- <folder name="Merri">
-  <folder name="Games">
-   <folder name="Miner">
-    <file source="Merri/Games/Miner/MinerPlayer.lua"/>
-    <file source="Merri/Games/Miner/MinerMap.lua"/>
-    <file source="Merri/Games/Miner/Game_Miner.lua"/>
-   </folder>
-  </folder>
-  <folder name="Language">
-   <file source="Merri/Language/GameText.lua"/>
-  </folder>
-  <folder name="States">
-   <file source="Merri/States/DifficultySelectState.lua"/>
-   <file source="Merri/States/LanguageSelectState.lua"/>
-   <file source="Merri/States/TitleState.lua"/>
-  </folder>
-  <file source="Merri/main.lua"/>
-  <file source="Merri/config.lua"/>
  </folder>
 </project>

@@ -209,6 +209,11 @@ function MinerMap:Generate()
 			
 				self.tiles[x][y].object = Bitmap.new( self.textures[self.tiles[x][y].objectType] )
 				self.tiles[x][y].object:setPosition( x * self.tileWidth, y * self.tileWidth )
+				
+				self.tiles[x][y].label = TextField.new( GameMinerState.fonts.overhead, GameText:Get( "target", self.tiles[x][y].objectType ) )
+				self.tiles[x][y].label:setPosition( x * self.tileWidth, y * self.tileWidth )
+				self.tiles[x][y].label:setTextColor( 0xFFFFFF )
+				
 			end
 		end
 	end
@@ -261,7 +266,8 @@ function MinerMap:Draw()
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
 			stage:addChild( self.tiles[x][y].bitmap )	
-			if ( self.tiles[x][y].object ~= nil ) then stage:addChild( self.tiles[x][y].object ) end
+			if ( self.tiles[x][y].object ~= nil ) then 	stage:addChild( self.tiles[x][y].object ) end
+			if ( self.tiles[x][y].label ~= nil ) then		stage:addChild( self.tiles[x][y].label ) end
 		end
 	end
 	
@@ -323,6 +329,7 @@ function MinerMap:UsePick( direction )
 	end
 	
 	self.tiles[x][y].object:setTexture( self.textures[self.tiles[x][y].objectType] )
+	self.tiles[x][y].label:setText( GameText:Get( "target", self.tiles[x][y].objectType ) )
 end
 
 function MinerMap:MovePlayer( direction, amount )
