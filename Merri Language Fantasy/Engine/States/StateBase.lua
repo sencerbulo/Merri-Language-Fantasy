@@ -19,6 +19,10 @@ function StateBase:Setup( options )
 	end
 end
 
+function StateBase:ToggleBackgroundScroll( value )
+	self.backgroundScroll = value
+end
+
 function StateBase:Cleanup()
 	
 end

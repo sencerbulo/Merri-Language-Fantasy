@@ -78,6 +78,18 @@ function GameText:SetupLanguages()
 	GameText.HelperText.Ido[ "Back" ] 				= "Revenar"
 	GameText.HelperText.Spanish[ "Back" ] 		= "Regres"
 	
+	-- Got a star
+	
+	GameText.TargetText.English[ "Earned a star" ] 		= "You aquired a star!"
+	GameText.TargetText.Esperanto[ "Earned a star" ] 	= "Vi akiris stelon!"
+	GameText.TargetText.Ido[ "Earned a star" ] 				= "Vu aquiris stelo!"
+	GameText.TargetText.Spanish[ "Earned a star" ] 		= "Usted adquirió una estrella!"
+	
+	GameText.HelperText.English[ "Earned a star" ] 		= "You aquired a star!"
+	GameText.HelperText.Esperanto[ "Earned a star" ] 	= "Vi akiris stelon!"
+	GameText.HelperText.Ido[ "Earned a star" ] 				= "Vu aquiris stelo!"
+	GameText.HelperText.Spanish[ "Earned a star" ] 		= "Usted adquirió una estrella!"
+	
 	
 	-- LanguageSelectState --
 	
@@ -281,7 +293,7 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Spanish[ "miner-move-west" ] 	= "Ora"
 	
 	GameText.TargetText.English[ "miner-mine" ] 		= "You swing your pick."
-	GameText.TargetText.Esperanto[ "miner-mine" ] 	= "Vi svingas vian pioĉo."
+	GameText.TargetText.Esperanto[ "miner-mine" ] 	= "Vi svingas vian pioĉon."
 	GameText.TargetText.Ido[ "miner-mine" ] 				= "asdf"
 	GameText.TargetText.Spanish[ "miner-mine" ] 	= "asdf"
 	

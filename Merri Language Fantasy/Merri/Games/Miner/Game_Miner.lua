@@ -85,6 +85,9 @@ function GameMinerState:Setup( options )
 		},
 	}
 	
+	self.debugButton = Bitmap.new( Texture.new( "Content/Games/Miner/UI/hud_down.png" ) )
+	self.debugButton:setPosition( 320, 600 )
+	
 	self.points = 0
 	
 	self:SetupHud()
@@ -130,13 +133,15 @@ function GameMinerState:Draw()
 		stage:addChild( button.bitmap )
 	end
 	
-	if ( stage:contains( self.fadeBitmap ) ) then
-		stage:addChild( self.fadeBitmap )
-	end
-	
 	stage:addChild( self.narrationLabel )
 	
 	self.map:UpdateLighting()
+	
+	stage:addChild( self.debugButton )
+	
+	if ( stage:contains( self.fadeBitmap ) ) then
+		stage:addChild( self.fadeBitmap )
+	end
 end
 
 function GameMinerState:SetupMap()
@@ -185,9 +190,15 @@ function GameMinerState:InputAction( action, direction )
 		stage:addChild( self.fadeBitmap )
 		self.fadeBitmap:setAlpha( 0 )
 		self.narrationLabel:setText( GameText:Get( "target", "miner-go-down-ladder" ) )
+	
+	elseif ( itemType == "star" ) then
+		-- End of mini-game
+		StateBase:SetGotoState( "GotStarState" )	
+		
 	end
 	
 	self:SetupHud()
+	self:TurnBasedUpdate()
 end
 
 function GameMinerState:Handle_KeyDown( event )
@@ -221,10 +232,19 @@ function GameMinerState:Handle_MouseDown( event )
 			self:InputAction( button.action, button.direction )			
 		end
 	end
+	
+	if ( self.debugButton:hitTestPoint( event.x, event.y ) ) then
+		self.sounds.footsteps:play()
+		self.fadeCounter = 100
+		self.transition = true
+		stage:addChild( self.fadeBitmap )
+		self.fadeBitmap:setAlpha( 0 )
+		self.narrationLabel:setText( GameText:Get( "target", "miner-go-down-ladder" ) )	
+	end
 end
 
 function GameMinerState:TurnBasedUpdate()
-
+	self.map:TurnBasedUpdate()
 end
 
 function GameMinerState:Handle_EnterFrame( event )

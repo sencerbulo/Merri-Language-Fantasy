@@ -9,6 +9,7 @@ function MinerMap:init( options )
 			
 			rock = Texture.new( "Content/Games/Miner/Tiles/rock.png" ),
 			ladder = Texture.new( "Content/Games/Miner/Tiles/ladder_down.png" ),
+			star = Texture.new( "Content/Graphics/Tiles/treasure_star.png" ),
 			mushroom = Texture.new( "Content/Games/Miner/Characters/enemy_mushroom.png" ),
 			bat = Texture.new( "Content/Games/Miner/Characters/enemy_bat.png" ),
 			snail = Texture.new( "Content/Games/Miner/Characters/enemy_snail.png" ),
@@ -25,11 +26,12 @@ function MinerMap:init( options )
 			sapphire = Texture.new( "Content/Games/Miner/Tiles/treasure_sapphire.png" ),
 			diamond = Texture.new( "Content/Games/Miner/Tiles/treasure_diamond.png" ),
 			emerald = Texture.new( "Content/Games/Miner/Tiles/treasure_emerald.png" ),
+			ruby = Texture.new( "Content/Games/Miner/Tiles/treasure_ruby.png" ),
 			sandwich = Texture.new( "Content/Games/Miner/Tiles/sandwich.png" ),
 		}
 		
 	self.tileWidth = self.textures.ground:getWidth()
-	self.floor = 1
+	self.floor = 20
 	self.lastFloor = 20
 	self.mapWidth = 10
 	self.mapHeight = 14
@@ -95,7 +97,11 @@ function MinerMap:Generate()
 	
 	local endX = self.mapWidth - 1
 	local endY = math.random( 0, self.mapHeight )
-	self.tiles[endX][endY].objectType = "ladder"
+	if ( self.floor < self.lastFloor ) then
+		self.tiles[endX][endY].objectType = "ladder"
+	else
+		self.tiles[endX][endY].objectType = "star"	
+	end
 	
 	-- Traverse Map
 	local x = startX
@@ -116,6 +122,7 @@ function MinerMap:Generate()
 		while ( x ~= endX or y ~= endY ) do
 			self.tiles[x][y].type = "ground"
 			self.tiles[x][y].bitmap:setTexture( self.textures[ self.tiles[x][y].type ] )
+			self.tiles[x][y].generalType = "none"
 			
 			local xOrY = math.random( 1, 2 )
 			if ( xOrY == 1 ) then
@@ -151,7 +158,6 @@ function MinerMap:Generate()
 		end
 	end
 	
-	
 	local enemyCount = math.floor( self.floor / 4 ) + 1
 	for e = 0, enemyCount do
 		local x, y		
@@ -164,24 +170,34 @@ function MinerMap:Generate()
 		end
 		
 		self.tiles[x][y].dead = false
+		self.tiles[x][y].generalType = "enemy"
+		self.tiles[x][y].objectDirection = "none"
 		
 		local enemyType = math.random( 1, 2 )
 		if ( enemyType == 1 and self.floor > 0 and self.floor <= 4 ) then
 			self.tiles[x][y].objectType = "mushroom"
+			self.tiles[x][y].objectDirection = "east"
 		elseif ( enemyType == 1 and self.floor > 4 and self.floor <= 8 ) then
 			self.tiles[x][y].objectType = "bat"
+			self.tiles[x][y].objectDirection = "west"
 		elseif ( enemyType == 1 and self.floor > 8 and self.floor <= 12 ) then
 			self.tiles[x][y].objectType = "snail"
+			self.tiles[x][y].objectDirection = "west"
 		elseif ( enemyType == 1 and self.floor > 12 and self.floor <= 16 ) then
 			self.tiles[x][y].objectType = "rabbit"
+			self.tiles[x][y].objectDirection = "east"
 		elseif ( enemyType == 2 and self.floor > 2 and self.floor <= 6 ) then
 			self.tiles[x][y].objectType = "snake"
+			self.tiles[x][y].objectDirection = "east"
 		elseif ( enemyType == 2 and self.floor > 6 and self.floor <= 10 ) then
 			self.tiles[x][y].objectType = "mole"
+			self.tiles[x][y].objectDirection = "north"
 		elseif ( enemyType == 2 and self.floor > 10 and self.floor <= 14 ) then
 			self.tiles[x][y].objectType = "skeleton"
+			self.tiles[x][y].objectDirection = "south"
 		elseif ( enemyType == 2 and self.floor > 14 and self.floor <= 20 ) then
 			self.tiles[x][y].objectType = "moose"
+			self.tiles[x][y].objectDirection = "north"
 		end
 	end
 	
@@ -197,6 +213,7 @@ function MinerMap:Generate()
 		end
 		
 		self.tiles[x][y].objectType = "rock"
+		self.tiles[x][y].generalType = "rock"
 	end	
 	
 	-- Set up Object bitmaps
@@ -299,6 +316,7 @@ function MinerMap:UseSword( direction )
 	self.tiles[tileX][tileY].object:setRotation( 180 )
 	self.tiles[tileX][tileY].object:setPosition( x + self.tileWidth, y + self.tileWidth )
 	self.tiles[tileX][tileY].dead = true
+	self.tiles[tileX][tileY].generalType = "none"
 	
 	return self.tiles[tileX][tileY].objectType
 end
@@ -312,26 +330,35 @@ function MinerMap:UsePick( direction )
 	local itemType = math.random( 1, 3 )
 	if ( itemType == 1 and self.floor > 0 and self.floor <= 4 ) then
 		self.tiles[x][y].objectType = "copper"
+		self.tiles[x][y].generalType = "collectable"
 	elseif ( itemType == 2 and self.floor > 2 and self.floor <= 6 ) then
 		self.tiles[x][y].objectType = "silver"
+		self.tiles[x][y].generalType = "collectable"
 	elseif ( itemType == 1 and self.floor > 4 and self.floor <= 8 ) then
 		self.tiles[x][y].objectType = "gold"
-		
+		self.tiles[x][y].generalType = "collectable"
 	elseif ( itemType == 2 and self.floor > 6 and self.floor <= 10 ) then
 		self.tiles[x][y].objectType = "amethyst"
+		self.tiles[x][y].generalType = "collectable"
 	elseif ( itemType == 1 and self.floor > 8 and self.floor <= 12 ) then
 		self.tiles[x][y].objectType = "sapphire"
+		self.tiles[x][y].generalType = "collectable"
 	elseif ( itemType == 2 and self.floor > 10 and self.floor <= 14 ) then
 		self.tiles[x][y].objectType = "diamond"
+		self.tiles[x][y].generalType = "collectable"
 	elseif ( itemType == 1 and self.floor > 12 and self.floor <= 16 ) then
 		self.tiles[x][y].objectType = "emerald"
+		self.tiles[x][y].generalType = "collectable"
 	elseif ( itemType == 2 and self.floor > 14 and self.floor <= 20 ) then
 		self.tiles[x][y].objectType = "ruby"
+		self.tiles[x][y].generalType = "collectable"
 	elseif ( itemType == 3 ) then
 		-- Sandwich
 		self.tiles[x][y].objectType = "sandwich"
+		self.tiles[x][y].generalType = "collectable"
 	end
 	
+	print( "Unveil object: ", self.tiles[x][y].objectType )
 	self.tiles[x][y].object:setTexture( self.textures[self.tiles[x][y].objectType] )
 	self.tiles[x][y].label:setText( GameText:Get( "target", self.tiles[x][y].objectType ) )
 end
@@ -377,16 +404,17 @@ end
 
 function MinerMap:UpdateLighting()
 	local playerX, playerY = self.player:getPosition()
-	
+
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
+			local r, g, b, a = self.tiles[x][y].bitmap:getColorTransform()
 			local tileX, tileY = self.tiles[x][y].bitmap:getPosition()
 			local distance = math.floor( self:GetDistance( tileX, tileY, playerX, playerY ) / 36 )
-			
-			local r = 1 - ( 0.25 * ( distance - 1 ) )
-			local g = 1 - ( 0.25 * ( distance - 1 ) )
-			local b = 1 - ( 0.25 * ( distance - 1 ) )
-			local a = 1
+
+			r = 1 - ( 0.25 * ( distance - 1 ) )
+			g = 1 - ( 0.25 * ( distance - 1 ) )
+			b = 1 - ( 0.25 * ( distance - 1 ) )
+			a = 1
 			
 			self.tiles[x][y].bitmap:setColorTransform( r, g, b, a )
 			if ( self.tiles[x][y].label ~= nil ) then 		self.tiles[x][y].label:setColorTransform( r, g, b, a ) 			end
@@ -405,3 +433,22 @@ end
 function MinerMap:Handle_EnterFrame()
 	self.player:Update()
 end
+
+function MinerMap:TurnBasedUpdate()
+	-- Move each enemy based on their behavior.
+end
+
+function MinerMap:SwapObjects( sx, sy, dx, dy )
+	print( "Swap objects at ", sx, sy, " - ", dx, dy )
+	
+	self.tiles[dx][dy].object = self.tiles[sx][sy].object
+	self.tiles[dx][dy].objectType = self.tiles[sx][sy].objectType
+	self.tiles[dx][dy].generalType = self.tiles[sx][sy].generalType
+	self.tiles[dx][dy].label = self.tiles[sx][sy].label
+	
+	self.tiles[sx][sy].object = nil
+	self.tiles[sx][sy].objectType = nil
+	self.tiles[sx][sy].generalType = nil
+	self.tiles[sx][sy].label = nil
+end
+

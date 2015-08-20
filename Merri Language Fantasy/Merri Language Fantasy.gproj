@@ -1,9 +1,10 @@
 <project>
- <properties retinaDisplay="0" osx_org="GiderosMobile" windowHeight="0" autorotation="0" mouseTouchOrder="0" touchToMouse="1" scaleMode="5" mouseToTouch="1" orientation="0" encryptCode="0" encryptAssets="0" architecture="2" logicalHeight="640" iosDevice="0" osx_domain="giderosmobile.com" win_org="Moosader" assetsOnly="0" logicalWidth="360" win_domain="moosader.com" fps="60" windowWidth="0" packageName="com.yourdomain.yourapp">
+ <properties autorotation="0" logicalHeight="640" windowWidth="0" touchToMouse="1" win_org="Moosader" windowHeight="0" encryptCode="0" mouseTouchOrder="0" architecture="2" scaleMode="5" osx_org="GiderosMobile" packageName="com.yourdomain.yourapp" osx_domain="giderosmobile.com" retinaDisplay="0" win_domain="moosader.com" logicalWidth="360" fps="60" iosDevice="0" mouseToTouch="1" assetsOnly="0" encryptAssets="0" orientation="0">
   <imageScales/>
  </properties>
  <folder name="Engine">
   <folder name="States">
+   <file source="Merri/States/GotStarState.lua"/>
    <file source="Engine/States/StateManager.lua"/>
    <file source="Engine/States/StateBase.lua"/>
   </folder>
@@ -105,21 +106,8 @@
     <file source="Content/Graphics/Characters/miner sprite.xcf"/>
    </folder>
    <folder name="Tiles">
-    <file source="Content/Graphics/Tiles/sandwich.png"/>
-    <file source="Content/Graphics/Tiles/ladder_down.png"/>
-    <file source="Content/Graphics/Tiles/tileset_miner.txt"/>
-    <file source="Content/Graphics/Tiles/tileset_miner.png"/>
-    <file source="Content/Graphics/Tiles/silver_coin.png"/>
-    <file source="Content/Graphics/Tiles/rock.png"/>
-    <file source="Content/Graphics/Tiles/ground_dirt2.png"/>
-    <file source="Content/Graphics/Tiles/ground_dirt.png"/>
-    <file source="Content/Graphics/Tiles/ground_cobblestone.png"/>
-    <file source="Content/Graphics/Tiles/gold_coin.png"/>
-    <file source="Content/Graphics/Tiles/gemD.png"/>
-    <file source="Content/Graphics/Tiles/gemC.png"/>
-    <file source="Content/Graphics/Tiles/gemB.png"/>
-    <file source="Content/Graphics/Tiles/gemA.png"/>
-    <file source="Content/Graphics/Tiles/copper_coin.png"/>
+    <file source="Content/Graphics/Tiles/treasure_star_big.png"/>
+    <file source="Content/Graphics/Tiles/treasure_star.png"/>
    </folder>
    <folder name="UI">
     <file source="Content/Graphics/UI/btn_menu.png"/>

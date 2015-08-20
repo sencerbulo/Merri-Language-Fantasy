@@ -3,6 +3,7 @@ stateManager = StateManager.new()
 stateManager:AddState( "LanguageSelectState", LanguageSelectState.new() )
 stateManager:AddState( "TitleState", TitleState.new() )
 stateManager:AddState( "DifficultySelectState", DifficultySelectState.new() )
+stateManager:AddState( "GotStarState", GotStarState.new() )
 stateManager:AddState( "GameMinerState", GameMinerState.new() )
 
 GameText:Setup()

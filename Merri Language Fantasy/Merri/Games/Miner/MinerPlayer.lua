@@ -2,14 +2,14 @@ MinerPlayer = Core.class()
 
 function MinerPlayer:init( options )
 	self.textures = {}
-	self.textures.south1 = Texture.new( "Content/Graphics/Characters/miner_down.png" )
-	self.textures.south2 = Texture.new( "Content/Graphics/Characters/miner_down2.png" )
-	self.textures.north1 = Texture.new( "Content/Graphics/Characters/miner_up.png" )
-	self.textures.north2 = Texture.new( "Content/Graphics/Characters/miner_up2.png" )
-	self.textures.east1 = Texture.new( "Content/Graphics/Characters/miner_right.png" )
-	self.textures.east2 = Texture.new( "Content/Graphics/Characters/miner_right2.png" )
-	self.textures.west1 = Texture.new( "Content/Graphics/Characters/miner_left.png" )
-	self.textures.west2 = Texture.new( "Content/Graphics/Characters/miner_left2.png" )
+	self.textures.south1 = Texture.new( "Content/Games/Miner/Characters/miner_down.png" )
+	self.textures.south2 = Texture.new( "Content/Games/Miner/Characters/miner_down2.png" )
+	self.textures.north1 = Texture.new( "Content/Games/Miner/Characters/miner_up.png" )
+	self.textures.north2 = Texture.new( "Content/Games/Miner/Characters/miner_up2.png" )
+	self.textures.east1 = Texture.new( "Content/Games/Miner/Characters/miner_right.png" )
+	self.textures.east2 = Texture.new( "Content/Games/Miner/Characters/miner_right2.png" )
+	self.textures.west1 = Texture.new( "Content/Games/Miner/Characters/miner_left.png" )
+	self.textures.west2 = Texture.new( "Content/Games/Miner/Characters/miner_left2.png" )
 	self.bitmap = Bitmap.new( self.textures.south1 )
 	self.moveAmount = options.moveAmount
 	self.frame = 1
