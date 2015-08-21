@@ -15,6 +15,8 @@ function GameMinerState:Setup( options )
 	
 	self.textures = {
 			black = Texture.new( "Content/Graphics/UI/blank_background.png" ),
+			heart = Texture.new( "Content/Games/Miner/UI/hud_heart.png" ),
+			menu = Texture.new( "Content/Graphics/UI/btn_menu.png" ),
 			
 			hud_south = Texture.new( "Content/Games/Miner/UI/hud_down.png" ),
 			hud_west = Texture.new( "Content/Games/Miner/UI/hud_left.png" ),
@@ -43,11 +45,6 @@ function GameMinerState:Setup( options )
 	self.transition = false
 	self.fadeBitmap = Bitmap.new( self.textures.black )
 	self.fadeBitmap:setAlpha( 0 )
-	
-	-- Narrative Line
-	self.narrationLabel = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "miner-begin" ) )
-	self.narrationLabel:setTextColor( 0xFFFFFF )
-	self.narrationLabel:setPosition( 10, 560 )
 	
 	-- Set up map
 	self.map = MinerMap.new()
@@ -89,6 +86,52 @@ function GameMinerState:Setup( options )
 	self.debugButton:setPosition( 320, 600 )
 	
 	self.points = 0
+	
+	-- Labels
+	self.labels = {}
+	
+	-- Narrative Line
+	self.labels.narration = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "miner-begin" ) )
+	self.labels.narration:setTextColor( 0xFFFFFF )
+	self.labels.narration:setPosition( 10, 560 )
+	
+	-- Health
+	self.labels.health = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Health" ) )
+	self.labels.health:setTextColor( 0xFFFFFF )
+	self.labels.health:setPosition( 80, 590 )
+	
+	-- Hearts
+	self.hudHearts = {}
+	for i = 0, 3 do
+		self.hudHearts[i] = Bitmap.new( self.textures.heart )
+		self.hudHearts[i]:setPosition( 160 + ( i * 20 ), 575 )
+	end
+	
+	-- Money
+	self.labels.money = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Money" ) )
+	self.labels.money:setTextColor( 0xFFFFFF )
+	self.labels.money:setPosition( 80, 610 )
+	
+	self.labels.moneyValue = TextField.new( GameMinerState.fonts.hud, self.points )
+	self.labels.moneyValue:setTextColor( 0xFFFFFF )
+	self.labels.moneyValue:setPosition( 165, 610 )
+	
+	-- Floor
+	self.labels.floor = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Floor" ) )
+	self.labels.floor:setTextColor( 0xFFFFFF )
+	self.labels.floor:setPosition( 80, 630 )
+	
+	self.labels.floorValue = TextField.new( GameMinerState.fonts.hud, self.map.floor )
+	self.labels.floorValue:setTextColor( 0xFFFFFF )
+	self.labels.floorValue:setPosition( 165, 630 )
+	
+	self.buttons = {}
+	self.buttons.menu = Bitmap.new( self.textures.menu )
+	self.buttons.menu:setPosition( 10, 580 )
+	
+	self.labels.menu = TextField.new( GameMinerState.fonts.hud, GameText:Get( "helper", "Menu" ) )
+	self.labels.menu:setTextColor( 0xFFFFFF )
+	self.labels.menu:setPosition( 12, 623 )
 	
 	self:SetupHud()
 	self:Draw()
@@ -133,11 +176,21 @@ function GameMinerState:Draw()
 		stage:addChild( button.bitmap )
 	end
 	
-	stage:addChild( self.narrationLabel )
+	for key, button in pairs( self.buttons ) do
+		stage:addChild( button )
+	end
+	
+	for key, label in pairs( self.labels ) do
+		stage:addChild( label )	
+	end
+	
+	for key, heart in pairs( self.hudHearts ) do
+		stage:addChild( heart )
+	end
 	
 	self.map:UpdateLighting()
 	
-	stage:addChild( self.debugButton )
+	--stage:addChild( self.debugButton )
 	
 	if ( stage:contains( self.fadeBitmap ) ) then
 		stage:addChild( self.fadeBitmap )
@@ -160,28 +213,29 @@ function GameMinerState:InputAction( action, direction )
 	
 	if ( action == "move" ) then
 		points, itemType = self.map:MovePlayer( direction, self.map.tileWidth )
-		self.narrationLabel:setText( GameText:Get( "target", "miner-move-" .. direction ) )
+		self.labels.narration:setText( GameText:Get( "target", "miner-move-" .. direction ) )
 	
 	elseif ( action == "mine" ) then
 		self.map:UsePick( direction )
 		self.sounds.mining:play()
-		self.narrationLabel:setText( GameText:Get( "target", "miner-mine" ) )
+		self.labels.narration:setText( GameText:Get( "target", "miner-mine" ) )
 	
 	elseif ( action == "attack" ) then
 		local attacked = self.map:UseSword( direction )
 		self.sounds.sword:play()
-		self.narrationLabel:setText( GameText:Get( "target", "miner-attack-" .. attacked ) )
+		self.labels.narration:setText( GameText:Get( "target", "miner-attack-" .. attacked ) )
 		
 	end
 	
 	self.points = self.points + points
 	if ( points > 0 ) then
 		self.sounds.collect:play()
-		self.narrationLabel:setText( GameText:Get( "target", "miner-collect-" .. itemType ) )
+		self.labels.narration:setText( GameText:Get( "target", "miner-collect-" .. itemType ) )
 		
 	elseif ( itemType == "sandwich" ) then
 		-- eat sound effect
-		self.narrationLabel:setText( GameText:Get( "target", "miner-eat-sandwich" ) )
+		self.sounds.collect:play()
+		self.labels.narration:setText( GameText:Get( "target", "miner-eat-sandwich" ) )
 		
 	elseif ( itemType == "ladder" ) then
 		self.sounds.footsteps:play()
@@ -189,13 +243,15 @@ function GameMinerState:InputAction( action, direction )
 		self.transition = true
 		stage:addChild( self.fadeBitmap )
 		self.fadeBitmap:setAlpha( 0 )
-		self.narrationLabel:setText( GameText:Get( "target", "miner-go-down-ladder" ) )
+		self.labels.narration:setText( GameText:Get( "target", "miner-go-down-ladder" ) )
 	
 	elseif ( itemType == "star" ) then
 		-- End of mini-game
 		StateBase:SetGotoState( "GotStarState" )	
 		
 	end
+	
+	self.labels.moneyValue:setText( self.points )
 	
 	self:SetupHud()
 	self:TurnBasedUpdate()
@@ -239,7 +295,7 @@ function GameMinerState:Handle_MouseDown( event )
 		self.transition = true
 		stage:addChild( self.fadeBitmap )
 		self.fadeBitmap:setAlpha( 0 )
-		self.narrationLabel:setText( GameText:Get( "target", "miner-go-down-ladder" ) )	
+		self.labels.narration:setText( GameText:Get( "target", "miner-go-down-ladder" ) )	
 	end
 end
 
@@ -259,6 +315,7 @@ function GameMinerState:Handle_EnterFrame( event )
 		elseif ( self.fadeCounter == 50 ) then
 			self.map:GoDownstairs()
 			self:Draw()
+			self.labels.floorValue:setText( self.map.floor )
 		
 		-- Fade in
 		elseif ( self.fadeCounter > 0 ) then

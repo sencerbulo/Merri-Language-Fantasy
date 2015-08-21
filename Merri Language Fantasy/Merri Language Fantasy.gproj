@@ -32,6 +32,7 @@
   <folder name="Games">
    <folder name="Miner">
     <folder name="UI">
+     <file source="Content/Games/Miner/UI/hud_heart.png"/>
      <file source="Content/Games/Miner/UI/hud_down.png"/>
      <file source="Content/Games/Miner/UI/hud_left.png"/>
      <file source="Content/Games/Miner/UI/hud_pick.png"/>
@@ -110,22 +111,22 @@
     <file source="Content/Graphics/Tiles/treasure_star.png"/>
    </folder>
    <folder name="UI">
-    <file source="Content/Graphics/UI/btn_menu.png"/>
-    <file source="Content/Graphics/UI/widebtnbg.png"/>
-    <file source="Content/Graphics/UI/title_text.png"/>
-    <file source="Content/Graphics/UI/generalbgtile.png"/>
-    <file source="Content/Graphics/UI/generalbg.png"/>
-    <file source="Content/Graphics/UI/difficulty_practice.png"/>
-    <file source="Content/Graphics/UI/difficulty_medium.png"/>
-    <file source="Content/Graphics/UI/difficulty_hard.png"/>
-    <file source="Content/Graphics/UI/difficulty_easy.png"/>
-    <file source="Content/Graphics/UI/btn_stats.png"/>
-    <file source="Content/Graphics/UI/btn_play.png"/>
-    <file source="Content/Graphics/UI/btn_options.png"/>
-    <file source="Content/Graphics/UI/btn_help.png"/>
-    <file source="Content/Graphics/UI/btn_back.png"/>
-    <file source="Content/Graphics/UI/blank_background.png"/>
     <file source="Content/Graphics/UI/bg_titlescene.png"/>
+    <file source="Content/Graphics/UI/blank_background.png"/>
+    <file source="Content/Graphics/UI/btn_back.png"/>
+    <file source="Content/Graphics/UI/btn_help.png"/>
+    <file source="Content/Graphics/UI/btn_menu.png"/>
+    <file source="Content/Graphics/UI/btn_options.png"/>
+    <file source="Content/Graphics/UI/btn_play.png"/>
+    <file source="Content/Graphics/UI/btn_stats.png"/>
+    <file source="Content/Graphics/UI/difficulty_easy.png"/>
+    <file source="Content/Graphics/UI/difficulty_hard.png"/>
+    <file source="Content/Graphics/UI/difficulty_medium.png"/>
+    <file source="Content/Graphics/UI/difficulty_practice.png"/>
+    <file source="Content/Graphics/UI/generalbg.png"/>
+    <file source="Content/Graphics/UI/generalbgtile.png"/>
+    <file source="Content/Graphics/UI/title_text.png"/>
+    <file source="Content/Graphics/UI/widebtnbg.png"/>
    </folder>
   </folder>
  </folder>

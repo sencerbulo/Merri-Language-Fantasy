@@ -78,6 +78,11 @@ function GameText:SetupLanguages()
 	GameText.HelperText.Ido[ "Back" ] 				= "Revenar"
 	GameText.HelperText.Spanish[ "Back" ] 		= "Regres"
 	
+	GameText.HelperText.English[ "Menu" ] 		= "Menu"
+	GameText.HelperText.Esperanto[ "Menu" ] 	= "Menuo"
+	GameText.HelperText.Ido[ "Menu" ] 			= "Revenar"
+	GameText.HelperText.Spanish[ "Menu" ] 		= "Regres"
+	
 	-- Got a star
 	
 	GameText.TargetText.English[ "Earned a star" ] 		= "You aquired a star!"
@@ -147,15 +152,20 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ido[ "Miner" ] 				= "Ministo"
 	GameText.TargetText.Spanish[ "Miner" ] 		= "Minero"
 	
-	GameText.TargetText.English[ "Level" ] 		= "Level"
-	GameText.TargetText.Esperanto[ "Level" ] 	= "Nivelo"
-	GameText.TargetText.Ido[ "Level" ] 				= "Ministo"
-	GameText.TargetText.Spanish[ "Level" ] 		= "Minero"
+	GameText.TargetText.English[ "Floor" ] 		= "Floor:"
+	GameText.TargetText.Esperanto[ "Floor" ] 	= "Nivelo:"
+	GameText.TargetText.Ido[ "Floor" ] 			= "Ministo"
+	GameText.TargetText.Spanish[ "Floor" ] 		= "Minero"
 	
-	GameText.TargetText.English[ "Money" ] 		= "Money"
-	GameText.TargetText.Esperanto[ "Money" ] 	= "Mono"
-	GameText.TargetText.Ido[ "Money" ] 				= "Ministo"
+	GameText.TargetText.English[ "Money" ] 		= "Money:"
+	GameText.TargetText.Esperanto[ "Money" ] 	= "Mono:"
+	GameText.TargetText.Ido[ "Money" ] 			= "Ministo"
 	GameText.TargetText.Spanish[ "Money" ] 		= "Minero"
+	
+	GameText.TargetText.English[ "Health" ] 	= "Health:"
+	GameText.TargetText.Esperanto[ "Health" ] 	= "Sano:"
+	GameText.TargetText.Ido[ "Health" ] 		= "Ministo"
+	GameText.TargetText.Spanish[ "Health" ] 	= "Minero"
 	
 	GameText.TargetText.English[ "snail" ] 		= "Snail"
 	GameText.TargetText.Esperanto[ "snail" ] 	= "Heliko"

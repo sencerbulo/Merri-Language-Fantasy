@@ -31,7 +31,7 @@ function MinerMap:init( options )
 		}
 		
 	self.tileWidth = self.textures.ground:getWidth()
-	self.floor = 20
+	self.floor = 1
 	self.lastFloor = 20
 	self.mapWidth = 10
 	self.mapHeight = 14
