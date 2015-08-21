@@ -391,8 +391,70 @@ function GameText:SetupLanguages()
 	
 	GameText.TargetText.English[ "miner-attack-skeleton" ] 		= "You attack the skeleton."
 	GameText.TargetText.Esperanto[ "miner-attack-skeleton" ] 	= "Vi atakas la skeleton."
-	GameText.TargetText.Ido[ "miner-attack-skeleton" ] 				= "asdf."
-	GameText.TargetText.Spanish[ "miner-attack-skeleton" ] 	= "asdf."
+	GameText.TargetText.Ido[ "miner-attack-skeleton" ] 			= "asdf."
+	GameText.TargetText.Spanish[ "miner-attack-skeleton" ] 		= "asdf."
+
+	-- Shop
+	
+	GameText.TargetText.English		[ "Do you want to buy a tool?" ] 	= "Do you want to buy a tool?"
+	GameText.TargetText.Esperanto	[ "Do you want to buy a tool?" ] 	= "Ĉu vi volas aĉeti ilon?"
+	GameText.TargetText.Ido			[ "Do you want to buy a tool?" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "Do you want to buy a tool?" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "Potion" ] 	= "Potion"
+	GameText.TargetText.Esperanto	[ "Potion" ] 	= "Pocio"
+	GameText.TargetText.Ido			[ "Potion" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "Potion" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "PotionDescription" ] 	= "Restores all of your health."
+	GameText.TargetText.Esperanto	[ "PotionDescription" ] 	= "Redoni ĉiom da via sano."
+	GameText.TargetText.Ido			[ "PotionDescription" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "PotionDescription" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "Earthquake" ] 	= "Earthquake"
+	GameText.TargetText.Esperanto	[ "Earthquake" ] 	= "Sismo"
+	GameText.TargetText.Ido			[ "Earthquake" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "Earthquake" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "EarthquakeDescription" ] 	= "Breaks all rocks."
+	GameText.TargetText.Esperanto	[ "EarthquakeDescription" ] 	= "Rompi ĉiujn ŝtonojn."
+	GameText.TargetText.Ido			[ "EarthquakeDescription" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "EarthquakeDescription" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "Dynamite" ] 	= "Dynamite"
+	GameText.TargetText.Esperanto	[ "Dynamite" ] 	= "Dinamito"
+	GameText.TargetText.Ido			[ "Dynamite" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "Dynamite" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "DynamiteDescription" ] 	= "Descend down one floor."
+	GameText.TargetText.Esperanto	[ "DynamiteDescription" ] 	= "Subiri unu nivelon."
+	GameText.TargetText.Ido			[ "DynamiteDescription" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "DynamiteDescription" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "Rope" ] 	= "Rope"
+	GameText.TargetText.Esperanto	[ "Rope" ] 	= "Ŝnuro"
+	GameText.TargetText.Ido			[ "Rope" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "Rope" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "RopeDescription" ] 	= "Climb up one floor."
+	GameText.TargetText.Esperanto	[ "RopeDescription" ] 	= "Supreniri unu nivelon."
+	GameText.TargetText.Ido			[ "RopeDescription" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "RopeDescription" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "Blizzard" ] 	= "Blizzard"
+	GameText.TargetText.Esperanto	[ "Blizzard" ] 	= "Neĝoŝtormo"
+	GameText.TargetText.Ido			[ "Blizzard" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "Blizzard" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "BlizzardDescription" ] 	= "Freeze all the enemies."
+	GameText.TargetText.Esperanto	[ "BlizzardDescription" ] 	= "Frostigi ĉiujn malamikojn."
+	GameText.TargetText.Ido			[ "BlizzardDescription" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "BlizzardDescription" ] 	= "asdf."
+	
+	GameText.TargetText.English		[ "Price" ] 	= "Price:"
+	GameText.TargetText.Esperanto	[ "Price" ] 	= "Prezo:"
+	GameText.TargetText.Ido			[ "Price" ] 	= "asdf."
+	GameText.TargetText.Spanish		[ "Price" ] 	= "asdf."
 	
 	-- ladder
 	GameText.TargetText.English[ "miner-go-down-ladder" ] 			= "You descend the ladder."

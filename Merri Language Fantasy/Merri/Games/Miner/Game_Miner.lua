@@ -25,6 +25,9 @@ function GameMinerState:Setup( options )
 			
 			hud_pick = Texture.new( "Content/Games/Miner/UI/hud_pick.png" ),
 			hud_sword = Texture.new( "Content/Games/Miner/UI/hud_sword.png" ),
+			
+			shopkeeper = Texture.new( "Content/Games/Miner/UI/shopkeeper.png" ),
+			itemBackground = Texture.new( "Content/Games/Miner/UI/inventory_bg.png" ),
 		}
 	
 	self.sounds = {
@@ -35,9 +38,12 @@ function GameMinerState:Setup( options )
 		sword = Sound.new( "Content/Audio/sword.wav" ),
 	}
 	
+	self.images = {}
+	
 	GameMinerState.fonts = {
 		overhead = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 8 ),
 		hud = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 14 ),
+		shop = TTFont.new( "Content/Fonts/NotoSans-Bold.ttf", 20 ),
 	}
 	
 	-- Fade out graphic
@@ -133,6 +139,8 @@ function GameMinerState:Setup( options )
 	self.labels.menu:setTextColor( 0xFFFFFF )
 	self.labels.menu:setPosition( 12, 623 )
 	
+	self.state = "game"
+	
 	self:SetupHud()
 	self:Draw()
 end
@@ -190,7 +198,7 @@ function GameMinerState:Draw()
 	
 	self.map:UpdateLighting()
 	
-	--stage:addChild( self.debugButton )
+	stage:addChild( self.debugButton )
 	
 	if ( stage:contains( self.fadeBitmap ) ) then
 		stage:addChild( self.fadeBitmap )
@@ -316,6 +324,7 @@ function GameMinerState:Handle_EnterFrame( event )
 			self.map:GoDownstairs()
 			self:Draw()
 			self.labels.floorValue:setText( self.map.floor )
+			self:ToggleState( "shop" )
 		
 		-- Fade in
 		elseif ( self.fadeCounter > 0 ) then
@@ -344,3 +353,95 @@ end
 function GameMinerState:GotoState()
 	return StateBase:GotoState()
 end
+
+function GameMinerState:ToggleState( state )
+	self.state = state
+	
+	if ( self.state == "shop" ) then
+		self.transition = false
+		
+		self.images.bg = Bitmap.new( self.textures.black )
+		
+		self.images.shopkeeper = Bitmap.new( self.textures.shopkeeper )
+		self.images.shopkeeper:setPosition( 65, 65 )
+		
+		self.images.itemBackground1 = Bitmap.new( self.textures.itemBackground )
+		self.images.itemBackground2 = Bitmap.new( self.textures.itemBackground )
+		self.images.itemBackground3 = Bitmap.new( self.textures.itemBackground )
+		
+		self.images.itemBackground1:setPosition( 32, 330 )
+		self.images.itemBackground2:setPosition( 32, 430 )
+		self.images.itemBackground3:setPosition( 32, 530 )
+		
+		self.labels.info1 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Do you want to buy a tool?" ) )
+		self.labels.info1:setPosition( 10, 50 )
+		self.labels.info1:setTextColor( 0xFFFFFF )
+		
+		self.labels.item1 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Potion" ) )
+		self.labels.item1:setPosition( 140, 350 )
+		self.labels.item1:setTextColor( 0xFFFFFF )
+		
+		self.labels.item1Description = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "PotionDescription" ) )
+		self.labels.item1Description:setPosition( 140, 370 )
+		self.labels.item1Description:setTextColor( 0xFFFFFF )
+		
+		self.labels.item1Price = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Price" ) .. " 50" )
+		self.labels.item1Price:setPosition( 140, 390 )
+		self.labels.item1Price:setTextColor( 0xFFFFFF )
+		
+		self.labels.item2 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Earthquake" ) )
+		self.labels.item2:setPosition( 140, 450 )
+		self.labels.item2:setTextColor( 0xFFFFFF )
+		
+		self.labels.item2Description = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "EarthquakeDescription" ) )
+		self.labels.item2Description:setPosition( 140, 470 )
+		self.labels.item2Description:setTextColor( 0xFFFFFF )
+		
+		self.labels.item2Price = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Price" ) .. " 10" )
+		self.labels.item2Price:setPosition( 140, 490 )
+		self.labels.item2Price:setTextColor( 0xFFFFFF )
+		
+		self.labels.item3 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Dynamite" ) )
+		self.labels.item3:setPosition( 140, 550 )
+		self.labels.item3:setTextColor( 0xFFFFFF )
+		
+		self.labels.item3Description = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "DynamiteDescription" ) )
+		self.labels.item3Description:setPosition( 140, 570 )
+		self.labels.item3Description:setTextColor( 0xFFFFFF )
+		
+		self.labels.item3Price = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Price" ) .. " 40" )
+		self.labels.item3Price:setPosition( 140, 590 )
+		self.labels.item3Price:setTextColor( 0xFFFFFF )
+		
+		
+		stage:addChild( self.images.bg )
+		stage:addChild( self.images.shopkeeper )
+		stage:addChild( self.images.itemBackground1 )
+		stage:addChild( self.images.itemBackground2 )
+		stage:addChild( self.images.itemBackground3 )
+		stage:addChild( self.labels.info1 )
+		stage:addChild( self.labels.item1 )
+		stage:addChild( self.labels.item1Description )
+		stage:addChild( self.labels.item1Price )
+		stage:addChild( self.labels.item2 )
+		stage:addChild( self.labels.item2Description )
+		stage:addChild( self.labels.item2Price )
+		stage:addChild( self.labels.item3 )
+		stage:addChild( self.labels.item3Description )
+		stage:addChild( self.labels.item3Price )
+		
+	else
+		-- Game
+		self.transition = false
+		
+		stage:removeChild( self.images.bg )
+		stage:removeChild( self.images.shopkeeper )
+		stage:removeChild( self.images.itemBackground1 )
+		stage:removeChild( self.images.itemBackground2 )
+		stage:removeChild( self.images.itemBackground3 )
+	
+	end
+end
+
+
+

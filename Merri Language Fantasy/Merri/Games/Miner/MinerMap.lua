@@ -228,7 +228,11 @@ function MinerMap:Generate()
 				self.tiles[x][y].object:setPosition( x * self.tileWidth, y * self.tileWidth )
 				
 				self.tiles[x][y].label = TextField.new( GameMinerState.fonts.overhead, GameText:Get( "target", self.tiles[x][y].objectType ) )
-				self.tiles[x][y].label:setPosition( x * self.tileWidth, y * self.tileWidth )
+				if ( self.tiles[endX][endY].objectType == "ladder" ) then
+					self.tiles[x][y].label:setPosition( x * self.tileWidth, y * self.tileWidth )
+				else
+					self.tiles[x][y].label:setPosition( x * self.tileWidth - 10, y * self.tileWidth )
+				end
 				self.tiles[x][y].label:setTextColor( 0xFFFFFF )
 				
 			end

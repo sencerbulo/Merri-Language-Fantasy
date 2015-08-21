@@ -32,6 +32,8 @@
   <folder name="Games">
    <folder name="Miner">
     <folder name="UI">
+     <file source="Content/Games/Miner/UI/inventory_bg.png"/>
+     <file source="Content/Games/Miner/UI/shopkeeper.png"/>
      <file source="Content/Games/Miner/UI/hud_heart.png"/>
      <file source="Content/Games/Miner/UI/hud_down.png"/>
      <file source="Content/Games/Miner/UI/hud_left.png"/>
