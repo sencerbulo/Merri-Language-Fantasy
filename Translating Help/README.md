@@ -25,6 +25,21 @@ To say your language's name, and the translation (don't change the text inside t
 
     GameText.HelperText.DuckLang	[ "Play" ] 	= "Quackie"
 
+## Non-romanized Scripts
+
+If your language uses an original script, we will need to coordinate on that so I can add that functionality.
+
+If your language uses a script that is supported by Unicode, it will be fine, just write it in that script.  
+However, I would like to have a *second* "translation" done with that language in a romanized format.
+
+For example, to support Japanese, I would like to have:
+
+* Hiragana, Katakana, and Kanji version (私の名前はレイチェルです)
+* Hiragana and Katakana only (わたし の なあえ は レイチェルです)
+* Romaji (Watashi no namae wa reicheru desu)
+
+This is for learning purposes.
+
 ## Don't know how to use GitHub?
 
 If you're not a programmer, or do not know how to use GitHub, that's OK. 
@@ -48,19 +63,8 @@ If there is already somebody there and you are reviewing their work, just add yo
 
     GameText.TargetText.Esperanto		[ "Translation Credits" ]	= "Rachel J. Morris, Tea Coba"
 
-## Non-romanized Scripts
+## Know GitHub?
 
-If your language uses an original script, we will need to coordinate on that so I can add that functionality.
-
-If your language uses a script that is supported by Unicode, it will be fine, just write it in that script.  
-However, I would like to have a *second* "translation" done with that language in a romanized format.
-
-For example, to support Japanese, I would like to have:
-
-* Hiragana, Katakana, and Kanji version (私の名前はレイチェルです)
-* Hiragana and Katakana only (わたし の なあえ は レイチェルです)
-* Romaji (Watashi no namae wa reicheru desu)
-
-This is for learning purposes.
+Make a pull request!!
 
 
