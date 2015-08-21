@@ -67,4 +67,8 @@ If there is already somebody there and you are reviewing their work, just add yo
 
 Make a pull request!!
 
+## Keep in Touch
+
+If you want to be a contributor, please send an email to Rachel@Moosader.com so we can send updates, keep in contact with you. If you're interested in doing translation work but would like a donation for your time, please also let us know!
+
 
