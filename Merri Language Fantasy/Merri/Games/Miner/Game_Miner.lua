@@ -27,7 +27,11 @@ function GameMinerState:Setup( options )
 			hud_sword = Texture.new( "Content/Games/Miner/UI/hud_sword.png" ),
 			
 			shopkeeper = Texture.new( "Content/Games/Miner/UI/shopkeeper.png" ),
+			
 			itemBackground = Texture.new( "Content/Games/Miner/UI/inventory_bg.png" ),
+			inventoryPotion = Texture.new( "Content/Games/Miner/UI/inventory_potion.png" ),
+			inventoryEarthquake = Texture.new( "Content/Games/Miner/UI/inventory_earthquake.png" ),
+			inventoryBlizzard = Texture.new( "Content/Games/Miner/UI/inventory_blizzard.png" ),
 		}
 	
 	self.sounds = {
@@ -365,9 +369,9 @@ function GameMinerState:ToggleState( state )
 		self.images.shopkeeper = Bitmap.new( self.textures.shopkeeper )
 		self.images.shopkeeper:setPosition( 65, 65 )
 		
-		self.images.itemBackground1 = Bitmap.new( self.textures.itemBackground )
-		self.images.itemBackground2 = Bitmap.new( self.textures.itemBackground )
-		self.images.itemBackground3 = Bitmap.new( self.textures.itemBackground )
+		self.images.itemBackground1 = Bitmap.new( self.textures.inventoryPotion )
+		self.images.itemBackground2 = Bitmap.new( self.textures.inventoryEarthquake )
+		self.images.itemBackground3 = Bitmap.new( self.textures.inventoryBlizzard )
 		
 		self.images.itemBackground1:setPosition( 32, 330 )
 		self.images.itemBackground2:setPosition( 32, 430 )
@@ -401,11 +405,11 @@ function GameMinerState:ToggleState( state )
 		self.labels.item2Price:setPosition( 140, 490 )
 		self.labels.item2Price:setTextColor( 0xFFFFFF )
 		
-		self.labels.item3 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Dynamite" ) )
+		self.labels.item3 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Blizzard" ) )
 		self.labels.item3:setPosition( 140, 550 )
 		self.labels.item3:setTextColor( 0xFFFFFF )
 		
-		self.labels.item3Description = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "DynamiteDescription" ) )
+		self.labels.item3Description = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "BlizzardDescription" ) )
 		self.labels.item3Description:setPosition( 140, 570 )
 		self.labels.item3Description:setTextColor( 0xFFFFFF )
 		
