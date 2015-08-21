@@ -47,6 +47,12 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Esperanto = {}
 	GameText.TargetText.Ido = {}
 	GameText.TargetText.Spanish = {}
+
+	-- Credits --
+	GameText.TargetText.English		[ "Translation Credits" ]	= "Rachel J. Morris"
+	GameText.TargetText.Esperanto	[ "Translation Credits" ] 	= "Rachel J. Morris"
+	GameText.TargetText.Ido			[ "Translation Credits" ] 	= "???"
+	GameText.TargetText.Spanish		[ "Translation Credits" ] 	= "Tea Coba"
 	
 	
 	-- Common --
