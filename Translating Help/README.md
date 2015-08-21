@@ -17,7 +17,7 @@ Target text is meant to be the language being learned, while the helper text is 
 
 ## Adding a new language
 
-Adding a new language is simple, you just need to change a line like this:
+Adding a new language is simple, you just need to duplicate a line like this:
 
     GameText.HelperText.English		[ "Play" ] 	= "Play"
 
