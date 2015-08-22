@@ -604,6 +604,28 @@ GameText.TargetText.Spanish     [ "miner-eat-sandwich" ]    = "Comes el sandwich
 GameText.TargetText.Ithkuil     [ "miner-eat-sandwich" ]    = "Čmel gral ko"
 GameText.TargetText.German      [ "miner-eat-sandwich" ]    = "Du isst das Höhlensandwich."
 
+GameText.TargetText.English     [ "use-earthquake" ]    = "The earth shakes violently."
+GameText.TargetText.Esperanto   [ "use-earthquake" ]    = "La tero tremas forte."
+GameText.TargetText.Ido         [ "use-earthquake" ]    = "La tero tremas forte."
+GameText.TargetText.Spanish     [ "use-earthquake" ]    = "The earth shakes."
+GameText.TargetText.Ithkuil     [ "use-earthquake" ]    = "The earth shakes."
+GameText.TargetText.German      [ "use-earthquake" ]    = "The earth shakes."
+
+
+GameText.TargetText.English     [ "use-blizzard" ]    = "Everything freezes over."
+GameText.TargetText.Esperanto   [ "use-blizzard" ]    = "Ĉio frostas."
+GameText.TargetText.Ido         [ "use-blizzard" ]    = "Omno frostas."
+GameText.TargetText.Spanish     [ "use-blizzard" ]    = "Everything freezes over."
+GameText.TargetText.Ithkuil     [ "use-blizzard" ]    = "Everything freezes over."
+GameText.TargetText.German      [ "use-blizzard" ]    = "Everything freezes over."
+
+GameText.TargetText.English     [ "enemies-thaw" ]    = "Everything has thawed out."
+GameText.TargetText.Esperanto   [ "enemies-thaw" ]    = "Ĉio degelas."
+GameText.TargetText.Ido         [ "enemies-thaw" ]    = "Omno desfrostas."
+GameText.TargetText.Spanish     [ "enemies-thaw" ]    = "Everything has thawed out."
+GameText.TargetText.Ithkuil     [ "enemies-thaw" ]    = "Everything has thawed out."
+GameText.TargetText.German      [ "enemies-thaw" ]    = "Everything has thawed out."
+
 -- collects
 GameText.TargetText.English     [ "miner-collect-copper" ]  = "You pick up copper."
 GameText.TargetText.Esperanto   [ "miner-collect-copper" ]  = "Vi kolektas kupron."

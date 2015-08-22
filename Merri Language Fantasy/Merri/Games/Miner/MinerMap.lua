@@ -10,14 +10,23 @@ function MinerMap:init( options )
 			rock = Texture.new( "Content/Games/Miner/Tiles/rock.png" ),
 			ladder = Texture.new( "Content/Games/Miner/Tiles/ladder_down.png" ),
 			star = Texture.new( "Content/Graphics/Tiles/treasure_star.png" ),
+			
 			mushroom = Texture.new( "Content/Games/Miner/Characters/enemy_mushroom.png" ),
+			mushroom_frozen = Texture.new( "Content/Games/Miner/Characters/enemy_mushroom_frozen.png" ),
 			bat = Texture.new( "Content/Games/Miner/Characters/enemy_bat.png" ),
+			bat_frozen = Texture.new( "Content/Games/Miner/Characters/enemy_bat_frozen.png" ),
 			snail = Texture.new( "Content/Games/Miner/Characters/enemy_snail.png" ),
+			snail_frozen = Texture.new( "Content/Games/Miner/Characters/enemy_snail_frozen.png" ),
 			rabbit = Texture.new( "Content/Games/Miner/Characters/enemy_rabbit.png" ),
+			rabbit_frozen = Texture.new( "Content/Games/Miner/Characters/enemy_rabbit_frozen.png" ),
 			snake = Texture.new( "Content/Games/Miner/Characters/enemy_snake.png" ),
+			snake_frozen = Texture.new( "Content/Games/Miner/Characters/enemy_snake_frozen.png" ),
 			mole = Texture.new( "Content/Games/Miner/Characters/enemy_mole.png" ),
+			mole_frozen = Texture.new( "Content/Games/Miner/Characters/enemy_mole_frozen.png" ),
 			skeleton = Texture.new( "Content/Games/Miner/Characters/enemy_skeleton.png" ),
+			skeleton_frozen = Texture.new( "Content/Games/Miner/Characters/enemy_skeleton_frozen.png" ),
 			moose = Texture.new( "Content/Games/Miner/Characters/enemy_moose.png" ),
+			moose_frozen = Texture.new( "Content/Games/Miner/Characters/enemy_moose_frozen.png" ),
 			
 			copper = Texture.new( "Content/Games/Miner/Tiles/treasure_copper.png" ),
 			silver = Texture.new( "Content/Games/Miner/Tiles/treasure_silver.png" ),
@@ -32,10 +41,12 @@ function MinerMap:init( options )
 		
 	self.tileWidth = self.textures.ground:getWidth()
 	self.floor =  options.floor
-	print( "Init floor ", options.floor )
 	self.lastFloor = 20
 	self.mapWidth = 10
 	self.mapHeight = 14
+	
+	self.freezeCountdown = 0
+	self.frame = 0
 		
 	self.tiles = {}
 	
@@ -327,11 +338,7 @@ function MinerMap:UseSword( direction )
 	return self.tiles[tileX][tileY].objectType
 end
 
-function MinerMap:UsePick( direction ) 
-	self.player:Face( direction )
-	local playerX, playerY = self.player:getPosition()
-	local x, y = self:GetTileCoordsInDirection( playerX, playerY, direction )
-	
+function MinerMap:OpenRock( x, y ) 
 	-- Choose what kind of item this is
 	local itemType = math.random( 1, 3 )
 	if ( itemType == 1 and self.floor > 0 and self.floor <= 4 ) then
@@ -367,6 +374,13 @@ function MinerMap:UsePick( direction )
 	print( "Unveil object: ", self.tiles[x][y].objectType )
 	self.tiles[x][y].object:setTexture( self.textures[self.tiles[x][y].objectType] )
 	self.tiles[x][y].label:setText( GameText:Get( "target", self.tiles[x][y].objectType ) )
+end
+
+function MinerMap:UsePick( direction ) 
+	self.player:Face( direction )
+	local playerX, playerY = self.player:getPosition()
+	local x, y = self:GetTileCoordsInDirection( playerX, playerY, direction )
+	self:OpenRock( x, y )
 end
 
 function MinerMap:MovePlayer( direction, amount )
@@ -438,10 +452,38 @@ end
 
 function MinerMap:Handle_EnterFrame()
 	self.player:Update()
+	
+	self.frame = self.frame + 0.1
+	
+	if ( self.freezeCountdown > 0 ) then		
+		-- Shiver
+		for y = 0, self.mapHeight do
+			for x = 0, self.mapWidth do
+				if ( self.tiles[x][y].frozen == true ) then
+					local posX = x * self.tileWidth
+					local posY = y * self.tileWidth
+					
+					if ( math.floor( self.frame ) % 2 == 0 ) then
+						posX = posX - 1
+					else
+						posX = posX  + 1
+					end
+					
+					self.tiles[x][y].object:setPosition( posX, posY )	
+				end
+			end
+		end
+	end
 end
 
 function MinerMap:TurnBasedUpdate()
 	-- Move each enemy based on their behavior.
+	if ( self.freezeCountdown > 0 ) then
+		self.freezeCountdown = self.freezeCountdown - 1
+		if ( self.freezeCountdown == 0 ) then
+			self:UnfreezeEnemies()
+		end
+	end
 end
 
 function MinerMap:SwapObjects( sx, sy, dx, dy )
@@ -459,7 +501,34 @@ function MinerMap:SwapObjects( sx, sy, dx, dy )
 end
 
 function MinerMap:FreezeAllEnemies()
+	for y = 0, self.mapHeight do
+		for x = 0, self.mapWidth do
+			if ( self.tiles[x][y].generalType == "enemy" ) then
+				self.tiles[x][y].frozen = true
+				self.tiles[x][y].object:setTexture( self.textures[ self.tiles[x][y].objectType .. "_frozen" ] )
+				self.freezeCountdown = 10
+			end
+		end
+	end	
+end
+
+function MinerMap:UnfreezeEnemies()
+	for y = 0, self.mapHeight do
+		for x = 0, self.mapWidth do
+			if ( self.tiles[x][y].generalType == "enemy" ) then
+				self.tiles[x][y].frozen = false
+				self.tiles[x][y].object:setTexture( self.textures[ self.tiles[x][y].objectType ] )
+			end
+		end
+	end	
 end
 
 function MinerMap:BreakAllRocks()
+	for y = 0, self.mapHeight do
+		for x = 0, self.mapWidth do
+			if ( self.tiles[x][y].objectType == "rock" ) then
+				self:OpenRock( x, y )
+			end
+		end
+	end	
 end

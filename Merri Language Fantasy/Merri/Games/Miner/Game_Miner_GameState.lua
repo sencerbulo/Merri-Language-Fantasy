@@ -81,7 +81,6 @@ function MinerGameState:Setup( options )
 	
 	end
 	
-	print( "Floor: ", MinerGameState.floor )
 	-- Set up map
 	self.map = MinerMap.new( { floor = MinerGameState.floor } )
 	self.map:Generate()
@@ -117,6 +116,8 @@ function MinerGameState:Setup( options )
 			yOffset = 0,
 		},
 	}
+	
+	self.frozenEnemies = false
 	
 	self.debugButton = Bitmap.new( Texture.new( "Content/Games/Miner/UI/hud_down.png" ) )
 	self.debugButton:setPosition( 0, 600 )
@@ -297,6 +298,13 @@ function MinerGameState:InputAction( action, direction )
 		
 	end
 	
+	
+	
+	if ( self.frozenEnemies and self.freezeCountdown == 0 ) then
+		self.frozenEnemies = false
+		self.labels.narration:setText( GameText:Get( "target", "enemies-thaw" ) )	
+	end
+	
 	self.labels.moneyValue:setText( MinerGameState.money )
 	
 	self:SetupHud()
@@ -338,12 +346,15 @@ function MinerGameState:UseItem( type )
 		success = true
 		self.map:BreakAllRocks()
 		self.sounds.Earthquake:play()
+		self.labels.narration:setText( GameText:Get( "target", "use-earthquake" ) )
 	
 	elseif ( type == "Blizzard" ) then
 		-- Freeze all enemies
 		success = true
 		self.map:FreezeAllEnemies()
 		self.sounds.Blizzard:play()
+		self.labels.narration:setText( GameText:Get( "target", "use-blizzard" ) )
+		self.frozenEnemies = true
 	
 	elseif ( type == "Rope" and MinerGameState.floor > 1 ) then
 		-- Cannot use on the first floor, but you shouldn't have it anyway

@@ -70,6 +70,14 @@
      <file source="Content/Games/Miner/Tiles/ground_cobblestone.png"/>
     </folder>
     <folder name="Characters">
+     <file source="Content/Games/Miner/Characters/enemy_snake_frozen.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_snail_frozen.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_skeleton_frozen.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_rabbit_frozen.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_mushroom_frozen.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_moose_frozen.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_mole_frozen.png"/>
+     <file source="Content/Games/Miner/Characters/enemy_bat_frozen.png"/>
      <file source="Content/Games/Miner/Characters/enemy_moose.png"/>
      <file source="Content/Games/Miner/Characters/enemy_rabbit.png"/>
      <file source="Content/Games/Miner/Characters/enemy_bat.png"/>
