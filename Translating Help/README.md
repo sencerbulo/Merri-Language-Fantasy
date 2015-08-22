@@ -35,7 +35,7 @@ However, I would like to have a *second* "translation" done with that language i
 For example, to support Japanese, I would like to have:
 
 * Hiragana, Katakana, and Kanji version (私の名前はレイチェルです)
-* Hiragana and Katakana only (わたし の なあえ は レイチェルです)
+* Hiragana and Katakana only (わたし の なまえ は レイチェルです)
 * Romaji (Watashi no namae wa reicheru desu)
 
 This is for learning purposes.
