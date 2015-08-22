@@ -70,6 +70,7 @@ function GameText:SetupLanguages()
     GameText.HelperText.Spanish = {}
     GameText.HelperText.Ithkuil = {}
     GameText.HelperText.German = {}
+    GameText.HelperText.French = {}
 
     GameText.TargetText.English = {}
     GameText.TargetText.Esperanto = {}
@@ -77,6 +78,7 @@ function GameText:SetupLanguages()
     GameText.TargetText.Spanish = {}
     GameText.TargetText.Ithkuil = {}
     GameText.TargetText.German = {}
+    GameText.TargetText.French = {}
 
 -- Credits --
 GameText.HelperText.English     [ "Translators" ]   = "Translators"
@@ -85,6 +87,7 @@ GameText.HelperText.Ido         [ "Translators" ]   = "Tradukisti"
 GameText.HelperText.Spanish     [ "Translators" ]   = "Traductor"
 GameText.HelperText.Ithkuil     [ "Translators" ]   = "Translators"
 GameText.HelperText.German      [ "Translators" ]   = "Übersetzer"
+GameText.HelperText.French      [ "Translators" ]   = "Traducteurs"
 
 -- Name of the language --
 GameText.HelperText.English     [ "language-name" ]     = "English"
@@ -93,6 +96,7 @@ GameText.HelperText.Ido         [ "language-name" ]     = "Ido"
 GameText.HelperText.Spanish     [ "language-name" ]     = "Español"
 GameText.HelperText.Ithkuil     [ "language-name" ]     = "Ithkuil"
 GameText.HelperText.German      [ "language-name" ]     = "Deutsch"
+GameText.HelperText.French      [ "language-name" ]     = "Français"
 
 -- Put your name in here
 GameText.HelperText.English     [ "Translation Credits" ]   = "Rachel J. Morris"
@@ -101,7 +105,7 @@ GameText.HelperText.Ido         [ "Translation Credits" ]   = "Rachel J. Morris"
 GameText.HelperText.Spanish     [ "Translation Credits" ]   = "Tea Coba"
 GameText.HelperText.Ithkuil     [ "Translation Credits" ]   = "Chikaodinaka 'dkawirl' Oluigbo"
 GameText.HelperText.German      [ "Translation Credits" ]   = "Marius Stärk"
-
+GameText.HelperText.French      [ "Translation Credits" ]   = "Vanege"
 
 -- Common --
 
@@ -118,6 +122,7 @@ GameText.HelperText.Ido         [ "website" ]   = "Retosituo:"
 GameText.HelperText.Spanish     [ "website" ]   = "Página web:"
 GameText.HelperText.Ithkuil     [ "website" ]    = "Website:"
 GameText.HelperText.German      [ "website" ]    = "Internetseite:"
+GameText.HelperText.French      [ "website" ]    = "Site web :"
 
 GameText.HelperText.English     [ "facebook" ]  = "Facebook:"
 GameText.HelperText.Esperanto   [ "facebook" ]  = "Facebook:"
@@ -125,6 +130,7 @@ GameText.HelperText.Ido         [ "facebook" ]  = "Facebook:"
 GameText.HelperText.Spanish     [ "facebook" ]  = "Facebook:"
 GameText.HelperText.Ithkuil     [ "facebook" ]    = "Facebook:"
 GameText.HelperText.German      [ "facebook" ]    = "Facebook:"
+GameText.HelperText.French      [ "facebook" ]    = "Facebook :"
 
 GameText.HelperText.English     [ "twitter" ]   = "Twitter:"
 GameText.HelperText.Esperanto   [ "twitter" ]   = "Twitter:"
@@ -132,7 +138,7 @@ GameText.HelperText.Ido         [ "twitter" ]   = "Twitter:"
 GameText.HelperText.Spanish     [ "twitter" ]   = "Twitter:"
 GameText.HelperText.Ithkuil     [ "twitter" ]    = "Twitter:"
 GameText.HelperText.German      [ "twitter" ]    = "Twitter:"
-
+GameText.HelperText.French      [ "twitter" ]    = "Twitter :"
 
 
 -- LanguageSelectState --
@@ -145,6 +151,7 @@ GameText.HelperText.Ido         [ "I know Ido" ]        = "Me konas Ido."
 GameText.HelperText.Spanish     [ "I know Spanish" ]    = "Yo conozco Español."
 GameText.HelperText.Ithkuil     [ "I know Ithkuil" ]    = "I know Ithkuil."
 GameText.HelperText.German      [ "I know German" ]     = "Ich kenne Deutsch."
+GameText.HelperText.French      [ "I know French" ]     = "Je connais le français."
 
 -- Target Languages --
 GameText.HelperText.English     [ "I am learning English" ]     = "I am learning English"
@@ -200,6 +207,7 @@ GameText.HelperText.Ido         [ "Next" ]  = "Durar"
 GameText.HelperText.Spanish     [ "Next" ]  = "Durar"
 GameText.HelperText.Ithkuil     [ "Next" ]  = "Continue"
 GameText.HelperText.German      [ "Next" ]  = "Fortsetzen"
+GameText.HelperText.French      [ "Next" ]  = "Suivant"
 
 GameText.HelperText.English     [ "Previous" ]  = "Previous"
 GameText.HelperText.Esperanto   [ "Previous" ]  = "Antaŭa"
@@ -207,6 +215,7 @@ GameText.HelperText.Ido         [ "Previous" ]  = "Antea"
 GameText.HelperText.Spanish     [ "Previous" ]  = "Pasada"
 GameText.HelperText.Ithkuil     [ "Previous" ]  = "Previous"
 GameText.HelperText.German      [ "Previous" ]  = "Vorherige"
+GameText.HelperText.French      [ "Previous" ]  = "Précédent"
 
 GameText.HelperText.English     [ "Options" ]   = "Options"
 GameText.HelperText.Esperanto   [ "Options" ]   = "Agordoj"
@@ -246,6 +255,7 @@ GameText.HelperText.Ido         [ "Thank you for trying out Merri" ]    = "Danko
 GameText.HelperText.Spanish     [ "Thank you for trying out Merri" ]    = "Thank you for trying out Merri!"
 GameText.HelperText.Ithkuil     [ "Thank you for trying out Merri" ]    = "Thank you for trying out Merri!"
 GameText.HelperText.German      [ "Thank you for trying out Merri" ]    = "Danke, dass du Merri ausprobierst!"
+GameText.HelperText.French      [ "Thank you for trying out Merri" ]    = "Merci d'avoir essayé Merri !"
 
 GameText.HelperText.English     [ "This is still a work in progress" ]  = "This is still a work in progress."
 GameText.HelperText.Esperanto   [ "This is still a work in progress" ]  = "Tio ĉi ankoraŭ ne estas kompleta."
@@ -253,6 +263,7 @@ GameText.HelperText.Ido         [ "This is still a work in progress" ]  = "Ica a
 GameText.HelperText.Spanish     [ "This is still a work in progress" ]  = "This is still a work in progress."
 GameText.HelperText.Ithkuil     [ "This is still a work in progress" ]  = "This is still a work in progress."
 GameText.HelperText.German      [ "This is still a work in progress" ]  = "Dieses Spiel befindet sich derzeit noch in Entwicklung."
+GameText.HelperText.French      [ "This is still a work in progress" ]  = "Le jeu est encore en développement."
 
 GameText.HelperText.English     [ "There may be errors or bugs" ]       = "There may be errors or bugs."
 GameText.HelperText.Esperanto   [ "There may be errors or bugs" ]       = "Eble ekzistas eraroj aŭ cimoj."
@@ -260,6 +271,7 @@ GameText.HelperText.Ido         [ "There may be errors or bugs" ]       = "Forsa
 GameText.HelperText.Spanish     [ "There may be errors or bugs" ]       = "There may be errors or bugs."
 GameText.HelperText.Ithkuil     [ "There may be errors or bugs" ]       = "There may be errors or bugs."
 GameText.HelperText.German      [ "There may be errors or bugs" ]       = "Es gibt wahrscheinlich noch Fehler."
+GameText.HelperText.French      [ "There may be errors or bugs" ]       = "Il peut y avoir des erreurs ou des bug."
 
 GameText.HelperText.English     [ "Report problems at EMAIL" ]          = "Report problems at Rachel@Moosader.com ."
 GameText.HelperText.Esperanto   [ "Report problems at EMAIL" ]          = "Raportu problemojn al Rachel@Moosader.com ."
@@ -267,6 +279,7 @@ GameText.HelperText.Ido         [ "Report problems at EMAIL" ]          = "Rapor
 GameText.HelperText.Spanish     [ "Report problems at EMAIL" ]          = "Report problems at Rachel@Moosader.com ."
 GameText.HelperText.Ithkuil     [ "Report problems at EMAIL" ]          = "Report problems at Rachel@Moosader.com ."
 GameText.HelperText.German      [ "Report problems at EMAIL" ]          = "Problemberichte können an Rachel@Moosader.com gesendet werden."
+GameText.HelperText.French      [ "Report problems at EMAIL" ]          = "Signalez les problèmes à Rachel@Moosader.com ."
 
 GameText.HelperText.English     [ "Want to keep up with this game's progress?" ]    = "Want to keep up with this game's progress?"
 GameText.HelperText.Esperanto   [ "Want to keep up with this game's progress?" ]    = "Ĉu vi volas sekvi novaĵojn pri la ludo?"
@@ -274,6 +287,7 @@ GameText.HelperText.Ido         [ "Want to keep up with this game's progress?" ]
 GameText.HelperText.Spanish     [ "Want to keep up with this game's progress?" ]    = "Want to keep up with this game's progress?"
 GameText.HelperText.Ithkuil     [ "Want to keep up with this game's progress?" ]    = "Want to keep up with this game's progress?"
 GameText.HelperText.German      [ "Want to keep up with this game's progress?" ]    = "Möchtest du über die Entwicklung dieses Spiels informiert werden?"
+GameText.HelperText.French      [ "Want to keep up with this game's progress?" ]    = "Souhaitez-vous suivre le développement du jeu ?"
 
 -- Don't translate these, they're being set based on the notes above.
 GameText.TargetText.English     [ "Thank you for trying out Merri" ]    = GameText.HelperText.English[ "Thank you for trying out Merri" ]
@@ -741,6 +755,7 @@ GameText.TargetText.Ido         [ "Don't buy anything" ]    = "Ne komprar irgo."
 GameText.TargetText.Spanish     [ "Don't buy anything" ]    = "Don't buy anything."
 GameText.TargetText.Ithkuil     [ "Don't buy anything" ]    = "Don't buy anything."
 GameText.TargetText.German      [ "Don't buy anything" ]    = "Don't buy anything."
+GameText.TargetText.French      [ "Don't buy anything" ]    = "Ne rien acheter."
 
 GameText.TargetText.English     [ "Potion" ]    = "Potion"
 GameText.TargetText.Esperanto   [ "Potion" ]    = "Pocio"
