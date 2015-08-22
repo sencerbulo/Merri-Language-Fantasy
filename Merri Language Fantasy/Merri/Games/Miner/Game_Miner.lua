@@ -32,6 +32,10 @@ function GameMinerState:Setup( options )
 			inventoryPotion = Texture.new( "Content/Games/Miner/UI/inventory_potion.png" ),
 			inventoryEarthquake = Texture.new( "Content/Games/Miner/UI/inventory_earthquake.png" ),
 			inventoryBlizzard = Texture.new( "Content/Games/Miner/UI/inventory_blizzard.png" ),
+			inventoryDynamite = Texture.new( "Content/Games/Miner/UI/inventory_blizzard.png" ),
+			inventoryRope = Texture.new( "Content/Games/Miner/UI/inventory_blizzard.png" ),
+			
+			dontbuy = Texture.new( "Content/Games/Miner/UI/dontbuy.png" ),
 		}
 	
 	self.sounds = {
@@ -136,12 +140,12 @@ function GameMinerState:Setup( options )
 	self.labels.floorValue:setPosition( 165, 630 )
 	
 	self.buttons = {}
-	self.buttons.menu = Bitmap.new( self.textures.menu )
-	self.buttons.menu:setPosition( 10, 580 )
+	--self.buttons.menu = Bitmap.new( self.textures.menu )
+	--self.buttons.menu:setPosition( 10, 580 )
 	
-	self.labels.menu = TextField.new( GameMinerState.fonts.hud, GameText:Get( "helper", "Menu" ) )
-	self.labels.menu:setTextColor( 0xFFFFFF )
-	self.labels.menu:setPosition( 12, 623 )
+	--self.labels.menu = TextField.new( GameMinerState.fonts.hud, GameText:Get( "helper", "Menu" ) )
+	--self.labels.menu:setTextColor( 0xFFFFFF )
+	--self.labels.menu:setPosition( 12, 623 )
 	
 	self.state = "game"
 	
@@ -294,20 +298,27 @@ function GameMinerState:Handle_KeyDown( event )
 end
 
 function GameMinerState:Handle_MouseDown( event )
-	-- Hud buttons could be to move or mine or attack
-	for key, button in pairs( self.hud ) do
-		if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
-			self:InputAction( button.action, button.direction )			
+	if ( self.state == "game" ) then
+		-- Hud buttons could be to move or mine or attack
+		for key, button in pairs( self.hud ) do
+			if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
+				self:InputAction( button.action, button.direction )			
+			end
 		end
-	end
-	
-	if ( self.debugButton:hitTestPoint( event.x, event.y ) ) then
-		self.sounds.footsteps:play()
-		self.fadeCounter = 100
-		self.transition = true
-		stage:addChild( self.fadeBitmap )
-		self.fadeBitmap:setAlpha( 0 )
-		self.labels.narration:setText( GameText:Get( "target", "miner-go-down-ladder" ) )	
+		
+		if ( self.debugButton:hitTestPoint( event.x, event.y ) ) then
+			self.sounds.footsteps:play()
+			self.fadeCounter = 100
+			self.transition = true
+			stage:addChild( self.fadeBitmap )
+			self.fadeBitmap:setAlpha( 0 )
+			self.labels.narration:setText( GameText:Get( "target", "miner-go-down-ladder" ) )	
+		end
+	elseif ( self.state == "shop" ) then
+		if ( self.images.dontbuy ~= nil and self.images.dontbuy:hitTestPoint( event.x, event.y ) ) then
+			self:ToggleState( "game" )
+			self.sounds.footsteps:play()
+		end
 	end
 end
 
@@ -369,54 +380,43 @@ function GameMinerState:ToggleState( state )
 		self.images.shopkeeper = Bitmap.new( self.textures.shopkeeper )
 		self.images.shopkeeper:setPosition( 65, 65 )
 		
-		self.images.itemBackground1 = Bitmap.new( self.textures.inventoryPotion )
-		self.images.itemBackground2 = Bitmap.new( self.textures.inventoryEarthquake )
-		self.images.itemBackground3 = Bitmap.new( self.textures.inventoryBlizzard )
-		
-		self.images.itemBackground1:setPosition( 32, 330 )
-		self.images.itemBackground2:setPosition( 32, 430 )
-		self.images.itemBackground3:setPosition( 32, 530 )
 		
 		self.labels.info1 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Do you want to buy a tool?" ) )
 		self.labels.info1:setPosition( 10, 50 )
 		self.labels.info1:setTextColor( 0xFFFFFF )
 		
-		self.labels.item1 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Potion" ) )
-		self.labels.item1:setPosition( 140, 350 )
-		self.labels.item1:setTextColor( 0xFFFFFF )
+		local items = { "Potion", "Earthquake", "Blizzard", "Dynamite", "Rope" }
 		
-		self.labels.item1Description = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "PotionDescription" ) )
-		self.labels.item1Description:setPosition( 140, 370 )
-		self.labels.item1Description:setTextColor( 0xFFFFFF )
+		local randomItems = {}
+		local x = 32
+		local y = 220
+		local inc = 90
+		for i = 1, 3 do
+			local index = math.random( 1, #items )
+			local itemName = items[ index ]
+			print( "Random item ", i, ": ", itemName )
+			
+			self.images[ "itemBackground" .. i ] = Bitmap.new( self.textures[ "inventory" .. itemName ] )
+			self.images[ "itemBackground" .. i ]:setPosition( x, y + ( i * inc ) )
+			
+			self.labels[ "item" .. i ] = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", itemName ) )
+			self.labels[ "item" .. i ]:setPosition( x+100, y+20 + ( i * inc ) )
+			self.labels[ "item" .. i ]:setTextColor( 0xFFFFFF )
+			
+			self.labels[ "itemDescription" .. i ] = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", itemName .. "Description" ) )
+			self.labels[ "itemDescription" .. i ]:setPosition( x+100, y+40 + ( i * inc ) )
+			self.labels[ "itemDescription" .. i ]:setTextColor( 0xFFFFFF )
 		
-		self.labels.item1Price = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Price" ) .. " 50" )
-		self.labels.item1Price:setPosition( 140, 390 )
-		self.labels.item1Price:setTextColor( 0xFFFFFF )
+			self.labels[ "itemPrice" .. i ] = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Price" ) .. " 50" )
+			self.labels[ "itemPrice" .. i ]:setPosition( x+100, y+60 + ( i * inc ) )
+			self.labels[ "itemPrice" .. i ]:setTextColor( 0xFFFFFF )
+		end
 		
-		self.labels.item2 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Earthquake" ) )
-		self.labels.item2:setPosition( 140, 450 )
-		self.labels.item2:setTextColor( 0xFFFFFF )
-		
-		self.labels.item2Description = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "EarthquakeDescription" ) )
-		self.labels.item2Description:setPosition( 140, 470 )
-		self.labels.item2Description:setTextColor( 0xFFFFFF )
-		
-		self.labels.item2Price = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Price" ) .. " 10" )
-		self.labels.item2Price:setPosition( 140, 490 )
-		self.labels.item2Price:setTextColor( 0xFFFFFF )
-		
-		self.labels.item3 = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Blizzard" ) )
-		self.labels.item3:setPosition( 140, 550 )
-		self.labels.item3:setTextColor( 0xFFFFFF )
-		
-		self.labels.item3Description = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "BlizzardDescription" ) )
-		self.labels.item3Description:setPosition( 140, 570 )
-		self.labels.item3Description:setTextColor( 0xFFFFFF )
-		
-		self.labels.item3Price = TextField.new( GameMinerState.fonts.hud, GameText:Get( "target", "Price" ) .. " 40" )
-		self.labels.item3Price:setPosition( 140, 590 )
-		self.labels.item3Price:setTextColor( 0xFFFFFF )
-		
+		self.images.dontbuy = Bitmap.new( self.textures.dontbuy )
+		self.images.dontbuy:setPosition( x, y+350 )
+		self.labels.dontbuy = TextField.new( GameMinerState.fonts.shop, GameText:Get( "target", "Don't buy anything" ) )
+		self.labels.dontbuy:setPosition( x + 100, y + 385 )
+		self.labels.dontbuy:setTextColor( 0xFFFFFF )
 		
 		stage:addChild( self.images.bg )
 		stage:addChild( self.images.shopkeeper )
@@ -425,24 +425,38 @@ function GameMinerState:ToggleState( state )
 		stage:addChild( self.images.itemBackground3 )
 		stage:addChild( self.labels.info1 )
 		stage:addChild( self.labels.item1 )
-		stage:addChild( self.labels.item1Description )
-		stage:addChild( self.labels.item1Price )
+		stage:addChild( self.labels.itemDescription1 )
+		stage:addChild( self.labels.itemPrice1 )
 		stage:addChild( self.labels.item2 )
-		stage:addChild( self.labels.item2Description )
-		stage:addChild( self.labels.item2Price )
+		stage:addChild( self.labels.itemDescription2 )
+		stage:addChild( self.labels.itemPrice2 )
 		stage:addChild( self.labels.item3 )
-		stage:addChild( self.labels.item3Description )
-		stage:addChild( self.labels.item3Price )
+		stage:addChild( self.labels.itemDescription3 )
+		stage:addChild( self.labels.itemPrice3 )
+		stage:addChild( self.images.dontbuy )
+		stage:addChild( self.labels.dontbuy )
 		
 	else
 		-- Game
-		self.transition = false
+		self.transition = true
 		
 		stage:removeChild( self.images.bg )
 		stage:removeChild( self.images.shopkeeper )
 		stage:removeChild( self.images.itemBackground1 )
 		stage:removeChild( self.images.itemBackground2 )
 		stage:removeChild( self.images.itemBackground3 )
+		stage:removeChild( self.labels.info1 )
+		stage:removeChild( self.labels.item1 )
+		stage:removeChild( self.labels.itemDescription1 )
+		stage:removeChild( self.labels.itemPrice1 )
+		stage:removeChild( self.labels.item2 )
+		stage:removeChild( self.labels.itemDescription2 )
+		stage:removeChild( self.labels.itemPrice2 )
+		stage:removeChild( self.labels.item3 )
+		stage:removeChild( self.labels.itemDescription3 )
+		stage:removeChild( self.labels.itemPrice3 )
+		stage:removeChild( self.images.dontbuy )
+		stage:removeChild( self.labels.dontbuy )
 	
 	end
 end

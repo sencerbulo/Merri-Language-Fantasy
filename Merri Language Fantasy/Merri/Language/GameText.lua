@@ -93,7 +93,7 @@ GameText.HelperText.Ithkuil     [ "language-name" ]   	= "Ithkuil"
 -- Put your name in here
 GameText.HelperText.English		[ "Translation Credits" ]	= "Rachel J. Morris"
 GameText.HelperText.Esperanto	[ "Translation Credits" ] 	= "Rachel J. Morris"
-GameText.HelperText.Ido			[ "Translation Credits" ] 	= "???"
+GameText.HelperText.Ido			[ "Translation Credits" ] 	= "Rachel J. Morris"
 GameText.HelperText.Spanish		[ "Translation Credits" ] 	= "Tea Coba"
 GameText.HelperText.Ithkuil     [ "Translation Credits" ]   = "Chikaodinaka 'dkawirl' Oluigbo"
 
@@ -157,6 +157,7 @@ GameText.HelperText.Ido			[ "Play" ] 	= "Ludar"
 GameText.HelperText.Spanish		[ "Play" ] 	= "Jugar"
 GameText.HelperText.Ithkuil     [ "Play" ]  = "Ováweš!"
 
+-- Previous / Next - flipping through pages in a menu
 GameText.HelperText.English		[ "Next" ] 	= "Continue"
 GameText.HelperText.Esperanto	[ "Next" ] 	= "Daŭri"
 GameText.HelperText.Ido			[ "Next" ] 	= "Durar"
@@ -181,47 +182,49 @@ GameText.HelperText.Ido			[ "Help" ] 	= "Helpo"
 GameText.HelperText.Spanish		[ "Help" ] 	= "Ayuda"
 GameText.HelperText.Ithkuil     [ "Help" ]  = "Âdnan"
 
+-- Go back to the previous menu
 GameText.HelperText.English		[ "Back" ] 	= "Back"
 GameText.HelperText.Esperanto	[ "Back" ] 	= "Reveni"
 GameText.HelperText.Ido			[ "Back" ] 	= "Revenar"
 GameText.HelperText.Spanish		[ "Back" ] 	= "Volver"
 GameText.HelperText.Ithkuil     [ "Back" ]  = "Rçarļ"
 
+-- In-game screen with buttons and text
 GameText.HelperText.English		[ "Menu" ] 	= "Menu"
 GameText.HelperText.Esperanto	[ "Menu" ] 	= "Menuo"
 GameText.HelperText.Ido			[ "Menu" ] 	= "Revenar"
 GameText.HelperText.Spanish		[ "Menu" ] 	= "Menú"
 GameText.HelperText.Ithkuil     [ "Menu" ]  = "Rçarļ"
 
--- Demo Text
+-- Demo Information Text
 
 GameText.HelperText.English		[ "Thank you for trying out Merri" ] 	= "Thank you for trying out Merri!"
-GameText.HelperText.Esperanto	[ "Thank you for trying out Merri" ] 	= "Dankon por provi je Merri!"
-GameText.HelperText.Ido			[ "Thank you for trying out Merri" ] 	= "Thank you for trying out Merri!"
+GameText.HelperText.Esperanto	[ "Thank you for trying out Merri" ] 	= "Dankon pro provi je Merri!"
+GameText.HelperText.Ido			[ "Thank you for trying out Merri" ] 	= "Danko pro probar Merri!"
 GameText.HelperText.Spanish		[ "Thank you for trying out Merri" ] 	= "Thank you for trying out Merri!"
 GameText.HelperText.Ithkuil		[ "Thank you for trying out Merri" ] 	= "Thank you for trying out Merri!"
 
 GameText.HelperText.English		[ "This is still a work in progress" ] 	= "This is still a work in progress."
-GameText.HelperText.Esperanto	[ "This is still a work in progress" ] 	= "This is still a work in progress."
-GameText.HelperText.Ido			[ "This is still a work in progress" ] 	= "This is still a work in progress."
+GameText.HelperText.Esperanto	[ "This is still a work in progress" ] 	= "Tio ĉi ankoraŭ ne estas kompleta."
+GameText.HelperText.Ido			[ "This is still a work in progress" ] 	= "Ica ankore esas nekompleta."
 GameText.HelperText.Spanish		[ "This is still a work in progress" ] 	= "This is still a work in progress."
 GameText.HelperText.Ithkuil     [ "This is still a work in progress" ]  = "This is still a work in progress."
 
 GameText.HelperText.English		[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
-GameText.HelperText.Esperanto	[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
-GameText.HelperText.Ido			[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
+GameText.HelperText.Esperanto	[ "There may be errors or bugs" ] 		= "Eble ekzistas eraroj aŭ cimoj."
+GameText.HelperText.Ido			[ "There may be errors or bugs" ] 		= "Forsan existas erori o cimi."
 GameText.HelperText.Spanish		[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
 GameText.HelperText.Ithkuil		[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
 
 GameText.HelperText.English		[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
-GameText.HelperText.Esperanto	[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
-GameText.HelperText.Ido			[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
+GameText.HelperText.Esperanto	[ "Report problems at EMAIL" ] 			= "Raportu problemojn al Rachel@Moosader.com ."
+GameText.HelperText.Ido			[ "Report problems at EMAIL" ] 			= "Raportez problemi ad Rachel@Moosader.com ."
 GameText.HelperText.Spanish		[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
 GameText.HelperText.Ithkuil		[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
 
 GameText.HelperText.English		[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
-GameText.HelperText.Esperanto	[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
-GameText.HelperText.Ido			[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
+GameText.HelperText.Esperanto	[ "Want to keep up with this game's progress?" ] 	= "Ĉu vi volas sekvi novaĵojn pri la ludo?"
+GameText.HelperText.Ido			[ "Want to keep up with this game's progress?" ] 	= "Ka vu volas sequar informo pri la ludo?"
 GameText.HelperText.Spanish		[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
 GameText.HelperText.Ithkuil		[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
 
@@ -612,9 +615,15 @@ GameText.TargetText.Ithkuil     [ "miner-go-down-ladder" ]  	= "Jal"
 
 GameText.TargetText.English		[ "Do you want to buy a tool?" ] 	= "Do you want to buy a tool?"
 GameText.TargetText.Esperanto	[ "Do you want to buy a tool?" ] 	= "Ĉu vi volas aĉeti ilon?"
-GameText.TargetText.Ido			[ "Do you want to buy a tool?" ] 	= "Ka vu volas kompras utensilo?."
+GameText.TargetText.Ido			[ "Do you want to buy a tool?" ] 	= "Ka vu volas kompras utensilo?"
 GameText.TargetText.Spanish		[ "Do you want to buy a tool?" ] 	= "asdf."
 GameText.TargetText.Ithkuil     [ "Do you want to buy a tool?" ]    = "Ebawul ki čeil?"
+
+GameText.TargetText.English		[ "Don't buy anything" ] 	= "Don't buy anything."
+GameText.TargetText.Esperanto	[ "Don't buy anything" ] 	= "Ne aĉeti ion."
+GameText.TargetText.Ido			[ "Don't buy anything" ] 	= "Ne komprar irgo."
+GameText.TargetText.Spanish		[ "Don't buy anything" ] 	= "Don't buy anything."
+GameText.TargetText.Ithkuil     [ "Don't buy anything" ]    = "Don't buy anything."
 
 GameText.TargetText.English		[ "Potion" ] 	= "Potion"
 GameText.TargetText.Esperanto	[ "Potion" ] 	= "Pocio"

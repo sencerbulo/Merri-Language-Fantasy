@@ -7,6 +7,7 @@ end
 
 -- Setup / Teardown --
 function DemoInfoState:Setup( options )
+	StateBase:SetGotoState( "" )
 	self:SetupInfoScreen()
 end
 
@@ -14,7 +15,7 @@ function DemoInfoState:SetupInfoScreen()
 	StateBase:ToggleBackgroundScroll( true )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
 	
-	local x = 20
+	local x = 10
 	local y = 50
 	local yInc = 60
 	local info = 1
@@ -82,6 +83,7 @@ function DemoInfoState:SetupInfoScreen()
 end
 
 function DemoInfoState:SetupCreditScreen()
+	print( "Credit Screen" )
 	StateBase:ClearScreen()
 	self:Cleanup()
 	

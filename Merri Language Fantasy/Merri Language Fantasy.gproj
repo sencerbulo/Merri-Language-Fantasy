@@ -33,6 +33,7 @@
   <folder name="Games">
    <folder name="Miner">
     <folder name="UI">
+     <file source="Content/Games/Miner/UI/dontbuy.png"/>
      <file source="Content/Games/Miner/UI/inventory_blizzard.png"/>
      <file source="Content/Games/Miner/UI/inventory_earthquake.png"/>
      <file source="Content/Games/Miner/UI/inventory_potion.png"/>
