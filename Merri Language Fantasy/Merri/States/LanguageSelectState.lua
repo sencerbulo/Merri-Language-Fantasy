@@ -77,7 +77,9 @@ end
 function LanguageSelectState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
 	
-	if ( self.menuPage == "SelectHelper" ) then
+	print( clickedButton )
+	
+	if ( self.menuPage == "SelectHelper" and clickedButton ~= nil ) then
 		local languageSelected = string.gsub( clickedButton, "btn_language_", "" )
 		print( "Selected helper language: ", languageSelected )
 		GLOBAL_CONFIG.HELPER_LANGUAGE = languageSelected
@@ -86,7 +88,7 @@ function LanguageSelectState:Handle_MouseDown( event )
 			self:SetupTargetMenu()
 		end
 		
-	elseif ( self.menuPage == "SelectTarget" ) then
+	elseif ( self.menuPage == "SelectTarget" and clickedButton ~= nil ) then
 		local languageSelected = string.gsub( clickedButton, "btn_language_", "" )
 		print( "Selected target language: ", languageSelected )
 		GLOBAL_CONFIG.TARGET_LANGUAGE = languageSelected

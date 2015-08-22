@@ -16,62 +16,48 @@ function DemoInfoState:SetupInfoScreen()
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
 	
 	local x = 10
-	local y = 50
-	local yInc = 60
+	local y = 100
+	local yInc = 40
+	local spacing = 10
 	local info = 1
-	local size1 = 15
-	local size2 = 13
+	local size1 = 8
+	local size2 = 8
+	
+	StateBase:AddLabel( { id = "titleA", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = 0, pos_y = 25, color = 0xFFFFFF, 	size = 25, text = "Merri:", centered = true } )
+	StateBase:AddLabel( { id = "titleB", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = 0, pos_y = 60, color = 0xFFFFFF, 	size = 25, text = GameText:Get( "target", "game title" ), centered = true } )
+		
+	
+	local lines = {
+		"Thank you for trying out Merri",
+		"This is still a work in progress", 
+		"There may be errors or bugs", 
+		"Report problems at EMAIL",  
+		"Want to keep up with this game's progress?", 
+	}
+	
+	for key, line in pairs( lines ) do
+		StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+			pos_x = x, pos_y = y, color = 0xFFFFFF, 	size = size1, text = GameText:Get( "target", line ), centered = false } )
+			
+		StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+			pos_x = x, pos_y = y+spacing, color = 0xFFFFFF, size = size2, text = GameText:Get( "helper", line ), centered = false } )
+		
+		y = y + yInc
+		info = info + 1
+	end
 	
 	StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y, color = 0xFFFFFF, 	size = size1, text = GameText:Get( "target", "Thank you for trying out Merri" ), centered = false } )
-		
-	StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y+20, color = 0xFFFFFF, size = size2, text = GameText:Get( "helper", "Thank you for trying out Merri" ), centered = false } )
-	
-	y = y + yInc
+		pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:Get( "helper", "website" ) .. " Moosader.com", centered = false } )
+	y = y + spacing
 	info = info + 1
-	
 	StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:Get( "target", "This is still a work in progress" ), centered = false } )
-		
-	StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y+20, color = 0xFFFFFF, size = size2, text = GameText:Get( "helper", "This is still a work in progress" ), centered = false } )
-	
-	y = y + yInc
+		pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:Get( "helper", "facebook" ) .. " facebook.com/Moosader", centered = false } )
+	y = y + spacing
 	info = info + 1
-	
 	StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:Get( "target", "There may be errors or bugs" ), centered = false } )
-		
-	StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y+20, color = 0xFFFFFF, size = size2, text = GameText:Get( "helper", "There may be errors or bugs" ), centered = false } )
-	
-	y = y + yInc
-	info = info + 1
-	
-	StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:Get( "target", "Report problems at EMAIL" ), centered = false } )
-		
-	StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y+20, color = 0xFFFFFF, size = size2, text = GameText:Get( "helper", "Report problems at EMAIL" ), centered = false } )
-	
-	y = y + yInc + 20
-	info = info + 1
-	
-	StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:Get( "target", "Want to keep up with this game's progress?" ), centered = false } )
-		
-	StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y+20, color = 0xFFFFFF, size = size2, text = GameText:Get( "helper", "Want to keep up with this game's progress?" ), centered = false } )
-	
-	y = y + yInc
-	info = info + 1
-	
-	StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = "Moosader.com", centered = false } )
-		
-	StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = x, pos_y = y+20, color = 0xFFFFFF, size = size2, text = "Moosader.com", centered = false } )
+		pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:Get( "helper", "twitter" ) .. " @Moosader", centered = false } )
 	
 	
 	StateBase:AddButton( { 
