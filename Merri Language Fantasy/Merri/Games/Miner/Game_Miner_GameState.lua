@@ -169,6 +169,7 @@ function MinerGameState:Setup( options )
 	else
 		self.buttons.inventory.bitmap = Bitmap.new( self.textures[ "inventory" .. MinerGameState.inventoryItem ] )
 		self.buttons.inventory.item = MinerGameState.inventoryItem
+		MinerGameState.inventoryItem = ""
 	
 	end
 	self.buttons.inventory.bitmap:setPosition( 267, 572 )
