@@ -101,6 +101,7 @@ function StateBase:SetBackground( options )
 			for x = 0, GLOBAL_CONFIG.SCREEN_WIDTH / w + 1 do
 				local tile = Bitmap.new( self.textures[ options.path ] ) 
 				tile:setPosition( x * w, y * h )
+				
 				table.insert( self.backgrounds, tile )
 			end
 		end

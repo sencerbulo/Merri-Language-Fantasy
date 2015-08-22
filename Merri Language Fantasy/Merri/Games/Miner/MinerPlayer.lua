@@ -16,7 +16,7 @@ function MinerPlayer:init( options )
 	self.direction = "south"
 	self.health = 3
 	
-	self.label = TextField.new( GameMinerState.fonts.overhead, GameText:Get( "target", "Miner" ) )
+	self.label = TextField.new( MinerGameState.fonts.overhead, GameText:Get( "target", "Miner" ) )
 	self.label:setTextColor( 0xFFFFFF )
 	
 	self.hp = 50

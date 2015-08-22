@@ -11,9 +11,10 @@
  <folder name="Merri">
   <folder name="Games">
    <folder name="Miner">
+    <file source="Merri/Games/Miner/Game_Miner_ShopState.lua"/>
+    <file source="Merri/Games/Miner/Game_Miner_GameState.lua"/>
     <file source="Merri/Games/Miner/MinerPlayer.lua"/>
     <file source="Merri/Games/Miner/MinerMap.lua"/>
-    <file source="Merri/Games/Miner/Game_Miner.lua"/>
    </folder>
   </folder>
   <folder name="Language">
@@ -33,6 +34,8 @@
   <folder name="Games">
    <folder name="Miner">
     <folder name="UI">
+     <file source="Content/Games/Miner/UI/inventory_rope.png"/>
+     <file source="Content/Games/Miner/UI/inventory_dynamite.png"/>
      <file source="Content/Games/Miner/UI/dontbuy.png"/>
      <file source="Content/Games/Miner/UI/inventory_blizzard.png"/>
      <file source="Content/Games/Miner/UI/inventory_earthquake.png"/>

@@ -4,7 +4,8 @@ stateManager:AddState( "LanguageSelectState", LanguageSelectState.new() )
 stateManager:AddState( "TitleState", TitleState.new() )
 stateManager:AddState( "DifficultySelectState", DifficultySelectState.new() )
 stateManager:AddState( "GotStarState", GotStarState.new() )
-stateManager:AddState( "GameMinerState", GameMinerState.new() )
+stateManager:AddState( "MinerGameState", MinerGameState.new() )
+stateManager:AddState( "MinerShopState", MinerShopState.new() )
 stateManager:AddState( "DemoInfoState", DemoInfoState.new() )
 
 GameText:Setup()
@@ -20,7 +21,7 @@ LOAD_CONFIG()
 
 --else
 	--stateManager:ChangeState( "TitleState" )
-	stateManager:ChangeState( "GameMinerState" )
+	stateManager:ChangeState( "MinerGameState" )
 
 --end
 

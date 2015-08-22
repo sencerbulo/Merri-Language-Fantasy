@@ -34,14 +34,14 @@ end
 function StateManager:Handle_EnterFrame( options )
 	if ( self.currentState == nil ) then return end
 	self.currentState:Handle_EnterFrame( options )
+	
+	if ( self.currentState:GotoState() ~= "" ) then
+		print( "Go to state ", self.currentState:GotoState() )
+		self:ChangeState( self.currentState:GotoState() )
+	end 
 end
 
 function StateManager:Handle_MouseDown( options )
 	if ( self.currentState == nil ) then return end
 	self.currentState:Handle_MouseDown( options )
-	
-	if ( self.currentState:GotoState() ~= "" ) then
-		print( "Go to state ", self.currentState:GotoState() )
-		self:ChangeState( self.currentState:GotoState() )
-	end
 end
