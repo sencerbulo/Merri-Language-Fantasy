@@ -4,6 +4,8 @@ function MinerGameState:init( options )
 	StateBase:init( options )
 	StateBase:Setup( { backgroundScroll = false } )
 	StateBase.transitioning = false
+	MinerGameState.inventoryItem = ""
+	MinerGameState.money = 0
 end
 
 -- Setup / Teardown --
@@ -26,6 +28,13 @@ function MinerGameState:Setup( options )
 			
 			hud_pick = Texture.new( "Content/Games/Miner/UI/hud_pick.png" ),
 			hud_sword = Texture.new( "Content/Games/Miner/UI/hud_sword.png" ),
+			
+			itemBackground = Texture.new( "Content/Games/Miner/UI/inventory_bg.png" ),
+			inventoryPotion = Texture.new( "Content/Games/Miner/UI/inventory_potion.png" ),
+			inventoryEarthquake = Texture.new( "Content/Games/Miner/UI/inventory_earthquake.png" ),
+			inventoryBlizzard = Texture.new( "Content/Games/Miner/UI/inventory_blizzard.png" ),
+			inventoryDynamite = Texture.new( "Content/Games/Miner/UI/inventory_dynamite.png" ),
+			inventoryRope = Texture.new( "Content/Games/Miner/UI/inventory_rope.png" ),
 		}
 	
 	self.sounds = {
@@ -98,10 +107,8 @@ function MinerGameState:Setup( options )
 		},
 	}
 	
-	self.debugButton = Bitmap.new( Texture.new( "Content/Games/Miner/UI/hud_down.png" ) )
-	self.debugButton:setPosition( 320, 600 )
-	
-	MinerGameState.money = 0
+	--self.debugButton = Bitmap.new( Texture.new( "Content/Games/Miner/UI/hud_down.png" ) )
+	--self.debugButton:setPosition( 320, 600 )
 	
 	-- Labels
 	self.labels = {}
@@ -142,8 +149,21 @@ function MinerGameState:Setup( options )
 	self.labels.floorValue:setPosition( 165, 630 )
 	
 	self.buttons = {}
-	--self.buttons.menu = Bitmap.new( self.textures.menu )
-	--self.buttons.menu:setPosition( 10, 580 )
+	self.buttons.inventory = {}
+	if ( MinerGameState.inventoryItem == "" ) then
+		self.buttons.inventory.bitmap = Bitmap.new( self.textures.itemBackground )
+		self.buttons.inventory.item = ""
+	
+	else
+		self.buttons.inventory.bitmap = Bitmap.new( self.textures[ "inventory" .. MinerGameState.inventoryItem ] )
+		self.buttons.inventory.item = MinerGameState.inventoryItem
+	
+	end
+	self.buttons.inventory.bitmap:setPosition( 267, 572 )
+	
+	self.buttons.menu = {}
+	self.buttons.menu.bitmap	= Bitmap.new( self.textures.menu )
+	self.buttons.menu.bitmap:setPosition( 10, 580 )
 	
 	--self.labels.menu = TextField.new( MinerGameState.fonts.hud, GameText:Get( "helper", "Menu" ) )
 	--self.labels.menu:setTextColor( 0xFFFFFF )
@@ -193,7 +213,7 @@ function MinerGameState:Draw()
 	end
 	
 	for key, button in pairs( self.buttons ) do
-		stage:addChild( button )
+		stage:addChild( button.bitmap )
 	end
 	
 	for key, label in pairs( self.labels ) do
@@ -206,7 +226,7 @@ function MinerGameState:Draw()
 	
 	self.map:UpdateLighting()
 	
-	stage:addChild( self.debugButton )
+	--stage:addChild( self.debugButton )
 	
 	if ( stage:contains( self.fadeBitmap ) ) then
 		stage:addChild( self.fadeBitmap )
@@ -305,7 +325,7 @@ function MinerGameState:Handle_MouseDown( event )
 		end
 	end
 	
-	if ( self.debugButton:hitTestPoint( event.x, event.y ) ) then
+	if ( self.debugButton ~= nil and self.debugButton:hitTestPoint( event.x, event.y ) ) then
 		self.sounds.footsteps:play()
 		self.fadeCounter = 100
 		self.transition = true

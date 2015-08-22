@@ -93,6 +93,8 @@
    </folder>
   </folder>
   <folder name="Audio">
+   <file source="Content/Audio/payup.wav"/>
+   <file source="Content/Audio/error.wav"/>
    <file source="Content/Audio/sword.wav"/>
    <file source="Content/Audio/hurt.wav"/>
    <file source="Content/Audio/footsteps.wav"/>

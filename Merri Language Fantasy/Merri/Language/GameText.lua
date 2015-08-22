@@ -742,6 +742,13 @@ GameText.TargetText.Spanish     [ "Don't buy anything" ]    = "Don't buy anythin
 GameText.TargetText.Ithkuil     [ "Don't buy anything" ]    = "Don't buy anything."
 GameText.TargetText.German      [ "Don't buy anything" ]    = "Nichts kaufen."
 
+GameText.TargetText.English     [ "You don't have enough money" ]    = "You don't have enough money."
+GameText.TargetText.Esperanto   [ "You don't have enough money" ]    = "Vi ne havas sufiĉe da mono."
+GameText.TargetText.Ido         [ "You don't have enough money" ]    = "Vu ne havas sate de pekunio."
+GameText.TargetText.Spanish     [ "You don't have enough money" ]    = "You don't have enough money."
+GameText.TargetText.Ithkuil     [ "You don't have enough money" ]    = "You don't have enough money."
+GameText.TargetText.German      [ "You don't have enough money" ]    = "You don't have enough money."
+
 GameText.TargetText.English     [ "Potion" ]    = "Potion"
 GameText.TargetText.Esperanto   [ "Potion" ]    = "Pocio"
 GameText.TargetText.Ido         [ "Potion" ]    = "Pociono."
