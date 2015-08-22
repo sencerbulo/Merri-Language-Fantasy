@@ -101,10 +101,8 @@ function DemoInfoState:SetupCreditScreen()
 	local yInc = 70
 	local size1 = 15
 	local size2 = 13
-	
-	local languages = { "English", "Esperanto", "Ido", "Spanish", "Ithkuil" }
-	
-	for key, language in pairs( languages ) do
+
+	for key, language in pairs( GLOBAL_LANGAUGES ) do
 		StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
 			pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:GetFromLanguage( "helper", language, "language-name" ), centered = false } )
 		StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		

@@ -6,6 +6,8 @@ GLOBAL_CONFIG = {
 	SCREEN_HEIGHT = 640,
 }
 
+GLOBAL_LANGAUGES = { "English", "Esperanto", "Ido", "Spanish", "Ithkuil", "German" }
+
 function SAVE_CONFIG()
 	print( "Save game" )
 	local savePath = "/sdcard/merri/"

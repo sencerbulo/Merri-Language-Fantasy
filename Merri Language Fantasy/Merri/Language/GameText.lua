@@ -69,12 +69,14 @@ function GameText:SetupLanguages()
 	GameText.HelperText.Ido = {}
 	GameText.HelperText.Spanish = {}
 	GameText.HelperText.Ithkuil = {}
+	GameText.HelperText.German = {}
 	
 	GameText.TargetText.English = {}
 	GameText.TargetText.Esperanto = {}
 	GameText.TargetText.Ido = {}
 	GameText.TargetText.Spanish = {}
 	GameText.TargetText.Ithkuil = {}
+	GameText.TargetText.German = {}
 
 -- Credits --
 GameText.HelperText.English		[ "Translators" ]	= "Translators"
@@ -82,6 +84,7 @@ GameText.HelperText.Esperanto	[ "Translators" ] 	= "Tradukistoj"
 GameText.HelperText.Ido			[ "Translators" ] 	= "Tradukisti"
 GameText.HelperText.Spanish		[ "Translators" ] 	= "Traductor"
 GameText.HelperText.Ithkuil     [ "Translators" ]   = "Translators"
+GameText.HelperText.German      [ "Translators" ]   = "Übersetzer"
 
 -- Name of the language --
 GameText.HelperText.English		[ "language-name" ]		= "English"
@@ -89,6 +92,7 @@ GameText.HelperText.Esperanto	[ "language-name" ] 	= "Esperanto"
 GameText.HelperText.Ido			[ "language-name" ] 	= "Ido"
 GameText.HelperText.Spanish		[ "language-name" ] 	= "Español"
 GameText.HelperText.Ithkuil     [ "language-name" ]   	= "Ithkuil"
+GameText.HelperText.German      [ "language-name" ]   	= "Deutsch"
 
 -- Put your name in here
 GameText.HelperText.English		[ "Translation Credits" ]	= "Rachel J. Morris"
@@ -96,6 +100,7 @@ GameText.HelperText.Esperanto	[ "Translation Credits" ] 	= "Rachel J. Morris"
 GameText.HelperText.Ido			[ "Translation Credits" ] 	= "Rachel J. Morris"
 GameText.HelperText.Spanish		[ "Translation Credits" ] 	= "Tea Coba"
 GameText.HelperText.Ithkuil     [ "Translation Credits" ]   = "Chikaodinaka 'dkawirl' Oluigbo"
+GameText.HelperText.German      [ "Translation Credits" ]   = "Marius Stärk"
 
 
 -- Common --

@@ -20,38 +20,14 @@ function LanguageSelectState:SetupHelperMenu( options )
 	local y = 25
 	local yInc = 75
 	
-	StateBase:AddButton( { 
-		button = { id = "btn_language_en", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_en", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "English", "I know English" ) }
-		} )
-		
-	y = y + yInc
-		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_eo", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_eo", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "Esperanto", "I know Esperanto" ) }
-		} )
-		
-	y = y + yInc
-		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_io", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_io", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "Ido", "I know Ido" ) }
-		} )
-		
-	y = y + yInc
-		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_es", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_es", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "Spanish", "I know Spanish" ) }
-		} )
-		
-	y = y + yInc
-		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_ith", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_ith", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "Ithkuil", "I know Ithkuil" ) }
-		} )
+	for key, language in pairs( GLOBAL_LANGAUGES ) do
+		StateBase:AddButton( { 
+			button = { id = "btn_language_" .. language, 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+			label 	= { id = "btn_language_" .. language, 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", language, "I know " .. language ) }
+			} )
+			
+		y = y + yInc	
+	end
 		
 	self.menuPage = "SelectHelper"
 	self:Draw()
@@ -66,39 +42,15 @@ function LanguageSelectState:SetupTargetMenu( options )
 	local yInc = 75
 
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
-	StateBase:AddButton( { 
-		button = { id = "btn_language_en", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_en", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning English" ) }
-		} )
-		
-	y = y + yInc
-		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_eo", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_eo", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Esperanto" ) }
-		} )
-		
-	y = y + yInc
-		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_io", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_io", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Ido" ) }
-		} )
-		
-	y = y + yInc
-	print( x, y )
-		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_es", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_es", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Spanish" ) }
-		} )
-		
-	y = y + yInc
-		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_ith", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_ith", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:Get( "helper", "I am learning Ithkuil" ) }
-		} )
+	
+	for key, language in pairs( GLOBAL_LANGAUGES ) do
+		StateBase:AddButton( { 
+			button = { id = "btn_language_" .. language, 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+			label 	= { id = "btn_language_" .. language, 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning " .. language ) }
+			} )
+			
+		y = y + yInc
+	end
 		
 	self.menuPage = "SelectTarget"
 	self:Draw()
@@ -126,22 +78,18 @@ function LanguageSelectState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
 	
 	if ( self.menuPage == "SelectHelper" ) then
-		if ( clickedButton == "btn_language_en" ) then 				GLOBAL_CONFIG.HELPER_LANGUAGE = "English"
-		elseif ( clickedButton == "btn_language_eo" ) then 		GLOBAL_CONFIG.HELPER_LANGUAGE = "Esperanto"
-		elseif ( clickedButton == "btn_language_io" ) then 		GLOBAL_CONFIG.HELPER_LANGUAGE = "Ido"
-		elseif ( clickedButton == "btn_language_es" ) then 		GLOBAL_CONFIG.HELPER_LANGUAGE = "Spanish"
-		end
+		local languageSelected = string.gsub( clickedButton, "btn_language_", "" )
+		print( "Selected helper language: ", languageSelected )
+		GLOBAL_CONFIG.HELPER_LANGUAGE = languageSelected
 		
 		if ( GLOBAL_CONFIG.HELPER_LANGUAGE ~= nil ) then
 			self:SetupTargetMenu()
 		end
 		
 	elseif ( self.menuPage == "SelectTarget" ) then
-		if ( clickedButton == "btn_language_en" ) then 				GLOBAL_CONFIG.TARGET_LANGUAGE = "English"
-		elseif ( clickedButton == "btn_language_eo" ) then 		GLOBAL_CONFIG.TARGET_LANGUAGE = "Esperanto"
-		elseif ( clickedButton == "btn_language_io" ) then 		GLOBAL_CONFIG.TARGET_LANGUAGE = "Ido"
-		elseif ( clickedButton == "btn_language_es" ) then 		GLOBAL_CONFIG.TARGET_LANGUAGE = "Spanish"
-		end
+		local languageSelected = string.gsub( clickedButton, "btn_language_", "" )
+		print( "Selected target language: ", languageSelected )
+		GLOBAL_CONFIG.TARGET_LANGUAGE = languageSelected
 		
 		if ( GLOBAL_CONFIG.TARGET_LANGUAGE ~= nil ) then
 			SAVE_CONFIG()
