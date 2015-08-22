@@ -9,7 +9,35 @@ function GameText:Setup( options )
 	GameText:SetupLanguages()
 end
 
+function GameText:GetFromLanguage( cat, lang, id )
+	local language = lang
+	local category = ""
+	if ( cat == "helper" ) then
+		category = "HelperText"
+		
+	else
+		category = "TargetText"
+		
+	end
+
+	if ( GameText[ category ] == nil ) then							
+		return "Invalid category " .. category
+		
+	elseif ( GameText[ category ][ language ] == nil ) then
+		return "Invalid language " .. language 
+		
+	elseif ( GameText[ category ][ language ][ id ] == nil ) then
+		return "Invalid id " .. id 
+		
+	else 
+		return GameText[ category ][ language ][ id ]
+		
+	end	
+end
+
 function GameText:Get( cat, id )
+	print( "Text, cat: ", cat, " id: ", id )
+
 	local language = ""
 	local category = ""
 	if ( cat == "helper" ) then
@@ -42,11 +70,13 @@ function GameText:SetupLanguages()
 	GameText.HelperText.Esperanto = {}
 	GameText.HelperText.Ido = {}
 	GameText.HelperText.Spanish = {}
+	GameText.HelperText.Ithkuil = {}
 	
 	GameText.TargetText.English = {}
 	GameText.TargetText.Esperanto = {}
 	GameText.TargetText.Ido = {}
 	GameText.TargetText.Spanish = {}
+	GameText.TargetText.Ithkuil = {}
 
 -- Credits --
 GameText.TargetText.English		[ "Translation Credits" ]	= "Rachel J. Morris"
@@ -63,6 +93,51 @@ GameText.TargetText.Esperanto	[ "game title" ] 	= "Fantazio de Esperanto"
 GameText.TargetText.Ido			[ "game title" ] 	= "Fantazio di Ido"
 GameText.TargetText.Spanish		[ "game title" ] 	= "Fantasía de Español"
 GameText.TargetText.Ithkuil     [ "game title" ]    = "Ithkaiwîl ubzál"
+
+
+
+-- LanguageSelectState --
+
+-- Helper Languages --
+-- These only need to be translated into the specific language, there don't need to be multiple translations --
+GameText.HelperText.English		[ "I know English" ] 	= "I know English."
+GameText.HelperText.Esperanto		[ "I know Esperanto" ] 	= "Mi konas Esperanton."
+GameText.HelperText.Ido				[ "I know Ido" ] 	= "Me konas Ido."
+GameText.HelperText.Spanish		[ "I know Spanish" ] 	= "Yo conozco Español."
+GameText.HelperText.Ithkuil		[ "I know Ithkuil" ] 	= "I know Ithkuil."
+
+-- Target Languages --
+GameText.HelperText.English		[ "I am learning English" ] 	= "I am learning English"
+GameText.HelperText.Esperanto	[ "I am learning English" ]		= "Mi lernas anglan lingvon"
+GameText.HelperText.Ido			[ "I am learning English" ] 	= "Me lernas angla linguo"
+GameText.HelperText.Spanish		[ "I am learning English" ] 	= "Estoy aprendiendo inglés"
+GameText.HelperText.Ithkuil     [ "I am learning English" ] 	= "Upinglišpel xháwîl"
+
+GameText.HelperText.English		[ "I am learning Esperanto" ]	= "I am learning Esperanto"
+GameText.HelperText.Esperanto	[ "I am learning Esperanto" ]	= "Mi lernas esperanton"
+GameText.HelperText.Ido			[ "I am learning Esperanto" ]	= "Me lernas esperanto"
+GameText.HelperText.Spanish		[ "I am learning Esperanto" ]	= "Estoy aprendiendo esperanto"
+GameText.HelperText.Ithkuil     [ "I am learning Esperanto" ]   = "Upesperantopel xháwîl"
+
+GameText.HelperText.English		[ "I am learning Ido" ]			= "I am learning Ido"
+GameText.HelperText.Esperanto	[ "I am learning Ido" ]			= "Mi lernas idon"
+GameText.HelperText.Ido			[ "I am learning Ido" ]			= "Me lernas ido"
+GameText.HelperText.Spanish		[ "I am learning Ido" ]			= "Estoy aprendiendo ido"
+GameText.HelperText.Ithkuil     [ "I am learning Ido" ] 		= "Upidopel xháwîl"
+
+GameText.HelperText.English		[ "I am learning Spanish" ]		= "I am learning Spanish"
+GameText.HelperText.Esperanto	[ "I am learning Spanish" ]		= "Mi lernas hispanan lingvon"
+GameText.HelperText.Ido			[ "I am learning Spanish" ]		= "Me lernas hispana linguo"
+GameText.HelperText.Spanish		[ "I am learning Spanish" ]		= "Estoy aprendiendo español"
+GameText.HelperText.Ithkuil     [ "I am learning Spanish" ] 	= "Upspanišpel xháwîl"
+
+GameText.HelperText.English     [ "I am learning Ithkuil" ]     = "I am learning Spanish"
+GameText.HelperText.Esperanto   [ "I am learning Ithkuil" ]     = "Mi lernas Ifkuilon"
+GameText.HelperText.Ido         [ "I am learning Ithkuil" ]     = "Me lernas Ifkuilo"
+GameText.HelperText.Spanish     [ "I am learning Ithkuil" ]     = "Estoy aprendiendo Ithkuil"
+GameText.HelperText.Ithkuil     [ "I am learning Ithkuil" ] 	= "Ithkel xháwîl"
+
+
 
 -- Menu Buttons --
 
@@ -110,39 +185,6 @@ GameText.HelperText.Ido			[ "Earned a star" ] 	= "Vu aquiris stelo!"
 GameText.HelperText.Spanish		[ "Earned a star" ] 	= "Usted adquirió una estrella!"
 GameText.HelperText.Ithkuil     [ "Earned a star" ]     = "Uk'awîr kî"
 
-
--- LanguageSelectState --
-
-GameText.HelperText.English		[ "I am learning English" ] 	= "I am learning English"
-GameText.HelperText.Esperanto	[ "I am learning English" ]		= "Mi lernas anglan lingvon"
-GameText.HelperText.Ido			[ "I am learning English" ] 	= "Me lernas angla linguo"
-GameText.HelperText.Spanish		[ "I am learning English" ] 	= "Estoy aprendiendo inglés"
-GameText.HelperText.Ithkuil     [ "I am learning English" ] = "Upinglišpel xháwîl"
-
-GameText.HelperText.English		[ "I am learning Esperanto" ]	= "I am learning Esperanto"
-GameText.HelperText.Esperanto	[ "I am learning Esperanto" ]	= "Mi lernas esperanton"
-GameText.HelperText.Ido			[ "I am learning Esperanto" ]	= "Me lernas esperanto"
-GameText.HelperText.Spanish		[ "I am learning Esperanto" ]	= "Estoy aprendiendo esperanto"
-GameText.HelperText.Ithkuil     [ "I am learning Esperanto" ]   = "Upesperantopel xháwîl"
-
-GameText.HelperText.English		[ "I am learning Ido" ]			= "I am learning Ido"
-GameText.HelperText.Esperanto	[ "I am learning Ido" ]			= "Mi lernas idon"
-GameText.HelperText.Ido			[ "I am learning Ido" ]			= "Me lernas ido"
-GameText.HelperText.Spanish		[ "I am learning Ido" ]			= "Estoy aprendiendo ido"
-GameText.HelperText.Ithkuil     [ "I am learning Ido" ] = "Upidopel xháwîl"
-
-GameText.HelperText.English		[ "I am learning Spanish" ]		= "I am learning Spanish"
-GameText.HelperText.Esperanto	[ "I am learning Spanish" ]		= "Mi lernas hispanan lingvon"
-GameText.HelperText.Ido			[ "I am learning Spanish" ]		= "Me lernas hispana linguo"
-GameText.HelperText.Spanish		[ "I am learning Spanish" ]		= "Estoy aprendiendo español"
-GameText.HelperText.Ithkuil     [ "I am learning Spanish" ] = "Upspanišpel xháwîl"
-
-GameText.HelperText.English     [ "I am learning Ithkuil" ]     = "I am learning Spanish"
-GameText.HelperText.Esperanto   [ "I am learning Ithkuil" ]     = "Mi lernas hispanan lingvon"
-GameText.HelperText.Ido         [ "I am learning Ithkuil" ]     = "Me lernas hispana linguo"
-GameText.HelperText.Spanish     [ "I am learning Ithkuil" ]     = "Estoy aprendiendo español"
-GameText.HelperText.Ithkuil     [ "I am learning Ithkuil" ] = "Ithkel xháwîl"
-
 -- DifficultSelectState --
 
 GameText.HelperText.English		[ "Practice" ] 	= "Practice"
@@ -155,7 +197,7 @@ GameText.HelperText.English		[ "Easy" ] 		= "Easy"
 GameText.HelperText.Esperanto	[ "Easy" ] 		= "Baznivela"
 GameText.HelperText.Ido			[ "Easy" ] 		= "Baznivela"
 GameText.HelperText.Spanish		[ "Easy" ] 		= "Fácil"	
-GameText.HelperText.Ithkuil     [ "Easy" ]  = "Xháwîlürt"
+GameText.HelperText.Ithkuil     [ "Easy" ]  	= "Xháwîlürt"
 
 GameText.HelperText.English		[ "Medium" ] 	= "Medium"
 GameText.HelperText.Esperanto	[ "Medium" ] 	= "Meznivela"
@@ -167,7 +209,7 @@ GameText.HelperText.English		[ "Hard" ] 		= "Hard"
 GameText.HelperText.Esperanto	[ "Hard" ] 		= "Altnivela"
 GameText.HelperText.Ido			[ "Hard" ] 		= "Altnivela"
 GameText.HelperText.Spanish		[ "Hard" ] 		= "Difícil"
-GameText.HelperText.Ithkuil     [ "Hard" ]  = "Xháwîlert" 
+GameText.HelperText.Ithkuil     [ "Hard" ]  	= "Xháwîlert" 
 
 GameText.HelperText.English		[ "Stats" ] 	= "Stats"
 GameText.HelperText.Esperanto	[ "Stats" ] 	= "Statistikoj"

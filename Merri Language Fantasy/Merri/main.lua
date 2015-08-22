@@ -19,7 +19,8 @@ if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == n
 
 else
 	--stateManager:ChangeState( "TitleState" )
-	stateManager:ChangeState( "GameMinerState" )
+	stateManager:ChangeState( "LanguageSelectState" )
+	--stateManager:ChangeState( "GameMinerState" )
 
 end
 

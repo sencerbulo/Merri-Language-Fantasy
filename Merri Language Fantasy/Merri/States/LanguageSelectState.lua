@@ -15,24 +15,42 @@ end
 function LanguageSelectState:SetupHelperMenu( options )	
 	StateBase:SetGotoState( "" )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
+	
+	local x = 15
+	local y = 25
+	local yInc = 75
+	
 	StateBase:AddButton( { 
-		button = { id = "btn_language_en", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 25  },
-		label 	= { id = "btn_language_en", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 25, pos_y = 25+35, color = 0xFFFFFF, size = 16, text = "I know English" }
+		button = { id = "btn_language_en", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_en", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "English", "I know English" ) }
 		} )
 		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_eo", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 100  },
-		label 	= { id = "btn_language_eo", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 25, pos_y = 100+35, color = 0xFFFFFF, size = 16, text = "Mi konas Esperanton" }
-		} )
+	y = y + yInc
 		
 	StateBase:AddButton( { 
-		button = { id = "btn_language_io", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 175  },
-		label 	= { id = "btn_language_io", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 25, pos_y = 175+35, color = 0xFFFFFF, size = 16, text = "Me konas Ido" }
+		button = { id = "btn_language_eo", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_eo", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "Esperanto", "I know Esperanto" ) }
 		} )
 		
+	y = y + yInc
+		
 	StateBase:AddButton( { 
-		button = { id = "btn_language_es", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 250  },
-		label 	= { id = "btn_language_es", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 25, pos_y = 250+35, color = 0xFFFFFF, size = 16, text = "Yo conozco español" }
+		button = { id = "btn_language_io", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_io", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "Ido", "I know Ido" ) }
+		} )
+		
+	y = y + yInc
+		
+	StateBase:AddButton( { 
+		button = { id = "btn_language_es", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_es", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "Spanish", "I know Spanish" ) }
+		} )
+		
+	y = y + yInc
+		
+	StateBase:AddButton( { 
+		button = { id = "btn_language_ith", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_ith", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:GetFromLanguage( "helper", "Ithkuil", "I know Ithkuil" ) }
 		} )
 		
 	self.menuPage = "SelectHelper"
@@ -42,26 +60,43 @@ end
 function LanguageSelectState:SetupTargetMenu( options )
 	StateBase:ClearScreen()
 	StateBase:ClearWidgets()
+	
+	local x = 15
+	local y = 25
+	local yInc = 75
 
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
 	StateBase:AddButton( { 
-		button = { id = "btn_language_en", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 25  },
-		label 	= { id = "btn_language_en", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 25, pos_y = 25+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning English" ) }
+		button = { id = "btn_language_en", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_en", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning English" ) }
 		} )
 		
-	StateBase:AddButton( { 
-		button = { id = "btn_language_eo", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 100  },
-		label 	= { id = "btn_language_eo", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 25, pos_y = 100+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Esperanto" ) }
-		} )
+	y = y + yInc
 		
 	StateBase:AddButton( { 
-		button = { id = "btn_language_io", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 175  },
-		label 	= { id = "btn_language_io", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 25, pos_y = 175+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Ido" ) }
+		button = { id = "btn_language_eo", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_eo", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Esperanto" ) }
 		} )
 		
+	y = y + yInc
+		
 	StateBase:AddButton( { 
-		button = { id = "btn_language_es", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = 15, pos_y = 250  },
-		label 	= { id = "btn_language_es", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 25, pos_y = 250+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Spanish" ) }
+		button = { id = "btn_language_io", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_io", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Ido" ) }
+		} )
+		
+	y = y + yInc
+		
+	StateBase:AddButton( { 
+		button = { id = "btn_language_es", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_es", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = y+10, pos_y = x+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Spanish" ) }
+		} )
+		
+	y = y + yInc
+		
+	StateBase:AddButton( { 
+		button = { id = "btn_language_ith", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "btn_language_ith", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 16, text = GameText:Get( "helper", "I am learning Ithkuil" ) }
 		} )
 		
 	self.menuPage = "SelectTarget"
