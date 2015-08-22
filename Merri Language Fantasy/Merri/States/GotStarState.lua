@@ -39,7 +39,7 @@ function GotStarState:Draw()
 	StateBase:Draw()
 	
 	for key, value in pairs( self.graphics.star ) do
-		stage:addChild( self.graphics.star )
+		stage:addChild( value )
 	end
 end
 

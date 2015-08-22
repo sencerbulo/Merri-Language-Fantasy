@@ -5,6 +5,7 @@ stateManager:AddState( "TitleState", TitleState.new() )
 stateManager:AddState( "DifficultySelectState", DifficultySelectState.new() )
 stateManager:AddState( "GotStarState", GotStarState.new() )
 stateManager:AddState( "GameMinerState", GameMinerState.new() )
+stateManager:AddState( "DemoInfoState", DemoInfoState.new() )
 
 GameText:Setup()
 
@@ -14,15 +15,15 @@ GLOBAL_CONFIG.TARGET_LANGUAGE = "Esperanto"
 
 LOAD_CONFIG()
 
-if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
-	stateManager:ChangeState( "LanguageSelectState" )
+--if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
+	--stateManager:ChangeState( "LanguageSelectState" )
+	stateManager:ChangeState( "DemoInfoState" )
 
-else
+--else
 	--stateManager:ChangeState( "TitleState" )
-	stateManager:ChangeState( "LanguageSelectState" )
 	--stateManager:ChangeState( "GameMinerState" )
 
-end
+--end
 
 function Handle_EnterFrame( event )
 	stateManager:Handle_EnterFrame( event )

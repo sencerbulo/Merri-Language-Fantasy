@@ -36,8 +36,6 @@ function GameText:GetFromLanguage( cat, lang, id )
 end
 
 function GameText:Get( cat, id )
-	print( "Text, cat: ", cat, " id: ", id )
-
 	local language = ""
 	local category = ""
 	if ( cat == "helper" ) then
@@ -79,11 +77,25 @@ function GameText:SetupLanguages()
 	GameText.TargetText.Ithkuil = {}
 
 -- Credits --
-GameText.TargetText.English		[ "Translation Credits" ]	= "Rachel J. Morris"
-GameText.TargetText.Esperanto	[ "Translation Credits" ] 	= "Rachel J. Morris"
-GameText.TargetText.Ido			[ "Translation Credits" ] 	= "???"
-GameText.TargetText.Spanish		[ "Translation Credits" ] 	= "Tea Coba"
-GameText.TargetText.Ithkuil     [ "Translation Credits" ]   = "Chikaodinaka 'dkawirl' Oluigbo"
+GameText.HelperText.English		[ "Translators" ]	= "Translators"
+GameText.HelperText.Esperanto	[ "Translators" ] 	= "Tradukistoj"
+GameText.HelperText.Ido			[ "Translators" ] 	= "Tradukisti"
+GameText.HelperText.Spanish		[ "Translators" ] 	= "Traductor"
+GameText.HelperText.Ithkuil     [ "Translators" ]   = "Translators"
+
+-- Name of the language --
+GameText.HelperText.English		[ "language-name" ]		= "English"
+GameText.HelperText.Esperanto	[ "language-name" ] 	= "Esperanto"
+GameText.HelperText.Ido			[ "language-name" ] 	= "Ido"
+GameText.HelperText.Spanish		[ "language-name" ] 	= "Español"
+GameText.HelperText.Ithkuil     [ "language-name" ]   	= "Ithkuil"
+
+-- Put your name in here
+GameText.HelperText.English		[ "Translation Credits" ]	= "Rachel J. Morris"
+GameText.HelperText.Esperanto	[ "Translation Credits" ] 	= "Rachel J. Morris"
+GameText.HelperText.Ido			[ "Translation Credits" ] 	= "???"
+GameText.HelperText.Spanish		[ "Translation Credits" ] 	= "Tea Coba"
+GameText.HelperText.Ithkuil     [ "Translation Credits" ]   = "Chikaodinaka 'dkawirl' Oluigbo"
 
 
 -- Common --
@@ -101,8 +113,8 @@ GameText.TargetText.Ithkuil     [ "game title" ]    = "Ithkaiwîl ubzál"
 -- Helper Languages --
 -- These only need to be translated into the specific language, there don't need to be multiple translations --
 GameText.HelperText.English		[ "I know English" ] 	= "I know English."
-GameText.HelperText.Esperanto		[ "I know Esperanto" ] 	= "Mi konas Esperanton."
-GameText.HelperText.Ido				[ "I know Ido" ] 	= "Me konas Ido."
+GameText.HelperText.Esperanto	[ "I know Esperanto" ] 	= "Mi konas Esperanton."
+GameText.HelperText.Ido			[ "I know Ido" ] 		= "Me konas Ido."
 GameText.HelperText.Spanish		[ "I know Spanish" ] 	= "Yo conozco Español."
 GameText.HelperText.Ithkuil		[ "I know Ithkuil" ] 	= "I know Ithkuil."
 
@@ -137,8 +149,6 @@ GameText.HelperText.Ido         [ "I am learning Ithkuil" ]     = "Me lernas Ifk
 GameText.HelperText.Spanish     [ "I am learning Ithkuil" ]     = "Estoy aprendiendo Ithkuil"
 GameText.HelperText.Ithkuil     [ "I am learning Ithkuil" ] 	= "Ithkel xháwîl"
 
-
-
 -- Menu Buttons --
 
 GameText.HelperText.English		[ "Play" ] 	= "Play"
@@ -146,6 +156,18 @@ GameText.HelperText.Esperanto	[ "Play" ] 	= "Ludi"
 GameText.HelperText.Ido			[ "Play" ] 	= "Ludar"
 GameText.HelperText.Spanish		[ "Play" ] 	= "Jugar"
 GameText.HelperText.Ithkuil     [ "Play" ]  = "Ováweš!"
+
+GameText.HelperText.English		[ "Next" ] 	= "Continue"
+GameText.HelperText.Esperanto	[ "Next" ] 	= "Daŭri"
+GameText.HelperText.Ido			[ "Next" ] 	= "Durar"
+GameText.HelperText.Spanish		[ "Next" ] 	= "Durar"
+GameText.HelperText.Ithkuil     [ "Next" ]  = "Continue"
+
+GameText.HelperText.English		[ "Previous" ] 	= "Previous"
+GameText.HelperText.Esperanto	[ "Previous" ] 	= "Antaŭa"
+GameText.HelperText.Ido			[ "Previous" ] 	= "Antea"
+GameText.HelperText.Spanish		[ "Previous" ] 	= "Pasada"
+GameText.HelperText.Ithkuil     [ "Previous" ]  = "Previous"
 
 GameText.HelperText.English		[ "Options" ] 	= "Options"
 GameText.HelperText.Esperanto	[ "Options" ] 	= "Agordoj"
@@ -170,6 +192,69 @@ GameText.HelperText.Esperanto	[ "Menu" ] 	= "Menuo"
 GameText.HelperText.Ido			[ "Menu" ] 	= "Revenar"
 GameText.HelperText.Spanish		[ "Menu" ] 	= "Regres"
 GameText.HelperText.Ithkuil     [ "Menu" ]  = "Rçarļ"
+
+-- Demo Text
+
+GameText.HelperText.English		[ "Thank you for trying out Merri" ] 	= "Thank you for trying out Merri!"
+GameText.HelperText.Esperanto	[ "Thank you for trying out Merri" ] 	= "Dankon por provi je Merri!"
+GameText.HelperText.Ido			[ "Thank you for trying out Merri" ] 	= "Thank you for trying out Merri!"
+GameText.HelperText.Spanish		[ "Thank you for trying out Merri" ] 	= "Thank you for trying out Merri!"
+GameText.HelperText.Ithkuil		[ "Thank you for trying out Merri" ] 	= "Thank you for trying out Merri!"
+
+GameText.HelperText.English		[ "This is still a work in progress" ] 	= "This is still a work in progress."
+GameText.HelperText.Esperanto	[ "This is still a work in progress" ] 	= "This is still a work in progress."
+GameText.HelperText.Ido			[ "This is still a work in progress" ] 	= "This is still a work in progress."
+GameText.HelperText.Spanish		[ "This is still a work in progress" ] 	= "This is still a work in progress."
+GameText.HelperText.Ithkuil     [ "This is still a work in progress" ]  = "This is still a work in progress."
+
+GameText.HelperText.English		[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
+GameText.HelperText.Esperanto	[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
+GameText.HelperText.Ido			[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
+GameText.HelperText.Spanish		[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
+GameText.HelperText.Ithkuil		[ "There may be errors or bugs" ] 		= "There may be errors or bugs."
+
+GameText.HelperText.English		[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
+GameText.HelperText.Esperanto	[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
+GameText.HelperText.Ido			[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
+GameText.HelperText.Spanish		[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
+GameText.HelperText.Ithkuil		[ "Report problems at EMAIL" ] 			= "Report problems at Rachel@Moosader.com ."
+
+GameText.HelperText.English		[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
+GameText.HelperText.Esperanto	[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
+GameText.HelperText.Ido			[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
+GameText.HelperText.Spanish		[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
+GameText.HelperText.Ithkuil		[ "Want to keep up with this game's progress?" ] 	= "Want to keep up with this game's progress?"
+
+-- Don't translate these, they're being set based on the notes above.
+GameText.TargetText.English		[ "Thank you for trying out Merri" ] 	= GameText.HelperText.English[ "Thank you for trying out Merri" ]
+GameText.TargetText.Esperanto	[ "Thank you for trying out Merri" ] 	= GameText.HelperText.Esperanto[ "Thank you for trying out Merri" ]
+GameText.TargetText.Ido			[ "Thank you for trying out Merri" ] 	= GameText.HelperText.Ido[ "Thank you for trying out Merri" ]
+GameText.TargetText.Spanish		[ "Thank you for trying out Merri" ] 	= GameText.HelperText.Spanish[ "Thank you for trying out Merri" ]
+GameText.TargetText.Ithkuil		[ "Thank you for trying out Merri" ] 	= GameText.HelperText.Ithkuil[ "Thank you for trying out Merri" ]
+
+GameText.TargetText.English		[ "This is still a work in progress" ] 	= GameText.TargetText.English[ "This is still a work in progress" ]
+GameText.TargetText.Esperanto	[ "This is still a work in progress" ] 	= GameText.TargetText.Esperanto[ "This is still a work in progress" ]
+GameText.TargetText.Ido			[ "This is still a work in progress" ] 	= GameText.TargetText.Ido[ "This is still a work in progress" ]
+GameText.TargetText.Spanish		[ "This is still a work in progress" ] 	= GameText.TargetText.Spanish[ "This is still a work in progress" ]
+GameText.TargetText.Ithkuil     [ "This is still a work in progress" ]  = GameText.TargetText.Ithkuil[ "This is still a work in progress" ]
+
+GameText.TargetText.English		[ "There may be errors or bugs" ] 		= GameText.HelperText.English[ "There may be errors or bugs" ]
+GameText.TargetText.Esperanto	[ "There may be errors or bugs" ] 		= GameText.HelperText.Esperanto[ "There may be errors or bugs" ]
+GameText.TargetText.Ido			[ "There may be errors or bugs" ] 		= GameText.HelperText.Ido[ "There may be errors or bugs" ]
+GameText.TargetText.Spanish		[ "There may be errors or bugs" ] 		= GameText.HelperText.Spanish[ "There may be errors or bugs" ]
+GameText.TargetText.Ithkuil		[ "There may be errors or bugs" ] 		= GameText.HelperText.Ithkuil[ "There may be errors or bugs" ]
+
+GameText.TargetText.English		[ "Report problems at EMAIL" ] 			= GameText.HelperText.English[ "Report problems at EMAIL" ]
+GameText.TargetText.Esperanto	[ "Report problems at EMAIL" ] 			= GameText.HelperText.Esperanto[ "Report problems at EMAIL" ]
+GameText.TargetText.Ido			[ "Report problems at EMAIL" ] 			= GameText.HelperText.Ido[ "Report problems at EMAIL" ]
+GameText.TargetText.Spanish		[ "Report problems at EMAIL" ] 			= GameText.HelperText.Spanish[ "Report problems at EMAIL" ]
+GameText.TargetText.Ithkuil		[ "Report problems at EMAIL" ] 			= GameText.HelperText.Ithkuil[ "Report problems at EMAIL" ]
+
+GameText.TargetText.English		[ "Want to keep up with this game's progress?" ] 		= GameText.HelperText.English[ "Want to keep up with this game's progress?" ]
+GameText.TargetText.Esperanto	[ "Want to keep up with this game's progress?" ] 		= GameText.HelperText.Esperanto[ "Want to keep up with this game's progress?" ]
+GameText.TargetText.Ido			[ "Want to keep up with this game's progress?" ] 		= GameText.HelperText.Ido[ "Want to keep up with this game's progress?" ]
+GameText.TargetText.Spanish		[ "Want to keep up with this game's progress?" ]		= GameText.HelperText.Spanish[ "Want to keep up with this game's progress?" ]
+GameText.TargetText.Ithkuil		[ "Want to keep up with this game's progress?" ] 		= GameText.HelperText.Ithkuil[ "Want to keep up with this game's progress?" ]
 
 -- Got a star
 

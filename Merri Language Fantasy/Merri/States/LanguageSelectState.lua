@@ -86,10 +86,11 @@ function LanguageSelectState:SetupTargetMenu( options )
 		} )
 		
 	y = y + yInc
+	print( x, y )
 		
 	StateBase:AddButton( { 
 		button = { id = "btn_language_es", 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-		label 	= { id = "btn_language_es", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = y+10, pos_y = x+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Spanish" ) }
+		label 	= { id = "btn_language_es", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning Spanish" ) }
 		} )
 		
 	y = y + yInc
@@ -145,7 +146,7 @@ function LanguageSelectState:Handle_MouseDown( event )
 		if ( GLOBAL_CONFIG.TARGET_LANGUAGE ~= nil ) then
 			SAVE_CONFIG()
 			--StateBase:SetGotoState( "TitleState" )
-			StateBase:SetGotoState( "GameMinerState" )
+			StateBase:SetGotoState( "DemoInfoState" )
 		end
 	end
 end

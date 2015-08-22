@@ -4,7 +4,6 @@
  </properties>
  <folder name="Engine">
   <folder name="States">
-   <file source="Merri/States/GotStarState.lua"/>
    <file source="Engine/States/StateManager.lua"/>
    <file source="Engine/States/StateBase.lua"/>
   </folder>
@@ -21,9 +20,11 @@
    <file source="Merri/Language/GameText.lua"/>
   </folder>
   <folder name="States">
+   <file source="Merri/States/DemoInfoState.lua"/>
    <file source="Merri/States/DifficultySelectState.lua"/>
    <file source="Merri/States/LanguageSelectState.lua"/>
    <file source="Merri/States/TitleState.lua"/>
+   <file source="Merri/States/GotStarState.lua"/>
   </folder>
   <file source="Merri/main.lua"/>
   <file source="Merri/config.lua"/>
