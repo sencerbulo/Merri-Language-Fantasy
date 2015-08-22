@@ -365,7 +365,7 @@ GameText.HelperText.Spanish     [ "Stats" ]     = "Estadísticas"
 GameText.HelperText.Ithkuil     [ "Stats" ]     = "Upšáwušk"
 GameText.HelperText.German      [ "Stats" ]     = "Statistiken"
 
--- GameMinerState --
+-- MinerGameState --
 
 -- Miner character
 GameText.TargetText.English     [ "Miner" ]     = "Miner"
@@ -740,7 +740,7 @@ GameText.TargetText.Esperanto   [ "Don't buy anything" ]    = "Ne aĉeti ion."
 GameText.TargetText.Ido         [ "Don't buy anything" ]    = "Ne komprar irgo."
 GameText.TargetText.Spanish     [ "Don't buy anything" ]    = "Don't buy anything."
 GameText.TargetText.Ithkuil     [ "Don't buy anything" ]    = "Don't buy anything."
-GameText.TargetText.German      [ "Don't buy anything" ]    = "Don't buy anything."
+GameText.TargetText.German      [ "Don't buy anything" ]    = "Nichts kaufen."
 
 GameText.TargetText.English     [ "Potion" ]    = "Potion"
 GameText.TargetText.Esperanto   [ "Potion" ]    = "Pocio"
@@ -786,8 +786,8 @@ GameText.TargetText.German      [ "DynamiteDescription" ]   = "Gehe eine Ebene h
 
 GameText.TargetText.English     [ "Rope" ]  = "Rope"
 GameText.TargetText.Esperanto   [ "Rope" ]  = "Ŝnuro"
-GameText.TargetText.Ido         [ "Rope" ]  = "Kordo."
-GameText.TargetText.Spanish     [ "Rope" ]  = "Rope."
+GameText.TargetText.Ido         [ "Rope" ]  = "Kordo"
+GameText.TargetText.Spanish     [ "Rope" ]  = "Rope"
 GameText.TargetText.Ithkuil     [ "Rope" ]  = "Öxpál"
 GameText.TargetText.German      [ "Rope" ]  = "Seil"
 

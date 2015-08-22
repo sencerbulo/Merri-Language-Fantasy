@@ -101,7 +101,7 @@ function MinerGameState:Setup( options )
 	self.debugButton = Bitmap.new( Texture.new( "Content/Games/Miner/UI/hud_down.png" ) )
 	self.debugButton:setPosition( 320, 600 )
 	
-	self.points = 0
+	MinerGameState.money = 0
 	
 	-- Labels
 	self.labels = {}
@@ -128,7 +128,7 @@ function MinerGameState:Setup( options )
 	self.labels.money:setTextColor( 0xFFFFFF )
 	self.labels.money:setPosition( 80, 610 )
 	
-	self.labels.moneyValue = TextField.new( MinerGameState.fonts.hud, self.points )
+	self.labels.moneyValue = TextField.new( MinerGameState.fonts.hud, MinerGameState.money )
 	self.labels.moneyValue:setTextColor( 0xFFFFFF )
 	self.labels.moneyValue:setPosition( 165, 610 )
 	
@@ -243,7 +243,7 @@ function MinerGameState:InputAction( action, direction )
 		
 	end
 	
-	self.points = self.points + points
+	MinerGameState.money = MinerGameState.money + points
 	if ( points > 0 ) then
 		self.sounds.collect:play()
 		self.labels.narration:setText( GameText:Get( "target", "miner-collect-" .. itemType ) )
@@ -267,7 +267,7 @@ function MinerGameState:InputAction( action, direction )
 		
 	end
 	
-	self.labels.moneyValue:setText( self.points )
+	self.labels.moneyValue:setText( MinerGameState.money )
 	
 	self:SetupHud()
 	self:TurnBasedUpdate()

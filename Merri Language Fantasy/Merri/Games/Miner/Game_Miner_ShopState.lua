@@ -36,9 +36,13 @@ function MinerShopState:Setup( options )
 	self.images.shopkeeper = Bitmap.new( self.textures.shopkeeper )
 	self.images.shopkeeper:setPosition( 65, 65 )
 	
+	StateBase:AddLabel( { id = "money", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = 0, pos_y = 25, color = 0xFFFFFF, size = 20, text = GameText:Get( "target", "Money" ) .. " " .. MinerGameState.money, centered = true } )
+		
 	StateBase:AddLabel( { id = "dialog", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = 0, pos_y = 50, color = 0xFFFFFF, size = 20, text = GameText:Get( "target", "Do you want to buy a tool?" ), centered = true } )
+		pos_x = 0, pos_y = 55, color = 0xFFFFFF, size = 20, text = GameText:Get( "target", "Do you want to buy a tool?" ), centered = true } )
 	
+	self.shopItems = {}
 	local items = {
 			{ name = "Potion", price = 50 },
 			{ name = "Earthquake", price = 30 },
@@ -54,6 +58,7 @@ function MinerShopState:Setup( options )
 	for i = 1, 3 do
 		local index = math.random( 1, #items )
 		local itemName = items[ index ].name
+		self.shopItems[ i ] = itemName
 		print( "Random item ", i, ": ", itemName )
 		
 		self.images[ "itemBackground" .. i ] = Bitmap.new( self.textures[ "inventory" .. itemName ] )
@@ -70,6 +75,8 @@ function MinerShopState:Setup( options )
 		self.labels[ "itemPrice" .. i ] = TextField.new( self.fonts.hud, GameText:Get( "target", "Price" ) .. " " .. items[ index ].price )
 		self.labels[ "itemPrice" .. i ]:setPosition( x+100, y+60 + ( i * inc ) )
 		self.labels[ "itemPrice" .. i ]:setTextColor( 0xFFFFFF )
+		
+		table.remove( items, index )
 	end
 	
 	self.images.dontbuy = Bitmap.new( self.textures.dontbuy )
@@ -117,7 +124,14 @@ end
 
 function MinerShopState:Handle_MouseDown( event )
 	if ( self.images.dontbuy:hitTestPoint( event.x, event.y ) ) then
-		StateBase:SetGotoState( "MinerGameState" )	
+		self:Cleanup()
+		StateBase:SetGotoState( "MinerGameState" )
+	end
+	
+	for i = 1, 3 do
+		if ( self.images[ "itemBackground" .. i ] ~= nil and self.images[ "itemBackground" .. i ]:hitTestPoint( event.x, event.y ) ) then
+			print( "Buy ", self.shopItems[ i ] )
+		end
 	end
 end
 
