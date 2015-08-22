@@ -31,7 +31,8 @@ function MinerMap:init( options )
 		}
 		
 	self.tileWidth = self.textures.ground:getWidth()
-	self.floor = 1
+	self.floor =  options.floor
+	print( "Init floor ", options.floor )
 	self.lastFloor = 20
 	self.mapWidth = 10
 	self.mapHeight = 14
@@ -47,6 +48,7 @@ end
 
 function MinerMap:GoDownstairs()
 	self.floor = self.floor + 1
+	MinerGameState.floor = MinerGameState.floor + 1
 	self:Generate()
 end
 
@@ -456,3 +458,8 @@ function MinerMap:SwapObjects( sx, sy, dx, dy )
 	self.tiles[sx][sy].label = nil
 end
 
+function MinerMap:FreezeAllEnemies()
+end
+
+function MinerMap:BreakAllRocks()
+end

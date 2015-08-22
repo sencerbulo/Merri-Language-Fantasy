@@ -93,6 +93,11 @@
    </folder>
   </folder>
   <folder name="Audio">
+   <file source="Content/Audio/rope.wav"/>
+   <file source="Content/Audio/potion.wav"/>
+   <file source="Content/Audio/earthquake.wav"/>
+   <file source="Content/Audio/dynamite.wav"/>
+   <file source="Content/Audio/blizzard.wav"/>
    <file source="Content/Audio/payup.wav"/>
    <file source="Content/Audio/error.wav"/>
    <file source="Content/Audio/sword.wav"/>

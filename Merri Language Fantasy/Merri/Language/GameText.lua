@@ -724,7 +724,21 @@ GameText.TargetText.Esperanto   [ "miner-go-down-ladder" ]      = "Vi malsupreni
 GameText.TargetText.Ido         [ "miner-go-down-ladder" ]      = "Vu decensas per la skalo."
 GameText.TargetText.Spanish     [ "miner-go-down-ladder" ]      = "Bajas por la escalera."
 GameText.TargetText.Ithkuil     [ "miner-go-down-ladder" ]      = "Jal"
-GameText.TargetText.German      [ "miner-go-down-ladder" ]  = "Du gehst die Leiter hinab."
+GameText.TargetText.German      [ "miner-go-down-ladder" ]      = "Du gehst die Leiter hinab."
+
+GameText.TargetText.English     [ "miner-rope" ]                = "You flee upward with the rope."
+GameText.TargetText.Esperanto   [ "miner-rope" ]                = "Vi eskapis supren per la ŝnuro."
+GameText.TargetText.Ido         [ "miner-rope" ]                = "Vu eskapis adinfre per la kordo."
+GameText.TargetText.Spanish     [ "miner-rope" ]                = "You flee upward with the rope."
+GameText.TargetText.Ithkuil     [ "miner-rope" ]                = "You flee upward with the rope."
+GameText.TargetText.German      [ "miner-rope" ]                = "You flee upward with the rope."
+
+GameText.TargetText.English     [ "miner-dynamite" ]            = "You flee downward with the dynamite."
+GameText.TargetText.Esperanto   [ "miner-dynamite" ]            = "Vi eskapis malsupren per la dinamito."
+GameText.TargetText.Ido         [ "miner-dynamite" ]            = "Vu eskapis adsupere per la dinamito."
+GameText.TargetText.Spanish     [ "miner-dynamite" ]            = "You flee downward with the dynamite."
+GameText.TargetText.Ithkuil     [ "miner-dynamite" ]            = "You flee downward with the dynamite."
+GameText.TargetText.German      [ "miner-dynamite" ]            = "You flee downward with the dynamite."
 
 -- Shop
 

@@ -5,7 +5,9 @@ function MinerGameState:init( options )
 	StateBase:Setup( { backgroundScroll = false } )
 	StateBase.transitioning = false
 	MinerGameState.inventoryItem = ""
-	MinerGameState.money = 0
+	MinerGameState.money = 100
+	MinerGameState.floor = 1
+	MinerGameState.moveFloorViaItem = false
 end
 
 -- Setup / Teardown --
@@ -43,6 +45,11 @@ function MinerGameState:Setup( options )
 		footsteps = Sound.new( "Content/Audio/footsteps.wav" ),
 		hurt = Sound.new( "Content/Audio/hurt.wav" ),
 		sword = Sound.new( "Content/Audio/sword.wav" ),
+		Potion = Sound.new( "Content/Audio/potion.wav" ),
+		Earthquake = Sound.new( "Content/Audio/earthquake.wav" ),
+		Blizzard = Sound.new( "Content/Audio/blizzard.wav" ),
+		Dynamite = Sound.new( "Content/Audio/dynamite.wav" ),
+		Rope = Sound.new( "Content/Audio/rope.wav" ),
 	}
 	
 	self.images = {}
@@ -55,24 +62,28 @@ function MinerGameState:Setup( options )
 	
 	-- Fade out graphic
 	if ( StateBase.transitioning ) then
-		self.sounds.footsteps:play()
+		if ( MinerGameState.moveFloorViaItem == false ) then
+			self.sounds.footsteps:play()
+		end
 		self.fadeCounter = 49
 		self.transition = true
 		self.fadeBitmap = Bitmap.new( self.textures.black )
 		self.fadeBitmap:setAlpha( 1 )
 		stage:addChild( self.fadeBitmap )
-		self.labels.narration:setText( GameText:Get( "target", "miner-go-down-ladder" ) )
+		MinerGameState.floor = MinerGameState.floor + 1
 	
 	else
 		self.fadeCounter = 0
 		self.transition = false
 		self.fadeBitmap = Bitmap.new( self.textures.black )
 		self.fadeBitmap:setAlpha( 0 )
+		MinerGameState.transitionText = GameText:Get( "target", "miner-begin" )
 	
 	end
 	
+	print( "Floor: ", MinerGameState.floor )
 	-- Set up map
-	self.map = MinerMap.new()
+	self.map = MinerMap.new( { floor = MinerGameState.floor } )
 	self.map:Generate()
 	--GetPlayerCoordinates	
 	-- Create player control buttons
@@ -107,14 +118,14 @@ function MinerGameState:Setup( options )
 		},
 	}
 	
-	--self.debugButton = Bitmap.new( Texture.new( "Content/Games/Miner/UI/hud_down.png" ) )
-	--self.debugButton:setPosition( 320, 600 )
+	self.debugButton = Bitmap.new( Texture.new( "Content/Games/Miner/UI/hud_down.png" ) )
+	self.debugButton:setPosition( 0, 600 )
 	
 	-- Labels
 	self.labels = {}
 	
 	-- Narrative Line
-	self.labels.narration = TextField.new( MinerGameState.fonts.hud, GameText:Get( "target", "miner-begin" ) )
+	self.labels.narration = TextField.new( MinerGameState.fonts.hud, MinerGameState.transitionText )
 	self.labels.narration:setTextColor( 0xFFFFFF )
 	self.labels.narration:setPosition( 10, 560 )
 	
@@ -226,7 +237,7 @@ function MinerGameState:Draw()
 	
 	self.map:UpdateLighting()
 	
-	--stage:addChild( self.debugButton )
+	stage:addChild( self.debugButton )
 	
 	if ( stage:contains( self.fadeBitmap ) ) then
 		stage:addChild( self.fadeBitmap )
@@ -275,11 +286,10 @@ function MinerGameState:InputAction( action, direction )
 		
 	elseif ( itemType == "ladder" ) then
 		self.sounds.footsteps:play()
-		self.fadeCounter = 100
-		self.transition = true
-		stage:addChild( self.fadeBitmap )
-		self.fadeBitmap:setAlpha( 0 )
-		self.labels.narration:setText( GameText:Get( "target", "miner-go-down-ladder" ) )
+		self:BeginTransition()
+		
+		MinerGameState.moveFloorViaItem = false
+		MinerGameState.transitionText = GameText:Get( "target", "miner-go-down-ladder" )
 	
 	elseif ( itemType == "star" ) then
 		-- End of mini-game
@@ -317,12 +327,63 @@ function MinerGameState:Handle_KeyDown( event )
 	self:InputAction( action, direction )
 end
 
+function MinerGameState:UseItem( type )
+	local success = false
+	if ( type == "Potion" ) then
+		-- Heal life, but not if hearts are full?
+		self.sounds.Potion:play()
+	
+	elseif ( type == "Earthquake" ) then
+		-- Break all rocks
+		success = true
+		self.map:BreakAllRocks()
+		self.sounds.Earthquake:play()
+	
+	elseif ( type == "Blizzard" ) then
+		-- Freeze all enemies
+		success = true
+		self.map:FreezeAllEnemies()
+		self.sounds.Blizzard:play()
+	
+	elseif ( type == "Rope" and MinerGameState.floor > 1 ) then
+		-- Cannot use on the first floor, but you shouldn't have it anyway
+		MinerGameState.moveFloorViaItem = true
+		MinerGameState.floor = MinerGameState.floor - 2 -- will add 1 to the floor
+		MinerGameState.transitionText = GameText:Get( "target", "miner-rope" )
+		self:BeginTransition()
+		self.sounds.Rope:play()
+		
+	elseif ( type == "Dynamite" and MinerGameState.floor < 20 ) then
+		-- Cannot use on the final floor
+		MinerGameState.moveFloorViaItem = true
+		MinerGameState.transitionText = GameText:Get( "target", "miner-dynamite" )
+		self:BeginTransition()
+		self.sounds.Dynamite:play()
+	end
+	
+	if ( success ) then
+		self.buttons.inventory.bitmap:setTexture( self.textures.itemBackground )
+		self.buttons.inventory.item = ""
+	end
+end
+
+function MinerGameState:BeginTransition()
+	self.fadeCounter = 100
+	self.transition = true
+	stage:addChild( self.fadeBitmap )
+	self.fadeBitmap:setAlpha( 0 )
+end
+
 function MinerGameState:Handle_MouseDown( event )
 	-- Hud buttons could be to move or mine or attack
 	for key, button in pairs( self.hud ) do
 		if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
 			self:InputAction( button.action, button.direction )			
 		end
+	end
+	
+	if ( self.buttons.inventory.bitmap:hitTestPoint( event.x, event.y ) ) then
+		self:UseItem( self.buttons.inventory.item )
 	end
 	
 	if ( self.debugButton ~= nil and self.debugButton:hitTestPoint( event.x, event.y ) ) then
@@ -350,7 +411,13 @@ function MinerGameState:Handle_EnterFrame( event )
 		-- Change
 		elseif ( self.fadeCounter == 50 ) then
 			StateBase.transitioning = true								-- when we reload shop, this will have it fade in
-			StateBase:SetGotoState( "MinerShopState" )		-- show the shop
+			
+			if ( MinerGameState.moveFloorViaItem == true ) then
+				StateBase:SetGotoState( "MinerGameState" )
+				
+			else
+				StateBase:SetGotoState( "MinerShopState" )		-- show the shop
+			end
 		
 		-- Fade in
 		elseif ( self.fadeCounter > 0 ) then
