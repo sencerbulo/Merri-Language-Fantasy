@@ -16,8 +16,7 @@ GLOBAL_CONFIG.TARGET_LANGUAGE = "Esperanto"
 LOAD_CONFIG()
 
 --if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
-	--stateManager:ChangeState( "LanguageSelectState" )
-	stateManager:ChangeState( "DemoInfoState" )
+	stateManager:ChangeState( "LanguageSelectState" )
 
 --else
 	--stateManager:ChangeState( "TitleState" )

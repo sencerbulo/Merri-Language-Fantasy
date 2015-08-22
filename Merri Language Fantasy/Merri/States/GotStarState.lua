@@ -57,7 +57,7 @@ end
 function GotStarState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
 	if ( clickedButton == "btn_back" ) then
-			StateBase:SetGotoState( "TitleState" )	
+			StateBase:SetGotoState( "LanguageSelectState" )	
 	
 	end
 end
