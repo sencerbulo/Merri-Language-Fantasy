@@ -6,7 +6,7 @@ function MinerGameState:init( options )
 	StateBase.transitioning = false
 	MinerGameState.inventoryItem = ""
 	MinerGameState.money = 0
-	MinerGameState.floor = 20
+	MinerGameState.floor = 1
 	MinerGameState.playerHealth = 4
 	MinerGameState.moveFloorViaItem = false
 	MinerGameState.gameOver = false

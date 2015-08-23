@@ -188,6 +188,12 @@ function StateBase:AddLabelAndDraw( options )
 	stage:addChild( self.labels[ options.id ] )
 end
 
+function StateBase:RemoveLabel( name )
+	if ( self.labels[ name ] ~= nil and stage:contains( self.labels[ name ] ) ) then
+		stage:removeChild( self.labels[ name ] )
+	end
+end
+
 function StateBase:AddButton( options )
 	self:AddBitmap( options.button )
 	if ( options.label ~= nil ) then		self:AddLabel( options.label )		end

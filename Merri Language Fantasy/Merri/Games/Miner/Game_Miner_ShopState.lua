@@ -42,12 +42,10 @@ function MinerShopState:Setup( options )
 	self.images.shopkeeper:setPosition( 65, 65 )
 	
 	StateBase:AddLabel( { id = "money", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = 0, pos_y = 25, color = 0xFFFFFF, size = 20, text = GameText:Get( "target", "Money" ) .. " " .. MinerGameState.money, centered = true } )
+		pos_x = 0, pos_y = 25, color = 0xFFFFFF, size = 20, text = GameText:Get( "target", "Money" ) .. " " .. MinerGameState.money, centered = true, fitToScreen = true } )
 	
-	self.labels.dialog = TextField.new( self.fonts.shop, GameText:Get( "target", "Do you want to buy a tool?" ) )
-	self.labels.dialog:setTextColor( 0xFFFFFF )
-	local textX = GLOBAL_CONFIG.SCREEN_WIDTH / 2 - ( string.len( GameText:Get( "target", "Do you want to buy a tool?" ) ) * 20 / 2 ) / 2
-	self.labels.dialog:setPosition( textX, 55 )
+	StateBase:AddLabel( { id = "buyTool", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = 0, pos_y = 55, color = 0xFFFFFF, size = 20, text = GameText:Get( "target", "Do you want to buy a tool?" ), centered = true, fitToScreen = true } )
 	
 	self.shopItems = {}
 	self.items = {
@@ -145,10 +143,11 @@ function MinerShopState:Handle_MouseDown( event )
 				StateBase:SetGotoState( "MinerGameState" )
 				
 			else
-				self.labels.dialog:setText( GameText:Get( "target", "You don't have enough money" ) )
-				local textX = GLOBAL_CONFIG.SCREEN_WIDTH / 2 - ( string.len( GameText:Get( "target", "You don't have enough money" ) ) * 20 / 2 ) / 2
-				self.labels.dialog:setPosition( textX, 55 )
-				self.labels.dialog:setTextColor( 0xFFA3A3 )
+				
+				StateBase:RemoveLabel( "buyTool" )
+				StateBase:AddLabelAndDraw( { id = "noMoney", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+					pos_x = 0, pos_y = 55, color = 0xFFA3A3, size = 20, text = GameText:Get( "target", "You don't have enough money" ), centered = true, fitToScreen = true } )
+				
 				self.sounds.error:play()
 			end
 		end

@@ -856,6 +856,14 @@ GameText.TargetText.Ithkuil     [ "miner-dynamite" ]            = "You flee down
 GameText.TargetText.German      [ "miner-dynamite" ]            = "You flee downward with the dynamite."
 GameText.TargetText.French      [ "miner-dynamite" ]            = "You flee downward with the dynamite."
 
+GameText.TargetText.English     [ "miner-died" ]            = "You have been killed."
+GameText.TargetText.Esperanto   [ "miner-died" ]            = "Vi estis mortigita."
+GameText.TargetText.Ido         [ "miner-died" ]            = "Vu esis mortigita."
+GameText.TargetText.Spanish     [ "miner-died" ]            = "You have been killed."
+GameText.TargetText.Ithkuil     [ "miner-died" ]            = "You have been killed."
+GameText.TargetText.German      [ "miner-died" ]            = "You have been killed."
+GameText.TargetText.French      [ "miner-died" ]            = "You have been killed."
+
 -- Shop
 
 GameText.TargetText.English     [ "Do you want to buy a tool?" ]    = "Do you want to buy a tool?"
@@ -873,6 +881,14 @@ GameText.TargetText.Spanish     [ "Don't buy anything" ]    = "No comprar nada."
 GameText.TargetText.Ithkuil     [ "Don't buy anything" ]    = "Don't buy anything."
 GameText.TargetText.German      [ "Don't buy anything" ]    = "Nichts kaufen."
 GameText.TargetText.French      [ "Don't buy anything" ]    = "Ne rien acheter."
+
+GameText.TargetText.English     [ "You don't have enough money" ]    = "You don't have enough money."
+GameText.TargetText.Esperanto   [ "You don't have enough money" ]    = "Vi ne havas sufiĉe da mono."
+GameText.TargetText.Ido         [ "You don't have enough money" ]    = "Vu ne havas sate de pekunio."
+GameText.TargetText.Spanish     [ "You don't have enough money" ]    = "No tienes suficiente dinero."
+GameText.TargetText.Ithkuil     [ "You don't have enough money" ]    = "You don't have enough money."
+GameText.TargetText.German      [ "You don't have enough money" ]    = "You don't have enough money."
+GameText.TargetText.French      [ "You don't have enough money" ]    = "You don't have enough money."
 
 -- Items
 GameText.TargetText.English     [ "Potion" ]    = "Potion"
