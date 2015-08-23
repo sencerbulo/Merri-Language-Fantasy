@@ -39,10 +39,10 @@ function DemoInfoState:SetupInfoScreen()
 	
 	for key, line in pairs( lines ) do
 		StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-			pos_x = x, pos_y = y, color = 0xFFFFFF, 	size = size1, text = GameText:Get( "target", line ), centered = false } )
+			pos_x = x, pos_y = y, color = 0xFFFFFF, 	size = size1, text = GameText:Get( "target", line ), centered = true, fitToScreen = true } )
 			
 		StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-			pos_x = x, pos_y = y+spacing, color = 0xFFFFFF, size = size2, text = GameText:Get( "helper", line ), centered = false } )
+			pos_x = x, pos_y = y+spacing, color = 0xFFFFFF, size = size2, text = GameText:Get( "helper", line ), centered = true, fitToScreen = true } )
 		
 		y = y + yInc
 		info = info + 1

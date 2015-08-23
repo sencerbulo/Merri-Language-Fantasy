@@ -7,7 +7,9 @@ end
 
 -- Setup / Teardown --
 function GotStarState:Setup( options )
+	StateBase.transitioning = false
 	StateBase:ToggleBackgroundScroll( true )
+	StateBase:SetGotoState( "" )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
 	
 	self.graphics = {}
@@ -17,10 +19,13 @@ function GotStarState:Setup( options )
 	self.graphics.star:setAnchorPoint( 0.5, 0.5 )
 	self.graphics.star:setRotation( -5 )
 	
+	local fontSizeA = 30
+	local fontSizeB = 20
+	
 	StateBase:AddLabel( { id = "attain1", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = 50, pos_y = 140, color = 0xFFFFFF, size = 30, text = GameText:Get( "target", "Earned a star" ), centered = true } )
+		pos_x = 50, pos_y = 140, color = 0xFFFFFF, size = fontSizeA, text = GameText:Get( "target", "Earned a star" ), centered = true, fitToScreen = true } )
 	StateBase:AddLabel( { id = "attain2", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-		pos_x = 120, pos_y = 180, color = 0xFFFFFF, size = 20, text = GameText:Get( "helper", "Earned a star" ), centered = true } )
+		pos_x = 120, pos_y = 180, color = 0xFFFFFF, size = fontSizeB, text = GameText:Get( "helper", "Earned a star" ), centered = true, fitToScreen = true } )
 		
 	StateBase:AddButton( { 
 		button = { id = "btn_back", 	path = "Content/Graphics/UI/btn_back.png",  			pos_x = 10, pos_y = 530  },
@@ -38,7 +43,7 @@ end
 function GotStarState:Draw()
 	StateBase:Draw()
 	
-	for key, value in pairs( self.graphics.star ) do
+	for key, value in pairs( self.graphics ) do
 		stage:addChild( value )
 	end
 end
@@ -57,7 +62,7 @@ end
 function GotStarState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
 	if ( clickedButton == "btn_back" ) then
-			StateBase:SetGotoState( "LanguageSelectState" )	
+		StateBase:SetGotoState( "LanguageSelectState" )	
 	
 	end
 end

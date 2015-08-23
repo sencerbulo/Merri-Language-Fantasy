@@ -183,7 +183,7 @@ function MinerMap:Generate()
 	end
 	
 	-- Add Enemies --
-	local enemyCount = math.floor( self.floor / 4 ) + 1
+	local enemyCount = math.floor( self.floor / 5 ) + 1
 	for e = 0, enemyCount do
 		local x, y		
 		local isValidPlace = false
