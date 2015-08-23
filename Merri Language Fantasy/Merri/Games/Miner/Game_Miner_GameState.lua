@@ -6,7 +6,8 @@ function MinerGameState:init( options )
 	StateBase.transitioning = false
 	MinerGameState.inventoryItem = ""
 	MinerGameState.money = 100
-	MinerGameState.floor = 5
+	MinerGameState.floor = 5 -- TODO: Change Back
+	MinerGameState.playerHealth = 4
 	MinerGameState.moveFloorViaItem = false
 end
 
@@ -43,7 +44,6 @@ function MinerGameState:Setup( options )
 		mining = Sound.new( "Content/Audio/mining.wav" ),
 		collect = Sound.new( "Content/Audio/collect.wav" ),
 		footsteps = Sound.new( "Content/Audio/footsteps.wav" ),
-		hurt = Sound.new( "Content/Audio/hurt.wav" ),
 		sword = Sound.new( "Content/Audio/sword.wav" ),
 		Potion = Sound.new( "Content/Audio/potion.wav" ),
 		Earthquake = Sound.new( "Content/Audio/earthquake.wav" ),
@@ -81,8 +81,8 @@ function MinerGameState:Setup( options )
 	
 	end
 	
-	-- Set up map
-	self.map = MinerMap.new( { floor = MinerGameState.floor } )
+	-- Set up map=
+	self.map = MinerMap.new( { floor = MinerGameState.floor, hp = MinerGameState.playerHealth } )
 	self.map:Generate()
 	--GetPlayerCoordinates	
 	-- Create player control buttons
@@ -141,6 +141,7 @@ function MinerGameState:Setup( options )
 		self.hudHearts[i] = Bitmap.new( self.textures.heart )
 		self.hudHearts[i]:setPosition( 160 + ( i * 20 ), 575 )
 	end
+	self:UpdateHearts()
 	
 	-- Money
 	self.labels.money = TextField.new( MinerGameState.fonts.hud, GameText:Get( "target", "Money" ) )
@@ -283,7 +284,10 @@ function MinerGameState:InputAction( action, direction )
 	elseif ( itemType == "sandwich" ) then
 		-- eat sound effect
 		self.sounds.collect:play()
+		self.map:EatSandwich()
 		self.labels.narration:setText( GameText:Get( "target", "miner-eat-sandwich" ) )
+		MinerGameState.playerHealth = self.map.player:GetHealth()
+		self:UpdateHearts()
 		
 	elseif ( itemType == "ladder" ) then
 		self.sounds.footsteps:play()
@@ -297,8 +301,6 @@ function MinerGameState:InputAction( action, direction )
 		StateBase:SetGotoState( "GotStarState" )	
 		
 	end
-	
-	
 	
 	if ( self.frozenEnemies and self.freezeCountdown == 0 ) then
 		self.frozenEnemies = false
@@ -336,11 +338,25 @@ function MinerGameState:Handle_KeyDown( event )
 	self:InputAction( action, direction )
 end
 
+function MinerGameState:UpdateHearts()
+	local hp = self.map.player:GetHealth()
+	for key, heart in pairs( self.hudHearts ) do
+		if ( key >= hp ) then
+			heart:setColorTransform( 0, 0, 0, 1 )
+		else
+			heart:setColorTransform( 1, 1, 1, 1 )
+		end
+	end
+end
+
 function MinerGameState:UseItem( type )
 	local success = false
 	if ( type == "Potion" ) then
-		-- Heal life, but not if hearts are full?
+		success = true
 		self.sounds.Potion:play()
+		self.map:ConsumePotion()
+		self:UpdateHearts()
+		self.labels.narration:setText( GameText:Get( "target", "use-potion" ) )
 	
 	elseif ( type == "Earthquake" ) then
 		-- Break all rocks
@@ -411,6 +427,11 @@ end
 
 function MinerGameState:TurnBasedUpdate()
 	self.map:TurnBasedUpdate()
+	self:UpdateHearts()
+	
+	if ( self.map.player:GetHealth() == 0 ) then
+		print( "Game Over" )
+	end
 end
 
 function MinerGameState:Handle_EnterFrame( event )
@@ -424,6 +445,7 @@ function MinerGameState:Handle_EnterFrame( event )
 		-- Change
 		elseif ( self.fadeCounter == 50 ) then
 			StateBase.transitioning = true								-- when we reload shop, this will have it fade in
+			MinerGameState.playerHealth = self.map.player:GetHealth()
 			
 			if ( MinerGameState.moveFloorViaItem == true ) then
 				StateBase:SetGotoState( "MinerGameState" )

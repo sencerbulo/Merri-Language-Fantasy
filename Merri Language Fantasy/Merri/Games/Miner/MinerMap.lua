@@ -39,6 +39,10 @@ function MinerMap:init( options )
 			sandwich = Texture.new( "Content/Games/Miner/Tiles/sandwich.png" ),
 		}
 		
+	self.sounds = {
+		hurt = Sound.new( "Content/Audio/hurt.wav" ),
+	}
+		
 	self.tileWidth = self.textures.ground:getWidth()
 	self.floor =  options.floor
 	self.lastFloor = 20
@@ -51,7 +55,7 @@ function MinerMap:init( options )
 	self.tiles = {}
 	self.enemies = {}
 	
-	self.player = MinerPlayer.new( { moveAmount = self.tileWidth } )
+	self.player = MinerPlayer.new( { moveAmount = self.tileWidth, hp = options.hp } )
 end
 
 function MinerMap:GetPlayerCoordinates()
@@ -424,6 +428,13 @@ function MinerMap:MoveEnemies()
 					and ( self.tiles[tileX][tileY].objectType == "" or self.tiles[tileX][tileY].objectType == nil ) ) then
 				enemy:Move( direction ) 
 			end
+			
+			x, y = enemy:getPosition()
+			if ( x == playerX and y == playerY ) then
+				-- Attack player
+				self.sounds.hurt:play()
+				self.player:GetHurt()
+			end
 		end
 	end
 end
@@ -469,10 +480,6 @@ end
 
 function MinerMap:UpdateLighting()
 	local playerX, playerY = self.player:getPosition()
-	
-	if ( 1 == 1 ) then
-		return 0
-	end
 
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
@@ -528,6 +535,7 @@ function MinerMap:TurnBasedUpdate()
 	end
 	
 	self:MoveEnemies()
+	self.player:TurnBasedUpdate()
 end
 
 function MinerMap:FreezeAllEnemies()
@@ -552,4 +560,12 @@ function MinerMap:BreakAllRocks()
 			end
 		end
 	end	
+end
+
+function MinerMap:EatSandwich()
+	self.player:AddHealth( 1 )
+end
+
+function MinerMap:ConsumePotion()
+	self.player:AddHealth( 4 )
 end

@@ -19,10 +19,11 @@ function MinerPlayer:init( options )
 	self.label = TextField.new( MinerGameState.fonts.overhead, GameText:Get( "target", "Miner" ) )
 	self.label:setTextColor( 0xFFFFFF )
 	
-	self.hp = 50
-	self.maxHp = 50
+	MinerPlayer.hp = options.hp
+	self.maxHp = 4
 	self.exp = 0
 	self.level = 1
+	self.hurtCooldown = 0
 end
 
 function MinerPlayer:Face( direction )
@@ -30,8 +31,37 @@ function MinerPlayer:Face( direction )
 end
 
 function MinerPlayer:AddHealth( amount )
-	self.hp = self.hp + amount
-	if ( self.hp > self.maxHp ) then		self.hp = self.maxHp 	end
+	print( "Heal ", amount )
+	MinerPlayer.hp = MinerPlayer.hp + amount
+	if ( MinerPlayer.hp > self.maxHp ) then		MinerPlayer.hp = self.maxHp 	end
+end
+
+function MinerPlayer:GetHurt()
+	if ( self.hurtCooldown == 0 ) then
+		self.hurtCooldown = 3
+		MinerPlayer.hp = MinerPlayer.hp - 1
+		self.bitmap:setColorTransform( 1, 0, 0, 1 )
+	end
+end
+
+function MinerPlayer:GetHealth()
+	return MinerPlayer.hp
+end
+
+function MinerPlayer:TurnBasedUpdate()
+	if ( self.hurtCooldown > 0 ) then
+		self.hurtCooldown = self.hurtCooldown - 1
+		local r, g, b, a = self.bitmap:getColorTransform()
+		
+	
+		if ( self.hurtCooldown == 1 ) then
+			self.bitmap:setColorTransform( 1, 1, 1, 1 )
+		else
+			g = g + 0.2
+			b = b + 0.2
+			self.bitmap:setColorTransform( 1, g, b, 1 )
+		end
+	end
 end
 
 function MinerPlayer:Move( direction, amount )

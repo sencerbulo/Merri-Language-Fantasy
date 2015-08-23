@@ -695,6 +695,14 @@ GameText.TargetText.Ithkuil     [ "enemies-thaw" ]    = "Everything has thawed o
 GameText.TargetText.German      [ "enemies-thaw" ]    = "Everything has thawed out."
 GameText.TargetText.French      [ "enemies-thaw" ]    = "Everything has thawed out."
 
+GameText.TargetText.English     [ "use-potion" ]    = "You feel strong again."
+GameText.TargetText.Esperanto   [ "use-potion" ]    = "Vi sentas vin forta denove."
+GameText.TargetText.Ido         [ "use-potion" ]    = "Vu sentas vu forta itere."
+GameText.TargetText.Spanish     [ "use-potion" ]    = "You feel strong again."
+GameText.TargetText.Ithkuil     [ "use-potion" ]    = "You feel strong again."
+GameText.TargetText.German      [ "use-potion" ]    = "You feel strong again."
+GameText.TargetText.French      [ "use-potion" ]    = "You feel strong again."
+
 -- collects
 GameText.TargetText.English     [ "miner-collect-copper" ]  = "You pick up copper."
 GameText.TargetText.Esperanto   [ "miner-collect-copper" ]  = "Vi kolektas kupron."
