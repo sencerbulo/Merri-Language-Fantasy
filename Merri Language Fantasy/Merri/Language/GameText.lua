@@ -827,7 +827,7 @@ GameText.TargetText.French      [ "miner-attack-skeleton" ]     = "Tu attaques l
 
 -- ladder
 GameText.TargetText.English     [ "miner-go-down-ladder" ]      = "You descend the ladder."
-GameText.TargetText.Esperanto   [ "miner-go-down-ladder" ]      = "Vi malsupreniras per la ŝtupetaro.."
+GameText.TargetText.Esperanto   [ "miner-go-down-ladder" ]      = "Vi malsupreniras per la ŝtupetaro."
 GameText.TargetText.Ido         [ "miner-go-down-ladder" ]      = "Vu decensas per la skalo."
 GameText.TargetText.Spanish     [ "miner-go-down-ladder" ]      = "Bajas por la escalera."
 GameText.TargetText.Ithkuil     [ "miner-go-down-ladder" ]      = "Jal"

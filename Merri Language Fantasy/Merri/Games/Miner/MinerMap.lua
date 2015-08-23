@@ -125,6 +125,7 @@ function MinerMap:Generate()
 	-- Traverse Map
 	local x = startX
 	local y = startY
+	self.player:setPosition( x * self.tileWidth, y * self.tileWidth )
 	
 	local roomPoints = {}
 	table.insert( roomPoints, { x = endX, y = endY } )
@@ -191,7 +192,7 @@ function MinerMap:Generate()
 		
 		self.tiles[x][y].startingItem = "enemy"
 
-		local enemy = MinerEnemy.new()
+		local enemy = MinerEnemy.new( { moveAmount = self.tileWidth } )
 		local objectType = ""
 		
 		local enemyType = math.random( 1, 2 )
@@ -222,15 +223,17 @@ function MinerMap:Generate()
 	end
 	
 	-- Add Rocks --
+	local playerX, playerY = self.player:getPosition()
 	local rockCount = math.floor( self.floor / 2 ) + 1
 	for r = 0, rockCount do
-		local x, y		
+		local x, y
 		local isValidPlace = false
 		
 		while ( isValidPlace == false ) do
 			x = math.random( 0, self.mapWidth )
 			y = math.random( 0, self.mapHeight )
-			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil )
+			local isPlayerLoc = (playerX == x and playerY == y)
+			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil and isPlayerLoc == false )
 		end
 		
 		self.tiles[x][y].objectType = "rock"
@@ -241,7 +244,7 @@ function MinerMap:Generate()
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
 			if ( self.tiles[x][y].objectType == "player" ) then
-				self.player:setPosition( x * self.tileWidth, y * self.tileWidth )
+				--self.player:setPosition( x * self.tileWidth, y * self.tileWidth )
 			
 			elseif ( self.tiles[x][y].objectType ~= nil and self.tiles[x][y].objectType ~= "none" ) then
 			
@@ -406,6 +409,25 @@ function MinerMap:UsePick( direction )
 	self:OpenRock( x, y )
 end
 
+function MinerMap:MoveEnemies()
+	local playerX, playerY = self.player:getPosition()
+	for key, enemy in pairs( self.enemies ) do
+		local x, y = enemy:getPosition()
+		
+		if ( enemy:IsAlive() and enemy:IsFrozen() == false ) then
+			local direction = enemy:DecideDirection( playerX, playerY )
+			
+			-- Is this a valid direction?
+			local tileX, tileY = self:GetTileCoordsInDirection( x, y, direction )
+			if ( self.tiles[tileX] ~= nil and self.tiles[tileX][tileY] ~= nil
+					and self.tiles[tileX][tileY].type == "ground"
+					and ( self.tiles[tileX][tileY].objectType == "" or self.tiles[tileX][tileY].objectType == nil ) ) then
+				enemy:Move( direction ) 
+			end
+		end
+	end
+end
+
 function MinerMap:MovePlayer( direction, amount )
 	self.player:Move( direction, self.tileWidth )
 	
@@ -447,6 +469,10 @@ end
 
 function MinerMap:UpdateLighting()
 	local playerX, playerY = self.player:getPosition()
+	
+	if ( 1 == 1 ) then
+		return 0
+	end
 
 	for y = 0, self.mapHeight do
 		for x = 0, self.mapWidth do
@@ -500,6 +526,8 @@ function MinerMap:TurnBasedUpdate()
 			self:UnfreezeEnemies()
 		end
 	end
+	
+	self:MoveEnemies()
 end
 
 function MinerMap:FreezeAllEnemies()

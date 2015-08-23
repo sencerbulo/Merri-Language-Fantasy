@@ -6,7 +6,7 @@ function MinerGameState:init( options )
 	StateBase.transitioning = false
 	MinerGameState.inventoryItem = ""
 	MinerGameState.money = 100
-	MinerGameState.floor = 1
+	MinerGameState.floor = 5
 	MinerGameState.moveFloorViaItem = false
 end
 
@@ -307,8 +307,9 @@ function MinerGameState:InputAction( action, direction )
 	
 	self.labels.moneyValue:setText( MinerGameState.money )
 	
-	self:SetupHud()
 	self:TurnBasedUpdate()
+	
+	self:SetupHud()
 end
 
 function MinerGameState:Handle_KeyDown( event )
