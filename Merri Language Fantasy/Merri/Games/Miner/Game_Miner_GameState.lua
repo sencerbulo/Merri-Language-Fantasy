@@ -169,14 +169,13 @@ function MinerGameState:Setup( options )
 	else
 		self.buttons.inventory.bitmap = Bitmap.new( self.textures[ "inventory" .. MinerGameState.inventoryItem ] )
 		self.buttons.inventory.item = MinerGameState.inventoryItem
-		MinerGameState.inventoryItem = ""
 	
 	end
 	self.buttons.inventory.bitmap:setPosition( 267, 572 )
 	
-	self.buttons.menu = {}
-	self.buttons.menu.bitmap	= Bitmap.new( self.textures.menu )
-	self.buttons.menu.bitmap:setPosition( 10, 580 )
+	--self.buttons.menu = {}
+	--self.buttons.menu.bitmap	= Bitmap.new( self.textures.menu )
+	--self.buttons.menu.bitmap:setPosition( 10, 580 )
 	
 	--self.labels.menu = TextField.new( MinerGameState.fonts.hud, GameText:Get( "helper", "Menu" ) )
 	--self.labels.menu:setTextColor( 0xFFFFFF )
@@ -376,6 +375,7 @@ function MinerGameState:UseItem( type )
 	if ( success ) then
 		self.buttons.inventory.bitmap:setTexture( self.textures.itemBackground )
 		self.buttons.inventory.item = ""
+		MinerGameState.inventoryItem = ""
 	end
 end
 

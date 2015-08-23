@@ -17,13 +17,17 @@ GLOBAL_CONFIG.TARGET_LANGUAGE = "Esperanto"
 LOAD_CONFIG()
 
 --if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
-	stateManager:ChangeState( "LanguageSelectState" )
+	--stateManager:ChangeState( "LanguageSelectState" )
 
 --else
 	--stateManager:ChangeState( "TitleState" )
 	--stateManager:ChangeState( "MinerGameState" )
 
 --end
+
+-- DEMO STATE - Go to Language State immediately
+--stateManager:ChangeState( "LanguageSelectState" )
+stateManager:ChangeState( "MinerGameState" )
 
 function Handle_EnterFrame( event )
 	stateManager:Handle_EnterFrame( event )
