@@ -243,7 +243,12 @@ function MinerMap:Generate()
 			x = math.random( 0, self.mapWidth )
 			y = math.random( 0, self.mapHeight )
 			local isPlayerLoc = (playerX == x and playerY == y)
-			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil and isPlayerLoc == false and self.tiles[endX][endY].objectType == "ladder" )
+			isValidPlace = ( 
+				self.tiles[x][y].type == "ground" and 
+				self.tiles[x][y].startingItem == nil and 
+				isPlayerLoc == false and
+				self.tiles[x][y].objectType ~= "ladder"
+				)
 		end
 		
 		self.tiles[x][y].objectType = "rock"
@@ -457,19 +462,21 @@ function MinerMap:MovePlayer( direction, amount )
 	
 	local points = 0
 	if 		( self.tiles[x][y].objectType == "copper" ) then
-		points = 5
+		points = 1
 	elseif 	( self.tiles[x][y].objectType == "silver" ) then
-		points = 10
+		points = 2
 	elseif 	( self.tiles[x][y].objectType == "gold" ) then
-		points = 20
+		points = 5
 	elseif 	( self.tiles[x][y].objectType == "amethyst" ) then
-		points = 50
+		points = 10
 	elseif 	( self.tiles[x][y].objectType == "sapphire" ) then
-		points = 100
+		points = 15
+	elseif 	( self.tiles[x][y].objectType == "emerald" ) then
+		points = 20
 	elseif 	( self.tiles[x][y].objectType == "diamond" ) then
-		points = 200
+		points = 30
 	elseif 	( self.tiles[x][y].objectType == "ruby" ) then
-		points = 400
+		points = 50
 	elseif ( self.tiles[x][y].objectType == "sandwich" ) then
 		--self.player:AddHealth( 1 )
 	end

@@ -414,6 +414,11 @@ function MinerGameState:Handle_MouseDown( event )
 		
 		if ( clickedButton == "btn_back" ) then
 			MinerGameState.gameOver = false -- Reset
+			MinerGameState.playerHealth = 4
+			MinerGameState.inventoryItem = ""
+			MinerGameState.money = 0
+			MinerGameState.floor = 1
+			MinerGameState.moveFloorViaItem = false
 			StateBase:SetGotoState( "LanguageSelectState" )
 		
 		end
