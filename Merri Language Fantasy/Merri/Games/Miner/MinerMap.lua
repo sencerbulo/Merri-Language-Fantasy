@@ -243,7 +243,7 @@ function MinerMap:Generate()
 			x = math.random( 0, self.mapWidth )
 			y = math.random( 0, self.mapHeight )
 			local isPlayerLoc = (playerX == x and playerY == y)
-			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil and isPlayerLoc == false )
+			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil and isPlayerLoc == false and self.tiles[endX][endY].objectType ~= "ladder" )
 		end
 		
 		self.tiles[x][y].objectType = "rock"
@@ -471,7 +471,7 @@ function MinerMap:MovePlayer( direction, amount )
 	elseif 	( self.tiles[x][y].objectType == "ruby" ) then
 		points = 400
 	elseif ( self.tiles[x][y].objectType == "sandwich" ) then
-		self.player:AddHealth( 20 )
+		--self.player:AddHealth( 1 )
 	end
 	
 	if ( points > 0 or self.tiles[x][y].objectType == "sandwich" ) then

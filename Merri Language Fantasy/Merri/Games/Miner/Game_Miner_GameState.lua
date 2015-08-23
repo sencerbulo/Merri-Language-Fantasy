@@ -413,6 +413,7 @@ function MinerGameState:Handle_MouseDown( event )
 		clickedButton = StateBase:ClickedButtonName( event )
 		
 		if ( clickedButton == "btn_back" ) then
+			MinerGameState.gameOver = false -- Reset
 			StateBase:SetGotoState( "LanguageSelectState" )
 		
 		end
