@@ -66,7 +66,6 @@ function MinerShopState:Setup( options )
 		local index = math.random( 1, #self.items )
 		local itemName = self.items[ index ].name
 		self.shopItems[ i ] = self.items[ index ]
-		print( "Random item ", i, ": ", itemName )
 		
 		self.images[ "itemBackground" .. i ] = Bitmap.new( self.textures[ "inventory" .. itemName ] )
 		self.images[ "itemBackground" .. i ]:setPosition( x, y + ( i * inc ) )

@@ -187,10 +187,14 @@ function MinerMap:Generate()
 	for e = 0, enemyCount do
 		local x, y		
 		local isValidPlace = false
+		local playerX, playerY = self.player:getPosition()	
+		playerX = playerX / self.tileWidth
+		playerY = playerY / self.tileWidth
 		
 		while ( isValidPlace == false ) do
 			x = math.random( 0, self.mapWidth )
 			y = math.random( 0, self.mapHeight )
+			local isPlayerLoc = (playerX == x and playerY == y)
 			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil )
 		end
 		
@@ -228,6 +232,8 @@ function MinerMap:Generate()
 	
 	-- Add Rocks --
 	local playerX, playerY = self.player:getPosition()
+	playerX = playerX / self.tileWidth
+	playerY = playerY / self.tileWidth
 	local rockCount = math.floor( self.floor / 2 ) + 1
 	for r = 0, rockCount do
 		local x, y

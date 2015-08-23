@@ -27,6 +27,9 @@ function MinerEnemy:SetType( options )
 	elseif ( self.type == "rabbit" ) then
 		self.movementType = "random"
 	
+	elseif ( self.type == "mole" ) then
+		self.movementType = "random"
+	
 	elseif ( self.type == "skeleton" ) then
 		self.movementType = "up-down"
 	
