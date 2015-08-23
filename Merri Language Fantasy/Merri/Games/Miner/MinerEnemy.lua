@@ -24,6 +24,9 @@ function MinerEnemy:SetType( options )
 	elseif ( self.type == "snake" ) then
 		self.movementType = "square"
 	
+	elseif ( self.type == "snail" ) then
+		self.movementType = "square"
+	
 	elseif ( self.type == "rabbit" ) then
 		self.movementType = "random"
 	

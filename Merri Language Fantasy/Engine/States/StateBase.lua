@@ -176,9 +176,20 @@ function StateBase:AddLabel( options )
 	end
 end
 
+function StateBase:AddLabelAndDraw( options )
+	self:AddLabel( options )
+	stage:addChild( self.labels[ options.id ] )
+end
+
 function StateBase:AddButton( options )
 	self:AddBitmap( options.button )
 	if ( options.label ~= nil ) then		self:AddLabel( options.label )		end
+end
+
+function StateBase:AddButtonAndDraw( options )
+	self:AddButton( options )
+	stage:addChild( self.bitmaps[ options.button.id ] )
+	stage:addChild( self.labels[ options.label.id ] )
 end
 
 -- Custom Logic --

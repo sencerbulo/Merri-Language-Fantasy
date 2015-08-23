@@ -30,6 +30,13 @@ function MinerPlayer:Face( direction )
 	self.direction = direction
 end
 
+function MinerPlayer:Die( tileWidth )
+	local x, y = self:getPosition()
+	self.bitmap:setRotation( 180 )
+	self.bitmap:setPosition( x + tileWidth, y + tileWidth )
+	self.alive = false
+end
+
 function MinerPlayer:AddHealth( amount )
 	print( "Heal ", amount )
 	MinerPlayer.hp = MinerPlayer.hp + amount
@@ -91,10 +98,12 @@ function MinerPlayer:getPosition()
 end
 
 function MinerPlayer:Update()
-	self.frame = self.frame + 0.05
-	if ( self.frame >= 3 ) then
-		self.frame = 1
+	if ( self.alive ) then
+		self.frame = self.frame + 0.05
+		if ( self.frame >= 3 ) then
+			self.frame = 1
+		end
+		local fr = math.floor( self.frame )
+		self.bitmap:setTexture( self.textures[ self.direction .. fr ] )
 	end
-	local fr = math.floor( self.frame )
-	self.bitmap:setTexture( self.textures[ self.direction .. fr ] )
 end

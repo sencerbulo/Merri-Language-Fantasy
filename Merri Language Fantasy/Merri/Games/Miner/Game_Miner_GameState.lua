@@ -5,10 +5,11 @@ function MinerGameState:init( options )
 	StateBase:Setup( { backgroundScroll = false } )
 	StateBase.transitioning = false
 	MinerGameState.inventoryItem = ""
-	MinerGameState.money = 100
-	MinerGameState.floor = 5 -- TODO: Change Back
+	MinerGameState.money = 0
+	MinerGameState.floor = 1
 	MinerGameState.playerHealth = 4
 	MinerGameState.moveFloorViaItem = false
+	MinerGameState.gameOver = false
 end
 
 -- Setup / Teardown --
@@ -239,7 +240,7 @@ function MinerGameState:Draw()
 	
 	self.map:UpdateLighting()
 	
-	stage:addChild( self.debugButton )
+	--stage:addChild( self.debugButton )
 	
 	if ( stage:contains( self.fadeBitmap ) ) then
 		stage:addChild( self.fadeBitmap )
@@ -315,6 +316,10 @@ function MinerGameState:InputAction( action, direction )
 end
 
 function MinerGameState:Handle_KeyDown( event )
+	if ( MinerGameState.gameOver ) then
+		return
+	end
+
 	local action, direction
 
 	if ( event.keyCode == KeyCode.W or event.keyCode == KeyCode.UP ) then
@@ -404,6 +409,17 @@ function MinerGameState:BeginTransition()
 end
 
 function MinerGameState:Handle_MouseDown( event )
+	if ( MinerGameState.gameOver  ) then
+		clickedButton = StateBase:ClickedButtonName( event )
+		
+		if ( clickedButton == "btn_back" ) then
+			StateBase:SetGotoState( "LanguageSelectState" )
+		
+		end
+		
+		return
+	end
+
 	-- Hud buttons could be to move or mine or attack
 	for key, button in pairs( self.hud ) do
 		if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
@@ -416,12 +432,6 @@ function MinerGameState:Handle_MouseDown( event )
 	end
 	
 	if ( self.debugButton ~= nil and self.debugButton:hitTestPoint( event.x, event.y ) ) then
-		self.sounds.footsteps:play()
-		self.fadeCounter = 100
-		self.transition = true
-		stage:addChild( self.fadeBitmap )
-		self.fadeBitmap:setAlpha( 0 )
-		self.labels.narration:setText( GameText:Get( "target", "miner-go-down-ladder" ) )	
 	end
 end
 
@@ -430,7 +440,7 @@ function MinerGameState:TurnBasedUpdate()
 	self:UpdateHearts()
 	
 	if ( self.map.player:GetHealth() == 0 ) then
-		print( "Game Over" )
+		self:GameOver()
 	end
 end
 
@@ -481,6 +491,26 @@ end
 
 function MinerGameState:GotoState()
 	return StateBase:GotoState()
+end
+
+function MinerGameState:GameOver()
+	self.map:DimTiles()
+	
+	for key, button in pairs( self.hud ) do
+		stage:removeChild( button.bitmap )
+	end
+
+	self.map.player:Die( self.map.tileWidth )
+	
+	StateBase:AddLabelAndDraw( { id = "gameOver3", path = "Content/Fonts/NotoSans-Bold.ttf",		pos_x = 10, pos_y = 300, color = 0xFF0000, size = 40, text = GameText:Get( "target", "Game Over" ), centered = true } )
+	StateBase:AddLabelAndDraw( { id = "gameOver4", path = "Content/Fonts/NotoSans-Bold.ttf",		pos_x = 10, pos_y = 350, color = 0xFF0000, size = 35, text = GameText:Get( "helper", "Game Over" ), centered = true } )
+	
+	StateBase:AddButtonAndDraw( { 
+		button = { id = "btn_back", 	path = "Content/Graphics/UI/btn_back.png",  	pos_x = 130, pos_y = 400  },
+		label 	= { id = "btn_back", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 135, pos_y = 400+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "Back" ) }
+		} )
+		
+	MinerGameState.gameOver = true
 end
 
 

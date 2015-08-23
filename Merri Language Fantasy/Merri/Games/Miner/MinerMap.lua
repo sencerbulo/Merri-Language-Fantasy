@@ -192,7 +192,7 @@ function MinerMap:Generate()
 		playerY = playerY / self.tileWidth
 		
 		while ( isValidPlace == false ) do
-			x = math.random( 0, self.mapWidth )
+			x = math.random( 1, self.mapWidth )
 			y = math.random( 0, self.mapHeight )
 			local isPlayerLoc = (playerX == x and playerY == y)
 			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil )
@@ -482,6 +482,17 @@ function MinerMap:MovePlayer( direction, amount )
 	
 	self:UpdateLighting()
 	return points, objectType
+end
+
+function MinerMap:DimTiles()
+	local dimness = 0.25
+	for y = 0, self.mapHeight do
+		for x = 0, self.mapWidth do
+			self.tiles[x][y].bitmap:setColorTransform( dimness, dimness, dimness, a )
+			if ( self.tiles[x][y].label ~= nil ) then 		self.tiles[x][y].label:setColorTransform( dimness, dimness, dimness, a ) 			end
+			if ( self.tiles[x][y].object ~= nil ) then 		self.tiles[x][y].object:setColorTransform( dimness, dimness, dimness, a ) 		end
+		end
+	end
 end
 
 function MinerMap:UpdateLighting()
