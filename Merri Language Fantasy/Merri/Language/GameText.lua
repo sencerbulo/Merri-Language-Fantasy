@@ -147,7 +147,7 @@ GameText.HelperText.French      [ "twitter" ]    = "Twitter :"
 -- Helper Languages --
 -- These only need to be translated into the specific language, there don't need to be multiple translations --
 GameText.HelperText.English     [ "I know English" ]    = "I know English."
-GameText.HelperText.Esperanto   [ "I know Esperanto" ]  = "Mi konas Esperanton."
+GameText.HelperText.Esperanto   [ "I know Esperanto" ]  = "Mi scipovas paroli Esperanton." -- aŭ konas, aŭ regas...
 GameText.HelperText.Ido         [ "I know Ido" ]        = "Me konas Ido."
 GameText.HelperText.Spanish     [ "I know Spanish" ]    = "Yo sé Español."
 GameText.HelperText.Ithkuil     [ "I know Ithkuil" ]    = "I know Ithkuil."
