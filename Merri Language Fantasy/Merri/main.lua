@@ -26,8 +26,7 @@ LOAD_CONFIG()
 --end
 
 -- DEMO STATE - Go to Language State immediately
---stateManager:ChangeState( "LanguageSelectState" )
-stateManager:ChangeState( "MinerGameState" )
+stateManager:ChangeState( "LanguageSelectState" )
 
 function Handle_EnterFrame( event )
 	stateManager:Handle_EnterFrame( event )

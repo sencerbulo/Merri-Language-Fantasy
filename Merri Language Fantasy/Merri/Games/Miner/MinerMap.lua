@@ -243,7 +243,7 @@ function MinerMap:Generate()
 			x = math.random( 0, self.mapWidth )
 			y = math.random( 0, self.mapHeight )
 			local isPlayerLoc = (playerX == x and playerY == y)
-			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil and isPlayerLoc == false and self.tiles[endX][endY].objectType ~= "ladder" )
+			isValidPlace = ( self.tiles[x][y].type == "ground" and self.tiles[x][y].startingItem == nil and isPlayerLoc == false and self.tiles[endX][endY].objectType == "ladder" )
 		end
 		
 		self.tiles[x][y].objectType = "rock"

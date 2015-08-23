@@ -20,8 +20,8 @@ function DemoInfoState:SetupInfoScreen()
 	local yInc = 40
 	local spacing = 10
 	local info = 1
-	local size1 = 8
-	local size2 = 8
+	local size1 = 10
+	local size2 = 10
 	
 	StateBase:AddLabel( { id = "titleA", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
 		pos_x = 0, pos_y = 25, color = 0xFFFFFF, 	size = 25, text = "Merri:", centered = true } )
