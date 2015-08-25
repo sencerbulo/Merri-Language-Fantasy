@@ -1,5 +1,5 @@
 <project>
- <properties orientation="0" iosDevice="0" mouseTouchOrder="0" scaleMode="5" encryptCode="0" touchToMouse="1" windowHeight="0" fps="60" win_domain="moosader.com" android_template="0" osx_domain="moosader.com" assetsOnly="0" windowWidth="0" logicalWidth="360" logicalHeight="640" mouseToTouch="1" autorotation="0" osx_org="Moosader" packageName="com.yourdomain.yourapp" encryptAssets="1" architecture="3" win_org="Moosader" retinaDisplay="0">
+ <properties windowHeight="0" win_org="Moosader" autorotation="0" mouseToTouch="1" retinaDisplay="0" mouseTouchOrder="0" touchToMouse="1" win_domain="moosader.com" encryptCode="0" logicalWidth="360" orientation="0" fps="60" architecture="2" osx_org="Moosader" windowWidth="0" packageName="com.yourdomain.yourapp" assetsOnly="0" scaleMode="5" osx_domain="moosader.com" iosDevice="0" logicalHeight="640" encryptAssets="1">
   <imageScales/>
  </properties>
  <folder name="Engine">

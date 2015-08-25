@@ -71,6 +71,7 @@ function GameText:SetupLanguages()
     GameText.HelperText.Ithkuil = {}
     GameText.HelperText.German = {}
     GameText.TargetText.French = {}
+    GameText.HelperText.Japanese = {}
 
     GameText.TargetText.English = {}
     GameText.TargetText.Esperanto = {}
@@ -79,6 +80,7 @@ function GameText:SetupLanguages()
     GameText.TargetText.Ithkuil = {}
     GameText.TargetText.German = {}
     GameText.HelperText.French = {}
+    GameText.TargetText.Japanese = {}
 
 -- Credits --
 GameText.HelperText.English     [ "Translators" ]   = "Translators"
@@ -88,6 +90,7 @@ GameText.HelperText.Spanish     [ "Translators" ]   = "Traductores"
 GameText.HelperText.Ithkuil     [ "Translators" ]   = "Translators"
 GameText.HelperText.German      [ "Translators" ]   = "Übersetzer"
 GameText.HelperText.French      [ "Translators" ]   = "Traducteurs"
+GameText.HelperText.Japanese    [ "Translators" ]   = "ほんやく"
 
 -- Name of the language --
 GameText.HelperText.English     [ "language-name" ]     = "English"
@@ -97,6 +100,7 @@ GameText.HelperText.Spanish     [ "language-name" ]     = "Español"
 GameText.HelperText.Ithkuil     [ "language-name" ]     = "Ithkuil"
 GameText.HelperText.German      [ "language-name" ]     = "Deutsch"
 GameText.HelperText.French      [ "language-name" ]     = "Français"
+GameText.HelperText.Japanese    [ "language-name" ]     = "にほんご"
 
 -- Put your name in here
 GameText.HelperText.English     [ "Translation Credits" ]   = "Rachel J. Morris"
@@ -106,6 +110,7 @@ GameText.HelperText.Spanish     [ "Translation Credits" ]   = "Tea Coba"
 GameText.HelperText.Ithkuil     [ "Translation Credits" ]   = "Chikaodinaka 'dkawirl' Oluigbo"
 GameText.HelperText.German      [ "Translation Credits" ]   = "Marius Stärk"
 GameText.TargetText.French      [ "Translation Credits" ]   = "Vanege"
+GameText.TargetText.Japanese    [ "Translation Credits" ]   = "Nadipedia"
 
 -- Common --
 
@@ -116,6 +121,7 @@ GameText.TargetText.Spanish     [ "game title" ]    = "Fantasía de Español"
 GameText.TargetText.Ithkuil     [ "game title" ]    = "Ithkaiwîl ubzál"
 GameText.TargetText.German      [ "game title" ]    = "Deutsche Fantasie"
 GameText.TargetText.French      [ "game title" ]    = "Fantaisie du Français"
+GameText.targetText.Japanese    [ "game title" ]    = "ジャパニーズ・ファンタジー"
 
 GameText.HelperText.English     [ "website" ]   = "Website:"
 GameText.HelperText.Esperanto   [ "website" ]   = "Retejo:"
@@ -124,6 +130,7 @@ GameText.HelperText.Spanish     [ "website" ]   = "Página web:"
 GameText.HelperText.Ithkuil     [ "website" ]    = "Website:"
 GameText.HelperText.German      [ "website" ]    = "Internetseite:"
 GameText.HelperText.French      [ "website" ]    = "Site web :"
+GameText.HelpetText.Japanese    [ "website" ]   = "ウェブサイト"
 
 GameText.HelperText.English     [ "facebook" ]  = "Facebook:"
 GameText.HelperText.Esperanto   [ "facebook" ]  = "Facebook:"
@@ -132,6 +139,7 @@ GameText.HelperText.Spanish     [ "facebook" ]  = "Facebook:"
 GameText.HelperText.Ithkuil     [ "facebook" ]    = "Facebook:"
 GameText.HelperText.German      [ "facebook" ]    = "Facebook:"
 GameText.HelperText.French      [ "facebook" ]    = "Facebook :"
+GameText.Helpertext.Japanese    [ "facebook" ]  = "フェイスブック"
 
 GameText.HelperText.English     [ "twitter" ]   = "Twitter:"
 GameText.HelperText.Esperanto   [ "twitter" ]   = "Twitter:"
@@ -140,6 +148,7 @@ GameText.HelperText.Spanish     [ "twitter" ]   = "Twitter:"
 GameText.HelperText.Ithkuil     [ "twitter" ]    = "Twitter:"
 GameText.HelperText.German      [ "twitter" ]    = "Twitter:"
 GameText.HelperText.French      [ "twitter" ]    = "Twitter :"
+Gametext.HelperText.Japanese    [" twitter" ]   = "ツイッター"
 
 
 -- LanguageSelectState --
@@ -153,6 +162,7 @@ GameText.HelperText.Spanish     [ "I know Spanish" ]    = "Yo sé Español."
 GameText.HelperText.Ithkuil     [ "I know Ithkuil" ]    = "I know Ithkuil."
 GameText.HelperText.German      [ "I know German" ]     = "Ich kann Deutsch."
 GameText.HelperText.French      [ "I know French" ]     = "Je connais le français."
+GameText.HelperText.Japanese    [ "I know Japanese" ]   = "にほんご　わかるよ。"
 
 -- Target Languages --
 GameText.HelperText.English     [ "I am learning English" ]     = "I am learning English"
@@ -161,6 +171,7 @@ GameText.HelperText.Ido         [ "I am learning English" ]     = "Me lernas la 
 GameText.HelperText.Spanish     [ "I am learning English" ]     = "Estoy aprendiendo Inglés"
 GameText.HelperText.Ithkuil     [ "I am learning English" ]     = "Upinglišpel xháwîl"
 GameText.HelperText.German      [ "I am learning English" ]     = "Ich lerne Englisch"
+GameText.Helpertext.Japanese    [ "I am learning English" ]     = "えいご　を　べんきょう　してるんだ。"
 
 GameText.HelperText.English     [ "I am learning Esperanto" ]   = "I am learning Esperanto"
 GameText.HelperText.Esperanto   [ "I am learning Esperanto" ]   = "Mi lernas Esperanton"
@@ -168,6 +179,7 @@ GameText.HelperText.Ido         [ "I am learning Esperanto" ]   = "Me lernas Esp
 GameText.HelperText.Spanish     [ "I am learning Esperanto" ]   = "Estoy aprendiendo Esperanto"
 GameText.HelperText.Ithkuil     [ "I am learning Esperanto" ]   = "Upesperantopel xháwîl"
 GameText.HelperText.German      [ "I am learning Esperanto" ]   = "Ich lerne Esperanto"
+GameText.HelperText.Japanese    [ "I am learning Esperanto" ]   = "エスペラント　を　べんきょう　してるんだ。"
 
 GameText.HelperText.English     [ "I am learning Ido" ]         = "I am learning Ido"
 GameText.HelperText.Esperanto   [ "I am learning Ido" ]         = "Mi lernas Idon"
@@ -175,6 +187,7 @@ GameText.HelperText.Ido         [ "I am learning Ido" ]         = "Me lernas Ido
 GameText.HelperText.Spanish     [ "I am learning Ido" ]         = "Estoy aprendiendo Ido"
 GameText.HelperText.Ithkuil     [ "I am learning Ido" ]         = "Upidopel xháwîl"
 GameText.HelperText.German      [ "I am learning Ido" ]         = "Ich lerne Ido"
+GameText.HelperText.Japanese    [ "I am learning Ido" ]         = "イド　を　べんきょう　してるんだ。"
 
 GameText.HelperText.English     [ "I am learning Spanish" ]     = "I am learning Spanish"
 GameText.HelperText.Esperanto   [ "I am learning Spanish" ]     = "Mi lernas la hispanan lingvon"
@@ -182,6 +195,7 @@ GameText.HelperText.Ido         [ "I am learning Spanish" ]     = "Me lernas la 
 GameText.HelperText.Spanish     [ "I am learning Spanish" ]     = "Estoy aprendiendo Español"
 GameText.HelperText.Ithkuil     [ "I am learning Spanish" ]     = "Upspanišpel xháwîl"
 GameText.HelperText.German      [ "I am learning Spanish" ]     = "Ich lerne Spanisch"
+GameText.HelperText.Japanese    [ "I am learning Spanish" ]     = "スペインご　を　べんきょう　してるんだ。"
 
 GameText.HelperText.English     [ "I am learning Ithkuil" ]     = "I am learning Ithkuil"
 GameText.HelperText.Esperanto   [ "I am learning Ithkuil" ]     = "Mi lernas Ifkuilon"
@@ -189,6 +203,7 @@ GameText.HelperText.Ido         [ "I am learning Ithkuil" ]     = "Me lernas Ifk
 GameText.HelperText.Spanish     [ "I am learning Ithkuil" ]     = "Estoy aprendiendo Ithkuil"
 GameText.HelperText.Ithkuil     [ "I am learning Ithkuil" ]     = "Ithkel xháwîl"
 GameText.HelperText.German      [ "I am learning Ithkuil" ]     = "Ich lerne Ithkuil"
+GameText.Helpertext.Japanese    [ "I am learning Ithkuil" ]     = "イスクイル　を　べんきょう　してるんだ。"
 
 -- Menu Buttons --
 -- If there are standards that computer user interfaces use
@@ -201,6 +216,7 @@ GameText.HelperText.Spanish     [ "Play" ]  = "Jugar"
 GameText.HelperText.Ithkuil     [ "Play" ]  = "Ováweš!"
 GameText.HelperText.German      [ "Play" ]  = "Spielen"
 GameText.HelperText.French      [ "Play" ]  = "Jouer"
+GameText.HelperText.Japanese    [ "play" ]  = "プレイ"
 
 -- Previous / Next - flipping through pages in a menu
 GameText.HelperText.English     [ "Next" ]  = "Continue"
@@ -210,6 +226,7 @@ GameText.HelperText.Spanish     [ "Next" ]  = "Continuar"
 GameText.HelperText.Ithkuil     [ "Next" ]  = "Continue"
 GameText.HelperText.German      [ "Next" ]  = "Fortsetzen"
 GameText.HelperText.French      [ "Next" ]  = "Suivant"
+GemeText.Helpertext.Japanese    [ "Next" ]  = "つぎ　へ"
 
 GameText.HelperText.English     [ "Previous" ]  = "Previous"
 GameText.HelperText.Esperanto   [ "Previous" ]  = "Antaŭa"
@@ -218,6 +235,7 @@ GameText.HelperText.Spanish     [ "Previous" ]  = "Atrás"
 GameText.HelperText.Ithkuil     [ "Previous" ]  = "Previous"
 GameText.HelperText.German      [ "Previous" ]  = "Vorherige"
 GameText.HelperText.French      [ "Previous" ]  = "Précédent"
+GameText.Helpertext.Japanese    [ "Previous" ]  = "まえ　へ"
 
 GameText.HelperText.English     [ "Options" ]   = "Options"
 GameText.HelperText.Esperanto   [ "Options" ]   = "Agordoj"
@@ -226,6 +244,7 @@ GameText.HelperText.Spanish     [ "Options" ]   = "Opciones"
 GameText.HelperText.Ithkuil     [ "Options" ]   = "Ênyar"
 GameText.HelperText.German      [ "Options" ]   = "Optionen"
 GameText.HelperText.French      [ "Options" ]   = "Options"
+GemeText.HelperText.Japanese    [ "options" ]   = "オプション"
 
 GameText.HelperText.English     [ "Help" ]  = "Help"
 GameText.HelperText.Esperanto   [ "Help" ]  = "Helpo"
@@ -234,6 +253,7 @@ GameText.HelperText.Spanish     [ "Help" ]  = "Ayuda"
 GameText.HelperText.Ithkuil     [ "Help" ]  = "Âdnan"
 GameText.HelperText.German      [ "Help" ]  = "Hilfe"
 GameText.HelperText.French      [ "Help" ]  = "Aide"
+GameText.HelpetText.Japanese    [ "Help" ]  = "ヘルプ"
 
 -- Go back to the previous menu
 GameText.HelperText.English     [ "Back" ]  = "Back"
@@ -243,6 +263,7 @@ GameText.HelperText.Spanish     [ "Back" ]  = "Volver"
 GameText.HelperText.Ithkuil     [ "Back" ]  = "Rçarļ"
 GameText.HelperText.German      [ "Back" ]  = "Zurück"
 GameText.HelperText.French      [ "Back" ]  = "Retour"
+GameText.HelperText.Japanese    [ "Back" ]  = "もどる"
 
 -- In-game screen with buttons and text
 GameText.HelperText.English     [ "Menu" ]  = "Menu"
@@ -252,6 +273,7 @@ GameText.HelperText.Spanish     [ "Menu" ]  = "Menú"
 GameText.HelperText.Ithkuil     [ "Menu" ]  = "Rçarļ"
 GameText.HelperText.German      [ "Menu" ]  = "Menü"
 GameText.HelperText.French      [ "Menu" ]  = "Menu"
+GameText.HelperText.Japanese    [ "Menu" ]  = "メニュー"
 
 -- Demo Information Text
 
@@ -262,6 +284,7 @@ GameText.HelperText.Spanish     [ "Thank you for trying out Merri" ]    = "¡Gra
 GameText.HelperText.Ithkuil     [ "Thank you for trying out Merri" ]    = "Thank you for trying out Merri!"
 GameText.HelperText.German      [ "Thank you for trying out Merri" ]    = "Danke, dass du Merri ausprobierst!"
 GameText.HelperText.French      [ "Thank you for trying out Merri" ]    = "Merci d'avoir essayé Merri !"
+Gametext.HelperText.Japanese    [ "Thank you for trying out Merri" ]    = "ためして　くれて　ありがとう　メッリ！"
 
 GameText.HelperText.English     [ "This is still a work in progress" ]  = "This is still a work in progress."
 GameText.HelperText.Esperanto   [ "This is still a work in progress" ]  = "Tio ĉi ankoraŭ ne estas kompleta."
@@ -270,6 +293,7 @@ GameText.HelperText.Spanish     [ "This is still a work in progress" ]  = "Esto 
 GameText.HelperText.Ithkuil     [ "This is still a work in progress" ]  = "This is still a work in progress."
 GameText.HelperText.German      [ "This is still a work in progress" ]  = "Dieses Spiel befindet sich derzeit noch in Entwicklung."
 GameText.HelperText.French      [ "This is still a work in progress" ]  = "Le jeu est encore en développement."
+GameText.HelperText.Japanese    [ "This is still a work in progress" ]  = "まだ　さぎょうちゅう。"
 
 GameText.HelperText.English     [ "There may be errors or bugs" ]       = "There may be errors or bugs."
 GameText.HelperText.Esperanto   [ "There may be errors or bugs" ]       = "Eble ekzistas eraroj aŭ cimoj."
@@ -278,6 +302,7 @@ GameText.HelperText.Spanish     [ "There may be errors or bugs" ]       = "Este 
 GameText.HelperText.Ithkuil     [ "There may be errors or bugs" ]       = "There may be errors or bugs."
 GameText.HelperText.German      [ "There may be errors or bugs" ]       = "Es gibt wahrscheinlich noch Fehler."
 GameText.HelperText.French      [ "There may be errors or bugs" ]       = "Il peut y avoir des erreurs ou des bug."
+GameText.HelperText.Japanese    [ "There may be errors or bugs" ]       = "エラー　か　バグ　が　ある　もよう。"
 
 GameText.HelperText.English     [ "Report problems at EMAIL" ]          = "Report problems at Rachel@Moosader.com ."
 GameText.HelperText.Esperanto   [ "Report problems at EMAIL" ]          = "Raportu problemojn al Rachel@Moosader.com ."
@@ -286,6 +311,7 @@ GameText.HelperText.Spanish     [ "Report problems at EMAIL" ]          = "Por f
 GameText.HelperText.Ithkuil     [ "Report problems at EMAIL" ]          = "Report problems at Rachel@Moosader.com ."
 GameText.HelperText.German      [ "Report problems at EMAIL" ]          = "Problemberichte können an Rachel@Moosader.com gesendet werden."
 GameText.HelperText.French      [ "Report problems at EMAIL" ]          = "Signalez les problèmes à Rachel@Moosader.com ."
+Gametext.HelperText.Japanese    [ "Report problems at EMAIL" ]          = "Rachel@Moosader.com　に　もんだい　を　ほうこく。"
 
 GameText.HelperText.English     [ "Want to keep up with this game's progress?" ]    = "Want to keep up with this game's progress?"
 GameText.HelperText.Esperanto   [ "Want to keep up with this game's progress?" ]    = "Ĉu vi volas sekvi novaĵojn pri la ludo?"
@@ -294,6 +320,7 @@ GameText.HelperText.Spanish     [ "Want to keep up with this game's progress?" ]
 GameText.HelperText.Ithkuil     [ "Want to keep up with this game's progress?" ]    = "Want to keep up with this game's progress?"
 GameText.HelperText.German      [ "Want to keep up with this game's progress?" ]    = "Möchtest du über die Entwicklung dieses Spiels informiert werden?"
 GameText.HelperText.French      [ "Want to keep up with this game's progress?" ]    = "Souhaitez-vous suivre le développement du jeu ?"
+GameText.HelperText.Japanese    [ "Want to keep up with this game's progress?" ]    = "ゲーム　の　けいか　を　セーブ　する？"
 
 -- Don't translate these, they're being set based on the notes above.
 GameText.TargetText.English     [ "Thank you for trying out Merri" ]    = GameText.HelperText.English[ "Thank you for trying out Merri" ]
