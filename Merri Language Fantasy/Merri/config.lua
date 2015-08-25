@@ -6,7 +6,7 @@ GLOBAL_CONFIG = {
 	SCREEN_HEIGHT = 640,
 }
 
-GLOBAL_LANGAUGES = { "English", "Esperanto", "Ido", "Spanish", "Ithkuil", "German" }
+GLOBAL_LANGAUGES = { "English", "Esperanto", "Ido", "Spanish", "Ithkuil", "German", "Polish", "Japanese" }
 
 function SAVE_CONFIG()
 	print( "Save game" )
