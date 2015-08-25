@@ -72,6 +72,7 @@ function GameText:SetupLanguages()
     GameText.HelperText.German = {}
     GameText.TargetText.French = {}
     GameText.HelperText.Japanese = {}
+    GameText.HelperText.Polish = {}
 
     GameText.TargetText.English = {}
     GameText.TargetText.Esperanto = {}
@@ -81,6 +82,7 @@ function GameText:SetupLanguages()
     GameText.TargetText.German = {}
     GameText.HelperText.French = {}
     GameText.TargetText.Japanese = {}
+    GameText.TargetText.Polish = {}
 
 -- Credits --
 GameText.HelperText.English     [ "Translators" ]   = "Translators"
@@ -91,6 +93,7 @@ GameText.HelperText.Ithkuil     [ "Translators" ]   = "Translators"
 GameText.HelperText.German      [ "Translators" ]   = "Übersetzer"
 GameText.HelperText.French      [ "Translators" ]   = "Traducteurs"
 GameText.HelperText.Japanese    [ "Translators" ]   = "ほんやく"
+GameText.HelperText.Polish      [ "Translators" ]   = "Tłumacze"
 
 -- Name of the language --
 GameText.HelperText.English     [ "language-name" ]     = "English"
@@ -101,6 +104,7 @@ GameText.HelperText.Ithkuil     [ "language-name" ]     = "Ithkuil"
 GameText.HelperText.German      [ "language-name" ]     = "Deutsch"
 GameText.HelperText.French      [ "language-name" ]     = "Français"
 GameText.HelperText.Japanese    [ "language-name" ]     = "にほんご"
+GameText.HelperText.Polish      [ "language-name" ]     = "Polski"
 
 -- Put your name in here
 GameText.HelperText.English     [ "Translation Credits" ]   = "Rachel J. Morris"
@@ -111,6 +115,7 @@ GameText.HelperText.Ithkuil     [ "Translation Credits" ]   = "Chikaodinaka 'dka
 GameText.HelperText.German      [ "Translation Credits" ]   = "Marius Stärk"
 GameText.TargetText.French      [ "Translation Credits" ]   = "Vanege"
 GameText.TargetText.Japanese    [ "Translation Credits" ]   = "Nadipedia"
+GameText.TargetText.Polish      [ "Translation Credits" ]   = "Wojtek Kubiak"
 
 -- Common --
 
@@ -122,15 +127,17 @@ GameText.TargetText.Ithkuil     [ "game title" ]    = "Ithkaiwîl ubzál"
 GameText.TargetText.German      [ "game title" ]    = "Deutsche Fantasie"
 GameText.TargetText.French      [ "game title" ]    = "Fantaisie du Français"
 GameText.targetText.Japanese    [ "game title" ]    = "ジャパニーズ・ファンタジー"
+GameText.TargetText.Polish      [ "game title" ]    = "Polska Fantazja"
 
 GameText.HelperText.English     [ "website" ]   = "Website:"
 GameText.HelperText.Esperanto   [ "website" ]   = "Retejo:"
 GameText.HelperText.Ido         [ "website" ]   = "Retosituo:"
 GameText.HelperText.Spanish     [ "website" ]   = "Página web:"
-GameText.HelperText.Ithkuil     [ "website" ]    = "Website:"
-GameText.HelperText.German      [ "website" ]    = "Internetseite:"
-GameText.HelperText.French      [ "website" ]    = "Site web :"
+GameText.HelperText.Ithkuil     [ "website" ]   = "Website:"
+GameText.HelperText.German      [ "website" ]   = "Internetseite:"
+GameText.HelperText.French      [ "website" ]   = "Site web:"
 GameText.HelpetText.Japanese    [ "website" ]   = "ウェブサイト"
+GameText.HelperText.Polish      [ "website" ]   = "Strona internetowa:"
 
 GameText.HelperText.English     [ "facebook" ]  = "Facebook:"
 GameText.HelperText.Esperanto   [ "facebook" ]  = "Facebook:"
@@ -139,16 +146,21 @@ GameText.HelperText.Spanish     [ "facebook" ]  = "Facebook:"
 GameText.HelperText.Ithkuil     [ "facebook" ]    = "Facebook:"
 GameText.HelperText.German      [ "facebook" ]    = "Facebook:"
 GameText.HelperText.French      [ "facebook" ]    = "Facebook :"
+GameText.HelperText.Ithkuil     [ "facebook" ]  = "Facebook:"
+GameText.HelperText.German      [ "facebook" ]  = "Facebook:"
+GameText.HelperText.French      [ "facebook" ]  = "Facebook:"
 GameText.Helpertext.Japanese    [ "facebook" ]  = "フェイスブック"
+GameText.HelperText.Polish      [ "facebook" ]  = "Facebook:"
 
 GameText.HelperText.English     [ "twitter" ]   = "Twitter:"
 GameText.HelperText.Esperanto   [ "twitter" ]   = "Twitter:"
 GameText.HelperText.Ido         [ "twitter" ]   = "Twitter:"
 GameText.HelperText.Spanish     [ "twitter" ]   = "Twitter:"
-GameText.HelperText.Ithkuil     [ "twitter" ]    = "Twitter:"
-GameText.HelperText.German      [ "twitter" ]    = "Twitter:"
-GameText.HelperText.French      [ "twitter" ]    = "Twitter :"
+GameText.HelperText.Ithkuil     [ "twitter" ]   = "Twitter:"
+GameText.HelperText.German      [ "twitter" ]   = "Twitter:"
+GameText.HelperText.French      [ "twitter" ]   = "Twitter:"
 Gametext.HelperText.Japanese    [" twitter" ]   = "ツイッター"
+GameText.HelperText.Polish      [ "twitter" ]   = "Twitter:"
 
 
 -- LanguageSelectState --
@@ -163,6 +175,7 @@ GameText.HelperText.Ithkuil     [ "I know Ithkuil" ]    = "I know Ithkuil."
 GameText.HelperText.German      [ "I know German" ]     = "Ich kann Deutsch."
 GameText.HelperText.French      [ "I know French" ]     = "Je connais le français."
 GameText.HelperText.Japanese    [ "I know Japanese" ]   = "にほんご　わかるよ。"
+GameText.HelperText.Polish      [ "I know Polish" ]     = "Znam polski."
 
 -- Target Languages --
 GameText.HelperText.English     [ "I am learning English" ]     = "I am learning English"
@@ -171,7 +184,9 @@ GameText.HelperText.Ido         [ "I am learning English" ]     = "Me lernas la 
 GameText.HelperText.Spanish     [ "I am learning English" ]     = "Estoy aprendiendo Inglés"
 GameText.HelperText.Ithkuil     [ "I am learning English" ]     = "Upinglišpel xháwîl"
 GameText.HelperText.German      [ "I am learning English" ]     = "Ich lerne Englisch"
+GameText.HelperText.French      [ "I am learning English" ]     = "I am learning English"
 GameText.Helpertext.Japanese    [ "I am learning English" ]     = "えいご　を　べんきょう　してるんだ。"
+GameText.HelperText.Polish      [ "I am learning English" ]     = "Uczę się angielskiego"
 
 GameText.HelperText.English     [ "I am learning Esperanto" ]   = "I am learning Esperanto"
 GameText.HelperText.Esperanto   [ "I am learning Esperanto" ]   = "Mi lernas Esperanton"
@@ -180,6 +195,8 @@ GameText.HelperText.Spanish     [ "I am learning Esperanto" ]   = "Estoy aprendi
 GameText.HelperText.Ithkuil     [ "I am learning Esperanto" ]   = "Upesperantopel xháwîl"
 GameText.HelperText.German      [ "I am learning Esperanto" ]   = "Ich lerne Esperanto"
 GameText.HelperText.Japanese    [ "I am learning Esperanto" ]   = "エスペラント　を　べんきょう　してるんだ。"
+GameText.HelperText.French      [ "I am learning Esperanto" ]   = "I am learning Esperanto"
+GameText.HelperText.Polish      [ "I am learning Esperanto" ]   = "Uczę się esperanto"
 
 GameText.HelperText.English     [ "I am learning Ido" ]         = "I am learning Ido"
 GameText.HelperText.Esperanto   [ "I am learning Ido" ]         = "Mi lernas Idon"
@@ -188,6 +205,8 @@ GameText.HelperText.Spanish     [ "I am learning Ido" ]         = "Estoy aprendi
 GameText.HelperText.Ithkuil     [ "I am learning Ido" ]         = "Upidopel xháwîl"
 GameText.HelperText.German      [ "I am learning Ido" ]         = "Ich lerne Ido"
 GameText.HelperText.Japanese    [ "I am learning Ido" ]         = "イド　を　べんきょう　してるんだ。"
+GameText.HelperText.French      [ "I am learning Ido" ]         = "I am learning Ido"
+GameText.HelperText.Polish      [ "I am learning Ido" ]         = "Uczę się ido"
 
 GameText.HelperText.English     [ "I am learning Spanish" ]     = "I am learning Spanish"
 GameText.HelperText.Esperanto   [ "I am learning Spanish" ]     = "Mi lernas la hispanan lingvon"
@@ -196,6 +215,8 @@ GameText.HelperText.Spanish     [ "I am learning Spanish" ]     = "Estoy aprendi
 GameText.HelperText.Ithkuil     [ "I am learning Spanish" ]     = "Upspanišpel xháwîl"
 GameText.HelperText.German      [ "I am learning Spanish" ]     = "Ich lerne Spanisch"
 GameText.HelperText.Japanese    [ "I am learning Spanish" ]     = "スペインご　を　べんきょう　してるんだ。"
+GameText.HelperText.French      [ "I am learning Spanish" ]     = "I am learning Spanish"
+GameText.HelperText.Polish      [ "I am learning Spanish" ]     = "Uczę się hiszpańskiego"
 
 GameText.HelperText.English     [ "I am learning Ithkuil" ]     = "I am learning Ithkuil"
 GameText.HelperText.Esperanto   [ "I am learning Ithkuil" ]     = "Mi lernas Ifkuilon"
@@ -204,6 +225,35 @@ GameText.HelperText.Spanish     [ "I am learning Ithkuil" ]     = "Estoy aprendi
 GameText.HelperText.Ithkuil     [ "I am learning Ithkuil" ]     = "Ithkel xháwîl"
 GameText.HelperText.German      [ "I am learning Ithkuil" ]     = "Ich lerne Ithkuil"
 GameText.Helpertext.Japanese    [ "I am learning Ithkuil" ]     = "イスクイル　を　べんきょう　してるんだ。"
+GameText.HelperText.French      [ "I am learning Ithkuil" ]     = "I am learning Ithkuil"
+GameText.HelperText.Polish      [ "I am learning Ithkuil" ]     = "Uczę się ithkuil"
+
+GameText.HelperText.English     [ "I am learning German" ]     = "I am learning German"
+GameText.HelperText.Esperanto   [ "I am learning German" ]     = "I am learning German"
+GameText.HelperText.Ido         [ "I am learning German" ]     = "I am learning German"
+GameText.HelperText.Spanish     [ "I am learning German" ]     = "I am learning German"
+GameText.HelperText.Ithkuil     [ "I am learning German" ]     = "I am learning German"
+GameText.HelperText.German      [ "I am learning German" ]     = "Ich lerne Deutsch"
+GameText.HelperText.French      [ "I am learning German" ]     = "I am learning German"
+GameText.HelperText.Polish      [ "I am learning German" ]     = "Uczę się niemieckiego"
+
+GameText.HelperText.English     [ "I am learning French" ]     = "I am learning French"
+GameText.HelperText.Esperanto   [ "I am learning French" ]     = "I am learning French"
+GameText.HelperText.Ido         [ "I am learning French" ]     = "I am learning French"
+GameText.HelperText.Spanish     [ "I am learning French" ]     = "I am learning French"
+GameText.HelperText.Ithkuil     [ "I am learning French" ]     = "I am learning French"
+GameText.HelperText.German      [ "I am learning French" ]     = "Ich lerne Französisch"
+GameText.HelperText.French      [ "I am learning French" ]     = "I am learning French"
+GameText.HelperText.Polish      [ "I am learning French" ]     = "Uczę się francuskiego"
+
+GameText.HelperText.English     [ "I am learning Polish" ]     = "I am learning Polish"
+GameText.HelperText.Esperanto   [ "I am learning Polish" ]     = "I am learning Polish"
+GameText.HelperText.Ido         [ "I am learning Polish" ]     = "I am learning Polish"
+GameText.HelperText.Spanish     [ "I am learning Polish" ]     = "I am learning Polish"
+GameText.HelperText.Ithkuil     [ "I am learning Polish" ]     = "I am learning Polish"
+GameText.HelperText.German      [ "I am learning Polish" ]     = "Ich lerne Polnisch"
+GameText.HelperText.French      [ "I am learning Polish" ]     = "I am learning Polish"
+GameText.HelperText.Polish      [ "I am learning Polish" ]     = "Uczę się polskiego"
 
 -- Menu Buttons --
 -- If there are standards that computer user interfaces use
@@ -217,6 +267,7 @@ GameText.HelperText.Ithkuil     [ "Play" ]  = "Ováweš!"
 GameText.HelperText.German      [ "Play" ]  = "Spielen"
 GameText.HelperText.French      [ "Play" ]  = "Jouer"
 GameText.HelperText.Japanese    [ "play" ]  = "プレイ"
+GameText.HelperText.Polish      [ "Play" ]  = "Graj"
 
 -- Previous / Next - flipping through pages in a menu
 GameText.HelperText.English     [ "Next" ]  = "Continue"
@@ -227,6 +278,7 @@ GameText.HelperText.Ithkuil     [ "Next" ]  = "Continue"
 GameText.HelperText.German      [ "Next" ]  = "Fortsetzen"
 GameText.HelperText.French      [ "Next" ]  = "Suivant"
 GemeText.Helpertext.Japanese    [ "Next" ]  = "つぎ　へ"
+GameText.HelperText.Polish      [ "Next" ]  = "Kontynuuj"
 
 GameText.HelperText.English     [ "Previous" ]  = "Previous"
 GameText.HelperText.Esperanto   [ "Previous" ]  = "Antaŭa"
@@ -236,6 +288,7 @@ GameText.HelperText.Ithkuil     [ "Previous" ]  = "Previous"
 GameText.HelperText.German      [ "Previous" ]  = "Vorherige"
 GameText.HelperText.French      [ "Previous" ]  = "Précédent"
 GameText.Helpertext.Japanese    [ "Previous" ]  = "まえ　へ"
+GameText.HelperText.Polish      [ "Previous" ]  = "Poprzednia"
 
 GameText.HelperText.English     [ "Options" ]   = "Options"
 GameText.HelperText.Esperanto   [ "Options" ]   = "Agordoj"
@@ -245,6 +298,7 @@ GameText.HelperText.Ithkuil     [ "Options" ]   = "Ênyar"
 GameText.HelperText.German      [ "Options" ]   = "Optionen"
 GameText.HelperText.French      [ "Options" ]   = "Options"
 GemeText.HelperText.Japanese    [ "options" ]   = "オプション"
+GameText.HelperText.Polish      [ "Options" ]   = "Opcje"
 
 GameText.HelperText.English     [ "Help" ]  = "Help"
 GameText.HelperText.Esperanto   [ "Help" ]  = "Helpo"
@@ -254,6 +308,7 @@ GameText.HelperText.Ithkuil     [ "Help" ]  = "Âdnan"
 GameText.HelperText.German      [ "Help" ]  = "Hilfe"
 GameText.HelperText.French      [ "Help" ]  = "Aide"
 GameText.HelpetText.Japanese    [ "Help" ]  = "ヘルプ"
+GameText.HelperText.Polish      [ "Help" ]  = "Pomoc"
 
 -- Go back to the previous menu
 GameText.HelperText.English     [ "Back" ]  = "Back"
@@ -264,6 +319,7 @@ GameText.HelperText.Ithkuil     [ "Back" ]  = "Rçarļ"
 GameText.HelperText.German      [ "Back" ]  = "Zurück"
 GameText.HelperText.French      [ "Back" ]  = "Retour"
 GameText.HelperText.Japanese    [ "Back" ]  = "もどる"
+GameText.HelperText.Polish      [ "Back" ]  = "Wróć"
 
 -- In-game screen with buttons and text
 GameText.HelperText.English     [ "Menu" ]  = "Menu"
@@ -274,6 +330,7 @@ GameText.HelperText.Ithkuil     [ "Menu" ]  = "Rçarļ"
 GameText.HelperText.German      [ "Menu" ]  = "Menü"
 GameText.HelperText.French      [ "Menu" ]  = "Menu"
 GameText.HelperText.Japanese    [ "Menu" ]  = "メニュー"
+GameText.HelperText.Polish      [ "Menu" ]  = "Menu"
 
 -- Demo Information Text
 
@@ -285,6 +342,7 @@ GameText.HelperText.Ithkuil     [ "Thank you for trying out Merri" ]    = "Thank
 GameText.HelperText.German      [ "Thank you for trying out Merri" ]    = "Danke, dass du Merri ausprobierst!"
 GameText.HelperText.French      [ "Thank you for trying out Merri" ]    = "Merci d'avoir essayé Merri !"
 Gametext.HelperText.Japanese    [ "Thank you for trying out Merri" ]    = "ためして　くれて　ありがとう　メッリ！"
+GameText.HelperText.Polish      [ "Thank you for trying out Merri" ]    = "Dzięki za wypróbowanie Merri!"
 
 GameText.HelperText.English     [ "This is still a work in progress" ]  = "This is still a work in progress."
 GameText.HelperText.Esperanto   [ "This is still a work in progress" ]  = "Tio ĉi ankoraŭ ne estas kompleta."
@@ -294,6 +352,7 @@ GameText.HelperText.Ithkuil     [ "This is still a work in progress" ]  = "This 
 GameText.HelperText.German      [ "This is still a work in progress" ]  = "Dieses Spiel befindet sich derzeit noch in Entwicklung."
 GameText.HelperText.French      [ "This is still a work in progress" ]  = "Le jeu est encore en développement."
 GameText.HelperText.Japanese    [ "This is still a work in progress" ]  = "まだ　さぎょうちゅう。"
+GameText.HelperText.Polish      [ "This is still a work in progress" ]  = "Ta gra jest wciąż rozwijana."
 
 GameText.HelperText.English     [ "There may be errors or bugs" ]       = "There may be errors or bugs."
 GameText.HelperText.Esperanto   [ "There may be errors or bugs" ]       = "Eble ekzistas eraroj aŭ cimoj."
@@ -303,6 +362,7 @@ GameText.HelperText.Ithkuil     [ "There may be errors or bugs" ]       = "There
 GameText.HelperText.German      [ "There may be errors or bugs" ]       = "Es gibt wahrscheinlich noch Fehler."
 GameText.HelperText.French      [ "There may be errors or bugs" ]       = "Il peut y avoir des erreurs ou des bug."
 GameText.HelperText.Japanese    [ "There may be errors or bugs" ]       = "エラー　か　バグ　が　ある　もよう。"
+GameText.HelperText.Polish      [ "There may be errors or bugs" ]       = "Mogą pojawiać się błędy lub bugi."
 
 GameText.HelperText.English     [ "Report problems at EMAIL" ]          = "Report problems at Rachel@Moosader.com ."
 GameText.HelperText.Esperanto   [ "Report problems at EMAIL" ]          = "Raportu problemojn al Rachel@Moosader.com ."
@@ -312,6 +372,7 @@ GameText.HelperText.Ithkuil     [ "Report problems at EMAIL" ]          = "Repor
 GameText.HelperText.German      [ "Report problems at EMAIL" ]          = "Problemberichte können an Rachel@Moosader.com gesendet werden."
 GameText.HelperText.French      [ "Report problems at EMAIL" ]          = "Signalez les problèmes à Rachel@Moosader.com ."
 Gametext.HelperText.Japanese    [ "Report problems at EMAIL" ]          = "Rachel@Moosader.com　に　もんだい　を　ほうこく。"
+GameText.HelperText.Polish      [ "Report problems at EMAIL" ]          = "Problemy zgłaszaj na adres Rachel@Moosader.com ."
 
 GameText.HelperText.English     [ "Want to keep up with this game's progress?" ]    = "Want to keep up with this game's progress?"
 GameText.HelperText.Esperanto   [ "Want to keep up with this game's progress?" ]    = "Ĉu vi volas sekvi novaĵojn pri la ludo?"
@@ -321,6 +382,7 @@ GameText.HelperText.Ithkuil     [ "Want to keep up with this game's progress?" ]
 GameText.HelperText.German      [ "Want to keep up with this game's progress?" ]    = "Möchtest du über die Entwicklung dieses Spiels informiert werden?"
 GameText.HelperText.French      [ "Want to keep up with this game's progress?" ]    = "Souhaitez-vous suivre le développement du jeu ?"
 GameText.HelperText.Japanese    [ "Want to keep up with this game's progress?" ]    = "ゲーム　の　けいか　を　セーブ　する？"
+GameText.HelperText.Polish      [ "Want to keep up with this game's progress?" ]    = "Czy chcesz otrzymywać informacje o postępach nad grą ?"
 
 -- Don't translate these, they're being set based on the notes above.
 GameText.TargetText.English     [ "Thank you for trying out Merri" ]    = GameText.HelperText.English[ "Thank you for trying out Merri" ]
@@ -330,6 +392,7 @@ GameText.TargetText.Spanish     [ "Thank you for trying out Merri" ]    = GameTe
 GameText.TargetText.Ithkuil     [ "Thank you for trying out Merri" ]    = GameText.HelperText.Ithkuil[ "Thank you for trying out Merri" ]
 GameText.TargetText.German      [ "Thank you for trying out Merri" ]    = GameText.HelperText.German[ "Thank you for trying out Merri" ]
 GameText.TargetText.French      [ "Thank you for trying out Merri" ]    = GameText.HelperText.French[ "Thank you for trying out Merri" ]
+GameText.TargetText.Polish      [ "Thank you for trying out Merri" ]    = GameText.HelperText.Polish[ "Thank you for trying out Merri" ]
 
 GameText.TargetText.English     [ "This is still a work in progress" ]  = GameText.HelperText.English[ "This is still a work in progress" ]
 GameText.TargetText.Esperanto   [ "This is still a work in progress" ]  = GameText.HelperText.Esperanto[ "This is still a work in progress" ]
@@ -338,6 +401,7 @@ GameText.TargetText.Spanish     [ "This is still a work in progress" ]  = GameTe
 GameText.TargetText.Ithkuil     [ "This is still a work in progress" ]  = GameText.HelperText.Ithkuil[ "This is still a work in progress" ]
 GameText.TargetText.German      [ "This is still a work in progress" ]  = GameText.HelperText.German[ "This is still a work in progress" ]
 GameText.TargetText.French      [ "This is still a work in progress" ]  = GameText.HelperText.French[ "This is still a work in progress" ]
+GameText.TargetText.Polish      [ "This is still a work in progress" ]  = GameText.HelperText.Polish[ "This is still a work in progress" ]
 
 GameText.TargetText.English     [ "There may be errors or bugs" ]       = GameText.HelperText.English[ "There may be errors or bugs" ]
 GameText.TargetText.Esperanto   [ "There may be errors or bugs" ]       = GameText.HelperText.Esperanto[ "There may be errors or bugs" ]
@@ -346,6 +410,7 @@ GameText.TargetText.Spanish     [ "There may be errors or bugs" ]       = GameTe
 GameText.TargetText.Ithkuil     [ "There may be errors or bugs" ]       = GameText.HelperText.Ithkuil[ "There may be errors or bugs" ]
 GameText.TargetText.German      [ "There may be errors or bugs" ]       = GameText.HelperText.German[ "There may be errors or bugs" ]
 GameText.TargetText.French      [ "There may be errors or bugs" ]       = GameText.HelperText.French[ "There may be errors or bugs" ]
+GameText.TargetText.Polish      [ "There may be errors or bugs" ]       = GameText.HelperText.Polish[ "There may be errors or bugs" ]
 
 GameText.TargetText.English     [ "Report problems at EMAIL" ]          = GameText.HelperText.English[ "Report problems at EMAIL" ]
 GameText.TargetText.Esperanto   [ "Report problems at EMAIL" ]          = GameText.HelperText.Esperanto[ "Report problems at EMAIL" ]
@@ -354,6 +419,7 @@ GameText.TargetText.Spanish     [ "Report problems at EMAIL" ]          = GameTe
 GameText.TargetText.Ithkuil     [ "Report problems at EMAIL" ]          = GameText.HelperText.Ithkuil[ "Report problems at EMAIL" ]
 GameText.TargetText.German      [ "Report problems at EMAIL" ]          = GameText.HelperText.German[ "Report problems at EMAIL" ]
 GameText.TargetText.French      [ "Report problems at EMAIL" ]          = GameText.HelperText.French[ "Report problems at EMAIL" ]
+GameText.TargetText.Polish      [ "Report problems at EMAIL" ]          = GameText.HelperText.Polish[ "Report problems at EMAIL" ]
 
 GameText.TargetText.English     [ "Want to keep up with this game's progress?" ]        = GameText.HelperText.English[ "Want to keep up with this game's progress?" ]
 GameText.TargetText.Esperanto   [ "Want to keep up with this game's progress?" ]        = GameText.HelperText.Esperanto[ "Want to keep up with this game's progress?" ]
@@ -362,6 +428,8 @@ GameText.TargetText.Spanish     [ "Want to keep up with this game's progress?" ]
 GameText.TargetText.Ithkuil     [ "Want to keep up with this game's progress?" ]        = GameText.HelperText.Ithkuil[ "Want to keep up with this game's progress?" ]
 GameText.TargetText.German      [ "Want to keep up with this game's progress?" ]        = GameText.HelperText.German[ "Want to keep up with this game's progress?" ]
 GameText.TargetText.French      [ "Want to keep up with this game's progress?" ]        = GameText.HelperText.French[ "Want to keep up with this game's progress?" ]
+GameText.TargetText.Polish      [ "Want to keep up with this game's progress?" ]        = GameText.HelperText.Polish[ "Want to keep up with this game's progress?" ]
+
 
 -- Got a star
 
@@ -371,7 +439,8 @@ GameText.TargetText.Ido         [ "Earned a star" ]     = "Vu aquiris stelo!"
 GameText.TargetText.Spanish     [ "Earned a star" ]     = "¡Has adquirido una estrella!"
 GameText.TargetText.Ithkuil     [ "Earned a star" ]     = "Uk'awîr kî"
 GameText.TargetText.German      [ "Earned a star" ]     = "Du hast einen Stern erhalten!"
-GameText.TargetText.French      [ "Earned a star" ]     = "Tu as gagné une étoile !"
+GameText.TargetText.French      [ "Earned a star" ]     = "Tu as gagné une étoile!"
+GameText.TargetText.Polish      [ "Earned a star" ]     = "Zdobyto gwiazdę!"
 
 -- This block doesn't get translated
 GameText.HelperText.English     [ "Earned a star" ]     = GameText.TargetText.English[ "Earned a star" ]
@@ -381,6 +450,7 @@ GameText.HelperText.Spanish     [ "Earned a star" ]     = GameText.TargetText.Sp
 GameText.HelperText.Ithkuil     [ "Earned a star" ]     = GameText.TargetText.Ithkuil[ "Earned a star" ]
 GameText.HelperText.German      [ "Earned a star" ]     = GameText.TargetText.German[ "Earned a star" ]
 GameText.HelperText.French      [ "Earned a star" ]     = GameText.TargetText.French[ "Earned a star" ]
+GameText.HelperText.Polish      [ "Earned a star" ]     = GameText.TargetText.Polish[ "Earned a star" ]
 
 -- DifficultSelectState --
 
@@ -391,6 +461,7 @@ GameText.HelperText.Spanish     [ "Practice" ]  = "Practicar"
 GameText.HelperText.Ithkuil     [ "Practice" ]  = "Xháwîl"
 GameText.HelperText.German      [ "Practice" ]  = "Üben"
 GameText.HelperText.French      [ "Practice" ]  = "Entraînement"
+GameText.HelperText.Polish      [ "Practice" ]  = "Trening"
 
 GameText.HelperText.English     [ "Easy" ]      = "Easy"
 GameText.HelperText.Esperanto   [ "Easy" ]      = "Baznivela"
@@ -399,6 +470,7 @@ GameText.HelperText.Spanish     [ "Easy" ]      = "Fácil"
 GameText.HelperText.Ithkuil     [ "Easy" ]      = "Xháwîlürt"
 GameText.HelperText.German      [ "Easy" ]      = "Leicht"
 GameText.HelperText.French      [ "Easy" ]      = "Facile"
+GameText.HelperText.Polish      [ "Easy" ]      = "Łatwy"
 
 GameText.HelperText.English     [ "Medium" ]    = "Medium"
 GameText.HelperText.Esperanto   [ "Medium" ]    = "Meznivela"
@@ -407,6 +479,7 @@ GameText.HelperText.Spanish     [ "Medium" ]    = "Intermedia"
 GameText.HelperText.Ithkuil     [ "Medium" ]    = "Xháwîlart"
 GameText.HelperText.German      [ "Medium" ]    = "Mittel"
 GameText.HelperText.French      [ "Medium" ]    = "Intermédiaire"
+GameText.HelperText.Polish      [ "Medium" ]    = "Średni"
 
 GameText.HelperText.English     [ "Hard" ]      = "Hard"
 GameText.HelperText.Esperanto   [ "Hard" ]      = "Altnivela"
@@ -415,6 +488,7 @@ GameText.HelperText.Spanish     [ "Hard" ]      = "Difícil"
 GameText.HelperText.Ithkuil     [ "Hard" ]      = "Xháwîlert"
 GameText.HelperText.German      [ "Hard" ]      = "Schwer"
 GameText.HelperText.French      [ "Hard" ]      = "Difficile"
+GameText.HelperText.Polish      [ "Hard" ]      = "Trudny"
 
 GameText.HelperText.English     [ "Stats" ]     = "Stats"
 GameText.HelperText.Esperanto   [ "Stats" ]     = "Statistikoj"
@@ -423,6 +497,7 @@ GameText.HelperText.Spanish     [ "Stats" ]     = "Estadísticas"
 GameText.HelperText.Ithkuil     [ "Stats" ]     = "Upšáwušk"
 GameText.HelperText.German      [ "Stats" ]     = "Statistiken"
 GameText.HelperText.French      [ "Stats" ]     = "Statistiques"
+GameText.HelperText.Polish      [ "Stats" ]     = "Statystyki"
 
 -- MinerGameState --
 
@@ -434,6 +509,7 @@ GameText.TargetText.Spanish     [ "Miner" ]     = "Minero"
 GameText.TargetText.Ithkuil     [ "Miner" ]     = "Qò rq'il ômrar"
 GameText.TargetText.German      [ "Miner" ]     = "Bergarbeiter"
 GameText.TargetText.French      [ "Miner" ]     = "Mineur"
+GameText.TargetText.Polish      [ "Miner" ]     = "Górnik"
 
 -- Game Stats
 GameText.TargetText.English     [ "Floor" ]     = "Floor:"
@@ -442,7 +518,8 @@ GameText.TargetText.Ido         [ "Floor" ]     = "Nivelo:"
 GameText.TargetText.Spanish     [ "Floor" ]     = "Nivel:"
 GameText.TargetText.Ithkuil     [ "Floor" ]     = "Mthal:"
 GameText.TargetText.German      [ "Floor" ]     = "Ebene:"
-GameText.TargetText.French      [ "Floor" ]     = "Étage :"
+GameText.TargetText.French      [ "Floor" ]     = "Étage:"
+GameText.TargetText.Polish      [ "Floor" ]     = "Poziom:"
 
 GameText.TargetText.English     [ "Money" ]     = "Money:"
 GameText.TargetText.Esperanto   [ "Money" ]     = "Mono:"
@@ -450,7 +527,8 @@ GameText.TargetText.Ido         [ "Money" ]     = "Pekunio:"
 GameText.TargetText.Spanish     [ "Money" ]     = "Dinero:"
 GameText.TargetText.Ithkuil     [ "Money" ]     = "Îmsawur:"
 GameText.TargetText.German      [ "Money" ]     = "Geld:"
-GameText.TargetText.French      [ "Money" ]     = "Sous :"
+GameText.TargetText.French      [ "Money" ]     = "Sous:"
+GameText.TargetText.Polish      [ "Money" ]     = "Pieniądze:"
 
 GameText.TargetText.English     [ "Health" ]    = "Health:"
 GameText.TargetText.Esperanto   [ "Health" ]    = "Sano:"
@@ -458,7 +536,8 @@ GameText.TargetText.Ido         [ "Health" ]    = "Saneso:"
 GameText.TargetText.Spanish     [ "Health" ]    = "Salud:"
 GameText.TargetText.Ithkuil     [ "Health" ]    = "Glawul:"
 GameText.TargetText.German      [ "Health" ]    = "Leben:"
-GameText.TargetText.French      [ "Health" ]    = "Santé :"
+GameText.TargetText.French      [ "Health" ]    = "Santé:"
+GameText.TargetText.Polish      [ "Health" ]    = "Zdrowie:"
 
 -- Monsters
 GameText.TargetText.English     [ "snail" ]     = "Snail"
@@ -468,6 +547,7 @@ GameText.TargetText.Spanish     [ "snail" ]     = "Caracol"
 GameText.TargetText.Ithkuil     [ "snail" ]     = "Âļnal"
 GameText.TargetText.German      [ "snail" ]     = "Schnecke"
 GameText.TargetText.French      [ "snail" ]     = "Escargot"
+GameText.TargetText.Polish      [ "snail" ]     = "Ślimak"
 
 GameText.TargetText.English     [ "mole" ]      = "Mole"
 GameText.TargetText.Esperanto   [ "mole" ]      = "Talpo"
@@ -476,6 +556,7 @@ GameText.TargetText.Spanish     [ "mole" ]      = "Topo"
 GameText.TargetText.Ithkuil     [ "mole" ]      = "Çqhwal"
 GameText.TargetText.German      [ "mole" ]      = "Maulwurf"
 GameText.TargetText.French      [ "mole" ]      = "Taupe"
+GameText.TargetText.Polish      [ "mole" ]      = "Kret"
 
 GameText.TargetText.English     [ "mushroom" ]  = "Mushroom"
 GameText.TargetText.Esperanto   [ "mushroom" ]  = "Fungo"
@@ -484,6 +565,7 @@ GameText.TargetText.Spanish     [ "mushroom" ]  = "Champiñón"
 GameText.TargetText.Ithkuil     [ "mushroom" ]  = "Cnalek"
 GameText.TargetText.German      [ "mushroom" ]  = "Pilz"
 GameText.TargetText.French      [ "mushroom" ]  = "Champignon"
+GameText.TargetText.Polish      [ "mushroom" ]  = "Grzyb"
 
 GameText.TargetText.English     [ "bat" ]       = "Bat"
 GameText.TargetText.Esperanto   [ "bat" ]       = "Vesperto"
@@ -492,6 +574,7 @@ GameText.TargetText.Spanish     [ "bat" ]       = "Murcielago"
 GameText.TargetText.Ithkuil     [ "bat" ]       = "Ftçal"
 GameText.TargetText.German      [ "bat" ]       = "Fledermaus"
 GameText.TargetText.French      [ "bat" ]       = "Chauve-souris"
+GameText.TargetText.Polish      [ "bat" ]       = "Nietoperz"
 
 GameText.TargetText.English     [ "rabbit" ]    = "Rabbit"
 GameText.TargetText.Esperanto   [ "rabbit" ]    = "Kuniklo"
@@ -500,6 +583,7 @@ GameText.TargetText.Spanish     [ "rabbit" ]    = "Conejo"
 GameText.TargetText.Ithkuil     [ "rabbit" ]    = "Lxwal"
 GameText.TargetText.German      [ "rabbit" ]    = "Hase"
 GameText.TargetText.French      [ "rabbit" ]    = "Lapin"
+GameText.TargetText.Polish      [ "rabbit" ]    = "Królik"
 
 GameText.TargetText.English     [ "snake" ]     = "Snake"
 GameText.TargetText.Esperanto   [ "snake" ]     = "Serpento"
@@ -508,6 +592,7 @@ GameText.TargetText.Spanish     [ "snake" ]     = "Serpiente"
 GameText.TargetText.Ithkuil     [ "snake" ]     = "Knal"
 GameText.TargetText.German      [ "snake" ]     = "Schlange"
 GameText.TargetText.French      [ "snake" ]     = "Serpent"
+GameText.TargetText.Polish      [ "snake" ]     = "Wąż"
 
 GameText.TargetText.English     [ "skeleton" ]  = "Skeleton"
 GameText.TargetText.Esperanto   [ "skeleton" ]  = "Skeleto"
@@ -516,6 +601,7 @@ GameText.TargetText.Spanish     [ "skeleton" ]  = "Esqueleto"
 GameText.TargetText.Ithkuil     [ "skeleton" ]  = "Urp'al eqel"
 GameText.TargetText.German      [ "skeleton" ]  = "Skelett"
 GameText.TargetText.French      [ "skeleton" ]  = "Squelette"
+GameText.TargetText.Polish      [ "skeleton" ]  = "Szkielet"
 
 GameText.TargetText.English     [ "moose" ]     = "Moose"
 GameText.TargetText.Esperanto   [ "moose" ]     = "Alko"
@@ -524,6 +610,7 @@ GameText.TargetText.Spanish     [ "moose" ]     = "Alce"
 GameText.TargetText.Ithkuil     [ "moose" ]     = "Ndwal"
 GameText.TargetText.German      [ "moose" ]     = "Elch"
 GameText.TargetText.French      [ "moose" ]     = "Élan"
+GameText.TargetText.Polish      [ "moose" ]     = "Łoś"
 
 -- Items
 GameText.TargetText.English     [ "rock" ]      = "Rock"
@@ -533,6 +620,7 @@ GameText.TargetText.Spanish     [ "rock" ]      = "Piedra"
 GameText.TargetText.Ithkuil     [ "rock" ]      = "Ktal"
 GameText.TargetText.German      [ "rock" ]      = "Fels"
 GameText.TargetText.French      [ "rock" ]      = "Rocher"
+GameText.TargetText.Polish      [ "rock" ]      = "Kamień"
 
 GameText.TargetText.English     [ "star" ]      = "Star"
 GameText.TargetText.Esperanto   [ "star" ]      = "Stelo"
@@ -541,6 +629,7 @@ GameText.TargetText.Spanish     [ "star" ]      = "Estrella"
 GameText.TargetText.Ithkuil     [ "star" ]      = "Uk'ar"
 GameText.TargetText.German      [ "star" ]      = "Stern"
 GameText.TargetText.French      [ "star" ]      = "Étoile"
+GameText.TargetText.Polish      [ "star" ]      = "Gwiazda"
 
 GameText.TargetText.English     [ "sandwich" ]  = "Sandwich"
 GameText.TargetText.Esperanto   [ "sandwich" ]  = "Sandviĉo"
@@ -549,6 +638,7 @@ GameText.TargetText.Spanish     [ "sandwich" ]  = "Sandwich"
 GameText.TargetText.Ithkuil     [ "sandwich" ]  = "Âčmawîr"
 GameText.TargetText.German      [ "sandwich" ]  = "Sandwich"
 GameText.TargetText.French      [ "sandwich" ]  = "Sandwich"
+GameText.TargetText.Polish      [ "sandwich" ]  = "Kanapka"
 
 GameText.TargetText.English     [ "amethyst" ]  = "Amethyst"
 GameText.TargetText.Esperanto   [ "amethyst" ]  = "Ametisto"
@@ -557,6 +647,7 @@ GameText.TargetText.Spanish     [ "amethyst" ]  = "Ametista"
 GameText.TargetText.Ithkuil     [ "amethyst" ]  = "Ktél khwal"
 GameText.TargetText.German      [ "amethyst" ]  = "Amethyst"
 GameText.TargetText.French      [ "amethyst" ]  = "Améthyste"
+GameText.TargetText.Polish      [ "amethyst" ]  = "Ametyst"
 
 GameText.TargetText.English     [ "sapphire" ]  = "Sapphire"
 GameText.TargetText.Esperanto   [ "sapphire" ]  = "Safiro"
@@ -565,6 +656,7 @@ GameText.TargetText.Spanish     [ "sapphire" ]  = "Zafiro"
 GameText.TargetText.Ithkuil     [ "sapphire" ]  = "Ktél přal"
 GameText.TargetText.German      [ "sapphire" ]  = "Saphir"
 GameText.TargetText.French      [ "sapphire" ]  = "Saphir"
+GameText.TargetText.Polish      [ "sapphire" ]  = "Szafir"
 
 GameText.TargetText.English     [ "diamond" ]   = "Diamond"
 GameText.TargetText.Esperanto   [ "diamond" ]   = "Diamanto"
@@ -573,6 +665,7 @@ GameText.TargetText.Spanish     [ "diamond" ]   = "Diamante"
 GameText.TargetText.Ithkuil     [ "diamond" ]   = "Stral"
 GameText.TargetText.German      [ "diamond" ]   = "Diamant"
 GameText.TargetText.French      [ "diamond" ]   = "Diamant"
+GameText.TargetText.Polish      [ "diamond" ]   = "Diament"
 
 GameText.TargetText.English     [ "emerald" ]   = "Emerald"
 GameText.TargetText.Esperanto   [ "emerald" ]   = "Smeraldo"
@@ -581,6 +674,7 @@ GameText.TargetText.Spanish     [ "emerald" ]   = "Esmeralda"
 GameText.TargetText.Ithkuil     [ "emerald" ]   = "Żp'al"
 GameText.TargetText.German      [ "emerald" ]   = "Emerald"
 GameText.TargetText.French      [ "emerald" ]   = "Émeraude"
+GameText.TargetText.Polish      [ "emerald" ]   = "Szmaragd"
 
 GameText.TargetText.English     [ "ruby" ]      = "Ruby"
 GameText.TargetText.Esperanto   [ "ruby" ]      = "Rubeno"
@@ -589,6 +683,7 @@ GameText.TargetText.Spanish     [ "ruby" ]      = "Rubí"
 GameText.TargetText.Ithkuil     [ "ruby" ]      = "Ktél xt'al"
 GameText.TargetText.German      [ "ruby" ]      = "Rubin"
 GameText.TargetText.French      [ "ruby" ]      = "Rubis"
+GameText.TargetText.Polish      [ "ruby" ]      = "Rubin"
 
 GameText.TargetText.English     [ "copper" ]    = "Copper"
 GameText.TargetText.Esperanto   [ "copper" ]    = "Kupro"
@@ -597,6 +692,7 @@ GameText.TargetText.Spanish     [ "copper" ]    = "Cobre"
 GameText.TargetText.Ithkuil     [ "copper" ]    = "Xhtal"
 GameText.TargetText.German      [ "copper" ]    = "Kupfer"
 GameText.TargetText.French      [ "copper" ]    = "Cuivre"
+GameText.TargetText.Polish      [ "copper" ]    = "Miedź"
 
 GameText.TargetText.English     [ "silver" ]    = "Silver"
 GameText.TargetText.Esperanto   [ "silver" ]    = "Arĝento"
@@ -605,6 +701,7 @@ GameText.TargetText.Spanish     [ "silver" ]    = "Plata"
 GameText.TargetText.Ithkuil     [ "silver" ]    = "Rqal"
 GameText.TargetText.German      [ "silver" ]    = "Silber"
 GameText.TargetText.French      [ "silver" ]    = "Argent"
+GameText.TargetText.Polish      [ "silver" ]    = "Srebro"
 
 GameText.TargetText.English     [ "gold" ]      = "Gold"
 GameText.TargetText.Esperanto   [ "gold" ]      = "Oro"
@@ -613,6 +710,7 @@ GameText.TargetText.Spanish     [ "gold" ]      = "Oro"
 GameText.TargetText.Ithkuil     [ "gold" ]      = "Xral"
 GameText.TargetText.German      [ "gold" ]      = "Gold"
 GameText.TargetText.French      [ "gold" ]      = "Or"
+GameText.TargetText.Polish      [ "gold" ]      = "Złoto"
 
 GameText.TargetText.English     [ "ladder" ]    = "Ladder"
 GameText.TargetText.Esperanto   [ "ladder" ]    = "Ŝtupetaro"
@@ -621,6 +719,7 @@ GameText.TargetText.Spanish     [ "ladder" ]    = "Escalera"
 GameText.TargetText.Ithkuil     [ "ladder" ]    = "Otnal"
 GameText.TargetText.German      [ "ladder" ]    = "Leiter"
 GameText.TargetText.French      [ "ladder" ]    = "Échelle"
+GameText.TargetText.Polish      [ "ladder" ]    = "Drabina"
 
 GameText.TargetText.English     [ "Game Over" ]     = "Game Over"
 GameText.TargetText.Esperanto   [ "Game Over" ]     = "Ludfino"
@@ -629,6 +728,7 @@ GameText.TargetText.Spanish     [ "Game Over" ]     = "Fin del juego"
 GameText.TargetText.Ithkuil     [ "Game Over" ]     = "Upšákt’"
 GameText.TargetText.German      [ "Game Over" ]     = "Spiel vorbei"
 GameText.TargetText.French      [ "Game Over" ]     = "Fin de la partie"
+GameText.TargetText.Polish      [ "Game Over" ]     = "Koniec gry"
 
 -- Skip this block
 GameText.HelperText.English     [ "Game Over" ]     = GameText.TargetText.English[ "Game Over" ]
@@ -638,6 +738,7 @@ GameText.HelperText.Spanish     [ "Game Over" ]     = GameText.TargetText.Spanis
 GameText.HelperText.Ithkuil     [ "Game Over" ]     = GameText.TargetText.Ithkuil[ "Game Over" ]
 GameText.HelperText.German      [ "Game Over" ]     = GameText.TargetText.German[ "Game Over" ]
 GameText.HelperText.French      [ "Game Over" ]     = GameText.TargetText.French[ "Game Over" ]
+GameText.HelperText.Polish      [ "Game Over" ]     = GameText.TargetText.Polish[ "Game Over" ]
 
 -- Game actions
 GameText.TargetText.English     [ "miner-begin" ]   = "Mine for treasure and stay alive!"
@@ -646,7 +747,8 @@ GameText.TargetText.Ido         [ "miner-begin" ]   = "Minez trezoro e durigez v
 GameText.TargetText.Spanish     [ "miner-begin " ]  = "¡Excava el tesoro y mantente con vida!"
 GameText.TargetText.Ithkuil     [ "miner-begin" ]   = "Ko rq'il ômrar. Ka uglawelir"
 GameText.TargetText.German      [ "miner-begin" ]   = "Fördere Schätze und bleibe am Leben!"
-GameText.TargetText.French      [ "miner-begin" ]   = "Mine à la recherche de trésors et reste en vie !"
+GameText.TargetText.French      [ "miner-begin" ]   = "Mine à la recherche de trésors et reste en vie!"
+GameText.TargetText.Polish      [ "miner-begin" ]   = "Kop za skarbem i przeżyj!"
 
 GameText.TargetText.English     [ "miner-move-north" ]  = "You walk north."
 GameText.TargetText.Esperanto   [ "miner-move-north" ]  = "Vi marŝas norden."
@@ -655,6 +757,7 @@ GameText.TargetText.Spanish     [ "miner-move-north" ]  = "Caminas hacia el nort
 GameText.TargetText.Ithkuil     [ "miner-move-north" ]  = "Ku gwal osroar"
 GameText.TargetText.German      [ "miner-move-north" ]  = "Du gehst Richtung Norden."
 GameText.TargetText.French      [ "miner-move-north" ]  = "Tu marches vers le nord."
+GameText.TargetText.Polish      [ "miner-move-north" ]  = "Idziesz na północ."
 
 GameText.TargetText.English     [ "miner-move-south" ]  = "You walk south."
 GameText.TargetText.Esperanto   [ "miner-move-south" ]  = "Vi marŝas suden."
@@ -663,6 +766,7 @@ GameText.TargetText.Spanish     [ "miner-move-south" ]  = "Caminas hacia el sur"
 GameText.TargetText.Ithkuil     [ "miner-move-south" ]  = "Ku gwal ösroar"
 GameText.TargetText.German      [ "miner-move-south" ]  = "Du gehst Richtung Süden."
 GameText.TargetText.French      [ "miner-move-south" ]  = "Tu marches vers le sud."
+GameText.TargetText.Polish      [ "miner-move-south" ]  = "Idziesz na południe."
 
 GameText.TargetText.English     [ "miner-move-east" ]   = "You walk east."
 GameText.TargetText.Esperanto   [ "miner-move-east" ]   = "Vi marŝas orienten."
@@ -671,6 +775,7 @@ GameText.TargetText.Spanish     [ "miner-move-east" ]   = "Caminas hacia el este
 GameText.TargetText.Ithkuil     [ "miner-move-east" ]   = "Ku gwal öcmoar"
 GameText.TargetText.German      [ "miner-move-east" ]   = "Du gehst Richtung Osten."
 GameText.TargetText.French      [ "miner-move-east" ]   = "Tu marches vers l'est."
+GameText.TargetText.Polish      [ "miner-move-east" ]   = "Idziesz na wschód."
 
 GameText.TargetText.English     [ "miner-move-west" ]   = "You walk west."
 GameText.TargetText.Esperanto   [ "miner-move-west" ]   = "Vi marŝas okcidenten."
@@ -679,6 +784,7 @@ GameText.TargetText.Spanish     [ "miner-move-west" ]   = "Caminas hacia el oest
 GameText.TargetText.Ithkuil     [ "miner-move-east" ]   = "You walk west."
 GameText.TargetText.German      [ "miner-move-west" ]   = "Du gehst Richtung Westen."
 GameText.TargetText.French      [ "miner-move-west" ]   = "Tu marches vers l'ouest."
+GameText.TargetText.Polish      [ "miner-move-west" ]   = "Idziesz na zachód."
 
 GameText.TargetText.English     [ "miner-mine" ]        = "You swing your pick."
 GameText.TargetText.Esperanto   [ "miner-mine" ]        = "Vi svingas vian pioĉon."
@@ -687,6 +793,7 @@ GameText.TargetText.Spanish     [ "miner-mine" ]        = "Comienzas a picar."
 GameText.TargetText.Ithkuil     [ "miner-mine" ]        = "Čel obval kî ko"
 GameText.TargetText.German      [ "miner-mine" ]        = "Du schwingst deine Spitzhacke."
 GameText.TargetText.French      [ "miner-mine" ]        = "Tu donnes un coup de pioche."
+GameText.TargetText.Polish      [ "miner-mine" ]        = "Machasz swoim kilofem."
 
 GameText.TargetText.English     [ "miner-eat-sandwich" ]    = "You eat the cave sandwich."
 GameText.TargetText.Esperanto   [ "miner-eat-sandwich" ]    = "Vi manĝas la kavernan sandviĉon."
@@ -695,14 +802,16 @@ GameText.TargetText.Spanish     [ "miner-eat-sandwich" ]    = "Comes el sandwich
 GameText.TargetText.Ithkuil     [ "miner-eat-sandwich" ]    = "Čmel gral ko"
 GameText.TargetText.German      [ "miner-eat-sandwich" ]    = "Du isst das Höhlensandwich."
 GameText.TargetText.French      [ "miner-eat-sandwich" ]    = "Tu manges le sandwich des cavernes."
+GameText.TargetText.Polish      [ "miner-eat-sandwich" ]    = "Zjadasz jaskiniową kanapkę."
 
 GameText.TargetText.English     [ "use-earthquake" ]    = "The earth shakes violently."
 GameText.TargetText.Esperanto   [ "use-earthquake" ]    = "La tero tremas forte."
 GameText.TargetText.Ido         [ "use-earthquake" ]    = "La tero tremas forte."
 GameText.TargetText.Spanish     [ "use-earthquake" ]    = "La tierra tiembla violentamente."
-GameText.TargetText.Ithkuil     [ "use-earthquake" ]    = "The earth shakes."
-GameText.TargetText.German      [ "use-earthquake" ]    = "The earth shakes."
-GameText.TargetText.French      [ "use-earthquake" ]    = "The earth shakes."
+GameText.TargetText.Ithkuil     [ "use-earthquake" ]    = "The earth shakes violently."
+GameText.TargetText.German      [ "use-earthquake" ]    = "The earth shakes violently."
+GameText.TargetText.French      [ "use-earthquake" ]    = "The earth shakes violently."
+GameText.TargetText.Polish      [ "use-earthquake" ]    = "Ziemia trzęsie się gwałtownie."
 
 GameText.TargetText.English     [ "use-blizzard" ]    = "Everything freezes over."
 GameText.TargetText.Esperanto   [ "use-blizzard" ]    = "Ĉio frostas."
@@ -711,6 +820,7 @@ GameText.TargetText.Spanish     [ "use-blizzard" ]    = "Todo se congela."
 GameText.TargetText.Ithkuil     [ "use-blizzard" ]    = "Everything freezes over."
 GameText.TargetText.German      [ "use-blizzard" ]    = "Everything freezes over."
 GameText.TargetText.French      [ "use-blizzard" ]    = "Everything freezes over."
+GameText.TargetText.Polish      [ "use-blizzard" ]    = "Wszystko zamarza."
 
 GameText.TargetText.English     [ "enemies-thaw" ]    = "Everything has thawed out."
 GameText.TargetText.Esperanto   [ "enemies-thaw" ]    = "Ĉio degelas."
@@ -719,6 +829,7 @@ GameText.TargetText.Spanish     [ "enemies-thaw" ]    = "Todo se ha derretido."
 GameText.TargetText.Ithkuil     [ "enemies-thaw" ]    = "Everything has thawed out."
 GameText.TargetText.German      [ "enemies-thaw" ]    = "Everything has thawed out."
 GameText.TargetText.French      [ "enemies-thaw" ]    = "Everything has thawed out."
+GameText.TargetText.Polish      [ "enemies-thaw" ]    = "Wszystko rozmroziło się."
 
 GameText.TargetText.English     [ "use-potion" ]    = "You feel strong again."
 GameText.TargetText.Esperanto   [ "use-potion" ]    = "Vi sentas vin forta denove."
@@ -727,6 +838,7 @@ GameText.TargetText.Spanish     [ "use-potion" ]    = "You feel strong again."
 GameText.TargetText.Ithkuil     [ "use-potion" ]    = "You feel strong again."
 GameText.TargetText.German      [ "use-potion" ]    = "You feel strong again."
 GameText.TargetText.French      [ "use-potion" ]    = "You feel strong again."
+GameText.TargetText.Polish      [ "use-potion" ]    = "Czujesz że wracają Tobie siły."
 
 -- collects
 GameText.TargetText.English     [ "miner-collect-copper" ]  = "You pick up copper."
@@ -736,6 +848,7 @@ GameText.TargetText.Spanish     [ "miner-collect-copper" ]  = "Obtienes cobre."
 GameText.TargetText.Ithkuil     [ "miner-collect-copper" ]  = "Xhtel ômrar ko"
 GameText.TargetText.German      [ "miner-collect-copper" ]  = "Du sammelst Kupfer auf."
 GameText.TargetText.French      [ "miner-collect-copper" ]  = "Tu as ramassé du cuivre."
+GameText.TargetText.Polish      [ "miner-collect-copper" ]  = "Podnosisz miedź."
 
 GameText.TargetText.English     [ "miner-collect-silver" ]  = "You pick up silver."
 GameText.TargetText.Esperanto   [ "miner-collect-silver" ]  = "Vi kolektas arĝenton."
@@ -744,6 +857,7 @@ GameText.TargetText.Spanish     [ "miner-collect-silver" ]  = "Obtienes plata."
 GameText.TargetText.Ithkuil     [ "miner-collect-silver" ]  = "Rqel ômrar ko"
 GameText.TargetText.German      [ "miner-collect-silver" ]  = "Du sammelst Silber auf."
 GameText.TargetText.French      [ "miner-collect-silver" ]  = "Tu as ramassé de l'argent."
+GameText.TargetText.Polish      [ "miner-collect-silver" ]  = "Podnosisz srebro."
 
 GameText.TargetText.English     [ "miner-collect-gold" ]    = "You pick up gold."
 GameText.TargetText.Esperanto   [ "miner-collect-gold" ]    = "Vi kolektas oron."
@@ -752,6 +866,7 @@ GameText.TargetText.Spanish     [ "miner-collect-gold" ]    = "Obtienes oro."
 GameText.TargetText.Ithkuil     [ "miner-collect-gold" ]    = "Xrel ômrar ko"
 GameText.TargetText.German      [ "miner-collect-gold" ]    = "Du sammelst Gold auf."
 GameText.TargetText.French      [ "miner-collect-gold" ]    = "Tu as ramassé de l'or."
+GameText.TargetText.Polish      [ "miner-collect-gold" ]    = "Podnosisz złoto."
 
 GameText.TargetText.English     [ "miner-collect-amethyst" ]    = "You pick up amethyst."
 GameText.TargetText.Esperanto   [ "miner-collect-amethyst" ]    = "Vi kolektas ametiston."
@@ -760,6 +875,7 @@ GameText.TargetText.Spanish     [ "miner-collect-amethyst" ]    = "Obtienes amet
 GameText.TargetText.Ithkuil     [ "miner-collect-amethyst" ]    = "Ktél khwal ômrar ko"
 GameText.TargetText.German      [ "miner-collect-amethyst" ]    = "Du sammelst Amethyst auf."
 GameText.TargetText.French      [ "miner-collect-amethyst" ]    = "Tu as ramassé une améthyste."
+GameText.TargetText.Polish      [ "miner-collect-amethyst" ]    = "Podnosisz ametyst."
 
 GameText.TargetText.English     [ "miner-collect-sapphire" ]    = "You pick up sapphire."
 GameText.TargetText.Esperanto   [ "miner-collect-sapphire" ]    = "Vi kolektas safiron."
@@ -768,6 +884,7 @@ GameText.TargetText.Spanish     [ "miner-collect-sapphire" ]    = "Obtienes zafi
 GameText.TargetText.Ithkuil     [ "miner-collect-sapphire" ]    = "Ktél přal ômrar ko"
 GameText.TargetText.German      [ "miner-collect-sapphire" ]    = "Du sammelst Saphir auf."
 GameText.TargetText.French      [ "miner-collect-sapphire" ]    = "Tu as ramassé un saphir."
+GameText.TargetText.Polish      [ "miner-collect-sapphire" ]    = "Podnosisz szafir."
 
 GameText.TargetText.English     [ "miner-collect-diamond" ]     = "You pick up diamond."
 GameText.TargetText.Esperanto   [ "miner-collect-diamond" ]     = "Vi kolektas diamanton."
@@ -776,6 +893,7 @@ GameText.TargetText.Spanish     [ "miner-collect-diamond" ]     = "Obtienes diam
 GameText.TargetText.Ithkuil     [ "miner-collect-diamond" ]     = "Strel ômrar ko"
 GameText.TargetText.German      [ "miner-collect-diamond" ]     = "Du sammelst Diamant auf."
 GameText.TargetText.French      [ "miner-collect-diamond" ]     = "Tu as ramassé un diamant."
+GameText.TargetText.Polish      [ "miner-collect-diamond" ]     = "Podnosisz diament."
 
 GameText.TargetText.English     [ "miner-collect-emerald" ]     = "You pick up emerald."
 GameText.TargetText.Esperanto   [ "miner-collect-emerald" ]     = "Vi kolektas smeraldon."
@@ -784,6 +902,7 @@ GameText.TargetText.Spanish     [ "miner-collect-emerald" ]     = "Obtienes esme
 GameText.TargetText.Ithkuil     [ "miner-collect-emerald" ]     = "Żp'al ômrar ko"
 GameText.TargetText.German      [ "miner-collect-emerald" ]     = "Du sammelst Emerald auf."
 GameText.TargetText.French      [ "miner-collect-emerald" ]     = "Tu as ramassé une émeraude."
+GameText.TargetText.Polish      [ "miner-collect-emerald" ]     = "Podnosisz szmaragd."
 
 GameText.TargetText.English     [ "miner-collect-ruby" ]        = "You pick up ruby."
 GameText.TargetText.Esperanto   [ "miner-collect-ruby" ]        = "Vi kolektas rubenon."
@@ -792,6 +911,7 @@ GameText.TargetText.Spanish     [ "miner-collect-ruby" ]        = "Obtienes rub�
 GameText.TargetText.Ithkuil     [ "miner-collect-ruby" ]        = "Ktél xtal ômrar ko"
 GameText.TargetText.German      [ "miner-collect-ruby" ]        = "Du sammmelst Rubin auf."
 GameText.TargetText.French      [ "miner-collect-ruby" ]        = "Tu as ramassé un rubis."
+GameText.TargetText.Polish      [ "miner-collect-ruby" ]        = "Tu as ramassé un rubin."
 
 -- attacking
 GameText.TargetText.English     [ "miner-attack-snail" ]    = "You attack the snail."
@@ -801,6 +921,7 @@ GameText.TargetText.Spanish     [ "miner-attack-snail" ]    = "Atacas al caracol
 GameText.TargetText.Ithkuil     [ "miner-attack-snail" ]    = "Âļnel fřál ko"
 GameText.TargetText.German      [ "miner-attack-snail" ]    = "Du greifst die Schnecke an."
 GameText.TargetText.French      [ "miner-attack-snail" ]    = "Tu attaques l'escargot."
+GameText.TargetText.Polish      [ "miner-attack-snail" ]    = "Atakujesz ślimaka."
 
 GameText.TargetText.English     [ "miner-attack-mole" ]     = "You attack the mole."
 GameText.TargetText.Esperanto   [ "miner-attack-mole" ]     = "Vi atakas la talpon."
@@ -809,6 +930,7 @@ GameText.TargetText.Spanish     [ "miner-attack-mole" ]     = "Atacas al topo."
 GameText.TargetText.Ithkuil     [ "miner-attack-mole" ]     = "Çqhwel fřál ko"
 GameText.TargetText.German      [ "miner-attack-mole" ]     = "Du greifst den Maulwurf an."
 GameText.TargetText.French      [ "miner-attack-mole" ]     = "Tu attaques la taupe."
+GameText.TargetText.Polish      [ "miner-attack-mole" ]     = "Atakujesz kreta."
 
 GameText.TargetText.English     [ "miner-attack-mushroom" ]     = "You attack the mushroom."
 GameText.TargetText.Esperanto   [ "miner-attack-mushroom" ]     = "Vi atakas la fungon."
@@ -817,6 +939,7 @@ GameText.TargetText.Spanish     [ "miner-attack-mushroom" ]     = "Atacas al cha
 GameText.TargetText.Ithkuil     [ "miner-attack-mushroom" ]     = "Cnelek fřál ko"
 GameText.TargetText.German      [ "miner-attack-mushroom" ]     = "Du greifst den Pilz an."
 GameText.TargetText.French      [ "miner-attack-mushroom" ]     = "Tu attaques le champignon."
+GameText.TargetText.Polish      [ "miner-attack-mushroom" ]     = "Atakujesz grzyba."
 
 GameText.TargetText.English     [ "miner-attack-bat" ]      = "You attack the bat."
 GameText.TargetText.Esperanto   [ "miner-attack-bat" ]      = "Vi atakas la vesperton."
@@ -825,6 +948,7 @@ GameText.TargetText.Spanish     [ "miner-attack-bat" ]      = "Atacas al murciel
 GameText.TargetText.Ithkuil     [ "miner-attack-bat" ]      = "Ftçel fřál ko"
 GameText.TargetText.German      [ "miner-attack-bat" ]      = "Du greifst die Fledermaus an."
 GameText.TargetText.French      [ "miner-attack-bat" ]      = "Tu attaques la chauve-souris."
+GameText.TargetText.Polish      [ "miner-attack-bat" ]      = "Atakujesz nietoperza."
 
 GameText.TargetText.English     [ "miner-attack-rabbit" ]   = "You attack the rabbit."
 GameText.TargetText.Esperanto   [ "miner-attack-rabbit" ]   = "Vi atakas la kuniklon."
@@ -833,6 +957,7 @@ GameText.TargetText.Spanish     [ "miner-attack-rabbit" ]   = "Atacas al conejo.
 GameText.TargetText.Ithkuil     [ "miner-attack-rabbit" ]   = "Lxwel fřál ko"
 GameText.TargetText.German      [ "miner-attack-rabbit" ]   = "Du greifst den Hasen an."
 GameText.TargetText.French      [ "miner-attack-rabbit" ]   = "Tu attaques le lapin."
+GameText.TargetText.Polish      [ "miner-attack-rabbit" ]   = "Atakujesz królika."
 
 GameText.TargetText.English     [ "miner-attack-snake" ]    = "You attack the snake."
 GameText.TargetText.Esperanto   [ "miner-attack-snake" ]    = "Vi atakas la serpenton."
@@ -841,6 +966,7 @@ GameText.TargetText.Spanish     [ "miner-attack-snake" ]    = "Atacas a la serpi
 GameText.TargetText.Ithkuil     [ "miner-attack-snake" ]    = "Knel fřál ko"
 GameText.TargetText.German      [ "miner-attack-snake" ]    = "Du greifst die Schlange an."
 GameText.TargetText.French      [ "miner-attack-snake" ]    = "Tu attaques le serpent."
+GameText.TargetText.Polish      [ "miner-attack-snake" ]    = "Atakujesz węża."
 
 GameText.TargetText.English     [ "miner-attack-moose" ]    = "You attack the moose."
 GameText.TargetText.Esperanto   [ "miner-attack-moose" ]    = "Vi atakas la alkon."
@@ -849,6 +975,7 @@ GameText.TargetText.Spanish     [ "miner-attack-moose" ]    = "Atacas al alce."
 GameText.TargetText.Ithkuil     [ "miner-attack-moose" ]    = "Ndwel fřál ko"
 GameText.TargetText.German      [ "miner-attack-moose" ]    = "Du greifst den Elch an."
 GameText.TargetText.French      [ "miner-attack-moose" ]    = "Tu attaques l'élan."
+GameText.TargetText.Polish      [ "miner-attack-moose" ]    = "Atakujesz łosia."
 
 GameText.TargetText.English     [ "miner-attack-skeleton" ]     = "You attack the skeleton."
 GameText.TargetText.Esperanto   [ "miner-attack-skeleton" ]     = "Vi atakas la skeleton."
@@ -857,6 +984,7 @@ GameText.TargetText.Spanish     [ "miner-attack-skeleton" ]     = "Atacas al esq
 GameText.TargetText.Ithkuil     [ "miner-attack-skeleton" ]     = "Urp'al eqel fřál ko"
 GameText.TargetText.German      [ "miner-attack-skeleton" ]     = "Du greifst das Skelett an."
 GameText.TargetText.French      [ "miner-attack-skeleton" ]     = "Tu attaques le squelette."
+GameText.TargetText.Polish      [ "miner-attack-skeleton" ]     = "Atakujesz szkielet."
 
 -- ladder
 GameText.TargetText.English     [ "miner-go-down-ladder" ]      = "You descend the ladder."
@@ -866,6 +994,7 @@ GameText.TargetText.Spanish     [ "miner-go-down-ladder" ]      = "Bajas por la 
 GameText.TargetText.Ithkuil     [ "miner-go-down-ladder" ]      = "Jal"
 GameText.TargetText.German      [ "miner-go-down-ladder" ]      = "Du gehst die Leiter hinab."
 GameText.TargetText.French      [ "miner-go-down-ladder" ]      = "Tu descends l'échelle."
+GameText.TargetText.Polish      [ "miner-go-down-ladder" ]      = "Schodzisz po drabinie."
 
 GameText.TargetText.English     [ "miner-rope" ]                = "You flee upward with the rope."
 GameText.TargetText.Esperanto   [ "miner-rope" ]                = "Vi eskapis supren per la ŝnuro."
@@ -874,6 +1003,7 @@ GameText.TargetText.Spanish     [ "miner-rope" ]                = "Escapas hacia
 GameText.TargetText.Ithkuil     [ "miner-rope" ]                = "You flee upward with the rope."
 GameText.TargetText.German      [ "miner-rope" ]                = "You flee upward with the rope."
 GameText.TargetText.French      [ "miner-rope" ]                = "You flee upward with the rope."
+GameText.TargetText.Polish      [ "miner-rope" ]                = "Uciekasz w górę po linie."
 
 GameText.TargetText.English     [ "miner-dynamite" ]            = "You flee downward with the dynamite."
 GameText.TargetText.Esperanto   [ "miner-dynamite" ]            = "Vi eskapis malsupren per la dinamito."
@@ -882,6 +1012,7 @@ GameText.TargetText.Spanish     [ "miner-dynamite" ]            = "Escapas hacia
 GameText.TargetText.Ithkuil     [ "miner-dynamite" ]            = "You flee downward with the dynamite."
 GameText.TargetText.German      [ "miner-dynamite" ]            = "You flee downward with the dynamite."
 GameText.TargetText.French      [ "miner-dynamite" ]            = "You flee downward with the dynamite."
+GameText.TargetText.Polish      [ "miner-dynamite" ]            = "Uciekasz w dół używając dynamitu."
 
 GameText.TargetText.English     [ "miner-died" ]            = "You have been killed."
 GameText.TargetText.Esperanto   [ "miner-died" ]            = "Vi estis mortigita."
@@ -890,6 +1021,7 @@ GameText.TargetText.Spanish     [ "miner-died" ]            = "You have been kil
 GameText.TargetText.Ithkuil     [ "miner-died" ]            = "You have been killed."
 GameText.TargetText.German      [ "miner-died" ]            = "You have been killed."
 GameText.TargetText.French      [ "miner-died" ]            = "You have been killed."
+GameText.TargetText.Polish      [ "miner-died" ]            = "Nie żyjesz."
 
 -- Shop
 
@@ -899,7 +1031,8 @@ GameText.TargetText.Ido         [ "Do you want to buy a tool?" ]    = "Ka vu vol
 GameText.TargetText.Spanish     [ "Do you want to buy a tool?" ]    = "¿Deseas comprar una herramienta?."
 GameText.TargetText.Ithkuil     [ "Do you want to buy a tool?" ]    = "Ebawul ki čeil?"
 GameText.TargetText.German      [ "Do you want to buy a tool?" ]    = "Möchtest du ein Werkzeug kaufen?"
-GameText.TargetText.French      [ "Do you want to buy a tool?" ]    = "Est-ce que tu veux acheter un outil ?"
+GameText.TargetText.French      [ "Do you want to buy a tool?" ]    = "Est-ce que tu veux acheter un outil?"
+GameText.TargetText.Polish      [ "Do you want to buy a tool?" ]    = "Czy chcesz kupić narzędzie?"
 
 -- This is a button with the option to not buy anything, not dialog
 GameText.TargetText.English     [ "Don't buy anything" ]    = "Don't buy anything."
@@ -909,6 +1042,7 @@ GameText.TargetText.Spanish     [ "Don't buy anything" ]    = "No comprar nada."
 GameText.TargetText.Ithkuil     [ "Don't buy anything" ]    = "Don't buy anything."
 GameText.TargetText.German      [ "Don't buy anything" ]    = "Nichts kaufen."
 GameText.TargetText.French      [ "Don't buy anything" ]    = "Ne rien acheter."
+GameText.TargetText.Polish      [ "Don't buy anything" ]    = "Nie kupuj nic."
 
 GameText.TargetText.English     [ "You don't have enough money" ]    = "You don't have enough money."
 GameText.TargetText.Esperanto   [ "You don't have enough money" ]    = "Vi ne havas sufiĉe da mono."
@@ -917,6 +1051,7 @@ GameText.TargetText.Spanish     [ "You don't have enough money" ]    = "No tiene
 GameText.TargetText.Ithkuil     [ "You don't have enough money" ]    = "You don't have enough money."
 GameText.TargetText.German      [ "You don't have enough money" ]    = "You don't have enough money."
 GameText.TargetText.French      [ "You don't have enough money" ]    = "You don't have enough money."
+GameText.TargetText.Polish      [ "You don't have enough money" ]    = "Masz za mało pieniędzy."
 
 -- Items
 GameText.TargetText.English     [ "Potion" ]    = "Potion"
@@ -926,6 +1061,7 @@ GameText.TargetText.Spanish     [ "Potion" ]    = "Poción"
 GameText.TargetText.Ithkuil     [ "Potion" ]    = "Ôgral kâ"
 GameText.TargetText.German      [ "Potion" ]    = "Heiltrank"
 GameText.TargetText.French      [ "Potion" ]    = "Potion"
+GameText.TargetText.Polish      [ "Potion" ]    = "Mikstura"
 
 GameText.TargetText.English     [ "PotionDescription" ]     = "Restores all of your health."
 GameText.TargetText.Esperanto   [ "PotionDescription" ]     = "Redoni ĉiom da via sano."
@@ -934,6 +1070,7 @@ GameText.TargetText.Spanish     [ "PotionDescription" ]     = "Restaura toda tu 
 GameText.TargetText.Ithkuil     [ "PotionDescription" ]     = "Restores all of your health."
 GameText.TargetText.German      [ "PotionDescription" ]     = "Heilt dich vollständig."
 GameText.TargetText.French      [ "PotionDescription" ]     = "Restaure toute ta santé."
+GameText.TargetText.Polish      [ "PotionDescription" ]     = "Przywraca całe zdrowie."
 
 GameText.TargetText.English     [ "Earthquake" ]    = "Earthquake"
 GameText.TargetText.Esperanto   [ "Earthquake" ]    = "Tertremo"
@@ -942,6 +1079,7 @@ GameText.TargetText.Spanish     [ "Earthquake" ]    = "Terremoto"
 GameText.TargetText.Ithkuil     [ "Earthquake" ]    = "pErţkwaekpar"
 GameText.TargetText.German      [ "Earthquake" ]    = "Erdbeben"
 GameText.TargetText.French      [ "Earthquake" ]    = "Séisme"
+GameText.TargetText.Polish      [ "Earthquake" ]    = "Trzęsienie ziemii"
 
 GameText.TargetText.English     [ "EarthquakeDescription" ]     = "Breaks all rocks."
 GameText.TargetText.Esperanto   [ "EarthquakeDescription" ]     = "Rompi ĉiujn ŝtonojn."
@@ -950,6 +1088,7 @@ GameText.TargetText.Spanish     [ "EarthquakeDescription" ]     = "Rompe todas l
 GameText.TargetText.Ithkuil     [ "EarthquakeDescription" ]     = "Breaks all rocks."
 GameText.TargetText.German      [ "EarthquakeDescription" ]     = "Lässt alle Steine zerbrechen."
 GameText.TargetText.French      [ "EarthquakeDescription" ]     = "Casse tous les rochers."
+GameText.TargetText.Polish      [ "EarthquakeDescription" ]     = "Rozwala wszystkie kamienie."
 
 GameText.TargetText.English     [ "Dynamite" ]  = "Dynamite"
 GameText.TargetText.Esperanto   [ "Dynamite" ]  = "Dinamito"
@@ -958,6 +1097,7 @@ GameText.TargetText.Spanish     [ "Dynamite" ]  = "Dinamita"
 GameText.TargetText.Ithkuil     [ "Dynamite" ]  = "Xčálrak"
 GameText.TargetText.German      [ "Dynamite" ]  = "Dynamit"
 GameText.TargetText.French      [ "Dynamite" ]  = "Dynamite"
+GameText.TargetText.Polish      [ "Dynamite" ]  = "Dynamit"
 
 GameText.TargetText.English     [ "DynamiteDescription" ]   = "Descend down one floor."
 GameText.TargetText.Esperanto   [ "DynamiteDescription" ]   = "Subiri unu nivelon."
@@ -966,6 +1106,7 @@ GameText.TargetText.Spanish     [ "DynamiteDescription" ]   = "Descender un piso
 GameText.TargetText.Ithkuil     [ "DynamiteDescription" ]   = "Jal"
 GameText.TargetText.German      [ "DynamiteDescription" ]   = "Gehe eine Ebene hinab."
 GameText.TargetText.French      [ "DynamiteDescription" ]   = "Fait descendre d'un étage."
+GameText.TargetText.Polish      [ "DynamiteDescription" ]   = "Pozwala zejść jeden poziom niżej."
 
 GameText.TargetText.English     [ "Rope" ]  = "Rope"
 GameText.TargetText.Esperanto   [ "Rope" ]  = "Ŝnuro"
@@ -974,6 +1115,7 @@ GameText.TargetText.Spanish     [ "Rope" ]  = "Cuerda"
 GameText.TargetText.Ithkuil     [ "Rope" ]  = "Öxpál"
 GameText.TargetText.German      [ "Rope" ]  = "Seil"
 GameText.TargetText.French      [ "Rope" ]  = "Corde"
+GameText.TargetText.Polish      [ "Rope" ]  = "Lina"
 
 GameText.TargetText.English     [ "RopeDescription" ]   = "Climb up one floor."
 GameText.TargetText.Esperanto   [ "RopeDescription" ]   = "Supreniri unu nivelon."
@@ -982,6 +1124,7 @@ GameText.TargetText.Spanish     [ "RopeDescription" ]   = "Ascender un piso."
 GameText.TargetText.Ithkuil     [ "RopeDescription" ]   = "Jal"
 GameText.TargetText.German      [ "RopeDescription" ]   = "Gehe eine Ebene hinauf."
 GameText.TargetText.French      [ "RopeDescription" ]   = "Fait monter d'un étage."
+GameText.TargetText.Polish     [ "RopeDescription" ]   = "Pozwala wejść jeden poziom wyżej."
 
 GameText.TargetText.English     [ "Blizzard" ]  = "Blizzard"
 GameText.TargetText.Esperanto   [ "Blizzard" ]  = "Neĝventego"
@@ -990,6 +1133,7 @@ GameText.TargetText.Spanish     [ "Blizzard" ]  = "Ventisca"
 GameText.TargetText.Ithkuil     [ "Blizzard" ]  = "Uţwálûk"
 GameText.TargetText.German      [ "Blizzard" ]  = "Blizzard"
 GameText.TargetText.French      [ "Blizzard" ]  = "Blizzard"
+GameText.TargetText.Polish      [ "Blizzard" ]  = "Zamieć"
 
 GameText.TargetText.English     [ "BlizzardDescription" ]   = "Freeze all the enemies."
 GameText.TargetText.Esperanto   [ "BlizzardDescription" ]   = "Frostigi ĉiujn malamikojn."
@@ -998,6 +1142,7 @@ GameText.TargetText.Spanish     [ "BlizzardDescription" ]   = "Congela a todos l
 GameText.TargetText.Ithkuil     [ "BlizzardDescription" ]   = "Tel îdhal"
 GameText.TargetText.German      [ "BlizzardDescription" ]   = "Friere alle Gegner ein."
 GameText.TargetText.French      [ "BlizzardDescription" ]   = "Gèle tous les ennemis."
+GameText.TargetText.Polish      [ "BlizzardDescription" ]   = "Zamraża wszystkich wrogów."
 
 GameText.TargetText.English     [ "Price" ]     = "Price:"
 GameText.TargetText.Esperanto   [ "Price" ]     = "Prezo:"
@@ -1005,6 +1150,7 @@ GameText.TargetText.Ido         [ "Price" ]     = "Preco:"
 GameText.TargetText.Spanish     [ "Price" ]     = "Precio:"
 GameText.TargetText.Ithkuil     [ "Price" ]     = "Îmsawur:"
 GameText.TargetText.German      [ "Price" ]     = "Preis:"
-GameText.TargetText.French      [ "Price" ]     = "Prix :"
+GameText.TargetText.French      [ "Price" ]     = "Prix:"
+GameText.TargetText.Polish      [ "Price" ]     = "Cena:"
 
 end
