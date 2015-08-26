@@ -20,6 +20,7 @@ function MinerPlayer:init( options )
 	self.label:setTextColor( 0xFFFFFF )
 	
 	MinerPlayer.hp = options.hp
+	self.alive = true
 	self.maxHp = 4
 	self.exp = 0
 	self.level = 1
