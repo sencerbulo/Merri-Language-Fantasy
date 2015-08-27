@@ -234,6 +234,7 @@ GameText.HelperText.Ido         [ "I am learning German" ]     = "I am learning 
 GameText.HelperText.Spanish     [ "I am learning German" ]     = "I am learning German"
 GameText.HelperText.Ithkuil     [ "I am learning German" ]     = "I am learning German"
 GameText.HelperText.German      [ "I am learning German" ]     = "Ich lerne Deutsch"
+GameText.HelperText.Japanese    [ "I am learning German" ]     = "ドイツご　を　べんきょう　してるんだ。"
 GameText.HelperText.French      [ "I am learning German" ]     = "I am learning German"
 GameText.HelperText.Polish      [ "I am learning German" ]     = "Uczę się niemieckiego"
 
@@ -243,6 +244,7 @@ GameText.HelperText.Ido         [ "I am learning French" ]     = "I am learning 
 GameText.HelperText.Spanish     [ "I am learning French" ]     = "I am learning French"
 GameText.HelperText.Ithkuil     [ "I am learning French" ]     = "I am learning French"
 GameText.HelperText.German      [ "I am learning French" ]     = "Ich lerne Französisch"
+GameText.HelperText.Japanese    [ "I am learning French" ]     = "フランスご　を　べんきょう　してるんだ。"
 GameText.HelperText.French      [ "I am learning French" ]     = "I am learning French"
 GameText.HelperText.Polish      [ "I am learning French" ]     = "Uczę się francuskiego"
 
@@ -252,6 +254,7 @@ GameText.HelperText.Ido         [ "I am learning Polish" ]     = "I am learning 
 GameText.HelperText.Spanish     [ "I am learning Polish" ]     = "I am learning Polish"
 GameText.HelperText.Ithkuil     [ "I am learning Polish" ]     = "I am learning Polish"
 GameText.HelperText.German      [ "I am learning Polish" ]     = "Ich lerne Polnisch"
+GameText.HelperText.Japanese    [ "I am learning Polish" ]     = "ポーランドご　を　べんきょう　してるんだ。"
 GameText.HelperText.French      [ "I am learning Polish" ]     = "I am learning Polish"
 GameText.HelperText.Polish      [ "I am learning Polish" ]     = "Uczę się polskiego"
 
