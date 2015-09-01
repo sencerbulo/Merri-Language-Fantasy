@@ -113,6 +113,7 @@ GameText.HelperText.Ithkuil     [ "I am learning French" ]     = ""
 GameText.HelperText.Ithkuil     [ "I am learning Polish" ]     = ""
 
 -- TODO: All of these should be moved to an external file.
+-- Note: Only load languages needed, after the language select.
 
 -- Credits --
 
