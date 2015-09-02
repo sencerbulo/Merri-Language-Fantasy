@@ -36,22 +36,22 @@ function SetupPolish()
     -- End ignore
         
     -- MAIN MENU BUTTONS
-    target[ "play" ]                    = "Play"                -- Button to begin the game
-    target[ "previous" ]                = "Previous"            -- Go backward one page (one menu)
-    target[ "next" ]                    = "Next"                -- Go forward one page (one menu)
-    target[ "options" ]                 = "Options"             -- Configure options in a game
-    target[ "help" ]                    = "Help"                -- Get help / instructions for a game or function
+    target[ "play" ]                    = "Graj"                -- Button to begin the game
+    target[ "previous" ]                = "Poprzednia"          -- Go backward one page (one menu)
+    target[ "next" ]                    = "Kontynuuj"           -- Go forward one page (one menu)
+    target[ "options" ]                 = "Opcje"               -- Configure options in a game
+    target[ "help" ]                    = "Pomoc"                -- Get help / instructions for a game or function
     target[ "menu" ]                    = "Menu"                -- Open up sub-menu screen
-    target[ "close-menu" ]              = "Back"                -- Close sub-menu
+    target[ "close-menu" ]              = "Wróć"                -- Close sub-menu
     target[ "back" ] = target[ "close-menu" ]                   -- Ignore this
-    target[ "progress" ]                = "Progress"            -- Progress / Statistics menu
+    target[ "progress" ]                = ""                    -- Progress / Statistics menu
     helper[ "progress" ] = target[ "progress" ]
     
     -- Difficulty levels
-    helper[ "Practice" ]  = "Practice"
-    helper[ "Easy" ]      = "Easy"
-    helper[ "Medium" ]    = "Medium"
-    helper[ "Hard" ]      = "Hard"
+    helper[ "Practice" ]  = "Trening"
+    helper[ "Easy" ]      = "Łatwy"
+    helper[ "Medium" ]    = "Średni"
+    helper[ "Hard" ]      = "Trudny"
     
     -- Ignore this block
     target[ "Practice" ] = helper[ "Practice" ]
@@ -61,66 +61,66 @@ function SetupPolish()
     -- End ignore
     
     -- COMMON GAME TEXT
-    target[ "Earned a star" ]           = "You aquired a star!"
+    target[ "Earned a star" ]           = "Zdobyto gwiazdę!"
     helper[ "Earned a star" ] = target[ "Earned a star" ]       -- Ignore this
     
     --------------------------
     -- MINER MINI-GAME TEXT --
     --------------------------
     -- Stats
-    target[ "Miner" ]                   = "Miner"               -- Male miner (temporary)
-    target[ "Floor" ]                   = "Floor:"              -- How many floors down you have traveled in the mine
-    target[ "Money" ]                   = "Money:"              -- The amount of (generic) money you've earned
-    target[ "Health" ]                  = "Health:"             -- Amount of hits you have before you die
+    target[ "Miner" ]                   = "Górnik"               -- Male miner (temporary)
+    target[ "Floor" ]                   = "Poziom:"              -- How many floors down you have traveled in the mine
+    target[ "Money" ]                   = "Pieniądze:"           -- The amount of (generic) money you've earned
+    target[ "Health" ]                  = "Zdrowie:"             -- Amount of hits you have before you die
     
     -- Messages
-    target[ "Game Over" ]               = "Game Over"
+    target[ "Game Over" ]               = "Koniec gry"
     helper[ "Game Over" ] = target[ "Game Over" ]   -- Ignore this
     
     
     -- Enemies
-    target[ "snail" ]                   = "Snail"
-    target[ "mole" ]                    = "Mole"
-    target[ "mushroom" ]                = "Mushroom"
-    target[ "bat" ]                     = "Bat"
-    target[ "rabbit" ]                  = "Rabbit"
-    target[ "snake" ]                   = "Snake"
-    target[ "skeleton" ]                = "Skeleton"
-    target[ "moose" ]                   = "Moose"
+    target[ "snail" ]                   = "Ślimak"
+    target[ "mole" ]                    = "Kret"
+    target[ "mushroom" ]                = "Grzyb"
+    target[ "bat" ]                     = "Nietoperz"
+    target[ "rabbit" ]                  = "Królik"
+    target[ "snake" ]                   = "Wąż"
+    target[ "skeleton" ]                = "Szkielet"
+    target[ "moose" ]                   = "Łoś"
     
     -- Items
-    target[ "rock" ]                    = "Rock"                -- Large stone to break open with a pickaxe
-    target[ "star" ]                    = "Star"
-    target[ "sandwich" ]                = "Sandwich"
-    target[ "amethyst" ]                = "Amethyst"
-    target[ "sapphire" ]                = "Sapphire"
-    target[ "diamond" ]                 = "Diamond"
-    target[ "emerald" ]                 = "Emerald"
-    target[ "ruby" ]                    = "Ruby"
-    target[ "copper" ]                  = "Copper"              -- It is a copper coin
-    target[ "silver" ]                  = "Silver"
-    target[ "gold" ]                    = "Gold"
-    target[ "ladder" ]                  = "Ladder"              -- Ladder to climb down one floor
+    target[ "rock" ]                    = "Kamień"                -- Large stone to break open with a pickaxe
+    target[ "star" ]                    = "Gwiazda"
+    target[ "sandwich" ]                = "Kanapka"
+    target[ "amethyst" ]                = "Ametyst"
+    target[ "sapphire" ]                = "Szafir"
+    target[ "diamond" ]                 = "Diament"
+    target[ "emerald" ]                 = "Szmaragd"
+    target[ "ruby" ]                    = "Rubin"
+    target[ "copper" ]                  = "Miedź"              -- It is a copper coin
+    target[ "silver" ]                  = "Srebro"
+    target[ "gold" ]                    = "Złoto"
+    target[ "ladder" ]                  = "Drabina"              -- Ladder to climb down one floor
     
     -- Shopkeeper Dialogue
-    target[ "Do you want to buy a tool?" ]    = "Do you want to buy a tool?"
-    target[ "You don't have enough money" ]   = "You don't have enough money."
+    target[ "Do you want to buy a tool?" ]    = "Czy chcesz kupić narzędzie?"
+    target[ "You don't have enough money" ]   = "Masz za mało pieniędzy."
     
     -- Button options
-    target[ "Don't buy anything" ]      = "Don't buy anything." -- Click to leave the store, nobody is saying this line it is a button.
-    target[ "Price" ]                   = "Price:"              -- Price label
+    target[ "Don't buy anything" ]      = "Nie kupuj nic." -- Click to leave the store, nobody is saying this line it is a button.
+    target[ "Price" ]                   = "Cena:"              -- Price label
     
     -- Item names and descriptions
-    target[ "Potion" ]                  = "Potion"              -- Restores health
-    target[ "PotionDescription" ]       = "Restores all of your health."
-    target[ "Earthquake" ]              = "Earthquake"
-    target[ "EarthquakeDescription" ]   = "Breaks all rocks."
-    target[ "Dynamite" ]                = "Dynamite"
-    target[ "DynamiteDescription" ]     = "Descend down one floor."
-    target[ "Rope" ]                    = "Rope"
-    target[ "RopeDescription" ]         = "Climb up one floor."
-    target[ "Blizzard" ]                = "Blizzard"
-    target[ "BlizzardDescription" ]     = "Freeze all the enemies."
+    target[ "Potion" ]                  = "Mikstura"              -- Restores health
+    target[ "PotionDescription" ]       = "Przywraca całe zdrowie."
+    target[ "Earthquake" ]              = "Trzęsienie ziemii"
+    target[ "EarthquakeDescription" ]   = "Rozwala wszystkie kamienie."
+    target[ "Dynamite" ]                = "Dynamit"
+    target[ "DynamiteDescription" ]     = "Pozwala zejść jeden poziom niżej."
+    target[ "Rope" ]                    = "Lina"
+    target[ "RopeDescription" ]         = "Pozwala wejść jeden poziom wyżej."
+    target[ "Blizzard" ]                = "Zamieć"
+    target[ "BlizzardDescription" ]     = "Zamraża wszystkich wrogów."
     
     -- Narration
     target[ "miner-begin" ]             = "Mine for treasure and stay alive!"
