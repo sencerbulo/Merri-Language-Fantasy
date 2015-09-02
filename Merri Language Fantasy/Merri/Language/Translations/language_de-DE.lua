@@ -8,7 +8,7 @@ function SetupGerman()
     helper[ "language-name" ]           = "Deutsch"             -- Name of this language (match this language file)
     helper[ "Translation Credits" ]     = "Marius Stärk"        -- Translators, append your name to the list.
     
-    helper[ "website" ]                 = "Website:"            -- Label for homepage URL
+    helper[ "website" ]                 = "Internetseite:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this
     
     helper[ "facebook" ]                = "Facebook:"           -- Label for Facebook URL
@@ -21,11 +21,11 @@ function SetupGerman()
     target[ "game title" ]              = "Deutsche Fantasie"     -- Translate as "Fantasy of ____" for your language. (e.g., Fantazio de Esperanto)
     
     -- DEMO TEXT (Temporary)
-    target[ "Thank you for trying out Merri" ]                  = "Thank you for trying out Merri!"
-    target[ "This is still a work in progress" ]                = "This is still a work in progress."
-    target[ "There may be errors or bugs" ]                     = "There may be errors or bugs."
-    target[ "Report problems at EMAIL" ]                        = "Report problems at Rachel@Moosader.com ."
-    target[ "Want to keep up with this game's progress?" ]      = "Want to keep up with this game's progress?"
+    target[ "Thank you for trying out Merri" ]                  = "Danke, dass du Merri ausprobierst!"
+    target[ "This is still a work in progress" ]                = "Dieses Spiel befindet sich derzeit noch in Entwicklung."
+    target[ "There may be errors or bugs" ]                     = "Es gibt wahrscheinlich noch Fehler."
+    target[ "Report problems at EMAIL" ]                        = "Problemberichte können an Rachel@Moosader.com gesendet werden."
+    target[ "Want to keep up with this game's progress?" ]      = "Möchtest du über die Entwicklung dieses Spiels informiert werden?"
     
     -- Ignore this block
     helper[ "Thank you for trying out Merri" ] = target[ "Thank you for trying out Merri" ]

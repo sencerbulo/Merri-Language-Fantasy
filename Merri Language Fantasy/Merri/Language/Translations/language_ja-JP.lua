@@ -8,24 +8,24 @@ function SetupJapanese()
     helper[ "language-name" ]           = "にほんご"              -- Name of this language (match this language file)
     helper[ "Translation Credits" ]     = "Nadipedia"           -- Translators, append your name to the list.
     
-    helper[ "website" ]                 = "Website:"            -- Label for homepage URL
+    helper[ "website" ]                 = "ウェブサイト"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this
     
-    helper[ "facebook" ]                = "Facebook:"           -- Label for Facebook URL
+    helper[ "facebook" ]                = "フェイスブック"           -- Label for Facebook URL
     target[ "facebook" ] = helper[ "facebook" ]                 -- Ignore this
     
-    helper[ "twitter" ]                 = "Twitter:"            -- Label for Twitter URL
+    helper[ "twitter" ]                 = "ツイッター"            -- Label for Twitter URL
     target[ "twitter" ] = helper[ "twitter" ]                   -- Ignore this
     
     -- GAME TITLE
     target[ "game title" ]              = "ジャパニーズ・ファンタジー"     -- Translate as "Fantasy of ____" for your language. (e.g., Fantazio de Esperanto)
     
     -- DEMO TEXT (Temporary)
-    target[ "Thank you for trying out Merri" ]                  = "Thank you for trying out Merri!"
-    target[ "This is still a work in progress" ]                = "This is still a work in progress."
-    target[ "There may be errors or bugs" ]                     = "There may be errors or bugs."
-    target[ "Report problems at EMAIL" ]                        = "Report problems at Rachel@Moosader.com ."
-    target[ "Want to keep up with this game's progress?" ]      = "Want to keep up with this game's progress?"
+    target[ "Thank you for trying out Merri" ]                  = "ためして　くれて　ありがとう　メッリ！"
+    target[ "This is still a work in progress" ]                = "まだ　さぎょうちゅう。"
+    target[ "There may be errors or bugs" ]                     = "エラー　か　バグ　が　ある　もよう。"
+    target[ "Report problems at EMAIL" ]                        = "Rachel@Moosader.com　に　もんだい　を　ほうこく。"
+    target[ "Want to keep up with this game's progress?" ]      = "ゲーム　の　けいか　を　セーブ　する？"
     
     -- Ignore this block
     helper[ "Thank you for trying out Merri" ] = target[ "Thank you for trying out Merri" ]

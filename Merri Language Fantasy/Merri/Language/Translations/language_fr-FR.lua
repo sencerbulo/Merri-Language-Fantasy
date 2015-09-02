@@ -8,7 +8,7 @@ function SetupFrench()
     helper[ "language-name" ]           = "Français"            -- Name of this language (match this language file)
     helper[ "Translation Credits" ]     = "Vanege"              -- Translators, append your name to the list.
     
-    helper[ "website" ]                 = "Website:"            -- Label for homepage URL
+    helper[ "website" ]                 = "Site web :"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this
     
     helper[ "facebook" ]                = "Facebook:"           -- Label for Facebook URL
@@ -21,11 +21,11 @@ function SetupFrench()
     target[ "game title" ]              = "Fantaisie du Français"     -- Translate as "Fantasy of ____" for your language. (e.g., Fantazio de Esperanto)
     
     -- DEMO TEXT (Temporary)
-    target[ "Thank you for trying out Merri" ]                  = "Thank you for trying out Merri!"
-    target[ "This is still a work in progress" ]                = "This is still a work in progress."
-    target[ "There may be errors or bugs" ]                     = "There may be errors or bugs."
-    target[ "Report problems at EMAIL" ]                        = "Report problems at Rachel@Moosader.com ."
-    target[ "Want to keep up with this game's progress?" ]      = "Want to keep up with this game's progress?"
+    target[ "Thank you for trying out Merri" ]                  = "Merci d'avoir essayé Merri !"
+    target[ "This is still a work in progress" ]                = "Le jeu est encore en développement."
+    target[ "There may be errors or bugs" ]                     = "Il peut y avoir des erreurs ou des bug."
+    target[ "Report problems at EMAIL" ]                        = "Signalez les problèmes à Rachel@Moosader.com ."
+    target[ "Want to keep up with this game's progress?" ]      = "Souhaitez-vous suivre le développement du jeu ?"
     
     -- Ignore this block
     helper[ "Thank you for trying out Merri" ] = target[ "Thank you for trying out Merri" ]

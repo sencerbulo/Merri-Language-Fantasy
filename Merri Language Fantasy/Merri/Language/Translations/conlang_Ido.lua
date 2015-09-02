@@ -36,22 +36,22 @@ function SetupIdo()
     -- End ignore
         
     -- MAIN MENU BUTTONS
-    target[ "play" ]                    = "Play"                -- Button to begin the game
-    target[ "previous" ]                = "Previous"            -- Go backward one page (one menu)
-    target[ "next" ]                    = "Next"                -- Go forward one page (one menu)
-    target[ "options" ]                 = "Options"             -- Configure options in a game
-    target[ "help" ]                    = "Help"                -- Get help / instructions for a game or function
-    target[ "menu" ]                    = "Menu"                -- Open up sub-menu screen
-    target[ "close-menu" ]              = "Back"                -- Close sub-menu
+    target[ "play" ]                    = "Ludar"               -- Button to begin the game
+    target[ "previous" ]                = "Antea"               -- Go backward one page (one menu)
+    target[ "next" ]                    = "Sequanta"            -- Go forward one page (one menu)
+    target[ "options" ]                 = "Selektaji"           -- Configure options in a game
+    target[ "help" ]                    = "Helpo"               -- Get help / instructions for a game or function
+    target[ "menu" ]                    = "Menuo"               -- Open up sub-menu screen
+    target[ "close-menu" ]              = "Revenar"             -- Close sub-menu
     target[ "back" ] = target[ "close-menu" ]                   -- Ignore this
-    target[ "progress" ]                = "Progress"            -- Progress / Statistics menu
+    target[ "progress" ]                = "Progreso"            -- Progress / Statistics menu
     helper[ "progress" ] = target[ "progress" ]
     
     -- Difficulty levels
-    helper[ "Practice" ]  = "Practice"
-    helper[ "Easy" ]      = "Easy"
-    helper[ "Medium" ]    = "Medium"
-    helper[ "Hard" ]      = "Hard"
+    helper[ "Practice" ]  = "Exercar"
+    helper[ "Easy" ]      = "Baz'nivela"
+    helper[ "Medium" ]    = "Mez'nivela"
+    helper[ "Hard" ]      = "Alt'nivela"
     
     -- Ignore this block
     target[ "Practice" ] = helper[ "Practice" ]
@@ -61,20 +61,20 @@ function SetupIdo()
     -- End ignore
     
     -- COMMON GAME TEXT
-    target[ "Earned a star" ]           = "You aquired a star!"
+    target[ "Earned a star" ]           = "Vu aquiris stelo!"
     helper[ "Earned a star" ] = target[ "Earned a star" ]       -- Ignore this
     
     --------------------------
     -- MINER MINI-GAME TEXT --
     --------------------------
     -- Stats
-    target[ "Miner" ]                   = "Miner"               -- Male miner (temporary)
-    target[ "Floor" ]                   = "Floor:"              -- How many floors down you have traveled in the mine
-    target[ "Money" ]                   = "Money:"              -- The amount of (generic) money you've earned
-    target[ "Health" ]                  = "Health:"             -- Amount of hits you have before you die
+    target[ "Miner" ]                   = "Ministo"               -- Male miner (temporary)
+    target[ "Floor" ]                   = "Nivelo:"              -- How many floors down you have traveled in the mine
+    target[ "Money" ]                   = "Pekunio:"              -- The amount of (generic) money you've earned
+    target[ "Health" ]                  = "Saneso:"             -- Amount of hits you have before you die
     
     -- Messages
-    target[ "Game Over" ]               = "Game Over"
+    target[ "Game Over" ]               = "Ludfino"
     helper[ "Game Over" ] = target[ "Game Over" ]   -- Ignore this
     
     

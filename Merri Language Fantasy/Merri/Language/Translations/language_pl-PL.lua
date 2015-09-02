@@ -8,7 +8,7 @@ function SetupPolish()
     helper[ "language-name" ]           = "Polish"           -- Name of this language (match this language file)
     helper[ "Translation Credits" ]     = "Wojtek Kubiak"    -- Translators, append your name to the list.
     
-    helper[ "website" ]                 = "Website:"            -- Label for homepage URL
+    helper[ "website" ]                 = "Strona internetowa:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this
     
     helper[ "facebook" ]                = "Facebook:"           -- Label for Facebook URL
@@ -21,11 +21,11 @@ function SetupPolish()
     target[ "game title" ]              = "Polska Fantazja"     -- Translate as "Fantasy of ____" for your language. (e.g., Fantazio de Esperanto)
     
     -- DEMO TEXT (Temporary)
-    target[ "Thank you for trying out Merri" ]                  = "Thank you for trying out Merri!"
-    target[ "This is still a work in progress" ]                = "This is still a work in progress."
-    target[ "There may be errors or bugs" ]                     = "There may be errors or bugs."
-    target[ "Report problems at EMAIL" ]                        = "Report problems at Rachel@Moosader.com ."
-    target[ "Want to keep up with this game's progress?" ]      = "Want to keep up with this game's progress?"
+    target[ "Thank you for trying out Merri" ]                  = "Ta gra jest wciąż rozwijana."
+    target[ "This is still a work in progress" ]                = "Ta gra jest wciąż rozwijana."
+    target[ "There may be errors or bugs" ]                     = "Mogą pojawiać się błędy lub bugi."
+    target[ "Report problems at EMAIL" ]                        = "Problemy zgłaszaj na adres Rachel@Moosader.com ."
+    target[ "Want to keep up with this game's progress?" ]      = "Czy chcesz otrzymywać informacje o postępach nad grą ?"
     
     -- Ignore this block
     helper[ "Thank you for trying out Merri" ] = target[ "Thank you for trying out Merri" ]
