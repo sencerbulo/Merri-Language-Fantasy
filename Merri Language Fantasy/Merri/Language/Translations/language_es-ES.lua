@@ -8,7 +8,7 @@ function SetupSpanish()
     helper[ "language-name" ]           = "Español"             -- Name of this language (match this language file)
     helper[ "Translation Credits" ]     = "Tea Coba"            -- Translators, append your name to the list.
     
-    helper[ "website" ]                 = "Website:"            -- Label for homepage URL
+    helper[ "website" ]                 = "Página web:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this
     
     helper[ "facebook" ]                = "Facebook:"           -- Label for Facebook URL
@@ -21,11 +21,11 @@ function SetupSpanish()
     target[ "game title" ]              = "Fantasía de Español"     -- Translate as "Fantasy of ____" for your language. (e.g., Fantazio de Esperanto)
     
     -- DEMO TEXT (Temporary)
-    target[ "Thank you for trying out Merri" ]                  = "Thank you for trying out Merri!"
-    target[ "This is still a work in progress" ]                = "This is still a work in progress."
-    target[ "There may be errors or bugs" ]                     = "There may be errors or bugs."
-    target[ "Report problems at EMAIL" ]                        = "Report problems at Rachel@Moosader.com ."
-    target[ "Want to keep up with this game's progress?" ]      = "Want to keep up with this game's progress?"
+    target[ "Thank you for trying out Merri" ]                  = "¡Gracias por probar Merri!"
+    target[ "This is still a work in progress" ]                = "Esto es un trabajo en progreso."
+    target[ "There may be errors or bugs" ]                     = "Este software puede contener errores o bugs."
+    target[ "Report problems at EMAIL" ]                        = "Por favor, reporta cualquier problema a Rachel@Moosader.com ."
+    target[ "Want to keep up with this game's progress?" ]      = "¿Quieres mantenerte al día sobre el desarrollo de este videojuego?"
     
     -- Ignore this block
     helper[ "Thank you for trying out Merri" ] = target[ "Thank you for trying out Merri" ]
@@ -36,22 +36,22 @@ function SetupSpanish()
     -- End ignore
         
     -- MAIN MENU BUTTONS
-    target[ "play" ]                    = "Play"                -- Button to begin the game
-    target[ "previous" ]                = "Previous"            -- Go backward one page (one menu)
-    target[ "next" ]                    = "Next"                -- Go forward one page (one menu)
+    target[ "play" ]                    = "Jugar"                -- Button to begin the game
+    target[ "previous" ]                = "Atrás"            -- Go backward one page (one menu)
+    target[ "next" ]                    = "Siguiente"                -- Go forward one page (one menu)
     target[ "options" ]                 = "Options"             -- Configure options in a game
-    target[ "help" ]                    = "Help"                -- Get help / instructions for a game or function
-    target[ "menu" ]                    = "Menu"                -- Open up sub-menu screen
-    target[ "close-menu" ]              = "Back"                -- Close sub-menu
+    target[ "help" ]                    = "Ayuda"                -- Get help / instructions for a game or function
+    target[ "menu" ]                    = "Menú"                -- Open up sub-menu screen
+    target[ "close-menu" ]              = "Volver"                -- Close sub-menu
     target[ "back" ] = target[ "close-menu" ]                   -- Ignore this
-    target[ "progress" ]                = "Progress"            -- Progress / Statistics menu
+    target[ "progress" ]                = "Progreso"            -- Progress / Statistics menu
     helper[ "progress" ] = target[ "progress" ]
     
     -- Difficulty levels
-    helper[ "Practice" ]  = "Practice"
-    helper[ "Easy" ]      = "Easy"
-    helper[ "Medium" ]    = "Medium"
-    helper[ "Hard" ]      = "Hard"
+    helper[ "Practice" ]  = "Practicar"
+    helper[ "Easy" ]      = "Fácil"
+    helper[ "Medium" ]    = "Intermedia"
+    helper[ "Hard" ]      = "Difícil"
     
     -- Ignore this block
     target[ "Practice" ] = helper[ "Practice" ]
@@ -61,98 +61,98 @@ function SetupSpanish()
     -- End ignore
     
     -- COMMON GAME TEXT
-    target[ "Earned a star" ]           = "You aquired a star!"
+    target[ "Earned a star" ]           = "¡Has adquirido una estrella!"
     helper[ "Earned a star" ] = target[ "Earned a star" ]       -- Ignore this
     
     --------------------------
     -- MINER MINI-GAME TEXT --
     --------------------------
     -- Stats
-    target[ "Miner" ]                   = "Miner"               -- Male miner (temporary)
-    target[ "Floor" ]                   = "Floor:"              -- How many floors down you have traveled in the mine
-    target[ "Money" ]                   = "Money:"              -- The amount of (generic) money you've earned
+    target[ "Miner" ]                   = "Minero"               -- Male miner (temporary)
+    target[ "Floor" ]                   = "Piso:"              -- How many floors down you have traveled in the mine
+    target[ "Money" ]                   = "Dinero:"              -- The amount of (generic) money you've earned
     target[ "Health" ]                  = "Health:"             -- Amount of hits you have before you die
     
     -- Messages
-    target[ "Game Over" ]               = "Game Over"
+    target[ "Game Over" ]               = "Fin del juego"
     helper[ "Game Over" ] = target[ "Game Over" ]   -- Ignore this
     
     
     -- Enemies
-    target[ "snail" ]                   = "Snail"
-    target[ "mole" ]                    = "Mole"
-    target[ "mushroom" ]                = "Mushroom"
-    target[ "bat" ]                     = "Bat"
-    target[ "rabbit" ]                  = "Rabbit"
-    target[ "snake" ]                   = "Snake"
-    target[ "skeleton" ]                = "Skeleton"
-    target[ "moose" ]                   = "Moose"
+    target[ "snail" ]                   = "Caracol"
+    target[ "mole" ]                    = "Topo"
+    target[ "mushroom" ]                = "Champiñón"
+    target[ "bat" ]                     = "Murcielago"
+    target[ "rabbit" ]                  = "Conejo"
+    target[ "snake" ]                   = "Serpiente"
+    target[ "skeleton" ]                = "Esqueleto"
+    target[ "moose" ]                   = "Alce"
     
     -- Items
-    target[ "rock" ]                    = "Rock"                -- Large stone to break open with a pickaxe
-    target[ "star" ]                    = "Star"
+    target[ "rock" ]                    = "Piedra"                -- Large stone to break open with a pickaxe
+    target[ "star" ]                    = "Estrella"
     target[ "sandwich" ]                = "Sandwich"
-    target[ "amethyst" ]                = "Amethyst"
-    target[ "sapphire" ]                = "Sapphire"
-    target[ "diamond" ]                 = "Diamond"
-    target[ "emerald" ]                 = "Emerald"
-    target[ "ruby" ]                    = "Ruby"
-    target[ "copper" ]                  = "Copper"              -- It is a copper coin
-    target[ "silver" ]                  = "Silver"
-    target[ "gold" ]                    = "Gold"
-    target[ "ladder" ]                  = "Ladder"              -- Ladder to climb down one floor
+    target[ "amethyst" ]                = "Ametista"
+    target[ "sapphire" ]                = "Zafiro"
+    target[ "diamond" ]                 = "Diamante"
+    target[ "emerald" ]                 = "Esmeralda"
+    target[ "ruby" ]                    = "Rubí"
+    target[ "copper" ]                  = "Cobre"              -- It is a copper coin
+    target[ "silver" ]                  = "Plata"
+    target[ "gold" ]                    = "Oro"
+    target[ "ladder" ]                  = "Escalera"              -- Ladder to climb down one floor
     
     -- Shopkeeper Dialogue
-    target[ "Do you want to buy a tool?" ]    = "Do you want to buy a tool?"
-    target[ "You don't have enough money" ]   = "You don't have enough money."
+    target[ "Do you want to buy a tool?" ]    = "¿Deseas comprar una herramienta?"
+    target[ "You don't have enough money" ]   = "No tienes suficiente dinero."
     
     -- Button options
-    target[ "Don't buy anything" ]      = "Don't buy anything." -- Click to leave the store, nobody is saying this line it is a button.
-    target[ "Price" ]                   = "Price:"              -- Price label
+    target[ "Don't buy anything" ]      = "No comprar nada." -- Click to leave the store, nobody is saying this line it is a button.
+    target[ "Price" ]                   = "Precio:"              -- Price label
     
     -- Item names and descriptions
-    target[ "Potion" ]                  = "Potion"              -- Restores health
-    target[ "PotionDescription" ]       = "Restores all of your health."
-    target[ "Earthquake" ]              = "Earthquake"
-    target[ "EarthquakeDescription" ]   = "Breaks all rocks."
-    target[ "Dynamite" ]                = "Dynamite"
-    target[ "DynamiteDescription" ]     = "Descend down one floor."
-    target[ "Rope" ]                    = "Rope"
-    target[ "RopeDescription" ]         = "Climb up one floor."
-    target[ "Blizzard" ]                = "Blizzard"
-    target[ "BlizzardDescription" ]     = "Freeze all the enemies."
+    target[ "Potion" ]                  = "Poción"              -- Restores health
+    target[ "PotionDescription" ]       = "Restaura toda tu salud."
+    target[ "Earthquake" ]              = "Terremoto"
+    target[ "EarthquakeDescription" ]   = "Rompe todas las piedras."
+    target[ "Dynamite" ]                = "Dinamita"
+    target[ "DynamiteDescription" ]     = "Descender un piso."
+    target[ "Rope" ]                    = "Cuerda"
+    target[ "RopeDescription" ]         = "Ascender un piso."
+    target[ "Blizzard" ]                = "Ventisca"
+    target[ "BlizzardDescription" ]     = "Congela a todos los enemigos."
     
     -- Narration
-    target[ "miner-begin" ]             = "Mine for treasure and stay alive!"
-    target[ "miner-move-north" ]        = "You walk north."
-    target[ "miner-move-south" ]        = "You walk south."
-    target[ "miner-move-east" ]         = "You walk east."
-    target[ "miner-move-west" ]         = "You walk west."
-    target[ "miner-mine" ]              = "You swing your pick."
-    target[ "miner-eat-sandwich" ]      = "You eat the cave sandwich."
-    target[ "use-earthquake" ]          = "The earth shakes violently."
-    target[ "use-blizzard" ]            = "Everything freezes over." 
-    target[ "enemies-thaw" ]            = "Everything has thawed out."
-    target[ "use-potion" ]              = "You feel strong again."
-    target[ "miner-collect-copper" ]    = "You pick up copper."
-    target[ "miner-collect-silver" ]    = "You pick up silver."
-    target[ "miner-collect-gold" ]      = "You pick up gold."
-    target[ "miner-collect-amethyst" ]  = "You pick up amethyst."
-    target[ "miner-collect-sapphire" ]  = "You pick up sapphire."
-    target[ "miner-collect-diamond" ]   = "You pick up diamond."
-    target[ "miner-collect-emerald" ]   = "You pick up emerald."
-    target[ "miner-collect-ruby" ]      = "You pick up ruby."
-    target[ "miner-attack-snail" ]      = "You attack the snail."
-    target[ "miner-attack-mole" ]       = "You attack the mole."
-    target[ "miner-attack-mushroom" ]   = "You attack the mushroom."
-    target[ "miner-attack-bat" ]        = "You attack the bat."
-    target[ "miner-attack-rabbit" ]     = "You attack the rabbit."
-    target[ "miner-attack-snake" ]      = "You attack the snake."
-    target[ "miner-attack-moose" ]      = "You attack the moose."
-    target[ "miner-attack-skeleton" ]   = "You attack the skeleton."
-    target[ "miner-go-down-ladder" ]    = "You descend the ladder."
-    target[ "miner-rope" ]              = "You flee upward by using the rope."
-    target[ "miner-dynamite" ]          = "You flee downward by using the dynamite."
-    target[ "miner-died" ]              = "You have been killed."
+    target[ "miner-begin" ]             = "¡Excava el tesoro y mantente con vida!"
+    target[ "miner-move-north" ]        = "Caminas hacia el norte."
+    target[ "miner-move-south" ]        = "Caminas hacia el sur"
+    target[ "miner-move-east" ]         = "Caminas hacia el este"
+    target[ "miner-move-west" ]         = "Caminas hacia el oeste"
+    target[ "miner-mine" ]              = "Comienzas a picar."
+    target[ "miner-eat-sandwich" ]      = "Comes el sandwich cavernario."
+    target[ "use-earthquake" ]          = "La tierra tiembla violentamente."
+    target[ "use-blizzard" ]            = "Todo se congela."
+    target[ "enemies-thaw" ]            = "Todo se ha derretido."
+    target[ "use-potion" ]              = ""
+    target[ "miner-collect-copper" ]    = "Obtienes cobre."
+    target[ "miner-collect-silver" ]    = "Obtienes plata."
+    target[ "miner-collect-gold" ]      = "Obtienes oro."
+    target[ "miner-collect-amethyst" ]  = "Obtienes ametista."
+    target[ "miner-collect-sapphire" ]  = "Obtienes zafiro."
+    target[ "miner-collect-diamond" ]   = "Obtienes diamante."
+    target[ "miner-collect-emerald" ]   = "Obtienes esmeralda."
+    target[ "miner-collect-ruby" ]      = "Obtienes rubí."
+    target[ "miner-attack-snail" ]      = "Atacas al caracol."
+    target[ "miner-attack-mole" ]       = "Atacas al topo."
+    target[ "miner-attack-mushroom" ]   = "Atacas al champiñón."
+    target[ "miner-attack-bat" ]        = "Atacas al murcielago."
+    target[ "miner-attack-rabbit" ]     = "Atacas al conejo."
+    target[ "miner-attack-snake" ]      = "Atacas a la serpiente."
+    target[ "miner-attack-moose" ]      = "Atacas al alce."
+    target[ "miner-attack-skeleton" ]   = "Atacas al esqueleto."
+    target[ "miner-go-down-ladder" ]    = "Bajas por la escalera."
+    target[ "miner-rope" ]              = "Escapas hacia arriba usando la cuerda."
+    target[ "miner-dynamite" ]          = "Escapas hacia arriba usando la dinamita."
+    target[ "miner-died" ]              = "Te han matado."
     
 end
