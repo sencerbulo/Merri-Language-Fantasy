@@ -23,13 +23,15 @@ In the top-right corner, there is a button labelled **Raw**. Click this and your
 (or [Click Here](https://raw.githubusercontent.com/Moosader/Merri-Language-Fantasy/master/Merri%20Language%20Fantasy/Merri/Language/GameText.lua)
 to view the raw file)
 
-( Screenshot )
+![Screenshot of raw download button](https://raw.githubusercontent.com/Moosader/Merri-Language-Fantasy/master/Translating%20Help/screenshot-raw-download.png)
 
 From here, use the **Save** shortcut on your web-browser (example: CTRL+S) to save the file to your hard-drive.
 
 Go back in your browser, back to the Language folder. Open the **Translations** folder.
 
-( Screenshot )
+![Screenshot of language files](https://raw.githubusercontent.com/Moosader/Merri-Language-Fantasy/master/Translating%20Help/screenshot-language-files.png)
+
+
 
 This is where all the language files are saved. Download the file named **LANGUAGE_TEMPLATE.lua** via the Raw button, as we did above.
 
