@@ -8,7 +8,7 @@ function SetupIdo()
     helper[ "language-name" ]           = "Ido"                 -- Name of this language (match this language file)
     helper[ "Translation Credits" ]     = "Rachel J. Morris, Bebson Hochfeld"       -- Translators, append your name to the list.
     
-    helper[ "website" ]                 = "Website:"            -- Label for homepage URL
+    helper[ "website" ]                 = "Retosituo:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this
     
     helper[ "facebook" ]                = "Facebook:"           -- Label for Facebook URL
@@ -21,11 +21,11 @@ function SetupIdo()
     target[ "game title" ]              = "Fantazio di Ido"     -- Translate as "Fantasy of ____" for your language. (e.g., Fantazio de Esperanto)
     
     -- DEMO TEXT (Temporary)
-    target[ "Thank you for trying out Merri" ]                  = "Thank you for trying out Merri!"
-    target[ "This is still a work in progress" ]                = "This is still a work in progress."
-    target[ "There may be errors or bugs" ]                     = "There may be errors or bugs."
-    target[ "Report problems at EMAIL" ]                        = "Report problems at Rachel@Moosader.com ."
-    target[ "Want to keep up with this game's progress?" ]      = "Want to keep up with this game's progress?"
+    target[ "Thank you for trying out Merri" ]                  = "Danko pro probar Merri!"
+    target[ "This is still a work in progress" ]                = "Ica ankore esas nekompleta."
+    target[ "There may be errors or bugs" ]                     = "Forsan existas erori o cimi."
+    target[ "Report problems at EMAIL" ]                        = "Raportez problemi ad Rachel@Moosader.com ."
+    target[ "Want to keep up with this game's progress?" ]      = "Ka vu volas sequar informo pri la ludo?"
     
     -- Ignore this block
     helper[ "Thank you for trying out Merri" ] = target[ "Thank you for trying out Merri" ]
@@ -79,80 +79,80 @@ function SetupIdo()
     
     
     -- Enemies
-    target[ "snail" ]                   = "Snail"
-    target[ "mole" ]                    = "Mole"
-    target[ "mushroom" ]                = "Mushroom"
-    target[ "bat" ]                     = "Bat"
-    target[ "rabbit" ]                  = "Rabbit"
-    target[ "snake" ]                   = "Snake"
-    target[ "skeleton" ]                = "Skeleton"
-    target[ "moose" ]                   = "Moose"
+    target[ "snail" ]                   = "Heliko"
+    target[ "mole" ]                    = "Talpo"
+    target[ "mushroom" ]                = "Fungo"
+    target[ "bat" ]                     = "Vespertilio"
+    target[ "rabbit" ]                  = "Kuniklo"
+    target[ "snake" ]                   = "Serpento"
+    target[ "skeleton" ]                = "Skeleto"
+    target[ "moose" ]                   = "Alko"
     
     -- Items
-    target[ "rock" ]                    = "Rock"                -- Large stone to break open with a pickaxe
-    target[ "star" ]                    = "Star"
-    target[ "sandwich" ]                = "Sandwich"
-    target[ "amethyst" ]                = "Amethyst"
-    target[ "sapphire" ]                = "Sapphire"
-    target[ "diamond" ]                 = "Diamond"
-    target[ "emerald" ]                 = "Emerald"
-    target[ "ruby" ]                    = "Ruby"
-    target[ "copper" ]                  = "Copper"              -- It is a copper coin
-    target[ "silver" ]                  = "Silver"
-    target[ "gold" ]                    = "Gold"
-    target[ "ladder" ]                  = "Ladder"              -- Ladder to climb down one floor
+    target[ "rock" ]                    = "Roko"                -- Large stone to break open with a pickaxe
+    target[ "star" ]                    = "Stelo"
+    target[ "sandwich" ]                = "Sandwicho"
+    target[ "amethyst" ]                = "Ametisto"
+    target[ "sapphire" ]                = "Safiro"
+    target[ "diamond" ]                 = "Diamanto"
+    target[ "emerald" ]                 = "Smeraldo"
+    target[ "ruby" ]                    = "Rubino"
+    target[ "copper" ]                  = "Kupro"              -- It is a copper coin
+    target[ "silver" ]                  = "Arjento"
+    target[ "gold" ]                    = "Oro"
+    target[ "ladder" ]                  = "Skalo"              -- Ladder to climb down one floor
     
     -- Shopkeeper Dialogue
-    target[ "Do you want to buy a tool?" ]    = "Do you want to buy a tool?"
-    target[ "You don't have enough money" ]   = "You don't have enough money."
+    target[ "Do you want to buy a tool?" ]    = "Ka vu volas komprar utensilo?"
+    target[ "You don't have enough money" ]   = "Vu ne havas suficanta pekunio."
     
     -- Button options
-    target[ "Don't buy anything" ]      = "Don't buy anything." -- Click to leave the store, nobody is saying this line it is a button.
-    target[ "Price" ]                   = "Price:"              -- Price label
+    target[ "Don't buy anything" ]      = "Ne komprar irgo." -- Click to leave the store, nobody is saying this line it is a button.
+    target[ "Price" ]                   = "Preco:"              -- Price label
     
     -- Item names and descriptions
-    target[ "Potion" ]                  = "Potion"              -- Restores health
-    target[ "PotionDescription" ]       = "Restores all of your health."
-    target[ "Earthquake" ]              = "Earthquake"
-    target[ "EarthquakeDescription" ]   = "Breaks all rocks."
-    target[ "Dynamite" ]                = "Dynamite"
-    target[ "DynamiteDescription" ]     = "Descend down one floor."
-    target[ "Rope" ]                    = "Rope"
-    target[ "RopeDescription" ]         = "Climb up one floor."
-    target[ "Blizzard" ]                = "Blizzard"
-    target[ "BlizzardDescription" ]     = "Freeze all the enemies."
+    target[ "Potion" ]                  = "Pociono"              -- Restores health
+    target[ "PotionDescription" ]       = "Ridonar omna de vua saneso."
+    target[ "Earthquake" ]              = "Ter'tremo"
+    target[ "EarthquakeDescription" ]   = "Ruptar omna roki."
+    target[ "Dynamite" ]                = "Dinamito"
+    target[ "DynamiteDescription" ]     = "Decensar unu nivelo."
+    target[ "Rope" ]                    = "Cuerda"
+    target[ "RopeDescription" ]         = "Acensar unu nivelo."
+    target[ "Blizzard" ]                = "Niv'sturmo"
+    target[ "BlizzardDescription" ]     = "Frostigar omna enemiki."
     
     -- Narration
-    target[ "miner-begin" ]             = "Mine for treasure and stay alive!"
-    target[ "miner-move-north" ]        = "You walk north."
-    target[ "miner-move-south" ]        = "You walk south."
-    target[ "miner-move-east" ]         = "You walk east."
-    target[ "miner-move-west" ]         = "You walk west."
-    target[ "miner-mine" ]              = "You swing your pick."
-    target[ "miner-eat-sandwich" ]      = "You eat the cave sandwich."
-    target[ "use-earthquake" ]          = "The earth shakes violently."
-    target[ "use-blizzard" ]            = "Everything freezes over." 
-    target[ "enemies-thaw" ]            = "Everything has thawed out."
-    target[ "use-potion" ]              = "You feel strong again."
-    target[ "miner-collect-copper" ]    = "You pick up copper."
-    target[ "miner-collect-silver" ]    = "You pick up silver."
-    target[ "miner-collect-gold" ]      = "You pick up gold."
-    target[ "miner-collect-amethyst" ]  = "You pick up amethyst."
-    target[ "miner-collect-sapphire" ]  = "You pick up sapphire."
-    target[ "miner-collect-diamond" ]   = "You pick up diamond."
-    target[ "miner-collect-emerald" ]   = "You pick up emerald."
-    target[ "miner-collect-ruby" ]      = "You pick up ruby."
-    target[ "miner-attack-snail" ]      = "You attack the snail."
-    target[ "miner-attack-mole" ]       = "You attack the mole."
-    target[ "miner-attack-mushroom" ]   = "You attack the mushroom."
-    target[ "miner-attack-bat" ]        = "You attack the bat."
-    target[ "miner-attack-rabbit" ]     = "You attack the rabbit."
-    target[ "miner-attack-snake" ]      = "You attack the snake."
-    target[ "miner-attack-moose" ]      = "You attack the moose."
-    target[ "miner-attack-skeleton" ]   = "You attack the skeleton."
-    target[ "miner-go-down-ladder" ]    = "You descend the ladder."
-    target[ "miner-rope" ]              = "You flee upward by using the rope."
-    target[ "miner-dynamite" ]          = "You flee downward by using the dynamite."
-    target[ "miner-died" ]              = "You have been killed."
+    target[ "miner-begin" ]             = "Minez trezoro e durigez vivar!"
+    target[ "miner-move-north" ]        = "Vu marchas ad'norde."
+    target[ "miner-move-south" ]        = "Vu marchas ad'sude."
+    target[ "miner-move-east" ]         = "Vu marchas ad'este."
+    target[ "miner-move-west" ]         = "Vu marchas ad'weste."
+    target[ "miner-mine" ]              = "Vu frapas per vua piocho."
+    target[ "miner-eat-sandwich" ]      = "Vu manjas la kaverna sandwicho."
+    target[ "use-earthquake" ]          = "La tero tremas forte."
+    target[ "use-blizzard" ]            = "Omno frostas."
+    target[ "enemies-thaw" ]            = "Omno des'frostas."
+    target[ "use-potion" ]              = "Vu sentas vu ye forta itere."
+    target[ "miner-collect-copper" ]    = "Vu kolektas kupro."
+    target[ "miner-collect-silver" ]    = "Vu kolektas arjento."
+    target[ "miner-collect-gold" ]      = "Vu kolektas oro."
+    target[ "miner-collect-amethyst" ]  = "Vu kolektas ametisto."
+    target[ "miner-collect-sapphire" ]  = "Vu kolektas safiro."
+    target[ "miner-collect-diamond" ]   = "Vu kolektas diamanto."
+    target[ "miner-collect-emerald" ]   = "Vu kolektas smeraldo."
+    target[ "miner-collect-ruby" ]      = "Vu kolektas rubino."
+    target[ "miner-attack-snail" ]      = "Vu atakas la heliko."
+    target[ "miner-attack-mole" ]       = "Vu atakas la talpo."
+    target[ "miner-attack-mushroom" ]   = "Vu atakas la fungo."
+    target[ "miner-attack-bat" ]        = "Vu atakas la vespertilio."
+    target[ "miner-attack-rabbit" ]     = "Vu atakas la kuniklo."
+    target[ "miner-attack-snake" ]      = "Vu atakas la serpento."
+    target[ "miner-attack-moose" ]      = "Vu atakas la alko."
+    target[ "miner-attack-skeleton" ]   = "Vu atakas la skeleto."
+    target[ "miner-go-down-ladder" ]    = "Vu decensas per la skalo."
+    target[ "miner-rope" ]              = "Vu eskapis ad'infre per la kordo."
+    target[ "miner-dynamite" ]          = "Vu eskapis ad'supre per la dinamito."
+    target[ "miner-died" ]              = "Vu esis ocidita."
     
 end
