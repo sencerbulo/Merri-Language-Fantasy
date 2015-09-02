@@ -7,6 +7,24 @@ GameText.LastUpdated = {}
 -- Ido:             https://en.wikipedia.org/wiki/Ido_%28language%29
 -- Ithkuil:         https://en.wikipedia.org/wiki/Ithkuil
 -- Interlingua:     https://en.wikipedia.org/wiki/Interlingua
+
+
+------------------------------------------------------------------------------------------------
+-- This is the template for a new language. Copy / Paste this block immediately below and translate these lines.
+-- Use the translations below for reference.
+GameText.HelperText.NewLanguage = {}
+GameText.TargetText.NewLanguage = {}
+GameText.LastUpdated.NewLanguage = "TodayDate"
+GameText.HelperText.NewLanguage   [ "I know LANGUAGE" ]              = "" -- Set this to say, "I know (language you are translating to)".
+GameText.HelperText.NewLanguage   [ "I am learning English" ]       = ""
+GameText.HelperText.NewLanguage   [ "I am learning Esperanto" ]     = ""
+GameText.HelperText.NewLanguage   [ "I am learning Ido" ]           = ""
+GameText.HelperText.NewLanguage   [ "I am learning Spanish" ]       = ""
+GameText.HelperText.NewLanguage   [ "I am learning Ithkuil" ]       = ""
+GameText.HelperText.NewLanguage   [ "I am learning German" ]        = ""
+GameText.HelperText.NewLanguage   [ "I am learning French" ]        = ""
+GameText.HelperText.NewLanguage   [ "I am learning Polish" ]        = ""
+------------------------------------------------------------------------------------------------
     
 GameText.HelperText.English = {}
 GameText.TargetText.English = {}
@@ -153,8 +171,18 @@ GameText.HelperText.Interlingua[ "I am learning German" ]       = "Io apprende G
 GameText.HelperText.Interlingua[ "I am learning French" ]       = "Io apprende Francese"
 GameText.HelperText.Interlingua[ "I am learning Polish" ]       = "Io apprende Polonese"
 
--- TODO: All of these should be moved to an external file.
--- Note: Only load languages needed, after the language select.
+GameText.HelperText.TokiPona = {}
+GameText.TargetText.TokiPona = {}
+GameText.LastUpdated.TokiPona = "2015-09-01"
+GameText.HelperText.TokiPona[ "I know Toki Pona" ]           = "mi sona e toki pona"
+GameText.HelperText.TokiPona[ "I am learning English" ]      = "mi kama sona e toki Inli"
+GameText.HelperText.TokiPona[ "I am learning Esperanto" ]    = "mi kama sona e toki Epelanto"
+GameText.HelperText.TokiPona[ "I am learning Ido" ]          = "mi kama sona e toki Ito"
+GameText.HelperText.TokiPona[ "I am learning Spanish" ]      = "mi kama sona e toki Epanja"
+GameText.HelperText.TokiPona[ "I am learning Ithkuil" ]      = "mi kama sona e toki Ikuli"
+GameText.HelperText.TokiPona[ "I am learning German" ]       = "mi kama sona e toki Tosi"
+GameText.HelperText.TokiPona[ "I am learning French" ]       = "mi kama sona e toki Kanse"
+GameText.HelperText.TokiPona[ "I am learning Polish" ]       = "mi kama sona e toki ??"
 
 end
 
