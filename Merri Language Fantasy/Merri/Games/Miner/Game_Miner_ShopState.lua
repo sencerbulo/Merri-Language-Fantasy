@@ -93,14 +93,19 @@ function MinerShopState:Setup( options )
 end
 
 function MinerShopState:Cleanup()
-	StateBase:Draw()
+	StateBase:Cleanup()
 	
 	for key, image in pairs( self.images ) do	
 		stage:removeChild( image )
+		self.images[ key ] = nil
 	end
 	for key, label in pairs( self.labels ) do	
 		stage:removeChild( label )
+		self.labels[ key ] = nil
 	end
+	
+	self:ClearScreen()
+	self:ClearWidgets()
 end
 
 function MinerShopState:Draw()

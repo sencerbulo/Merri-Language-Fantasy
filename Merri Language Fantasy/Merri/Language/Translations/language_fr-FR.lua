@@ -155,4 +155,5 @@ function SetupFrench()
     target[ "miner-dynamite" ]          = "Tu t'enfuis par le bas grâce à la dynamite."
     target[ "miner-died" ]              = "Tu as été tué."
     
+	return helper, target    
 end

@@ -155,4 +155,5 @@ function SetupIdo()
     target[ "miner-dynamite" ]          = "Vu eskapis ad'supre per la dinamito."
     target[ "miner-died" ]              = "Vu esis ocidita."
     
+	return helper, target
 end

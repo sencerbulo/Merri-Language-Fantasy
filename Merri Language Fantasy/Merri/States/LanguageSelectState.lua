@@ -46,7 +46,7 @@ function LanguageSelectState:SetupTargetMenu( options )
 	for key, language in pairs( GLOBAL_LANGAUGES ) do
 		StateBase:AddButton( { 
 			button = { id = "btn_language_" .. language, 	path = "Content/Graphics/UI/widebtnbg.png",  	pos_x = x, pos_y = y  },
-			label 	= { id = "btn_language_" .. language, 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "I am learning " .. language ) }
+			label 	= { id = "btn_language_" .. language, 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x+10, pos_y = y+35, color = 0xFFFFFF, size = 14, text = GameText:GetSpecial( "helper", "I am learning " .. language ) }
 			} )
 			
 		y = y + yInc
@@ -95,6 +95,7 @@ function LanguageSelectState:Handle_MouseDown( event )
 		
 		if ( GLOBAL_CONFIG.TARGET_LANGUAGE ~= nil ) then
 			SAVE_CONFIG()
+			GameText:LoadUsedLanguages()
 			--StateBase:SetGotoState( "TitleState" )
 			StateBase:SetGotoState( "DemoInfoState" )
 		end

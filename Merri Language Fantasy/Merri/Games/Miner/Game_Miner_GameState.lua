@@ -216,6 +216,32 @@ function MinerGameState:SetupHud()
 end
 
 function MinerGameState:Cleanup()
+	StateBase:Cleanup()
+	
+	self:ClearScreen()
+	self:ClearWidgets()
+	
+	for key, button in pairs( self.hud ) do 
+		stage:removeChild( button.bitmap )
+		self.hud[ key ] = nil
+	end
+	
+	for key, button in pairs( self.buttons ) do
+		stage:removeChild( button.bitmap )
+		self.buttons[ key ] = nil
+	end
+	
+	for key, label in pairs( self.labels ) do
+		stage:removeChild( label )
+		self.labels[ key ] = nil
+	end
+	
+	for key, heart in pairs( self.hudHearts ) do
+		stage:removeChild( heart )
+		self.hudHearts[ key ] = nil
+	end
+	
+	self.map:ClearMap()
 end
 
 function MinerGameState:Draw()

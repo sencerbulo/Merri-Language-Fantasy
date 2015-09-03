@@ -155,4 +155,5 @@ function SetupEnglish()
     target[ "miner-dynamite" ]          = "You flee downward by using the dynamite."
     target[ "miner-died" ]              = "You have been killed."
     
+	return helper, target    
 end

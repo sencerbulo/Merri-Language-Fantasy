@@ -22,6 +22,7 @@ LOAD_CONFIG()
 --else
 	--stateManager:ChangeState( "TitleState" )
 	--stateManager:ChangeState( "MinerGameState" )
+	--GameText:LoadUsedLanguages()
 
 --end
 

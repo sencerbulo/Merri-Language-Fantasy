@@ -24,7 +24,20 @@ function StateBase:ToggleBackgroundScroll( value )
 end
 
 function StateBase:Cleanup()
+	for key, value in pairs( self.backgrounds ) do
+		stage:removeChild( value )
+		self.backgrounds[ key ] = nil
+	end
+
+	for key, value in pairs( self.bitmaps ) do
+		stage:removeChild( value )
+		self.bitmaps[ key ] = nil
+	end
 	
+	for key, value in pairs( self.labels ) do
+		stage:removeChild( value )
+		self.labels[ key ] = nil
+	end	
 end
 
 function StateBase:GotoState()

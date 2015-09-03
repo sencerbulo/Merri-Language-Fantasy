@@ -156,4 +156,5 @@ function SetupEnglish()
     target[ "miner-dynamite" ]          = ""
     target[ "miner-died" ]              = ""
     
+	return helper, target    
 end

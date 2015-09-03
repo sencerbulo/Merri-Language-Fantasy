@@ -8,7 +8,6 @@ GameText.LastUpdated = {}
 -- Ithkuil:         https://en.wikipedia.org/wiki/Ithkuil
 -- Interlingua:     https://en.wikipedia.org/wiki/Interlingua
 
-
 ------------------------------------------------------------------------------------------------
 -- This is the template for a new language. Copy / Paste this block immediately below and translate these lines.
 -- Use the translations below for reference.
@@ -104,6 +103,7 @@ GameText.HelperText.Polish[ "I am learning German" ]            = "Uczę się ni
 GameText.HelperText.Polish[ "I am learning French" ]            = "Uczę się francuskiego"
 GameText.HelperText.Polish[ "I am learning Polish" ]            = "Uczę się polskiego"
     
+-- Crap, Gideros doesn't like this script.
 GameText.HelperText.Persian = {}
 GameText.TargetText.Persian = {}
 GameText.LastUpdated.Persian = "2015-09-01"
@@ -186,6 +186,37 @@ GameText.HelperText.TokiPona[ "I am learning Polish" ]       = "mi kama sona e t
 
 end
 
+function GameText:LoadUsedLanguages()
+	print( "Load languages" )
+	local helper = nil
+	local target = nil
+	local dummy = nil
+	
+	-- GLOBAL_CONFIG.TARGET_LANGUAGE
+	if ( GLOBAL_CONFIG.TARGET_LANGUAGE == "English" ) then					dummy, target = SetupEnglish()
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Esperanto" ) then		dummy, target = SetupEsperanto()	
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Ido" ) then					dummy, target = SetupIdo()	
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Spanish" ) then			dummy, target = SetupSpanish()	
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "German" ) then			dummy, target = SetupGerman()	
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "French" ) then			dummy, target = SetupFrench()	
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Polish" ) then				dummy, target = SetupPolish()	
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Ithkuil" ) then			dummy, target = SetupIthkuil()	
+	end
+	
+	-- GLOBAL_CONFIG.HELPER_LANGUAGE
+	if ( GLOBAL_CONFIG.HELPER_LANGUAGE == "English" ) then					helper, dummy = SetupEnglish()
+	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "Esperanto" ) then		helper, dummy = SetupEsperanto()
+	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "Ido" ) then					helper, dummy = SetupIdo()
+	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "Spanish" ) then			helper, dummy = SetupSpanish()
+	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "German" ) then			helper, dummy = SetupGerman()
+	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "French" ) then			helper, dummy = SetupFrench()
+	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "Polish" ) then				helper, dummy = SetupPolish()
+	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "Ithkuil" ) then			helper, dummy = SetupIthkuil()
+	end
+	
+	GameText.Helper = helper
+	GameText.Target = target
+end
 
 function GameText:init( options )
 end
@@ -193,6 +224,9 @@ end
 function GameText:Setup( options )
     GameText.HelperText = {}
     GameText.TargetText = {}
+	-- These two tables will be for the actual languages, loaded into the game via setup function call.
+	GameText.Helper = {}
+	GameText.Target = {}
     GameText:SetupLanguages()
 end
 
@@ -222,7 +256,7 @@ function GameText:GetFromLanguage( cat, lang, id )
     end
 end
 
-function GameText:Get( cat, id )
+function GameText:GetSpecial( cat, id )
     local language = ""
     local category = ""
     if ( cat == "helper" ) then
@@ -246,6 +280,29 @@ function GameText:Get( cat, id )
 
     else
         return GameText[ category ][ language ][ id ]
+
+    end
+end
+
+function GameText:Get( cat, id )
+	-- GameText.Helper[ "twitter" ]
+    local category = ""
+    if ( cat == "helper" ) then
+        category = "Helper"
+
+    else
+        category = "Target"
+
+    end
+
+    if ( GameText[ category ] == nil ) then
+        return "Invalid category " .. category
+
+    elseif ( GameText[ category ][ id ] == nil ) then
+        return "Invalid id " .. id
+
+    else
+        return GameText[ category ][ id ]
 
     end
 end

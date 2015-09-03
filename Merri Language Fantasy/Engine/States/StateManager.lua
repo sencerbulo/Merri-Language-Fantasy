@@ -15,6 +15,7 @@ function StateManager:ChangeState( name )
 		print( "ChangeState ", self.currentState:GotoState() )
 		self.currentState:ClearScreen()
 		self.currentState:ClearWidgets()
+		self.currentState:Cleanup()
 	end
 
 	if ( self.states[ name ] ~= nil ) then

@@ -155,4 +155,5 @@ function SetupPolish()
     target[ "miner-dynamite" ]          = "Uciekasz w dół używając dynamitu."
     target[ "miner-died" ]              = "Nie żyjesz."
     
+	return helper, target    
 end

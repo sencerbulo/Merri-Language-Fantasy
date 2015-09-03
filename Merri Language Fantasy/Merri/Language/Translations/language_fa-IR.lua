@@ -156,4 +156,5 @@ function SetupFarsi()
     target[ "miner-dynamite" ]          = ".با دینامیت رو به پایین فرار می‌کنید"
     target[ "miner-died" ]              = ".شما کشته شدید"
     
+	return helper, target    
 end

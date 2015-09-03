@@ -155,4 +155,5 @@ function SetupInterlingua()
     target[ "miner-dynamite" ]          = "Tu usa le dinamite pro descender."
     target[ "miner-died" ]              = "Tu ha essite occidite."
     
+	return helper, target    
 end

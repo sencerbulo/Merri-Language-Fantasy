@@ -156,4 +156,5 @@ function SetupJapanese()
     target[ "miner-dynamite" ]          = "ダイナマイト　で　したに　にげる。"
     target[ "miner-died" ]              = "ころされて　しまった。"
     
+	return helper, target    
 end

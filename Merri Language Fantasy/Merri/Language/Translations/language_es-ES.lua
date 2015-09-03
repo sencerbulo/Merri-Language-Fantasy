@@ -155,4 +155,5 @@ function SetupSpanish()
     target[ "miner-dynamite" ]          = "Escapas hacia arriba usando la dinamita."
     target[ "miner-died" ]              = "Te han matado."
     
+	return helper, target    
 end

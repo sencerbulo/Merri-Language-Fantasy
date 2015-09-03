@@ -155,4 +155,5 @@ function SetupEsperanto()
     target[ "miner-dynamite" ]          = "Vi eskapis malsupren per la dinamito."
     target[ "miner-died" ]              = "Vi estis mortigita."
     
+	return helper, target    
 end
