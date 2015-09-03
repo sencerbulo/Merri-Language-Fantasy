@@ -184,6 +184,19 @@ GameText.HelperText.TokiPona[ "I am learning German" ]       = "mi kama sona e t
 GameText.HelperText.TokiPona[ "I am learning French" ]       = "mi kama sona e toki Kanse"
 GameText.HelperText.TokiPona[ "I am learning Polish" ]       = "mi kama sona e toki ??"
 
+GameText.HelperText.Laadan = {}
+GameText.TargetText.Laadan = {}
+GameText.LastUpdated.Laadan = "2015-09-03"
+GameText.HelperText.Laadan   [ "I know LANGUAGE" ]              = "Bíi lothel le Láadaneth wa." 
+GameText.HelperText.Laadan   [ "I am learning English" ]       = "Bíi bedi le Inelesheth wa." -- I don't know how to translate language names.
+GameText.HelperText.Laadan   [ "I am learning Esperanto" ]     = ""
+GameText.HelperText.Laadan   [ "I am learning Ido" ]           = ""
+GameText.HelperText.Laadan   [ "I am learning Spanish" ]       = ""
+GameText.HelperText.Laadan   [ "I am learning Ithkuil" ]       = ""
+GameText.HelperText.Laadan   [ "I am learning German" ]        = ""
+GameText.HelperText.Laadan   [ "I am learning French" ]        = ""
+GameText.HelperText.Laadan   [ "I am learning Polish" ]        = ""
+
 end
 
 function GameText:LoadUsedLanguages()
