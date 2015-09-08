@@ -159,6 +159,7 @@ function SetupEnglish()
     helper[ "next" ]              = target[ "next" ]              
     helper[ "options" ]   =target[ "options" ]              
     helper[ "help" ]   =target[ "help" ]    
+    helper[ "menu" ]   =target[ "menu" ]    
 	target[ "back" ] = target[ "close-menu" ]
 	helper[ "back" ] = target[ "back" ]
 	helper[ "close-menu" ] = target[ "close-menu" ]
