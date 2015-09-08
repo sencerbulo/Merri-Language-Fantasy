@@ -1,5 +1,5 @@
 <project>
- <properties win_domain="moosader.com" logicalHeight="640" iosDevice="0" touchToMouse="1" osx_domain="moosader.com" osx_org="Moosader" scaleMode="5" fps="60" autorotation="0" architecture="2" retinaDisplay="0" encryptAssets="1" mouseToTouch="1" assetsOnly="0" encryptCode="0" orientation="0" packageName="com.Moosader.FantazioDeEsperanto" windowHeight="0" logicalWidth="360" win_org="Moosader" windowWidth="0" mouseTouchOrder="0">
+ <properties packageName="com.Moosader.FantazioDeEsperanto" win_org="Moosader" windowHeight="0" fps="60" encryptAssets="1" touchToMouse="1" logicalHeight="640" osx_domain="moosader.com" windowWidth="0" iosDevice="0" assetsOnly="0" logicalWidth="360" architecture="2" encryptCode="0" orientation="0" mouseToTouch="1" retinaDisplay="0" osx_org="Moosader" scaleMode="5" autorotation="0" win_domain="moosader.com" mouseTouchOrder="0">
   <imageScales/>
  </properties>
  <folder name="Engine">
@@ -232,6 +232,7 @@
     <file source="Content/Graphics/Tiles/treasure_star.png"/>
    </folder>
    <folder name="UI">
+    <file source="Content/Graphics/UI/btn_pronoun.png"/>
     <file source="Content/Graphics/UI/bg_textfield.png"/>
     <file source="Content/Graphics/UI/btn_scroll_right.png"/>
     <file source="Content/Graphics/UI/btn_scroll_left.png"/>

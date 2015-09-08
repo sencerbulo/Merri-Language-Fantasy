@@ -2,6 +2,7 @@
 GLOBAL_CONFIG = {
 	HELPER_LANGUAGE = nil,
 	TARGET_LANGUAGE = nil,
+	PRONOUN = nil,
 	SCREEN_WIDTH = 360,
 	SCREEN_HEIGHT = 640,
 }
@@ -46,8 +47,9 @@ function SAVE_CONFIG()
 	if ( GLOBAL_CONFIG.SCREEN_HEIGHT ~= nil ) then  			
 	CONFIG_WRITETOFILE( destFile, "		SCREEN_HEIGHT = 640," ) else print( "Skip SCREEN_HEIGHT" ) end
 	
-	if ( GLOBAL_CONFIG.VERSION ~= nil ) then  			
-	CONFIG_WRITETOFILE( destFile, "		VERSION = ", GLOBAL_CONFIG.VERSION ,"," ) else print( "Skip VERSION" ) end
+	if ( GLOBAL_CONFIG.PRONOUN ~= nil ) then  			
+	CONFIG_WRITETOFILE( destFile, "		PRONOUN = " .. GLOBAL_CONFIG.PRONOUN .. "," ) else print( "Skip PRONOUN" ) end
+	
 	
 	CONFIG_WRITETOFILE( destFile, "	}" )
 	--CONFIG_WRITETOFILE( destFile, "" )

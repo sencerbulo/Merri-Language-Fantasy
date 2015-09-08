@@ -8,7 +8,7 @@ end
 function CharacterCreatorState:Setup( options )
 	StateBase:SetGotoState( "" )
 	self:SetupAppearanceMenu()
-	self:Draw()
+	self.pronoun = ""
 end
 
 function CharacterCreatorState:SetupAppearanceMenu()
@@ -106,6 +106,7 @@ function CharacterCreatorState:SetupAppearanceMenu()
 		
 	StateBase:AddButton( { 
 		button = { id = "pronoun", 	path = "Content/Graphics/UI/bg_textfield.png",  	pos_x = x + 150, pos_y = y - 25  },
+		label 	= { id = "pronoun", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = x + 155, pos_y = y+8, color = 0xFFFFFF, size = 20, text = self.pronoun }
 		} )
 	
 		
@@ -135,13 +136,41 @@ function CharacterCreatorState:SetupAppearanceMenu()
 	self.bitmaps.face = Bitmap.new( Texture.new( "Content/Graphics/Characters/face/face" .. self.faceCode .. "-color1.png" ) )
 	self.bitmaps.face:setScale( 2 )
 	self.bitmaps.face:setPosition( characterX, characterY )
+	
+	self:Draw()
 end
 
-function CharacterCreatorState:SetupPronounChooser()
+function CharacterCreatorState:SetupPronounMenu()
 	StateBase:ClearScreen()
 	self:Cleanup()
 	StateBase:Setup( { backgroundScroll = true } )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
+	
+	StateBase:AddLabel( { id = "header", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = 0, pos_y = 25, color = 0xFFFFFF, size = 20, text = GameText:Get( "helper", "Pronouns" ), centered = true } )
+		
+	local x = 36
+	local y = 175
+	local inc = 100
+	
+	self.pronounList = GameText:GetPronouns()
+	
+	for key, pronoun in pairs( self.pronounList ) do
+		StateBase:AddButton( { 
+			button = { id = "btn_" .. pronoun.pronoun, 	path = "Content/Graphics/UI/btn_pronoun.png",  	pos_x = x, pos_y = y },
+			label 	= { id = "btn_" .. pronoun.pronoun, 	path = "Content/Fonts/NotoSans-Bold.ttf",   			
+				pos_x = x + 10, pos_y = y + 25, color = 0xFFFFFF, size = 20, text = pronoun.pronoun }
+			} )
+		StateBase:AddLabel( { id = "desc_" .. pronoun.pronoun, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+			pos_x = x+10, pos_y = y+50, color = 0xFFFFFF, size = 15, text = pronoun.description, centered = false } )
+			
+		y = y + inc
+	end
+	
+		
+		
+	self:Draw()
+	
 end
 
 function CharacterCreatorState:Cleanup()
@@ -178,6 +207,24 @@ end
 function CharacterCreatorState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
 	
+	if ( self.pronounList ~= nil ) then
+		local clickedPronoun = false
+		for key, pronoun in pairs( self.pronounList ) do
+			if ( clickedButton == "btn_" .. pronoun.pronoun ) then
+				print( "Selected pronoun", pronoun.pronoun )
+				GLOBAL_CONFIG.PRONOUN = pronoun.pronoun
+				self.pronoun = pronoun.pronoun
+				clickedPronoun = true
+			end
+		end
+		
+		if ( clickedPronoun ) then
+			self:SetupAppearanceMenu()
+		end
+		
+	end
+	
+	
 	if ( clickedButton == "name_text" ) then
 		local textInputDialog = TextInputDialog.new( 
 			GameText:Get( "helper", "Player name" ), 
@@ -188,57 +235,61 @@ function CharacterCreatorState:Handle_MouseDown( event )
 			
 		textInputDialog:addEventListener( Event.COMPLETE, CharacterCreatorState.GetNameDialogReturn, self )
 		textInputDialog:show()
-	end
+	
+	
+	elseif ( clickedButton == "pronoun" ) then
+		self:SetupPronounMenu()
+	
 	
 	-- HAIR
-	if ( clickedButton == "hair_left" ) then
+	elseif ( clickedButton == "hair_left" ) then
 		self.hairCode = self.hairCode - 1
 		if ( self.hairCode < 1 ) then 
 			self.hairCode = self.hairCodeMax
 		end
 		self.bitmaps.hair:setTexture( Texture.new( "Content/Graphics/Characters/hair/hair" .. self.hairCode .. "-color1.png" ) )
 		
-	end
+	
 		
-	if ( clickedButton == "hair_right" ) then
+	elseif ( clickedButton == "hair_right" ) then
 		self.hairCode = self.hairCode + 1
 		if ( self.hairCode > self.hairCodeMax ) then
 			self.hairCode = 1
 		end
 		self.bitmaps.hair:setTexture( Texture.new( "Content/Graphics/Characters/hair/hair" .. self.hairCode .. "-color1.png" ) )
 		
-	end
+	
 	
 	-- FACE
-	if ( clickedButton == "face_left" ) then
+	elseif ( clickedButton == "face_left" ) then
 		self.faceCode = self.faceCode - 1
 		if ( self.faceCode < 1 ) then 
 			self.faceCode = self.faceCodeMax
 		end
 		self.bitmaps.face:setTexture( Texture.new( "Content/Graphics/Characters/face/face" .. self.faceCode .. "-color1.png" ) )
 		
-	end
+	
 		
-	if ( clickedButton == "face_right" ) then
+	elseif ( clickedButton == "face_right" ) then
 		self.faceCode = self.faceCode + 1
 		if ( self.faceCode > self.faceCodeMax ) then
 			self.faceCode = 1
 		end
 		self.bitmaps.face:setTexture( Texture.new( "Content/Graphics/Characters/face/face" .. self.faceCode .. "-color1.png" ) )
 		
-	end
+	
 	
 	-- SKIN
-	if ( clickedButton == "skin_left" ) then
+	elseif ( clickedButton == "skin_left" ) then
 		self.baseCode = self.baseCode - 1
 		if ( self.baseCode < 1 ) then 
 			self.baseCode = self.baseCodeMax
 		end
 		self.bitmaps.base:setTexture( Texture.new( "Content/Graphics/Characters/base/base1-color" .. self.baseCode .. ".png" ) )
 		
-	end
+	
 		
-	if ( clickedButton == "skin_right" ) then
+	elseif ( clickedButton == "skin_right" ) then
 		self.baseCode = self.baseCode + 1
 		if ( self.baseCode > self.baseCodeMax ) then
 			self.baseCode = 1

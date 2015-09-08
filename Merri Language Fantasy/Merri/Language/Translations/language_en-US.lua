@@ -73,8 +73,21 @@ function SetupEnglish()
     helper[ "Face" ] = "Face:"
     helper[ "Skin color" ] = "Skin color:"
     helper[ "Pronoun" ] = "Pronoun:"
+    helper[ "Pronouns" ] = "Pronouns"
 	helper[ "Enter a name" ] = "Enter a name"
 	helper[ "Player name" ] = "Player name"
+    
+    -- Pronouns available in the English language
+    target[ "pronouns" ] = {
+            { pronoun = "he", type = "masculine" },
+            { pronoun = "she", type = "feminine" },
+            { pronoun = "they", type = "neutral" },
+        }
+        
+    -- Used to describe other languages' pronouns
+    helper[ "pronoun description masculine" ] = "Masculine"
+    helper[ "pronoun description feminine" ] = "Feminine"
+    helper[ "pronoun description neutral" ] = "Neutral"
     
     ----------------------------------
     -- ANIMAL BATTLE MINI-GAME TEXT --

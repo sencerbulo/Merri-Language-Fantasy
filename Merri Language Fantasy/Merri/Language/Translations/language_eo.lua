@@ -72,6 +72,31 @@ function SetupEsperanto()
     helper[ "Animal Battle" ] = "Batalo kontraŭ Bestoj"
     target[ "Animal Battle" ] = helper[ "Animal Battle" ]
     
+    -- CHARACTER CREATOR
+    
+    helper[ "Character Creator" ] = "Rolula Kreilo"
+    helper[ "Name" ] = "Nomo:"
+    helper[ "Hair" ] = "Stilo de hararo:"
+    helper[ "Hair color" ] = "Koloro de hararo:"
+    helper[ "Face" ] = "Vizaĝo:"
+    helper[ "Skin color" ] = "Koloro de haŭto:"
+    helper[ "Pronoun" ] = "Pronomo:"
+    helper[ "Pronouns" ] = "Pronomoj"
+	helper[ "Enter a name" ] = "Tajpu nomon"
+	helper[ "Player name" ] = "Nomo de rolulo"
+    
+    -- Pronouns available in this language
+    target[ "pronouns" ] = {
+            { pronoun = "li", type = "masculine" },
+            { pronoun = "ŝi", type = "feminine" },
+            { pronoun = "ĝi", type = "neutral" },
+        }
+        
+    -- Used to describe other languages' pronouns
+    helper[ "pronoun description masculine" ] = "Vira"
+    helper[ "pronoun description feminine" ] = "Ina"
+    helper[ "pronoun description neutral" ] = "Neŭtrala"
+    
     
     ----------------------------------
     -- ANIMAL BATTLE MINI-GAME TEXT --

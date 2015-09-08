@@ -257,6 +257,19 @@ end
 function GameText:init( options )
 end
 
+function GameText:GetPronouns()
+	-- Return list of pronouns (target language) and descriptions (helper language)
+	
+	local pronouns = {}
+	for key, pronoun in pairs( GameText.Target.pronouns ) do
+		p = pronoun
+		p.description = GameText:Get( "helper", "pronoun description " .. pronoun.type )
+		table.insert( pronouns, p )
+	end
+
+	return pronouns
+end
+
 function GameText:Setup( options )
     GameText.HelperText = {}
     GameText.TargetText = {}
