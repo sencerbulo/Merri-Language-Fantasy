@@ -55,6 +55,10 @@ function SetupEnglish()
     target[ "Earned a star" ]           = "You acquired a star!"
     helper[ "Earned a star" ] = target[ "Earned a star" ]       -- Ignore this
     
+    -- GAMES
+    helper[ "Miner" ] = "Miner"
+    target[ "Miner" ] = helper[ "Miner" ]
+    
     --------------------------
     -- MINER MINI-GAME TEXT --
     --------------------------

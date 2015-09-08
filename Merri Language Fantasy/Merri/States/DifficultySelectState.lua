@@ -9,7 +9,11 @@ end
 function DifficultySelectState:Setup( options )
 	StateBase:SetGotoState( "" )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
-	
+	self:SetupDemoMenu()
+	self:Draw()
+end
+
+function DifficultySelectState:SetupMain()	
 	StateBase:AddButton( { 
 		button 	= { id = "btn_practice", 	path = "Content/Graphics/UI/difficulty_practice.png",  	pos_x = 0, pos_y = 0  },
 		label 		= { id = "btn_practice", 	path = "Content/Fonts/NotoSans-Bold.ttf",   								pos_x = 135, pos_y = 75, color = 0xFFFFFF, size = 25, text = GameText:Get( "helper", "Practice" ) }
@@ -39,8 +43,24 @@ function DifficultySelectState:Setup( options )
 		button = { id = "btn_back", 	path = "Content/Graphics/UI/btn_back.png",  			pos_x = 10, pos_y = 530  },
 		label 	= { id = "btn_back", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 15, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "back" ) }
 		} )
+end
+
+function DifficultySelectState:SetupDemoMenu()
+	StateBase:AddButton( { 
+		button 	= { id = "btn_miner", 	path = "Content/Graphics/UI/btn_game_miner.png",  	pos_x = 0, pos_y = 0  },
+		label 		= { id = "btn_miner", 	path = "Content/Fonts/NotoSans-Bold.ttf",   								pos_x = 25, pos_y = 120, color = 0xFFFFFF, size = 20, 
+			text = GameText:Get( "target", "Miner" ) .. " (" .. GameText:Get( "helper", "Miner" ) .. ")"   }
+		} )
 		
-	self:Draw()
+--	StateBase:AddButton( { 
+--		button = { id = "btn_stats", 	path = "Content/Graphics/UI/btn_stats.png",  			pos_x = 250, pos_y = 530  },
+--		label 	= { id = "btn_stats", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 255, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "progress" ) }
+--		} )
+		
+	StateBase:AddButton( { 
+		button = { id = "btn_back", 	path = "Content/Graphics/UI/btn_back.png",  			pos_x = 10, pos_y = 530  },
+		label 	= { id = "btn_back", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 15, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "back" ) }
+		} )
 end
 
 function DifficultySelectState:Cleanup()
@@ -63,8 +83,8 @@ end
 
 function DifficultySelectState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
-	if ( clickedButton == "btn_play" ) then
-	
+	if ( clickedButton == "btn_miner" ) then
+		StateBase:SetGotoState( "MinerGameState" )
 	
 	elseif ( clickedButton == "btn_help" ) then
 	

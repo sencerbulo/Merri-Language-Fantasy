@@ -19,8 +19,7 @@ if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == n
 else
 	-- Make sure to load languages for Helper and Target
 	GameText:LoadUsedLanguages()
-	--stateManager:ChangeState( "TitleState" )
-	stateManager:ChangeState( "MinerGameState" )
+	stateManager:ChangeState( "TitleState" )
 
 end
 

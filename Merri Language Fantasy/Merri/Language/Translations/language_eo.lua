@@ -66,6 +66,10 @@ function SetupEsperanto()
     target[ "Earned a star" ]           = "Vi akiris stelon!"
     helper[ "Earned a star" ] = target[ "Earned a star" ]       -- Ignore this
     
+    -- GAMES
+    helper[ "Miner" ] = "Ministo"
+    target[ "Miner" ] = helper[ "Miner" ]
+    
     --------------------------
     -- MINER MINI-GAME TEXT --
     --------------------------

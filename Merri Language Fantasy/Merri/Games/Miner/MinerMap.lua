@@ -383,7 +383,10 @@ end
 
 function MinerMap:OpenRock( x, y ) 
 	-- Choose what kind of item this is
-	local itemType = math.random( 1, 3 )
+	local itemType = math.random( 1, 5 )
+	if ( itemType == 3 ) then itemType = 1 
+	elseif ( itemType == 4 ) then itemType = 2  
+	end
 	if ( itemType == 1 and self.floor > 0 and self.floor <= 4 ) then
 		self.tiles[x][y].objectType = "copper"
 		self.tiles[x][y].generalType = "collectable"
@@ -408,7 +411,7 @@ function MinerMap:OpenRock( x, y )
 	elseif ( itemType == 2 and self.floor > 14 and self.floor <= 20 ) then
 		self.tiles[x][y].objectType = "ruby"
 		self.tiles[x][y].generalType = "collectable"
-	elseif ( itemType == 3 ) then
+	elseif ( itemType == 5 ) then
 		-- Sandwich
 		self.tiles[x][y].objectType = "sandwich"
 		self.tiles[x][y].generalType = "collectable"
