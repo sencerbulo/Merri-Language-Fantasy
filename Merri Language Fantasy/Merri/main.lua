@@ -7,8 +7,8 @@ stateManager:AddState( "GotStarState", GotStarState.new() )
 stateManager:AddState( "DemoInfoState", DemoInfoState.new() )
 stateManager:AddState( "MinerGameState", MinerGameState.new() )
 stateManager:AddState( "MinerShopState", MinerShopState.new() )
-stateManager:AddState( "FoodShopState", FoodShopState.new() )
---stateManager:AddState( "AnimalBattleState", AnimalBattleState.new() )
+--stateManager:AddState( "FoodShopState", FoodShopState.new() )
+stateManager:AddState( "AnimalBattleState", AnimalBattleState.new() )
 
 GameText:Setup()
 
@@ -19,7 +19,8 @@ if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == n
 else
 	-- Make sure to load languages for Helper and Target
 	GameText:LoadUsedLanguages()
-	stateManager:ChangeState( "TitleState" )
+	--stateManager:ChangeState( "TitleState" )
+	stateManager:ChangeState( "AnimalBattleState" )
 
 end
 

@@ -63,6 +63,12 @@ function StateBase:Draw()
 	end
 end
 
+function StateBase:DrawLabels()
+	for key, value in pairs( self.labels ) do
+		stage:addChild( value )
+	end
+end
+
 function StateBase:ClearScreen()
 	for key, value in pairs( self.backgrounds ) do
 		if ( stage:contains( value ) ) then stage:removeChild( value ) end

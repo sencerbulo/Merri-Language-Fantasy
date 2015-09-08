@@ -69,6 +69,15 @@ function SetupEsperanto()
     -- GAMES
     helper[ "Miner" ] = "Ministo"
     target[ "Miner" ] = helper[ "Miner" ]
+    helper[ "Animal Battle" ] = "Batalo kontraŭ Bestoj"
+    target[ "Animal Battle" ] = helper[ "Animal Battle" ]
+    
+    
+    ----------------------------------
+    -- ANIMAL BATTLE MINI-GAME TEXT --
+    ----------------------------------
+    
+    target[ "Attack the cat" ] = "Ataku la katon!"
     
     --------------------------
     -- MINER MINI-GAME TEXT --

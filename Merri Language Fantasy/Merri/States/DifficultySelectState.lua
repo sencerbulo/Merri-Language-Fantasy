@@ -46,10 +46,19 @@ function DifficultySelectState:SetupMain()
 end
 
 function DifficultySelectState:SetupDemoMenu()
+	local x = 0
+	local y = 0
 	StateBase:AddButton( { 
-		button 	= { id = "btn_miner", 	path = "Content/Graphics/UI/btn_game_miner.png",  	pos_x = 0, pos_y = 0  },
-		label 		= { id = "btn_miner", 	path = "Content/Fonts/NotoSans-Bold.ttf",   								pos_x = 25, pos_y = 120, color = 0xFFFFFF, size = 20, 
-			text = GameText:Get( "target", "Miner" ) .. " (" .. GameText:Get( "helper", "Miner" ) .. ")"   }
+		button 	= { id = "btn_miner", 	path = "Content/Graphics/UI/btn_game_miner.png",  	pos_x = x, pos_y = y  },
+		label 		= { id = "btn_miner", 	path = "Content/Fonts/NotoSans-Bold.ttf",   					pos_x = x+25, pos_y = y+118, color = 0xFFFFFF, size = 20, 
+			text = GameText:Get( "target", "Miner" )   }
+		} )
+	
+	y = 130
+	StateBase:AddButton( { 
+		button 	= { id = "btn_animal", 	path = "Content/Graphics/UI/btn_game_animal.png",  			pos_x = x, pos_y = y },
+		label 		= { id = "btn_animal", 	path = "Content/Fonts/NotoSans-Bold.ttf",   								pos_x = x+25, pos_y = y+118, color = 0xFFFFFF, size = 20, 
+			text = GameText:Get( "target", "Animal Battle" )   }
 		} )
 		
 --	StateBase:AddButton( { 
@@ -86,7 +95,8 @@ function DifficultySelectState:Handle_MouseDown( event )
 	if ( clickedButton == "btn_miner" ) then
 		StateBase:SetGotoState( "MinerGameState" )
 	
-	elseif ( clickedButton == "btn_help" ) then
+	elseif ( clickedButton == "btn_animal" ) then
+		StateBase:SetGotoState( "AnimalBattleState" )
 	
 	
 	elseif ( clickedButton == "btn_back" ) then

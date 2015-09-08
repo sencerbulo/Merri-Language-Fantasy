@@ -58,6 +58,14 @@ function SetupEnglish()
     -- GAMES
     helper[ "Miner" ] = "Miner"
     target[ "Miner" ] = helper[ "Miner" ]
+    helper[ "Animal Battle" ] = "Animal Battle"
+    target[ "Animal Battle" ] = helper[ "Animal Battle" ]
+    
+    ----------------------------------
+    -- ANIMAL BATTLE MINI-GAME TEXT --
+    ----------------------------------
+    
+    target[ "Attack the cat" ] = "Attack the cat!"
     
     --------------------------
     -- MINER MINI-GAME TEXT --
