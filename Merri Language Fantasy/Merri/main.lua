@@ -10,24 +10,16 @@ stateManager:AddState( "DemoInfoState", DemoInfoState.new() )
 
 GameText:Setup()
 
--- DEMO MODE
-GLOBAL_CONFIG.HELPER_LANGUAGE = "English"
-GLOBAL_CONFIG.TARGET_LANGUAGE = "Esperanto"
-
 LOAD_CONFIG()
+if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
+	stateManager:ChangeState( "LanguageSelectState" )
 
---if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
-	--stateManager:ChangeState( "LanguageSelectState" )
+else
+	-- Make sure to load languages for Helper and Target
+	GameText:LoadUsedLanguages()
+	stateManager:ChangeState( "TitleState" )
 
---else
-	--stateManager:ChangeState( "TitleState" )
-	--stateManager:ChangeState( "MinerGameState" )
-	--GameText:LoadUsedLanguages()
-
---end
-
--- DEMO STATE - Go to Language State immediately
-stateManager:ChangeState( "LanguageSelectState" )
+end
 
 function Handle_EnterFrame( event )
 	stateManager:Handle_EnterFrame( event )

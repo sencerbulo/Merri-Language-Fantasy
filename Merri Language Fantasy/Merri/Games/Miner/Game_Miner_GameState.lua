@@ -222,22 +222,22 @@ function MinerGameState:Cleanup()
 	self:ClearWidgets()
 	
 	for key, button in pairs( self.hud ) do 
-		stage:removeChild( button.bitmap )
+		if ( stage:contains( button.bitmap ) ) then stage:removeChild( button.bitmap ) end
 		self.hud[ key ] = nil
 	end
 	
 	for key, button in pairs( self.buttons ) do
-		stage:removeChild( button.bitmap )
+		if ( stage:contains( button.bitmap ) ) then stage:removeChild( button.bitmap ) end
 		self.buttons[ key ] = nil
 	end
 	
 	for key, label in pairs( self.labels ) do
-		stage:removeChild( label )
+		if ( stage:contains( label ) ) then stage:removeChild( label ) end
 		self.labels[ key ] = nil
 	end
 	
 	for key, heart in pairs( self.hudHearts ) do
-		stage:removeChild( heart )
+		if ( stage:contains( heart ) ) then stage:removeChild( heart ) end
 		self.hudHearts[ key ] = nil
 	end
 	

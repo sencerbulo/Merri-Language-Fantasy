@@ -5,15 +5,9 @@ function SetupEnglish()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Translators"         -- Header text: "Translators" for Translator credits section
-    
     helper[ "website" ]                 = "Website:"            -- Label for homepage URL
-    target[ "website" ] = helper[ "website" ]                   -- Ignore this
-    
     helper[ "facebook" ]                = "Facebook:"           -- Label for Facebook URL
-    target[ "facebook" ] = helper[ "facebook" ]                 -- Ignore this
-    
     helper[ "twitter" ]                 = "Twitter:"            -- Label for Twitter URL
-    target[ "twitter" ] = helper[ "twitter" ]                   -- Ignore this
     
     -- GAME TITLE
     target[ "game title" ]              = "English Fantasy"     -- Translate as "Fantasy of ____" for your language. (e.g., Fantazio de Esperanto)
@@ -24,14 +18,6 @@ function SetupEnglish()
     target[ "There may be errors or bugs" ]                     = "There may be errors or bugs."
     target[ "Report problems at EMAIL" ]                        = "Report problems at Rachel@Moosader.com ."
     target[ "Want to keep up with this game's progress?" ]      = "Want to keep up with this game's progress?"
-    
-    -- Ignore this block
-    helper[ "Thank you for trying out Merri" ] = target[ "Thank you for trying out Merri" ]
-    helper[ "This is still a work in progress" ] = target[ "This is still a work in progress" ]
-    helper[ "There may be errors or bugs" ] = target[ "There may be errors or bugs" ]
-    helper[ "Report problems at EMAIL" ] = target[ "Report problems at EMAIL" ]
-    helper[ "Want to keep up with this game's progress?" ] = target[ "Want to keep up with this game's progress?" ]
-    -- End ignore
         
     -- MAIN MENU BUTTONS
     target[ "play" ]                    = "Play"                -- Button to begin the game
@@ -41,9 +27,7 @@ function SetupEnglish()
     target[ "help" ]                    = "Help"                -- Get help / instructions for a game or function
     target[ "menu" ]                    = "Menu"                -- Open up sub-menu screen
     target[ "close-menu" ]              = "Back"                -- Close sub-menu
-    target[ "back" ] = target[ "close-menu" ]                   -- Ignore this
     target[ "progress" ]                = "Progress"            -- Progress / Statistics menu
-    helper[ "progress" ] = target[ "progress" ]
     
     -- Difficulty levels
     helper[ "Practice" ]  = "Practice"
@@ -152,6 +136,32 @@ function SetupEnglish()
     target[ "miner-rope" ]              = "You flee upward by using the rope."
     target[ "miner-dynamite" ]          = "You flee downward by using the dynamite."
     target[ "miner-died" ]              = "You have been killed."
+	
+	-- Copies
+	
+    target[ "website" ] = helper[ "website" ]                   -- Ignore this
+    target[ "facebook" ] = helper[ "facebook" ]                 -- Ignore this
+    target[ "twitter" ] = helper[ "twitter" ]                   -- Ignore this	
+    
+    -- Ignore this block
+    helper[ "Thank you for trying out Merri" ] = target[ "Thank you for trying out Merri" ]
+    helper[ "This is still a work in progress" ] = target[ "This is still a work in progress" ]
+    helper[ "There may be errors or bugs" ] = target[ "There may be errors or bugs" ]
+    helper[ "Report problems at EMAIL" ] = target[ "Report problems at EMAIL" ]
+    helper[ "Want to keep up with this game's progress?" ] = target[ "Want to keep up with this game's progress?" ]
+    -- End ignore
+	
+	-- Ignore this block
+    helper[ "play" ] =  target[ "play" ]                    
+    helper[ "previous" ] = target[ "previous" ]              
+    helper[ "next" ]              = target[ "next" ]              
+    helper[ "options" ]   =target[ "options" ]              
+    helper[ "help" ]   =target[ "help" ]                  
+    helper[ "back" ] = target[ "close-menu" ]
+	helper[ "back" ] = target[ "back" ]
+	helper[ "close-menu" ] = target[ "close-menu" ]
+    helper[ "progress" ] = target[ "progress" ]
+	-- End ignore
     
 	return helper, target    
 end

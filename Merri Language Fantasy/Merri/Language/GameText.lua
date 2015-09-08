@@ -325,7 +325,6 @@ end
 -- Specific language files
 
 function GameText:Get( cat, id )
-	-- GameText.Helper[ "twitter" ]
     local category = ""
     if ( cat == "helper" ) then
         category = "Helper"
