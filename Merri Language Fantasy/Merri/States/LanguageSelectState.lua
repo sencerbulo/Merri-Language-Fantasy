@@ -96,7 +96,7 @@ function LanguageSelectState:Handle_MouseDown( event )
 		if ( GLOBAL_CONFIG.TARGET_LANGUAGE ~= nil ) then
 			SAVE_CONFIG()
 			GameText:LoadUsedLanguages()
-			StateBase:SetGotoState( "TitleState" )
+			StateBase:SetGotoState( "CharacterCreatorState" )
 		end
 	end
 end

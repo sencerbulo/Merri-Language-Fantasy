@@ -22,15 +22,18 @@ function SetupEnglish()
 	helper[ "Version" ] = "Version"
         
     -- MAIN MENU BUTTONS
-    target[ "play" ]                    = "Play"                -- Button to begin the game
-    target[ "previous" ]                = "Previous"            -- Go backward one page (one menu)
-    target[ "next" ]                    = "Next"                -- Go forward one page (one menu)
-    target[ "options" ]                 = "Options"             -- Configure options in a game
-    target[ "help" ]                    = "Help"                -- Get help / instructions for a game or function
-    target[ "menu" ]                    = "Menu"                -- Open up sub-menu screen
-    target[ "close-menu" ]              = "Back"                -- Close sub-menu
-    target[ "progress" ]                = "Progress"            -- Progress / Statistics menu
-	
+    helper[ "play" ]                    = "Play"                -- Button to begin the game
+    helper[ "previous" ]                = "Previous"            -- Go backward one page (one menu)
+    helper[ "next" ]                    = "Next"                -- Go forward one page (one menu)
+    helper[ "options" ]                 = "Options"             -- Configure options in a game
+    helper[ "help" ]                    = "Help"                -- Get help / instructions for a game or function
+    helper[ "menu" ]                    = "Menu"                -- Open up sub-menu screen
+    helper[ "close-menu" ]              = "Back"                -- Close sub-menu
+    helper[ "progress" ]                = "Progress"            -- Progress / Statistics menu
+    helper[ "save" ]                    = "Save"                -- Save changes
+	helper[ "cancel" ]                  = "Cancel"
+
+
 	helper[ "Continue playing" ] = "Continue playing"
 	helper[ "Back to game select" ] = "Back to game select"
 	helper[ "close menu" ] = "Close menu"
@@ -60,6 +63,18 @@ function SetupEnglish()
     target[ "Miner" ] = helper[ "Miner" ]
     helper[ "Animal Battle" ] = "Animal Battle"
     target[ "Animal Battle" ] = helper[ "Animal Battle" ]
+    
+    -- CHARACTER CREATOR
+    
+    helper[ "Character Creator" ] = "Character Creator"
+    helper[ "Name" ] = "Name:"
+    helper[ "Hair" ] = "Hair style:"
+    helper[ "Hair color" ] = "Hair color:"
+    helper[ "Face" ] = "Face:"
+    helper[ "Skin color" ] = "Skin color:"
+    helper[ "Pronoun" ] = "Pronoun:"
+	helper[ "Enter a name" ] = "Enter a name"
+	helper[ "Player name" ] = "Player name"
     
     ----------------------------------
     -- ANIMAL BATTLE MINI-GAME TEXT --
@@ -173,18 +188,6 @@ function SetupEnglish()
     -- End ignore
 	
 	-- Ignore this block
-    helper[ "play" ] =  target[ "play" ]                    
-    helper[ "previous" ] = target[ "previous" ]              
-    helper[ "next" ]              = target[ "next" ]              
-    helper[ "options" ]   =target[ "options" ]              
-    helper[ "help" ]   =target[ "help" ]    
-    helper[ "menu" ]   =target[ "menu" ]    
-	target[ "back" ] = target[ "close-menu" ]
-	helper[ "back" ] = target[ "back" ]
-	helper[ "close-menu" ] = target[ "close-menu" ]
-    helper[ "progress" ] = target[ "progress" ]
-	-- End ignore
-	target[ "paused" ] = helper[ "paused" ]
     
 	return helper, target    
 end

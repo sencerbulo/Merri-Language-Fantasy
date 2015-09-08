@@ -5,6 +5,7 @@ stateManager:AddState( "TitleState", TitleState.new() )
 stateManager:AddState( "DifficultySelectState", DifficultySelectState.new() )
 stateManager:AddState( "GotStarState", GotStarState.new() )
 stateManager:AddState( "DemoInfoState", DemoInfoState.new() )
+stateManager:AddState( "CharacterCreatorState", CharacterCreatorState.new() )
 stateManager:AddState( "MinerGameState", MinerGameState.new() )
 stateManager:AddState( "MinerShopState", MinerShopState.new() )
 --stateManager:AddState( "FoodShopState", FoodShopState.new() )
@@ -20,7 +21,7 @@ else
 	-- Make sure to load languages for Helper and Target
 	GameText:LoadUsedLanguages()
 	--stateManager:ChangeState( "TitleState" )
-	stateManager:ChangeState( "AnimalBattleState" )
+	stateManager:ChangeState( "CharacterCreatorState" )
 
 end
 

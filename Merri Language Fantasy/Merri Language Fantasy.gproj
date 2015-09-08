@@ -42,6 +42,7 @@
    <file source="Merri/Language/GameText.lua"/>
   </folder>
   <folder name="States">
+   <file source="Merri/States/CharacterCreator.lua"/>
    <file source="Merri/States/DemoInfoState.lua"/>
    <file source="Merri/States/DifficultySelectState.lua"/>
    <file source="Merri/States/LanguageSelectState.lua"/>
@@ -183,23 +184,59 @@
   </folder>
   <folder name="Graphics">
    <folder name="Characters">
-    <file source="Content/Graphics/Characters/enemy_snail.png"/>
-    <file source="Content/Graphics/Characters/enemy_mole.png"/>
-    <file source="Content/Graphics/Characters/miner_up2.png"/>
-    <file source="Content/Graphics/Characters/miner_up.png"/>
-    <file source="Content/Graphics/Characters/miner_right2.png"/>
-    <file source="Content/Graphics/Characters/miner_right.png"/>
-    <file source="Content/Graphics/Characters/miner_left2.png"/>
-    <file source="Content/Graphics/Characters/miner_left.png"/>
-    <file source="Content/Graphics/Characters/miner_down2.png"/>
-    <file source="Content/Graphics/Characters/miner_down.png"/>
-    <file source="Content/Graphics/Characters/miner sprite.xcf"/>
+    <folder name="hair">
+     <file source="Content/Graphics/Characters/hair/hair9-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair8-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair7-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair6-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair5-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair4-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair3-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair2-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair1-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair12-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair11-color1.png"/>
+     <file source="Content/Graphics/Characters/hair/hair10-color1.png"/>
+    </folder>
+    <folder name="face">
+     <file source="Content/Graphics/Characters/face/face9-color1.png"/>
+     <file source="Content/Graphics/Characters/face/face8-color1.png"/>
+     <file source="Content/Graphics/Characters/face/face7-color1.png"/>
+     <file source="Content/Graphics/Characters/face/face6-color1.png"/>
+     <file source="Content/Graphics/Characters/face/face5-color1.png"/>
+     <file source="Content/Graphics/Characters/face/face4-color1.png"/>
+     <file source="Content/Graphics/Characters/face/face3-color1.png"/>
+     <file source="Content/Graphics/Characters/face/face2-color1.png"/>
+     <file source="Content/Graphics/Characters/face/face1-color1.png"/>
+    </folder>
+    <folder name="base">
+     <file source="Content/Graphics/Characters/base/base1-color9.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color8.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color7.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color6.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color5.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color4.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color3.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color2.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color15.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color14.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color13.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color12.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color11.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color10.png"/>
+     <file source="Content/Graphics/Characters/base/base1-color1.png"/>
+    </folder>
    </folder>
    <folder name="Tiles">
     <file source="Content/Graphics/Tiles/treasure_star_big.png"/>
     <file source="Content/Graphics/Tiles/treasure_star.png"/>
    </folder>
    <folder name="UI">
+    <file source="Content/Graphics/UI/bg_textfield.png"/>
+    <file source="Content/Graphics/UI/btn_scroll_right.png"/>
+    <file source="Content/Graphics/UI/btn_scroll_left.png"/>
+    <file source="Content/Graphics/UI/bg_character.png"/>
+    <file source="Content/Graphics/UI/btn_save.png"/>
     <file source="Content/Graphics/UI/btn_game_animal.png"/>
     <file source="Content/Graphics/UI/btn_game_miner.png"/>
     <file source="Content/Graphics/UI/btn_pause_option.png"/>
