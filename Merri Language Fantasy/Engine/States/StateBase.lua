@@ -25,17 +25,17 @@ end
 
 function StateBase:Cleanup()
 	for key, value in pairs( self.backgrounds ) do
-		stage:removeChild( value )
+		if ( stage:contains( value ) ) then stage:removeChild( value ) end
 		self.backgrounds[ key ] = nil
 	end
 
 	for key, value in pairs( self.bitmaps ) do
-		stage:removeChild( value )
+		if ( stage:contains( value ) ) then stage:removeChild( value ) end
 		self.bitmaps[ key ] = nil
 	end
 	
 	for key, value in pairs( self.labels ) do
-		stage:removeChild( value )
+		if ( stage:contains( value ) ) then stage:removeChild( value ) end
 		self.labels[ key ] = nil
 	end	
 end
@@ -64,15 +64,15 @@ end
 
 function StateBase:ClearScreen()
 	for key, value in pairs( self.backgrounds ) do
-		stage:removeChild( value )
+		if ( stage:contains( value ) ) then stage:removeChild( value ) end
 	end
 
 	for key, value in pairs( self.bitmaps ) do
-		stage:removeChild( value )
+		if ( stage:contains( value ) ) then stage:removeChild( value ) end
 	end
 	
 	for key, value in pairs( self.labels ) do
-		stage:removeChild( value )
+		if ( stage:contains( value ) ) then stage:removeChild( value ) end
 	end	
 end
 
@@ -203,7 +203,7 @@ end
 
 function StateBase:RemoveLabel( name )
 	if ( self.labels[ name ] ~= nil and stage:contains( self.labels[ name ] ) ) then
-		stage:removeChild( self.labels[ name ] )
+		if ( stage:contains( self.labels[ name ] ) ) then stage:removeChild( self.labels[ name ] ) end
 	end
 end
 
