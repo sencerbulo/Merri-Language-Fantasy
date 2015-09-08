@@ -47,13 +47,14 @@ function MinerMap:init( options )
 	self.floor =  options.floor
 	self.lastFloor = 20
 	self.mapWidth = 10
-	self.mapHeight = 14
+	self.mapHeight = 10
 	
 	self.freezeCountdown = 0
 	self.frame = 0
 		
 	self.tiles = {}
 	self.enemies = {}
+	self.enableLighting = true
 	
 	self.player = MinerPlayer.new( { moveAmount = self.tileWidth, hp = options.hp } )
 end
@@ -503,6 +504,9 @@ function MinerMap:DimTiles()
 end
 
 function MinerMap:UpdateLighting()
+	if ( self.enableLighting == false ) then
+		return
+	end
 	local playerX, playerY = self.player:getPosition()
 
 	for y = 0, self.mapHeight do

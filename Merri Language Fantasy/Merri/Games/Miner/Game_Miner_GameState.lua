@@ -14,7 +14,6 @@ end
 
 -- Setup / Teardown --
 function MinerGameState:Setup( options )
-	self.enableLighting = true
 	StateBase:SetGotoState( "" )
 	
 	-- Setup UI
@@ -24,6 +23,8 @@ function MinerGameState:Setup( options )
 			black = Texture.new( "Content/Graphics/UI/blank_background.png" ),
 			heart = Texture.new( "Content/Games/Miner/UI/hud_heart.png" ),
 			menu = Texture.new( "Content/Graphics/UI/btn_menu.png" ),
+			
+			hud_empty = Texture.new( "Content/Games/Miner/UI/button_bg.png" ),
 			
 			hud_south = Texture.new( "Content/Games/Miner/UI/hud_down.png" ),
 			hud_west = Texture.new( "Content/Games/Miner/UI/hud_left.png" ),
@@ -91,30 +92,38 @@ function MinerGameState:Setup( options )
 		topButton = {
 			action = "move",
 			direction = "north",
-			bitmap = Bitmap.new( self.textures.hud_north ),
+			bitmap = Bitmap.new( self.textures.hud_empty ),
 			xOffset = 0,
 			yOffset = -36,
+			xPosition = 155,
+			yPosition = 447,
 		},
 		bottomButton = {
 			action = "move",
 			direction = "south",
-			bitmap = Bitmap.new( self.textures.hud_south ),
+			bitmap = Bitmap.new( self.textures.hud_empty ),
 			xOffset = 0,
 			yOffset = 36,
+			xPosition = 155,
+			yPosition = 551,
 		},
 		leftButton = {
 			action = "move",
 			direction = "west",
-			bitmap = Bitmap.new( self.textures.hud_west ),
+			bitmap = Bitmap.new( self.textures.hud_empty ),
 			xOffset = -36,
 			yOffset = 0,
+			xPosition = 103,
+			yPosition = 499,
 		},
 		rightButton = {
 			action = "move",
 			direction = "east",
-			bitmap = Bitmap.new( self.textures.hud_east ),
+			bitmap = Bitmap.new( self.textures.hud_empty ),
 			xOffset = 36,
 			yOffset = 0,
+			xPosition = 207,
+			yPosition = 499,
 		},
 	}
 	
@@ -125,43 +134,45 @@ function MinerGameState:Setup( options )
 	
 	-- Labels
 	self.labels = {}
-	
 	-- Narrative Line
 	self.labels.narration = TextField.new( MinerGameState.fonts.hud, MinerGameState.transitionText )
 	self.labels.narration:setTextColor( 0xFFFFFF )
-	self.labels.narration:setPosition( 10, 560 )
+	self.labels.narration:setPosition( 10, 415 )
 	
+	
+	local statTextX = 10
 	-- Health
 	self.labels.health = TextField.new( MinerGameState.fonts.hud, GameText:Get( "target", "Health" ) )
 	self.labels.health:setTextColor( 0xFFFFFF )
-	self.labels.health:setPosition( 80, 590 )
+	self.labels.health:setPosition( statTextX, 450 )
 	
 	-- Hearts
 	self.hudHearts = {}
 	for i = 0, 3 do
 		self.hudHearts[i] = Bitmap.new( self.textures.heart )
-		self.hudHearts[i]:setPosition( 160 + ( i * 20 ), 575 )
+		self.hudHearts[i]:setPosition( statTextX + ( i * 20 ), 460 )
 	end
 	self:UpdateHearts()
 	
 	-- Money
 	self.labels.money = TextField.new( MinerGameState.fonts.hud, GameText:Get( "target", "Money" ) )
 	self.labels.money:setTextColor( 0xFFFFFF )
-	self.labels.money:setPosition( 80, 610 )
+	self.labels.money:setPosition( statTextX, 500 )
 	
 	self.labels.moneyValue = TextField.new( MinerGameState.fonts.hud, MinerGameState.money )
 	self.labels.moneyValue:setTextColor( 0xFFFFFF )
-	self.labels.moneyValue:setPosition( 165, 610 )
+	self.labels.moneyValue:setPosition( statTextX, 520 )
 	
 	-- Floor
 	self.labels.floor = TextField.new( MinerGameState.fonts.hud, GameText:Get( "target", "Floor" ) )
 	self.labels.floor:setTextColor( 0xFFFFFF )
-	self.labels.floor:setPosition( 80, 630 )
+	self.labels.floor:setPosition( statTextX, 550 )
 	
 	self.labels.floorValue = TextField.new( MinerGameState.fonts.hud, self.map.floor )
 	self.labels.floorValue:setTextColor( 0xFFFFFF )
-	self.labels.floorValue:setPosition( 165, 630 )
+	self.labels.floorValue:setPosition( statTextX, 570 )
 	
+	local inventoryX = 267
 	self.buttons = {}
 	self.buttons.inventory = {}
 	if ( MinerGameState.inventoryItem == "" ) then
@@ -173,15 +184,15 @@ function MinerGameState:Setup( options )
 		self.buttons.inventory.item = MinerGameState.inventoryItem
 	
 	end
-	self.buttons.inventory.bitmap:setPosition( 267, 572 )
+	self.buttons.inventory.bitmap:setPosition( inventoryX, 572 )
 	
-	--self.buttons.menu = {}
-	--self.buttons.menu.bitmap	= Bitmap.new( self.textures.menu )
-	--self.buttons.menu.bitmap:setPosition( 10, 580 )
+	self.buttons.menu = {}
+	self.buttons.menu.bitmap	= Bitmap.new( self.textures.menu )
+	self.buttons.menu.bitmap:setPosition( statTextX, 585 )
 	
-	--self.labels.menu = TextField.new( MinerGameState.fonts.hud, GameText:Get( "helper", "Menu" ) )
-	--self.labels.menu:setTextColor( 0xFFFFFF )
-	--self.labels.menu:setPosition( 12, 623 )
+	self.labels.menu = TextField.new( MinerGameState.fonts.hud, GameText:Get( "helper", "menu" ) )
+	self.labels.menu:setTextColor( 0xFFFFFF )
+	self.labels.menu:setPosition( statTextX+3, 630 )
 	
 	self:SetupHud()
 	self:Draw()
@@ -192,14 +203,12 @@ function MinerGameState:SetupHud()
 	self.hud.bottomButton.action,
 	self.hud.leftButton.action,
 	self.hud.rightButton.action = self.map:GetHudActions()
-	
-	local x, y = self.map:GetPlayerCoordinates()
+
 	for key, button in pairs( self.hud ) do
 		-- Update Position
-		button.bitmap:setPosition( x + button.xOffset, y + button.yOffset )
+		button.bitmap:setPosition( button.xPosition, button.yPosition )
 		
 		-- Update actions
-		button.bitmap:setAlpha( 1 )
 		if ( button.action == "move" ) then
 			button.bitmap:setTexture( self.textures[ "hud_" .. button.direction ] )
 		
@@ -210,7 +219,7 @@ function MinerGameState:SetupHud()
 			button.bitmap:setTexture( self.textures.hud_sword )
 		
 		else -- none
-			button.bitmap:setAlpha( 0 )
+			button.bitmap:setTexture( self.textures.hud_empty )
 		end
 	end
 end
@@ -544,6 +553,4 @@ function MinerGameState:GameOver()
 		
 	MinerGameState.gameOver = true
 end
-
-
 
