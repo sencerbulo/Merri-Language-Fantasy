@@ -69,7 +69,6 @@ function DemoInfoState:SetupInfoScreen()
 end
 
 function DemoInfoState:SetupCreditScreen()
-	print( "Credit Screen" )
 	StateBase:ClearScreen()
 	self:Cleanup()
 	
@@ -129,7 +128,6 @@ end
 
 function DemoInfoState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
-	print( "Clicked ", clickedButton )
 	if ( clickedButton == "btn_play" ) then
 		StateBase:SetGotoState( "MinerGameState" )	
 		

@@ -7,8 +7,17 @@ end
 -- Setup / Teardown --
 function CharacterCreatorState:Setup( options )
 	StateBase:SetGotoState( "" )
-	self:SetupAppearanceMenu()
+	
 	self.pronoun = ""
+	self.baseCode = 1
+	self.baseCodeMax = 15
+	self.faceCode = 1
+	self.faceCodeMax = 9
+	self.hairCode = 1
+	self.hairCodeMax = 12
+	self.hairColor = { r = 100, g = 100, b = 100, a = 255 }
+	
+	self:SetupAppearanceMenu()
 end
 
 function CharacterCreatorState:SetupAppearanceMenu()
@@ -19,14 +28,6 @@ function CharacterCreatorState:SetupAppearanceMenu()
 	
 	StateBase:AddLabel( { id = "header", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
 		pos_x = 0, pos_y = 25, color = 0xFFFFFF, size = 20, text = GameText:Get( "helper", "Character Creator" ), centered = true } )
-		
-	self.baseCode = 1
-	self.baseCodeMax = 15
-	self.faceCode = 1
-	self.faceCodeMax = 9
-	self.hairCode = 1
-	self.hairCodeMax = 12
-	self.hairColor = { r = 100, g = 100, b = 100, a = 255 }
 	
 	local x = 25
 	local y = 160
@@ -200,6 +201,7 @@ end
 
 function CharacterCreatorState:GetNameDialogReturn( event )
 	if event.buttonIndex == 1 then
+		self.name = event.text
 		StateBase:ChangeLabelText( { id = "name_text", text = event.text } )
 	end
 end
@@ -212,7 +214,6 @@ function CharacterCreatorState:Handle_MouseDown( event )
 		for key, pronoun in pairs( self.pronounList ) do
 			if ( clickedButton == "btn_" .. pronoun.pronoun ) then
 				print( "Selected pronoun", pronoun.pronoun )
-				GLOBAL_CONFIG.PRONOUN = pronoun.pronoun
 				self.pronoun = pronoun.pronoun
 				clickedPronoun = true
 			end
@@ -295,6 +296,17 @@ function CharacterCreatorState:Handle_MouseDown( event )
 			self.baseCode = 1
 		end
 		self.bitmaps.base:setTexture( Texture.new( "Content/Graphics/Characters/base/base1-color" .. self.baseCode .. ".png" ) )
+		
+	elseif ( clickedButton == "btn_save" ) then
+		GLOBAL_CONFIG.PRONOUN 	= self.pronoun
+		GLOBAL_CONFIG.NAME 			= self.name
+		GLOBAL_CONFIG.BASE	 			= self.baseCode
+		GLOBAL_CONFIG.HAIR	 			= self.hairCode
+		GLOBAL_CONFIG.FACE	 			= self.faceCode
+		
+		SAVE_CONFIG()
+		
+		StateBase:SetGotoState( "TitleState" )
 		
 	end
 	

@@ -5,10 +5,54 @@ GLOBAL_CONFIG = {
 	PRONOUN = nil,
 	SCREEN_WIDTH = 360,
 	SCREEN_HEIGHT = 640,
+	NAME = nil,
+	BASE = nil,
+	HAIR = nil,
+	FACE = nil,
 }
 
 GLOBAL_LANGAUGES = { "English", "Esperanto", "Ido", "Spanish", "Ithkuil", "German", "Polish", "Japanese" }
 GLOBAL_VERSION = "preview 2015-09-07"
+
+function CLEAR_CONFIG()
+	local savePath = "/sdcard/merri/"
+	local backupPath = "|D|"
+	local saveGame = "Whee.lua"
+	local path = savePath .. saveGame
+	
+	require "lfs"
+	local destFile = io.open( path, "wb" )
+	
+	if ( destFile == nil ) then
+		print( path .. " failed" )
+		path = backupPath .. saveGame
+		destFile = io.open( path, "wb" )
+	end
+	
+	if ( destFile == nil ) then
+		-- Fatal error, could not create
+		print( "ERROR: Could not create save game file!" )
+		return false
+	end
+	
+	CONFIG_WRITETOFILE( destFile, "function savegame()" )
+	CONFIG_WRITETOFILE( destFile, "	game_data = {" )
+	
+	CONFIG_WRITETOFILE( destFile, "		HELPER_LANGUAGE = nil," )
+	CONFIG_WRITETOFILE( destFile, "		TARGET_LANGUAGE = nil," )
+	CONFIG_WRITETOFILE( destFile, "		SCREEN_WIDTH 		= 360," )
+	CONFIG_WRITETOFILE( destFile, "		SCREEN_HEIGHT 		= 640," )
+	CONFIG_WRITETOFILE( destFile, "		PRONOUN = nil," )
+	CONFIG_WRITETOFILE( destFile, "		NAME = nil," )
+	CONFIG_WRITETOFILE( destFile, "		BASE = nil," )
+	CONFIG_WRITETOFILE( destFile, "		FACE = nil," )
+	CONFIG_WRITETOFILE( destFile, "		HAIR = nil," )
+	CONFIG_WRITETOFILE( destFile, "	}" )
+	CONFIG_WRITETOFILE( destFile, "	return game_data" )	
+	CONFIG_WRITETOFILE( destFile, "end" )
+	
+	destFile:close()
+end
 
 function SAVE_CONFIG()
 	print( "Save game" )
@@ -48,7 +92,19 @@ function SAVE_CONFIG()
 	CONFIG_WRITETOFILE( destFile, "		SCREEN_HEIGHT = 640," ) else print( "Skip SCREEN_HEIGHT" ) end
 	
 	if ( GLOBAL_CONFIG.PRONOUN ~= nil ) then  			
-	CONFIG_WRITETOFILE( destFile, "		PRONOUN = " .. GLOBAL_CONFIG.PRONOUN .. "," ) else print( "Skip PRONOUN" ) end
+	CONFIG_WRITETOFILE( destFile, "		PRONOUN = \"" .. GLOBAL_CONFIG.PRONOUN .. "\"," ) else print( "Skip PRONOUN" ) end
+	
+	if ( GLOBAL_CONFIG.NAME ~= nil ) then  			
+	CONFIG_WRITETOFILE( destFile, "		NAME = \"" .. GLOBAL_CONFIG.NAME .. "\"," ) else print( "Skip NAME" ) end
+	
+	if ( GLOBAL_CONFIG.BASE ~= nil ) then  			
+	CONFIG_WRITETOFILE( destFile, "		BASE = " .. GLOBAL_CONFIG.BASE .. "," ) else print( "Skip BASE" ) end
+	
+	if ( GLOBAL_CONFIG.FACE ~= nil ) then  			
+	CONFIG_WRITETOFILE( destFile, "		FACE = " .. GLOBAL_CONFIG.FACE .. "," ) else print( "Skip FACE" ) end
+	
+	if ( GLOBAL_CONFIG.HAIR ~= nil ) then  			
+	CONFIG_WRITETOFILE( destFile, "		HAIR = " .. GLOBAL_CONFIG.HAIR .. "," ) else print( "Skip HAIR" ) end
 	
 	
 	CONFIG_WRITETOFILE( destFile, "	}" )
@@ -88,7 +144,7 @@ function LOAD_CONFIG()
 	end
 	
 	for key, value in pairs( GLOBAL_CONFIG ) do
-		print( key, " - ", value )
+		print( key, ": ", value )
 	end
 end
 

@@ -12,7 +12,6 @@ stateManager:AddState( "MinerShopState", MinerShopState.new() )
 stateManager:AddState( "AnimalBattleState", AnimalBattleState.new() )
 
 GameText:Setup()
-
 LOAD_CONFIG()
 if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == nil ) then
 	stateManager:ChangeState( "LanguageSelectState" )
@@ -20,10 +19,10 @@ if ( GLOBAL_CONFIG.HELPER_LANGUAGE == nil and GLOBAL_CONFIG.TARGET_LANGUAGE == n
 else
 	-- Make sure to load languages for Helper and Target
 	GameText:LoadUsedLanguages()
-	--stateManager:ChangeState( "TitleState" )
-	stateManager:ChangeState( "CharacterCreatorState" )
+	stateManager:ChangeState( "TitleState" )
 
 end
+	--stateManager:ChangeState( "CharacterCreatorState" )
 
 function Handle_EnterFrame( event )
 	stateManager:Handle_EnterFrame( event )

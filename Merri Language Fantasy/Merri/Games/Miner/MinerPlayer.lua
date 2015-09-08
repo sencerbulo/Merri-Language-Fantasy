@@ -39,7 +39,6 @@ function MinerPlayer:Die( tileWidth )
 end
 
 function MinerPlayer:AddHealth( amount )
-	print( "Heal ", amount )
 	MinerPlayer.hp = MinerPlayer.hp + amount
 	if ( MinerPlayer.hp > self.maxHp ) then		MinerPlayer.hp = self.maxHp 	end
 end

@@ -77,8 +77,6 @@ end
 function LanguageSelectState:Handle_MouseDown( event )
 	clickedButton = StateBase:ClickedButtonName( event )
 	
-	print( clickedButton )
-	
 	if ( self.menuPage == "SelectHelper" and clickedButton ~= nil ) then
 		local languageSelected = string.gsub( clickedButton, "btn_language_", "" )
 		print( "Selected helper language: ", languageSelected )
