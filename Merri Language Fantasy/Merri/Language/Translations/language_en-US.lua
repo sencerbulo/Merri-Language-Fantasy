@@ -18,6 +18,8 @@ function SetupEnglish()
     target[ "There may be errors or bugs" ]                     = "There may be errors or bugs."
     target[ "Report problems at EMAIL" ]                        = "Report problems at Rachel@Moosader.com ."
     target[ "Want to keep up with this game's progress?" ]      = "Want to keep up with this game's progress?"
+	
+	helper[ "Version" ] = "Version"
         
     -- MAIN MENU BUTTONS
     target[ "play" ]                    = "Play"                -- Button to begin the game
@@ -156,8 +158,8 @@ function SetupEnglish()
     helper[ "previous" ] = target[ "previous" ]              
     helper[ "next" ]              = target[ "next" ]              
     helper[ "options" ]   =target[ "options" ]              
-    helper[ "help" ]   =target[ "help" ]                  
-    helper[ "back" ] = target[ "close-menu" ]
+    helper[ "help" ]   =target[ "help" ]    
+	target[ "back" ] = target[ "close-menu" ]
 	helper[ "back" ] = target[ "back" ]
 	helper[ "close-menu" ] = target[ "close-menu" ]
     helper[ "progress" ] = target[ "progress" ]

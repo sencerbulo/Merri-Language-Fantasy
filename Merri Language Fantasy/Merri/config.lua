@@ -7,6 +7,7 @@ GLOBAL_CONFIG = {
 }
 
 GLOBAL_LANGAUGES = { "English", "Esperanto", "Ido", "Spanish", "Ithkuil", "German", "Polish", "Japanese" }
+GLOBAL_VERSION = "preview 2015-09-07"
 
 function SAVE_CONFIG()
 	print( "Save game" )
@@ -44,6 +45,9 @@ function SAVE_CONFIG()
 	
 	if ( GLOBAL_CONFIG.SCREEN_HEIGHT ~= nil ) then  			
 	CONFIG_WRITETOFILE( destFile, "		SCREEN_HEIGHT = 640," ) else print( "Skip SCREEN_HEIGHT" ) end
+	
+	if ( GLOBAL_CONFIG.VERSION ~= nil ) then  			
+	CONFIG_WRITETOFILE( destFile, "		VERSION = ", GLOBAL_CONFIG.VERSION ,"," ) else print( "Skip VERSION" ) end
 	
 	CONFIG_WRITETOFILE( destFile, "	}" )
 	--CONFIG_WRITETOFILE( destFile, "" )

@@ -26,7 +26,12 @@ function TitleState:Setup( options )
 		label 	= { id = "btn_help", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 255, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "help" ) }
 		} )
 		
+	print( GLOBAL_CONFIG.VERSION )
+		
 	StateBase:AddLabel( { id = "moosader", path = "Content/Fonts/NotoSans-Bold.ttf",		pos_x = 10, pos_y = 25, color = 0xFFFFFF, size = 13, text = "Moosader" } )
+	StateBase:AddLabel( { id = "preview", 			path = "Content/Fonts/NotoSans-Bold.ttf",		pos_x = 100, pos_y = 25, color = 0xDAB9FF, size = 13, text = GameText:Get( "helper", "Version" ) .. ":" } )
+	StateBase:AddLabel( { id = "version", 			path = "Content/Fonts/NotoSans-Bold.ttf",		pos_x = 170, pos_y = 25, color = 0xDAB9FF, size = 13, text = GLOBAL_VERSION } )
+	
 	StateBase:AddBitmap( { id = "title", 	path = "Content/Graphics/UI/title_text.png",  pos_x = GLOBAL_CONFIG.SCREEN_WIDTH/2 - 210/2, pos_y = 35 } )
 	StateBase:AddLabel( { id = "title", 			path = "Content/Fonts/NotoSans-Bold.ttf",		pos_x = 10, pos_y = 140, color = 0xFFFFFF, size = 20, text = GameText:Get( "target", "game title" ), centered = true } )
 	StateBase:AddBitmap( { id = "bg", 	path = "Content/Graphics/UI/bg_titlescene.png",  pos_x = 0, pos_y = 160 } )

@@ -7,6 +7,7 @@ end
 
 -- Setup / Teardown --
 function DifficultySelectState:Setup( options )
+	StateBase:SetGotoState( "" )
 	StateBase:SetBackground( { id = "background", 		path = "Content/Graphics/UI/generalbgtile.png",  pos_x = 0, pos_y = 0 } )
 	
 	StateBase:AddButton( { 
@@ -31,12 +32,12 @@ function DifficultySelectState:Setup( options )
 		
 	StateBase:AddButton( { 
 		button = { id = "btn_stats", 	path = "Content/Graphics/UI/btn_stats.png",  			pos_x = 250, pos_y = 530  },
-		label 	= { id = "btn_stats", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 255, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "Stats" ) }
+		label 	= { id = "btn_stats", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 255, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "progress" ) }
 		} )
 		
 	StateBase:AddButton( { 
 		button = { id = "btn_back", 	path = "Content/Graphics/UI/btn_back.png",  			pos_x = 10, pos_y = 530  },
-		label 	= { id = "btn_back", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 15, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "Back" ) }
+		label 	= { id = "btn_back", 	path = "Content/Fonts/NotoSans-Bold.ttf",   				pos_x = 15, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "back" ) }
 		} )
 		
 	self:Draw()
