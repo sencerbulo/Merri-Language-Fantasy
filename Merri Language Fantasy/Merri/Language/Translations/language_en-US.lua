@@ -30,6 +30,13 @@ function SetupEnglish()
     target[ "menu" ]                    = "Menu"                -- Open up sub-menu screen
     target[ "close-menu" ]              = "Back"                -- Close sub-menu
     target[ "progress" ]                = "Progress"            -- Progress / Statistics menu
+	
+	helper[ "Continue playing" ] = "Continue playing"
+	helper[ "Back to game select" ] = "Back to game select"
+	helper[ "close menu" ] = "Close menu"
+	helper[ "paused" ] = "Paused"
+	
+	helper[ "If you quit" ] = "If you quit, you will lose your progress."
     
     -- Difficulty levels
     helper[ "Practice" ]  = "Practice"
@@ -165,6 +172,7 @@ function SetupEnglish()
 	helper[ "close-menu" ] = target[ "close-menu" ]
     helper[ "progress" ] = target[ "progress" ]
 	-- End ignore
+	target[ "paused" ] = helper[ "paused" ]
     
 	return helper, target    
 end

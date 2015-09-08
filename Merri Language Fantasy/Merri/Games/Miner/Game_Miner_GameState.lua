@@ -444,35 +444,45 @@ function MinerGameState:BeginTransition()
 end
 
 function MinerGameState:Handle_MouseDown( event )
-	if ( MinerGameState.gameOver  ) then
-		clickedButton = StateBase:ClickedButtonName( event )
-		
-		if ( clickedButton == "btn_back" ) then
-			MinerGameState.gameOver = false -- Reset
-			MinerGameState.playerHealth = 4
-			MinerGameState.inventoryItem = ""
-			MinerGameState.money = 0
-			MinerGameState.floor = 1
-			MinerGameState.moveFloorViaItem = false
-			StateBase:SetGotoState( "LanguageSelectState" )
-		
+	if ( StateBase.paused ) then
+		StateBase:Handle_MouseDown_Paused( event )
+	
+	else
+		if ( MinerGameState.gameOver  ) then
+			clickedButton = StateBase:ClickedButtonName( event )
+			
+			if ( clickedButton == "btn_back" ) then
+				MinerGameState.gameOver = false -- Reset
+				MinerGameState.playerHealth = 4
+				MinerGameState.inventoryItem = ""
+				MinerGameState.money = 0
+				MinerGameState.floor = 1
+				MinerGameState.moveFloorViaItem = false
+				StateBase:SetGotoState( "TitleState" )
+			
+			end
+			
+			return
 		end
-		
-		return
-	end
 
-	-- Hud buttons could be to move or mine or attack
-	for key, button in pairs( self.hud ) do
-		if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
-			self:InputAction( button.action, button.direction )			
+		-- Hud buttons could be to move or mine or attack
+		for key, button in pairs( self.hud ) do
+			if ( button.bitmap:hitTestPoint( event.x, event.y ) ) then
+				self:InputAction( button.action, button.direction )			
+			end
 		end
-	end
-	
-	if ( self.buttons.inventory.bitmap:hitTestPoint( event.x, event.y ) ) then
-		self:UseItem( self.buttons.inventory.item )
-	end
-	
-	if ( self.debugButton ~= nil and self.debugButton:hitTestPoint( event.x, event.y ) ) then
+		
+		if ( self.buttons.inventory.bitmap:hitTestPoint( event.x, event.y ) ) then
+			self:UseItem( self.buttons.inventory.item )
+		end
+		
+		if ( self.buttons.menu.bitmap:hitTestPoint( event.x, event.y ) ) then
+			StateBase:CreateGameMenu()
+		end
+		
+		if ( self.debugButton ~= nil and self.debugButton:hitTestPoint( event.x, event.y ) ) then
+		end
+		
 	end
 end
 
@@ -553,4 +563,3 @@ function MinerGameState:GameOver()
 		
 	MinerGameState.gameOver = true
 end
-

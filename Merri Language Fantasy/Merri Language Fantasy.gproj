@@ -160,6 +160,8 @@
     <file source="Content/Graphics/Tiles/treasure_star.png"/>
    </folder>
    <folder name="UI">
+    <file source="Content/Graphics/UI/btn_pause_option.png"/>
+    <file source="Content/Graphics/UI/pause_menu.png"/>
     <file source="Content/Graphics/UI/bg_titlescene.png"/>
     <file source="Content/Graphics/UI/blank_background.png"/>
     <file source="Content/Graphics/UI/btn_back.png"/>

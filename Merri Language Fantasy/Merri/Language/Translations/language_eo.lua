@@ -44,6 +44,10 @@ function SetupEsperanto()
     target[ "back" ] = target[ "close-menu" ]                   -- Ignore this
     target[ "progress" ]                = "Progreso"            -- Progress / Statistics menu
     helper[ "progress" ] = target[ "progress" ]
+	helper[ "Version" ] = "Version"
+	helper[ "close menu" ] = "Close menu"
+	helper[ "paused" ] = "Paused"
+	target[ "paused" ] = helper[ "paused" ]
     
     -- Difficulty levels
     helper[ "Practice" ]  = "Ekzerci"

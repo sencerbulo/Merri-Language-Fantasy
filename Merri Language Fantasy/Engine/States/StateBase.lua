@@ -7,6 +7,7 @@ function StateBase:init( options )
 	self.labels = {}
 	self.backgrounds = {}
 	self.backgroundScroll = false
+	StateBase.paused = false
 	
 	self:Setup( options )
 end
@@ -242,3 +243,61 @@ function StateBase:Update()
 end
 
 
+function StateBase:CreateGameMenu()
+	-- Create "Back" / "Continue" menu for within mini-games.
+	self.pauseMenu = Bitmap.new( Texture.new( "Content/Graphics/UI/pause_menu.png" ) )
+	StateBase.paused = true
+	stage:addChild( self.pauseMenu )
+	
+	local x = 36
+	local y = 200
+	
+	self:AddLabelAndDraw( { id = "paused1",	path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = x, pos_y = y, color = 0xFFFFFF, 	size = 16, text = GameText:Get( "target", "paused" ), centered = true, fitToScreen = true } )
+	self:AddLabelAndDraw( { id = "paused2",	path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = x, pos_y = y+20, color = 0xFFFFFF, 	size = 12, text = GameText:Get( "helper", "paused" ), centered = true, fitToScreen = true } )
+	
+	y = 250
+	self:AddLabelAndDraw( { id = "info",	path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = x, pos_y = y+20, color = 0xFFFFFF, 	size = 12, text = GameText:Get( "helper", "If you quit" ), centered = true, fitToScreen = true } )
+	y = y + 40
+	self:AddButtonAndDraw( { 
+		button = { id = "mainmenu", 	path = "Content/Graphics/UI/btn_pause_option.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "mainmenu", 	path = "Content/Fonts/NotoSans-Bold.ttf", pos_x = x+10, pos_y = y+25, color = 0xFFFFFF, size = 16, 
+			text = GameText:Get( "helper", "Back to game select" ) }
+		} )
+	
+	y = 350
+	self:AddButtonAndDraw( { 
+		button = { id = "continue", 	path = "Content/Graphics/UI/btn_pause_option.png",  	pos_x = x, pos_y = y  },
+		label 	= { id = "continue", 	path = "Content/Fonts/NotoSans-Bold.ttf", pos_x = x+10, pos_y = y+25, color = 0xFFFFFF, size = 16, 
+			text = GameText:Get( "helper", "Continue playing" ) }
+		} )
+	
+	
+	
+end
+
+function StateBase:Handle_MouseDown_Paused( event )
+	clickedButton = StateBase:ClickedButtonName( event )
+	
+	if ( clickedButton == "mainmenu" ) then 					
+		StateBase:SetGotoState( "TitleState" )
+		
+	elseif ( clickedButton == "continue" ) then
+		self:ClearGameMenu()
+	
+	end
+end
+
+function StateBase:ClearGameMenu()
+	StateBase.paused = false
+	stage:removeChild( self.pauseMenu )
+	stage:removeChild( self.bitmaps[ "mainmenu" ] )
+	stage:removeChild( self.labels[ "mainmenu" ] )
+	stage:removeChild( self.bitmaps[ "continue" ] )
+	stage:removeChild( self.labels[ "continue" ] )
+	stage:removeChild( self.labels[ "paused1" ] )
+	stage:removeChild( self.labels[ "paused2" ] )
+	stage:removeChild( self.labels[ "info" ] )
+end
