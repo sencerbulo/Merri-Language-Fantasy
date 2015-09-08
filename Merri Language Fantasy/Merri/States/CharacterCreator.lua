@@ -20,6 +20,14 @@ function CharacterCreatorState:SetupAppearanceMenu()
 	StateBase:AddLabel( { id = "header", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
 		pos_x = 0, pos_y = 25, color = 0xFFFFFF, size = 20, text = GameText:Get( "helper", "Character Creator" ), centered = true } )
 		
+	self.baseCode = 1
+	self.baseCodeMax = 15
+	self.faceCode = 1
+	self.faceCodeMax = 9
+	self.hairCode = 1
+	self.hairCodeMax = 12
+	self.hairColor = { r = 100, g = 100, b = 100, a = 255 }
+	
 	local x = 25
 	local y = 160
 	local inc = 65
@@ -40,6 +48,9 @@ function CharacterCreatorState:SetupAppearanceMenu()
 		button = { id = "hair_left", 	path = "Content/Graphics/UI/btn_scroll_left.png",  	pos_x = x + 150, pos_y = y - 25  },
 		} )
 		
+	StateBase:AddLabel( { id = "label_hair", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = x+230, pos_y = y+5, color = 0xFFFFFF, size = 25, text = self.hairCode, centered = false } )
+		
 	StateBase:AddButton( { 
 		button = { id = "hair_right", 	path = "Content/Graphics/UI/btn_scroll_right.png",  	pos_x = x + 275, pos_y = y - 25  },
 		} )
@@ -51,6 +62,9 @@ function CharacterCreatorState:SetupAppearanceMenu()
 	StateBase:AddButton( { 
 		button = { id = "haircolor_left", 	path = "Content/Graphics/UI/btn_scroll_left.png",  	pos_x = x + 150, pos_y = y - 25  },
 		} )
+		
+	StateBase:AddLabel( { id = "label_haircolor", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = x+230, pos_y = y+5, color = 0xFFFFFF, size = 25, text = "0", centered = false } )
 		
 	StateBase:AddButton( { 
 		button = { id = "haircolor_right", 	path = "Content/Graphics/UI/btn_scroll_right.png",  	pos_x = x + 275, pos_y = y - 25  },
@@ -64,6 +78,9 @@ function CharacterCreatorState:SetupAppearanceMenu()
 		button = { id = "face_left", 	path = "Content/Graphics/UI/btn_scroll_left.png",  	pos_x = x + 150, pos_y = y - 25  },
 		} )
 		
+	StateBase:AddLabel( { id = "label_face", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = x+230, pos_y = y+5, color = 0xFFFFFF, size = 25, text = self.faceCode, centered = false } )
+		
 	StateBase:AddButton( { 
 		button = { id = "face_right", 	path = "Content/Graphics/UI/btn_scroll_right.png",  	pos_x = x + 275, pos_y = y - 25  },
 		} )
@@ -75,6 +92,9 @@ function CharacterCreatorState:SetupAppearanceMenu()
 	StateBase:AddButton( { 
 		button = { id = "skin_left", 	path = "Content/Graphics/UI/btn_scroll_left.png",  	pos_x = x + 150, pos_y = y - 25  },
 		} )
+		
+	StateBase:AddLabel( { id = "label_skin", 			path = "Content/Fonts/NotoSans-Bold.ttf",		
+		pos_x = x+230, pos_y = y+5, color = 0xFFFFFF, size = 25, text = self.baseCode, centered = false } )
 		
 	StateBase:AddButton( { 
 		button = { id = "skin_right", 	path = "Content/Graphics/UI/btn_scroll_right.png",  	pos_x = x + 275, pos_y = y - 25  },
@@ -93,14 +113,6 @@ function CharacterCreatorState:SetupAppearanceMenu()
 		button = { id = "btn_save", 	path = "Content/Graphics/UI/btn_save.png",  	pos_x = 250, pos_y = 530  },
 		label 	= { id = "btn_save", 	path = "Content/Fonts/NotoSans-Bold.ttf",   			pos_x = 255, pos_y = 530+95, color = 0xFFFFFF, size = 14, text = GameText:Get( "helper", "save" ) }
 		} )
-		
-	self.baseCode = 1
-	self.baseCodeMax = 15
-	self.faceCode = 1
-	self.faceCodeMax = 9
-	self.hairCode = 1
-	self.hairCodeMax = 12
-	self.hairColor = { r = 100, g = 100, b = 100, a = 255 }
 		
 	self.bitmaps = {}
 	
@@ -235,7 +247,9 @@ function CharacterCreatorState:Handle_MouseDown( event )
 		
 	end
 	
-	print( "Hair: ", self.hairCode, " Face: ", self.faceCode, " Base: ", self.baseCode )
+	StateBase:ChangeLabelText( { id = "label_skin", text = self.baseCode } )
+	StateBase:ChangeLabelText( { id = "label_face", text = self.faceCode } )
+	StateBase:ChangeLabelText( { id = "label_hair", text = self.hairCode } )
 	
 end
 

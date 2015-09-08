@@ -1,5 +1,5 @@
 <project>
- <properties win_domain="moosader.com" logicalHeight="640" iosDevice="0" touchToMouse="1" osx_domain="moosader.com" osx_org="Moosader" scaleMode="5" fps="60" autorotation="0" architecture="1" retinaDisplay="0" encryptAssets="1" mouseToTouch="1" assetsOnly="0" encryptCode="0" orientation="0" packageName="com.Moosader.FantazioDeEsperanto" windowHeight="0" logicalWidth="360" win_org="Moosader" windowWidth="0" mouseTouchOrder="0">
+ <properties win_domain="moosader.com" logicalHeight="640" iosDevice="0" touchToMouse="1" osx_domain="moosader.com" osx_org="Moosader" scaleMode="5" fps="60" autorotation="0" architecture="2" retinaDisplay="0" encryptAssets="1" mouseToTouch="1" assetsOnly="0" encryptCode="0" orientation="0" packageName="com.Moosader.FantazioDeEsperanto" windowHeight="0" logicalWidth="360" win_org="Moosader" windowWidth="0" mouseTouchOrder="0">
   <imageScales/>
  </properties>
  <folder name="Engine">
