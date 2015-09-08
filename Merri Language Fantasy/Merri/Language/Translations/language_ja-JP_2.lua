@@ -6,8 +6,6 @@ function SetupJapanese()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "ほんやく"              -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "にほんご"              -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Nadipedia"           -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "ウェブサイト"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

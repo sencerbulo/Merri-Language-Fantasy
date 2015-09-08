@@ -5,8 +5,6 @@ function SetupPolish()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Tłumacze"         -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "Polish"           -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Wojtek Kubiak"    -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "Strona internetowa:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

@@ -5,8 +5,6 @@ function SetupEnglish()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Translators"         -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "English"             -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Rachel J. Morris"    -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "Website:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

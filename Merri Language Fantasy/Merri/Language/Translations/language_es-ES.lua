@@ -5,8 +5,6 @@ function SetupSpanish()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Traductores"         -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "Español"             -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Tea Coba"            -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "Página web:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

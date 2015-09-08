@@ -90,9 +90,9 @@ function DemoInfoState:SetupCreditScreen()
 
 	for key, language in pairs( GLOBAL_LANGAUGES ) do
 		StateBase:AddLabel( { id = "infoA" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-			pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:GetFromLanguage( "helper", language, "language-name" ), centered = false } )
+			pos_x = x, pos_y = y, color = 0xFFFFFF, size = size1, text = GameText:GetFromLanguageCommon( "helper", language, "language-name" ), centered = false } )
 		StateBase:AddLabel( { id = "infoB" .. info, 			path = "Content/Fonts/NotoSans-Bold.ttf",		
-			pos_x = x+20, pos_y = y+20, color = 0xFFFFFF, size = size2, text = GameText:GetFromLanguage( "helper", language, "Translation Credits" ), centered = false } )
+			pos_x = x+20, pos_y = y+20, color = 0xFFFFFF, size = size2, text = GameText:GetFromLanguageCommon( "helper", language, "Translation Credits" ), centered = false } )
 		
 		y = y + yInc
 		info = info + 1

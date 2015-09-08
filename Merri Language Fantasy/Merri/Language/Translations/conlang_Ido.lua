@@ -5,8 +5,6 @@ function SetupIdo()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Tradukisti"          -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "Ido"                 -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Rachel J. Morris, Bebson Hochfeld"       -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "Retosituo:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

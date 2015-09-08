@@ -5,8 +5,6 @@ function SetupIthkuil()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = ""                    -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "Ithkuil"             -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Chikaodinaka 'dkawirl' Oluigbo"    -- Translators, append your name to the list.
     
     helper[ "website" ]                 = ":"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

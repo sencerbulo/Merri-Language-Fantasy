@@ -5,8 +5,6 @@ function SetupEsperanto()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Tradukistoj"         -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "Esperanto"           -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Rachel J. Morris"    -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "Retejo:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

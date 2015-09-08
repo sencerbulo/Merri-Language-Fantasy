@@ -5,8 +5,6 @@ function SetupGerman()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Übersetzer"          -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "Deutsch"             -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Marius Stärk"        -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "Internetseite:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

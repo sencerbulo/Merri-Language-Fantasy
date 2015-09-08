@@ -5,8 +5,6 @@ function SetupFrench()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Traducteurs"         -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "Français"            -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Vanege"              -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "Site web :"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this

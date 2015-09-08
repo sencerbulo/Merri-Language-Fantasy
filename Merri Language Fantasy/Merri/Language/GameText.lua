@@ -24,7 +24,7 @@ GameText.HelperText.NewLanguage   [ "I am learning German" ]        = ""
 GameText.HelperText.NewLanguage   [ "I am learning French" ]        = ""
 GameText.HelperText.NewLanguage   [ "I am learning Polish" ]        = ""
 ------------------------------------------------------------------------------------------------
-    
+
 GameText.HelperText.English = {}
 GameText.TargetText.English = {}
 GameText.LastUpdated.English = "2015-09-01"
@@ -37,7 +37,9 @@ GameText.HelperText.English   [ "I am learning Ithkuil" ]       = "I am learning
 GameText.HelperText.English   [ "I am learning German" ]        = "I am learning German"
 GameText.HelperText.English   [ "I am learning French" ]        = "I am learning French"
 GameText.HelperText.English   [ "I am learning Polish" ]        = "I am learning Polish"
-    
+GameText.HelperText.English	[ "Translation Credits" ]     = "Rachel J. Morris"    -- Translators, append your name to the list.
+GameText.HelperText.English	[ "language-name" ]           = "English"
+
 GameText.HelperText.Spanish = {}
 GameText.TargetText.Spanish = {}
 GameText.LastUpdated.Spanish = "2015-08-22"
@@ -45,12 +47,14 @@ GameText.HelperText.Spanish[ "I know Spanish" ]                 = "Yo sé Españ
 GameText.HelperText.Spanish[ "I am learning English" ]          = "Estoy aprendiendo Inglés"
 GameText.HelperText.Spanish[ "I am learning Esperanto" ]        = "Estoy aprendiendo Esperanto"
 GameText.HelperText.Spanish[ "I am learning Ido" ]              = "Estoy aprendiendo Ido"
-GameText.HelperText.Spanish[ "I am learning Spanish" ]          = "Estoy aprendiendo Español"   
+GameText.HelperText.Spanish[ "I am learning Spanish" ]          = "Estoy aprendiendo Español"
 GameText.HelperText.Spanish[ "I am learning Ithkuil" ]          = "Estoy aprendiendo Ithkuil"
 GameText.HelperText.Spanish[ "I am learning German" ]           = ""
 GameText.HelperText.Spanish[ "I am learning French" ]           = ""
 GameText.HelperText.Spanish[ "I am learning Polish" ]           = ""
-    
+GameText.HelperText.Spanish[ "Translation Credits" ]     = "Tea Coba"            -- Translators, append your name to the list.
+GameText.HelperText.Spanish[ "language-name" ]           = "Español"
+
 GameText.HelperText.German = {}
 GameText.TargetText.German = {}
 GameText.LastUpdated.German = "2015-08-22"
@@ -63,7 +67,9 @@ GameText.HelperText.German[ "I am learning Ithkuil" ]           = "Ich lerne Ith
 GameText.HelperText.German[ "I am learning German" ]            = "Ich lerne Deutsch"
 GameText.HelperText.German[ "I am learning French" ]            = "Ich lerne Französisch"
 GameText.HelperText.German[ "I am learning Polish" ]            = "Ich lerne Polnisch"
-    
+GameText.HelperText.German[ "Translation Credits" ]     = "Marius Stärk"        -- Translators, append your name to the list.
+GameText.HelperText.German[ "language-name" ]           = "Deutsch"
+
 GameText.TargetText.French = {}
 GameText.HelperText.French = {}
 GameText.LastUpdated.French = "2015-09-01"
@@ -76,7 +82,9 @@ GameText.HelperText.French[ "I am learning Ithkuil" ]           = "J'apprends l'
 GameText.HelperText.French[ "I am learning German" ]            = "J'apprends l'allemand"
 GameText.HelperText.French[ "I am learning French" ]            = "J'apprends le français"
 GameText.HelperText.French[ "I am learning Polish" ]            = "J'apprends le polonais"
-    
+GameText.HelperText.French[ "Translation Credits" ]     = "Vanege"              -- Translators, append your name to the list.
+GameText.HelperText.French[ "language-name" ]           = "Français"
+
 GameText.HelperText.Japanese = {}
 GameText.TargetText.Japanese = {}
 GameText.LastUpdated.Japanese = "2015-08-26"
@@ -89,7 +97,9 @@ GameText.HelperText.Japanese[ "I am learning Ithkuil" ]         = "イスクイ�
 GameText.HelperText.Japanese[ "I am learning French" ]          = "フランスご　を　べんきょう　してるんだ。"
 GameText.HelperText.Japanese[ "I am learning German" ]          = "ドイツご　を　べんきょう　してるんだ。"
 GameText.HelperText.Japanese[ "I am learning Polish" ]          = "ポーランドご　を　べんきょう　してるんだ。"
-    
+GameText.HelperText.Japanese[ "Translation Credits" ]     = "Nadipedia"           -- Translators, append your name to the list.
+GameText.HelperText.Japanese[ "language-name" ]           = "にほんご"
+
 GameText.HelperText.Polish = {}
 GameText.TargetText.Polish = {}
 GameText.LastUpdated.Polish = "2015-08-24"
@@ -102,7 +112,9 @@ GameText.HelperText.Polish[ "I am learning Ithkuil" ]           = "Uczę się it
 GameText.HelperText.Polish[ "I am learning German" ]            = "Uczę się niemieckiego"
 GameText.HelperText.Polish[ "I am learning French" ]            = "Uczę się francuskiego"
 GameText.HelperText.Polish[ "I am learning Polish" ]            = "Uczę się polskiego"
-    
+GameText.HelperText.Polish[ "Translation Credits" ]     = "Wojtek Kubiak"    -- Translators, append your name to the list.
+GameText.HelperText.Polish[ "language-name" ]           = "Polish"
+
 -- Crap, Gideros doesn't like this script.
 GameText.HelperText.Persian = {}
 GameText.TargetText.Persian = {}
@@ -116,9 +128,9 @@ GameText.HelperText.Persian[ "I am learning Ithkuil" ]           =  "من دار
 GameText.HelperText.Persian[ "I am learning German" ]            = "من دارم آلمانی یاد می‌گیرم"
 GameText.HelperText.Persian[ "I am learning French" ]            = "من دارم فرانسوی یاد می‌گیرم"
 GameText.HelperText.Persian[ "I am learning Polish" ]            = "من دارم لهستانی یاد می‌گیرم"
-    
+
 -- Conlangs
-    
+
 GameText.HelperText.Esperanto = {}
 GameText.TargetText.Esperanto = {}
 GameText.LastUpdated.Esperanto = "2015-09-01"
@@ -131,7 +143,9 @@ GameText.HelperText.Esperanto[ "I am learning Ithkuil" ]        = "Mi lernas Ifk
 GameText.HelperText.Esperanto[ "I am learning German" ]         = "Mi lernas la germanan lingvon"
 GameText.HelperText.Esperanto[ "I am learning French" ]         = "Mi lernas la francan lingvon"
 GameText.HelperText.Esperanto[ "I am learning Polish" ]         = "Mi lernas la polan lingvon"
-    
+GameText.HelperText.Esperanto[ "Translation Credits" ]     = "Rachel J. Morris"    -- Translators, append your name to the list.
+GameText.HelperText.Esperanto[ "language-name" ]           = "Esperanto"
+
 GameText.HelperText.Ido = {}
 GameText.TargetText.Ido = {}
 GameText.LastUpdated.Ido = "2015-09-01"
@@ -144,6 +158,8 @@ GameText.HelperText.Ido[ "I am learning Ithkuil" ]              = "Me lernas Ifk
 GameText.HelperText.Ido[ "I am learning German" ]               = "Me lernas la Franca linguo"
 GameText.HelperText.Ido[ "I am learning French" ]               = "Me lernas la Germana linguo"
 GameText.HelperText.Ido[ "I am learning Polish" ]               = "Me lernas la Polona linguo"
+GameText.HelperText.Ido[ "Translation Credits" ]     = "Rachel J. Morris, Bebson Hochfeld"       -- Translators, append your name to the list.
+GameText.HelperText.Ido[ "language-name" ]           = "Ido"
 
 GameText.HelperText.Ithkuil = {}
 GameText.TargetText.Ithkuil = {}
@@ -157,6 +173,8 @@ GameText.HelperText.Ithkuil[ "I am learning Ithkuil" ]          = "Ithkel xháw�
 GameText.HelperText.Ithkuil[ "I am learning German" ]           = ""
 GameText.HelperText.Ithkuil[ "I am learning French" ]           = ""
 GameText.HelperText.Ithkuil[ "I am learning Polish" ]           = ""
+GameText.HelperText.Ithkuil[ "Translation Credits" ]     = "Chikaodinaka 'dkawirl' Oluigbo"    -- Translators, append your name to the list.
+GameText.HelperText.Ithkuil[ "language-name" ]           = "Ithkuil"
 
 GameText.HelperText.Interlingua = {}
 GameText.TargetText.Interlingua = {}
@@ -170,6 +188,8 @@ GameText.HelperText.Interlingua[ "I am learning Ithkuil" ]      = "Io apprende I
 GameText.HelperText.Interlingua[ "I am learning German" ]       = "Io apprende German"
 GameText.HelperText.Interlingua[ "I am learning French" ]       = "Io apprende Francese"
 GameText.HelperText.Interlingua[ "I am learning Polish" ]       = "Io apprende Polonese"
+GameText.HelperText.Interlingua[ "Translation Credits" ]     = "Tea Coba"            -- Translators, append your name to the list.
+GameText.HelperText.Interlingua[ "language-name" ]           = "Interlingua"
 
 GameText.HelperText.TokiPona = {}
 GameText.TargetText.TokiPona = {}
@@ -183,11 +203,13 @@ GameText.HelperText.TokiPona[ "I am learning Ithkuil" ]      = "mi kama sona e t
 GameText.HelperText.TokiPona[ "I am learning German" ]       = "mi kama sona e toki Tosi"
 GameText.HelperText.TokiPona[ "I am learning French" ]       = "mi kama sona e toki Kanse"
 GameText.HelperText.TokiPona[ "I am learning Polish" ]       = "mi kama sona e toki ??"
+GameText.HelperText.TokiPona[ "Translation Credits" ]     = "AetherStar"                    -- Translators, append your name to the list.
+GameText.HelperText.TokiPona[ "language-name" ]           = "toki pona"
 
 GameText.HelperText.Laadan = {}
 GameText.TargetText.Laadan = {}
 GameText.LastUpdated.Laadan = "2015-09-03"
-GameText.HelperText.Laadan   [ "I know LANGUAGE" ]              = "Bíi lothel le Láadaneth wa." 
+GameText.HelperText.Laadan   [ "I know LANGUAGE" ]          = "Bíi lothel le Láadaneth wa."
 GameText.HelperText.Laadan   [ "I am learning English" ]       = "Bíi bedi le Inelesheth wa." -- I don't know how to translate language names.
 GameText.HelperText.Laadan   [ "I am learning Esperanto" ]     = ""
 GameText.HelperText.Laadan   [ "I am learning Ido" ]           = ""
@@ -196,6 +218,7 @@ GameText.HelperText.Laadan   [ "I am learning Ithkuil" ]       = ""
 GameText.HelperText.Laadan   [ "I am learning German" ]        = ""
 GameText.HelperText.Laadan   [ "I am learning French" ]        = ""
 GameText.HelperText.Laadan   [ "I am learning Polish" ]        = ""
+GameText.HelperText.Laadan[ "Translation Credits" ]     = "Rachel J. Morris"                    -- Translators, append your name to the list.
 
 end
 
@@ -204,18 +227,18 @@ function GameText:LoadUsedLanguages()
 	local helper = nil
 	local target = nil
 	local dummy = nil
-	
+
 	-- GLOBAL_CONFIG.TARGET_LANGUAGE
 	if ( GLOBAL_CONFIG.TARGET_LANGUAGE == "English" ) then					dummy, target = SetupEnglish()
-	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Esperanto" ) then		dummy, target = SetupEsperanto()	
-	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Ido" ) then					dummy, target = SetupIdo()	
-	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Spanish" ) then			dummy, target = SetupSpanish()	
-	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "German" ) then			dummy, target = SetupGerman()	
-	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "French" ) then			dummy, target = SetupFrench()	
-	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Polish" ) then				dummy, target = SetupPolish()	
-	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Ithkuil" ) then			dummy, target = SetupIthkuil()	
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Esperanto" ) then		dummy, target = SetupEsperanto()
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Ido" ) then					dummy, target = SetupIdo()
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Spanish" ) then			dummy, target = SetupSpanish()
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "German" ) then			dummy, target = SetupGerman()
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "French" ) then			dummy, target = SetupFrench()
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Polish" ) then				dummy, target = SetupPolish()
+	elseif ( GLOBAL_CONFIG.TARGET_LANGUAGE == "Ithkuil" ) then			dummy, target = SetupIthkuil()
 	end
-	
+
 	-- GLOBAL_CONFIG.HELPER_LANGUAGE
 	if ( GLOBAL_CONFIG.HELPER_LANGUAGE == "English" ) then					helper, dummy = SetupEnglish()
 	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "Esperanto" ) then		helper, dummy = SetupEsperanto()
@@ -226,7 +249,7 @@ function GameText:LoadUsedLanguages()
 	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "Polish" ) then				helper, dummy = SetupPolish()
 	elseif ( GLOBAL_CONFIG.HELPER_LANGUAGE == "Ithkuil" ) then			helper, dummy = SetupIthkuil()
 	end
-	
+
 	GameText.Helper = helper
 	GameText.Target = target
 end
@@ -243,7 +266,9 @@ function GameText:Setup( options )
     GameText:SetupLanguages()
 end
 
-function GameText:GetFromLanguage( cat, lang, id )
+-- Common language text (from GetText.lua)
+
+function GameText:GetFromLanguageCommon( cat, lang, id )
     local language = lang
     local category = ""
     if ( cat == "helper" ) then
@@ -269,7 +294,7 @@ function GameText:GetFromLanguage( cat, lang, id )
     end
 end
 
-function GameText:GetSpecial( cat, id )
+function GameText:GetCommon( cat, id )
     local language = ""
     local category = ""
     if ( cat == "helper" ) then
@@ -296,6 +321,8 @@ function GameText:GetSpecial( cat, id )
 
     end
 end
+
+-- Specific language files
 
 function GameText:Get( cat, id )
 	-- GameText.Helper[ "twitter" ]

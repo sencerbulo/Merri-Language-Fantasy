@@ -5,8 +5,6 @@ function SetupInterlingua()
     
     -- CREDITS SCREEN
     helper[ "Translators" ]             = "Traductores"         -- Header text: "Translators" for Translator credits section
-    helper[ "language-name" ]           = "Interlingua"         -- Name of this language (match this language file)
-    helper[ "Translation Credits" ]     = "Tea Coba"            -- Translators, append your name to the list.
     
     helper[ "website" ]                 = "Sito web:"            -- Label for homepage URL
     target[ "website" ] = helper[ "website" ]                   -- Ignore this
