@@ -131,7 +131,7 @@ function SetupSpanish()
     target[ "use-earthquake" ]          = "La tierra tiembla violentamente."
     target[ "use-blizzard" ]            = "Todo se congela."
     target[ "enemies-thaw" ]            = "Todo se ha derretido."
-    target[ "use-potion" ]              = ""
+    target[ "use-potion" ]              = "Te sientes con fuerzas de nuevo"
     target[ "miner-collect-copper" ]    = "Obtienes cobre."
     target[ "miner-collect-silver" ]    = "Obtienes plata."
     target[ "miner-collect-gold" ]      = "Obtienes oro."
